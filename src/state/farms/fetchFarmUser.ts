@@ -79,7 +79,7 @@ export const fetchFarmUserStakedBalances = async (
 }
 
 export const fetchFarmUserEarnings = async (account: string, farmsToFetch: SerializedFarmConfig[], chainId: number) => {
-  const isBscNetwork = !verifyBscNetwork(chainId)
+  const isBscNetwork = verifyBscNetwork(chainId)
   const multiCallChainId = isBscNetwork ? chainId : await getBscChainId(chainId)
   const masterChefAddress = getMasterChefAddress(multiCallChainId)
 

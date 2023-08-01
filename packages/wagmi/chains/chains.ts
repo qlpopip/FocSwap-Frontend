@@ -1,4 +1,4 @@
-import { rinkeby as defaultRinkeby, mainnet as defaultMainnet, goerli as defaultGoerli } from 'wagmi/chains'
+import { rinkeby as defaultRinkeby, mainnet as defaultMainnet, goerli as defaultGoerli} from 'wagmi/chains'
 import { Chain } from 'wagmi'
 
 export const avalandche: Chain = {
@@ -140,4 +140,28 @@ export const goerli: Chain = {
     // https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key
     nodeReal: 'https://eth-goerli.nodereal.io/v1/79c5963a17324f79bc42cc888c26462a',
   },
+}
+
+export const baobab: Chain = {
+  id: 1001,
+  name: 'Baobab Klaytn',
+  network: 'baobab',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Klaytn Token',
+    symbol: 'KLAY',
+  },
+  rpcUrls: {
+    default: 'https://public-node-api.klaytnapi.com/v1/baobab',
+    // https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key
+    nodeReal: 'https://public-node-api.klaytnapi.com/v1/baobab',
+  },
+  blockExplorers: {
+    default: { name: 'klaytnscope', url: 'https://baobab.scope.klaytn.com' },
+  },
+  multicall: {
+    address: '0x40643b8aeaaca0b87ea1a1e596e64a0e14b1d244',
+    blockCreated: 87232478,
+  },
+  testnet: true,
 }

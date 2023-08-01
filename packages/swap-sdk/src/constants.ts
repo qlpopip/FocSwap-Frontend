@@ -10,6 +10,7 @@ export enum ChainId {
   GOERLI = 5,
   BSC = 56,
   BSC_TESTNET = 97,
+  BAOBAB = 1001,
 }
 
 export enum TradeType {
@@ -34,6 +35,7 @@ export const FACTORY_ADDRESS_MAP: Record<number, string> = {
   [ChainId.GOERLI]: '0x0d53887A7EE0a6e941b496Bef8a41CaC4a03124c',
   [ChainId.BSC]: FACTORY_ADDRESS,
   [ChainId.BSC_TESTNET]: '0x6725f303b657a9451d8ba641348b6761a6cc7a17',
+  [ChainId.BAOBAB]: '0x2C2876120d96a393f174b848Ab22Bd07cC9800b4',
 }
 export const INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5'
 
@@ -44,6 +46,7 @@ export const INIT_CODE_HASH_MAP: Record<number, string> = {
   [ChainId.GOERLI]: '0x29bd6d25b5a86f6ac94daf96ae9932a8109dee0e95aff78c7c9d38ee24fd6f88',
   [ChainId.BSC]: INIT_CODE_HASH,
   [ChainId.BSC_TESTNET]: '0xd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66',
+  [ChainId.BAOBAB]: '0x29bd6d25b5a86f6ac94daf96ae9932a8109dee0e95aff78c7c9d38ee24fd6f88',
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
@@ -96,6 +99,14 @@ export const WETH9 = {
     'Wrapped Ether',
     'https://weth.io'
   ),
+  [ChainId.BAOBAB]: new Token(
+    ChainId.BAOBAB,
+    '0x043c471bee060e00a56ccd02c0ca286808a5a436',
+    18,
+    'WKLAY',
+    'Wrapped KLAY',
+    'https://weth.io'
+  ),
 }
 
 export const WBNB = {
@@ -131,6 +142,7 @@ export const WNATIVE: Record<number, Token> = {
   [ChainId.GOERLI]: WETH9[ChainId.GOERLI],
   [ChainId.BSC]: WBNB[ChainId.BSC],
   [ChainId.BSC_TESTNET]: WBNB[ChainId.BSC_TESTNET],
+  [ChainId.BAOBAB]: WETH9[ChainId.BAOBAB],
 }
 
 export const NATIVE: Record<
@@ -144,6 +156,7 @@ export const NATIVE: Record<
   [ChainId.ETHEREUM]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   [ChainId.RINKEBY]: { name: 'Rinkeby Ether', symbol: 'RIN', decimals: 18 },
   [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
+  [ChainId.BAOBAB]: { name: 'Baobab Klay', symbol: 'KLAY', decimals: 18 },
   [ChainId.BSC]: {
     name: 'Binance Chain Native Token',
     symbol: 'BNB',

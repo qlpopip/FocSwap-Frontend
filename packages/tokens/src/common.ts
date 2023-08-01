@@ -2,7 +2,7 @@ import { ChainId, Token } from '@pancakeswap/sdk'
 
 export const CAKE_MAINNET = new Token(
   ChainId.BSC,
-  '0x697A539Ef37aC83980af8e59b5055f11d7dFc964',
+  '0x30EB1AB7eA42dAb8d6839b929c11A0f4F2a1F2CE',
   18,
   'ODI',
   'PancakeSwap Token',
@@ -27,6 +27,15 @@ export const CAKE_GOERLI = new Token(
   'https://pancakeswap.finance/',
 )
 
+export const CAKE_BAOBAB = new Token(
+  ChainId.BAOBAB,
+  '0x30EB1AB7eA42dAb8d6839b929c11A0f4F2a1F2CE',
+  18,
+  'CAKE',
+  'PancakeSwap Token',
+  'https://pancakeswap.finance/',
+)
+
 export const USDC_BSC = new Token(
   ChainId.BSC,
   '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
@@ -38,6 +47,15 @@ export const USDC_BSC = new Token(
 
 export const USDC_TESTNET = new Token(
   ChainId.BSC_TESTNET,
+  '0x64544969ed7EBf5f083679233325356EbE738930',
+  18,
+  'USDC',
+  'Binance-Peg USD Coin',
+  'https://www.centre.io/usdc',
+)
+
+export const USDC_BAOBAB = new Token(
+  ChainId.BAOBAB,
   '0x64544969ed7EBf5f083679233325356EbE738930',
   18,
   'USDC',
@@ -126,18 +144,29 @@ export const BUSD_GOERLI = new Token(
   'https://www.paxos.com/busd/',
 )
 
+export const BUSD_BAOBAB = new Token(
+  ChainId.BAOBAB,
+  '0xb809b9B2dc5e93CB863176Ea2D565425B03c0540',
+  18,
+  'BUSD',
+  'Binance USD',
+  'https://www.paxos.com/busd/',
+)
+
 export const BUSD: Record<ChainId, Token> = {
   [ChainId.ETHEREUM]: BUSD_ETH,
   [ChainId.RINKEBY]: BUSD_RINKEBY,
   [ChainId.GOERLI]: BUSD_GOERLI,
   [ChainId.BSC]: BUSD_BSC,
   [ChainId.BSC_TESTNET]: BUSD_TESTNET,
+  [ChainId.BAOBAB]: BUSD_BAOBAB,
 }
 
 export const CAKE = {
   [ChainId.BSC]: CAKE_MAINNET,
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
   [ChainId.GOERLI]: CAKE_GOERLI,
+  [ChainId.BAOBAB]: CAKE_BAOBAB,
 }
 
 export const USDC = {
@@ -146,6 +175,7 @@ export const USDC = {
   [ChainId.ETHEREUM]: USDC_ETH,
   [ChainId.RINKEBY]: USDC_RINKEBY,
   [ChainId.GOERLI]: USDC_GOERLI,
+  [ChainId.BAOBAB]: USDC_BAOBAB,
 }
 
 export const USDT = {

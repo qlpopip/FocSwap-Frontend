@@ -71,9 +71,10 @@ export const livePools: SerializedPoolConfig[] = [
     stakingToken: goerliTestnetTokens.odi,
     earningToken: goerliTestnetTokens.odi,
     contractAddress: {
-      5: '0x2330888aeEF9E663BEA60E874f13b98A9A416E13',
-      56: '0x2330888aeEF9E663BEA60E874f13b98A9A416E13',
-      97: '0x2330888aeEF9E663BEA60E874f13b98A9A416E13',
+      5: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
+      56: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
+      97: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
+      1001: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2'
     },
     poolCategory: PoolCategory.COMMUNITY,
     tokenPerBlock: '1',
