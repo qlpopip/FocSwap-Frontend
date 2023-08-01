@@ -31,7 +31,7 @@ export const CAKE_BAOBAB = new Token(
   ChainId.BAOBAB,
   '0x30EB1AB7eA42dAb8d6839b929c11A0f4F2a1F2CE',
   18,
-  'CAKE',
+  'ODI',
   'PancakeSwap Token',
   'https://pancakeswap.finance/',
 )

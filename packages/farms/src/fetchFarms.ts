@@ -60,9 +60,9 @@ export async function farmV2FetchFarms({
       throw error
     }
   })
-
+//  console.log(farmsData)
   const farmsDataWithPrices = getFarmsPrices(farmsData, chainId)
-
+  
   return farmsDataWithPrices
 }
 

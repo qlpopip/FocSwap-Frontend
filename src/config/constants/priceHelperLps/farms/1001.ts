@@ -5,7 +5,7 @@ const priceHelperLps: SerializedFarmConfig[] = [
   {
     pid: null,
     lpSymbol: 'WETH-USDC LP',
-    lpAddress: '0xf5bf0C34d3c428A74Ceb98d27d38d0036C587200',
+    lpAddress: '0xb3948b426e9482c5f38d4880af584c95cd56f42b',
     token: baobabTokens.weth,
     quoteToken: baobabTokens.odi,
   },

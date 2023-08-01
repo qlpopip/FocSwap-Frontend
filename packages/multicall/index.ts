@@ -100,6 +100,7 @@ export function createMulticall<TProvider>(provider: ({ chainId }: { chainId?: n
     const _calls = calls.map(({ abi, address, name, params, allowFailure: _allowFailure }) => {
       const contract = new Contract(address, abi)
       const callData = contract.interface.encodeFunctionData(name, params ?? [])
+      
       if (!contract[name]) console.error(`${name} missing on ${address}`)
       return {
         target: address,

@@ -66,6 +66,7 @@ export const fetchFarmsPublicDataAsync = createAsyncThunk<
       const { poolLength, totalRegularAllocPoint, cakePerBlock } =
         await farmFetcher.fetchMasterChefV2Data(chain.testnet)
 
+      //console.log(poolLength, totalRegularAllocPoint, cakePerBlock)
       const regularCakePerBlock = formatEther(cakePerBlock)
       const farmsConfig = await getFarmConfig(chainId)
       const farmsCanFetch = farmsConfig.filter(
@@ -80,7 +81,7 @@ export const fetchFarmsPublicDataAsync = createAsyncThunk<
         totalRegularAllocPoint,
       })
       const farmsWithPrices = farms.length > 0 ? getFarmsPrices(farms, chainId) : []
-
+      
       return [farmsWithPrices, poolLength.toNumber(), +regularCakePerBlock]
     } catch (error) {
       console.error(error)
@@ -160,7 +161,6 @@ async function getNormalFarmsStakeValue(farms, account, chainId) {
     fetchFarmUserStakedBalances(account, farms, chainId),
     fetchFarmUserEarnings(account, farms, chainId),
   ])
-
   const normalFarmAllowances = userFarmAllowances.map((_, index) => {
     return {
       pid: farms[index].pid,
@@ -193,7 +193,6 @@ export const fetchFarmUserDataAsync = createAsyncThunk<
     )
     if (proxyAddress && farmsCanFetch?.length) {
       const { normalFarms, farmsWithProxy } = splitProxyFarms(farmsCanFetch)
-
       const [proxyAllowances, normalAllowances] = await Promise.all([
         getBoostedFarmsStakeValue(farmsWithProxy, account, chainId, proxyAddress),
         getNormalFarmsStakeValue(normalFarms, account, chainId),
@@ -201,7 +200,6 @@ export const fetchFarmUserDataAsync = createAsyncThunk<
 
       return [...proxyAllowances, ...normalAllowances]
     }
-
     return getNormalFarmsStakeValue(farmsCanFetch, account, chainId)
   },
   {
