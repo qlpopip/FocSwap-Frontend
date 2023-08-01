@@ -27,13 +27,13 @@ const Button = <E extends ElementType = "button">(props: ButtonProps<E>): JSX.El
     >
       <>
         {isValidElement(startIcon) &&
-          cloneElement(startIcon, {
-            mr: "0.5rem",
+          cloneElement(startIcon as React.ReactElement<any>, {
+            style: { marginRight: "0.5rem" },
           })}
         {children}
         {isValidElement(endIcon) &&
-          cloneElement(endIcon, {
-            ml: "0.5rem",
+          cloneElement(endIcon as React.ReactElement<any>, {
+            style: { marginLeft: "0.5rem" },
           })}
       </>
     </StyledButton>
