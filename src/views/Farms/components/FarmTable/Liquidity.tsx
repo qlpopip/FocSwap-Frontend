@@ -29,6 +29,7 @@ const Container = styled.div`
 `
 
 const Liquidity: React.FunctionComponent<React.PropsWithChildren<LiquidityProps>> = ({ liquidity }) => {
+  // console.log(BigNumber(liquidity).toString())
   const displayLiquidity =
     liquidity && liquidity.gt(0) ? (
       `$${Number(liquidity).toLocaleString(undefined, { maximumFractionDigits: 0 })}`

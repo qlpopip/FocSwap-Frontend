@@ -106,9 +106,9 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
               </Text>
               <Flex justifyContent="space-between" mb="24px">
                 <Text>{t('Dark mode')}</Text>
-                <ThemeSwitcher isDark={isDark} toggleTheme={() => setTheme(isDark ? 'light' : 'dark')} />
+                <ThemeSwitcher isDark={isDark} toggleTheme={() => setTheme(isDark ? 'dark' : 'dark')} />
               </Flex>
-              <Flex justifyContent="space-between" alignItems="center" mb="24px">
+              {/* <Flex justifyContent="space-between" alignItems="center" mb="24px">
                 <Flex alignItems="center">
                   <Text>{t('Subgraph Health Indicator')}</Text>
                   <QuestionHelper
@@ -127,7 +127,7 @@ const SettingsModal: React.FC<React.PropsWithChildren<InjectedModalProps>> = ({ 
                     setSubgraphHealth(!subgraphHealth)
                   }}
                 />
-              </Flex>
+              </Flex> */}
               <GasSettings />
             </Flex>
           </>

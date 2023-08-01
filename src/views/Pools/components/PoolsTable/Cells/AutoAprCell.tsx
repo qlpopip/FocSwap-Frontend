@@ -83,7 +83,7 @@ const AutoAprCell: React.FC<React.PropsWithChildren<AprCellProps>> = ({ pool }) 
             )}
           </CellContent>
         </BaseCell>
-        <BaseCell role="cell" flex={['1 0 50px', '1 0 50px', '2 0 100px', null, '1 0 120px']}>
+        {/* <BaseCell role="cell" flex={['1 0 50px', '1 0 50px', '2 0 100px', null, '1 0 120px']}>
           <CellContent>
             <Text fontSize="12px" color="textSubtle" textAlign="left">
               {t('Locked APY')}
@@ -122,7 +122,7 @@ const AutoAprCell: React.FC<React.PropsWithChildren<AprCellProps>> = ({ pool }) 
               <Skeleton width="80px" height="16px" />
             )}
           </CellContent>
-        </BaseCell>
+        </BaseCell> */}
       </>
     )
   }

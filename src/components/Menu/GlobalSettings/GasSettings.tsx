@@ -31,9 +31,9 @@ const GasSettings = () => {
           mr="4px"
           scale="sm"
           onClick={() => {
-            setGasPrice(GAS_PRICE_GWEI.default)
+            setGasPrice(GAS_PRICE_GWEI.fast)
           }}
-          variant={gasPrice === GAS_PRICE_GWEI.default ? 'primary' : 'tertiary'}
+          variant={gasPrice === GAS_PRICE_GWEI.fast ? 'primary' : 'tertiary'}
         >
           {t('Standard (%gasPrice%)', { gasPrice: GAS_PRICE.default })}
         </Button>

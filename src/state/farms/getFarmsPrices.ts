@@ -131,9 +131,9 @@ export default getFarmsPrices
 
 const nativeStableLpMap = {
   5: {
-    address: '0xf5bf0C34d3c428A74Ceb98d27d38d0036C587200',
+    address: '0xF51BAea3d139Ca5b6541c601411384e8c06481B9',
     wNative: 'WETH',
-    stable: 'USDC',
+    stable: 'tUSDC',
   },
   56: {
     address: '0x58F876857a02D6762E0101bb5C46A8c1ED44Dc16',

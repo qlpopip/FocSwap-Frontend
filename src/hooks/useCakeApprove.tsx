@@ -17,6 +17,7 @@ const useCakeApprove = (setLastUpdated: () => void, spender, successMsg) => {
     const receipt = await fetchWithCatchTxError(() => {
       return callWithGasPrice(cakeContract, 'approve', [spender, MaxUint256])
     })
+    console.log(receipt)
     if (receipt?.status) {
       toastSuccess(
         t('Contract Enabled'),

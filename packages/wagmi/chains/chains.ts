@@ -138,6 +138,6 @@ export const goerli: Chain = {
   rpcUrls: {
     ...defaultGoerli.rpcUrls,
     // https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key
-    nodeReal: 'https://eth-goerli.nodereal.io/v1/8a4432e42df94dcca2814fde8aea2a2e',
+    nodeReal: 'https://eth-goerli.nodereal.io/v1/79c5963a17324f79bc42cc888c26462a',
   },
 }

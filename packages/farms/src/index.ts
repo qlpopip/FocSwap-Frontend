@@ -4,10 +4,11 @@ import { farmV2FetchFarms, fetchFarmsParams, fetchMasterChefV2Data as _fetchMast
 export const masterChefAddresses = {
   97: '0xB4A466911556e39210a6bB2FaECBB59E4eB7E43d',
   56: '0xa5f8C5Dbd5F286960b9d90548680aE5ebFf07652',
+  5: '0x2330888aeEF9E663BEA60E874f13b98A9A416E13'
 }
 
 export const nonBSCVaultAddresses = {
-  5: '0x8CB958bBdb45597cc918147469eb650A9397aBDA',
+  5: '0x2330888aeEF9E663BEA60E874f13b98A9A416E13',
 }
 
 const supportedChainId = [5, 56, 97]

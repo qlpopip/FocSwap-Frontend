@@ -4,7 +4,7 @@ import { useTranslation } from '@pancakeswap/localization'
 import { escapeRegExp } from '../../utils'
 
 const StyledInput = styled.input<{ error?: boolean; fontSize?: string; align?: string }>`
-  color: ${({ error, theme }) => (error ? theme.colors.failure : theme.colors.text)};
+  color: #000000;
   width: 0;
   position: relative;
   font-weight: 500;

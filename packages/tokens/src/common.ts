@@ -2,9 +2,9 @@ import { ChainId, Token } from '@pancakeswap/sdk'
 
 export const CAKE_MAINNET = new Token(
   ChainId.BSC,
-  '0x0E09FaBB73Bd3Ade0a17ECC321fD13a19e81cE82',
+  '0x697A539Ef37aC83980af8e59b5055f11d7dFc964',
   18,
-  'CAKE',
+  'ODI',
   'PancakeSwap Token',
   'https://pancakeswap.finance/',
 )
@@ -12,6 +12,15 @@ export const CAKE_MAINNET = new Token(
 export const CAKE_TESTNET = new Token(
   ChainId.BSC_TESTNET,
   '0xFa60D973F7642B748046464e165A65B7323b0DEE',
+  18,
+  'CAKE',
+  'PancakeSwap Token',
+  'https://pancakeswap.finance/',
+)
+
+export const CAKE_GOERLI = new Token(
+  ChainId.GOERLI,
+  '0x697A539Ef37aC83980af8e59b5055f11d7dFc964',
   18,
   'CAKE',
   'PancakeSwap Token',
@@ -128,6 +137,7 @@ export const BUSD: Record<ChainId, Token> = {
 export const CAKE = {
   [ChainId.BSC]: CAKE_MAINNET,
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
+  [ChainId.GOERLI]: CAKE_GOERLI,
 }
 
 export const USDC = {

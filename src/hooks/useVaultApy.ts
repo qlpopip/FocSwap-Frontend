@@ -55,8 +55,7 @@ export function useVaultApy({ duration = MAX_LOCK_DURATION }: { duration?: numbe
     const calls = [
       {
         address: masterChefAddress,
-        name: 'cakePerBlock',
-        params: [false],
+        name: 'ODIPerBlock',
       },
       {
         address: masterChefAddress,
@@ -65,18 +64,23 @@ export function useVaultApy({ duration = MAX_LOCK_DURATION }: { duration?: numbe
       },
       {
         address: masterChefAddress,
-        name: 'totalSpecialAllocPoint',
+        name: 'totalAllocPoint',
       },
     ]
 
-    const [[specialFarmsPerBlock], cakePoolInfo, [totalSpecialAllocPoint]] = await multicallv2({
+    const [[specialFarmsPerBlock], [...cakePoolInfo], [totalSpecialAllocPoint]] = await multicallv2({
       abi: masterChefAbi,
       calls,
     })
 
-    const cakePoolSharesInSpecialFarms = FixedNumber.from(cakePoolInfo.allocPoint).divUnsafe(
+    
+    const cakePoolSharesInSpecialFarms = FixedNumber.from(cakePoolInfo[1]).divUnsafe(
       FixedNumber.from(totalSpecialAllocPoint),
     )
+    // console.log(FixedNumber.from(specialFarmsPerBlock)
+    // .mulUnsafe(FixedNumber.from(BLOCKS_PER_YEAR))
+    // .mulUnsafe(cakePoolSharesInSpecialFarms))
+    //console.log(cakePoolSharesInSpecialFarms)
     return FixedNumber.from(specialFarmsPerBlock)
       .mulUnsafe(FixedNumber.from(BLOCKS_PER_YEAR))
       .mulUnsafe(cakePoolSharesInSpecialFarms)

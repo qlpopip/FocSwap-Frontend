@@ -2,6 +2,7 @@ import {
   Cake,
   CakeFlexibleSideVaultV2,
   CakeVaultV2,
+  CakeVault,
   Erc20,
   Erc20Bytes32,
   Erc721collection,
@@ -30,6 +31,7 @@ import {
   getCakeFlexibleSideVaultV2Contract,
   getCakePredictionsContract,
   getCakeVaultV2Contract,
+  getCakeVaultContract,
   getChainlinkOracleContract,
   getClaimRefundContract,
   getEasterNftContract,
@@ -193,11 +195,11 @@ export const useEasterNftContract = () => {
   return useMemo(() => getEasterNftContract(signer), [signer])
 }
 
-export const useVaultPoolContract = (vaultKey: VaultKey): CakeVaultV2 | CakeFlexibleSideVaultV2 => {
+export const useVaultPoolContract = (vaultKey: VaultKey): CakeVault | CakeFlexibleSideVaultV2 => {
   const { data: signer } = useSigner()
   return useMemo(() => {
     if (vaultKey === VaultKey.CakeVault) {
-      return getCakeVaultV2Contract(signer)
+      return getCakeVaultContract(signer)
     }
     if (vaultKey === VaultKey.CakeFlexibleSideVault) {
       return getCakeFlexibleSideVaultV2Contract(signer)

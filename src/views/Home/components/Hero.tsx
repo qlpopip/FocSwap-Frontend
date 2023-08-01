@@ -9,6 +9,7 @@ import styled, { keyframes } from 'styled-components'
 import bunnyImage from '../../../../public/images/home/lunar-bunny/bunny@2x.png'
 import CompositeImage, { CompositeImageProps } from './CompositeImage'
 import { SlideSvgDark, SlideSvgLight } from './SlideSvg'
+import { css } from 'styled-components'
 
 const flyingAnim = () => keyframes`
   from {
@@ -89,6 +90,25 @@ const starsImage: CompositeImageProps = {
   ],
 }
 
+const StyledFlex = styled(Flex)`
+  background-image: url('/images/background.png');
+  background-size: contain;
+
+  ${css`
+    @media screen and (max-width: 768px) {
+      height: 100vh; // 화면 너비가 768px 이하일 때 높이를 400px로 설정
+    }
+
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      height: 100vh; // 화면 너비가 769px 이상 1024px 이하일 때 높이를 600px로 설정
+    }
+
+    @media screen and (min-width: 1025px) {
+      height: 100vh; // 화면 너비가 1025px 이상일 때 높이를 800px로 설정
+    }
+  `}
+`;
+
 const Hero = () => {
   const { t } = useTranslation()
   const { account } = useWeb3React()
@@ -99,6 +119,15 @@ const Hero = () => {
       <BgWrapper>
         <InnerWrapper>{theme.isDark ? <SlideSvgDark width="100%" /> : <SlideSvgLight width="100%" />}</InnerWrapper>
       </BgWrapper>
+      <StyledFlex
+        height={['450px', null, null, '450px']}
+        width={['192px', null, null, '100%']}
+        flex={[null, null, null, '1']}
+        mb={['24px', null, null, '0']}
+        position="relative"
+        alignItems="center" // Flex 컨테이너의 아이템을 수직 가운데 정렬
+        justifyContent="center"
+      >
       <Flex
         position="relative"
         flexDirection={['column-reverse', null, null, 'row']}
@@ -108,11 +137,11 @@ const Hero = () => {
         id="homepage-hero"
       >
         <Flex flex="1" flexDirection="column">
-          <Heading scale="xxl" color="secondary" mb="24px">
-            {t('The moon is made of pancakes.')}
+          <Heading scale="xxl" color="secondary" mb="24px" width="100%">
+            {t('ODiswap explanation')}
           </Heading>
-          <Heading scale="md" mb="24px">
-            {t('Trade, earn, and win crypto on the most popular decentralized platform in the galaxy.')}
+          <Heading scale="md" mb="24px" width="100%">
+            {t('ODiswap explanation')}
           </Heading>
           <Flex>
             {!account && <ConnectWalletButton mr="8px" />}
@@ -128,14 +157,9 @@ const Hero = () => {
           mb={['24px', null, null, '0']}
           position="relative"
         >
-          <BunnyWrapper>
-            <Image src={bunnyImage} priority placeholder="blur" alt={t('Lunar bunny')} />
-          </BunnyWrapper>
-          <StarsWrapper>
-            <CompositeImage {...starsImage} />
-          </StarsWrapper>
         </Flex>
       </Flex>
+      </StyledFlex>
     </>
   )
 }

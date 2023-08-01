@@ -30,7 +30,7 @@ const useFarmsWithBalance = () => {
       const farmsCanFetch = farmsConfig.filter((f) => poolLength > f.pid)
       const calls = farmsCanFetch.map((farm) => ({
         address: getMasterChefAddress(chainId),
-        name: 'pendingCake',
+        name: 'pendingODI',
         params: [farm.pid, account],
       }))
 

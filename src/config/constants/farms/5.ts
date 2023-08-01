@@ -3,20 +3,12 @@ import { SerializedFarmConfig } from '../types'
 
 const farms: SerializedFarmConfig[] = [
   {
-    pid: 7,
-    vaultPid: 1,
-    lpSymbol: 'CELR-WETH LP',
-    lpAddress: '0xF8E1FA0648F87c115F26E43271B3D6e4a80A2944',
-    token: goerliTestnetTokens.celr,
-    quoteToken: goerliTestnetTokens.weth,
-  },
-  {
-    pid: 8,
-    vaultPid: 2,
-    lpSymbol: 'LEET-WETH LP',
-    lpAddress: '0x846f5e6DDb29dC5D07f8dE0a980E30cb5aa07109',
-    token: goerliTestnetTokens.leet,
-    quoteToken: goerliTestnetTokens.weth,
+    pid: 1,
+    vaultPid: 3,
+    lpSymbol: 'WETH-UNI LP',
+    lpAddress: '0xF51BAea3d139Ca5b6541c601411384e8c06481B9',
+    token: goerliTestnetTokens.weth,
+    quoteToken: goerliTestnetTokens.uni,
   },
 ].map((p) => ({ ...p, token: p.token.serialize, quoteToken: p.quoteToken.serialize }))
 

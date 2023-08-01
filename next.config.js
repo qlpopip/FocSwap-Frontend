@@ -124,11 +124,6 @@ const config = {
         destination: '/pools',
         permanent: true,
       },
-      {
-        source: '/collectibles',
-        destination: '/nfts',
-        permanent: true,
-      },
     ]
   },
   webpack: (webpackConfig, { webpack }) => {

@@ -22,9 +22,9 @@ const TotalStakedCell: React.FC<React.PropsWithChildren<TotalStakedCellProps>> =
   const { totalCakeInVault } = useVaultPoolByKey(vaultKey)
 
   const totalStakedBalance = useMemo(() => {
-    if (vaultKey) {
-      return getBalanceNumber(totalCakeInVault, stakingToken.decimals)
-    }
+    // if (vaultKey) {
+    //   return getBalanceNumber(totalCakeInVault, stakingToken.decimals)
+    // }
 
     return getBalanceNumber(totalStaked, stakingToken.decimals)
   }, [vaultKey, totalCakeInVault, totalStaked, stakingToken.decimals])

@@ -124,7 +124,7 @@ export const usePriceByPairs = (currencyA?: Currency, currencyB?: Currency) => {
         CurrencyAmount.fromRawAmount(token1, reserve1.toString()),
       )
 
-      return pair.priceOf(tokenB)
+      return pair.priceOf(tokenA)
     },
     { dedupingInterval: FAST_INTERVAL, refreshInterval: FAST_INTERVAL },
   )
@@ -156,8 +156,8 @@ export const useCakeBusdPrice = ({ forceMainnet } = { forceMainnet: false }): Pr
   const { chainId } = useActiveWeb3React()
   const isTestnet = !forceMainnet && isChainTestnet(chainId)
   // Return bsc testnet cake if chain is testnet
-  const cake: Token = isTestnet ? CAKE[ChainId.BSC_TESTNET] : CAKE[ChainId.BSC]
-  return usePriceByPairs(BUSD[cake.chainId], cake)
+  const cake: Token = isTestnet ? CAKE[ChainId.GOERLI] : CAKE[ChainId.BSC]
+  return usePriceByPairs(USDC[cake.chainId], cake)
 }
 
 // @Note: only fetch from one pair

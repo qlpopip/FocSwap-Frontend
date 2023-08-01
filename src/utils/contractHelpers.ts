@@ -68,6 +68,7 @@ import tradingCompetitionMoboxAbi from 'config/abi/tradingCompetitionMobox.json'
 import tradingCompetitionMoDAbi from 'config/abi/tradingCompetitionMoD.json'
 import easterNftAbi from 'config/abi/easterNft.json'
 import cakeVaultV2Abi from 'config/abi/cakeVaultV2.json'
+import cakeVaultAbi from 'config/abi/cakeVault.json'
 import cakeFlexibleSideVaultV2Abi from 'config/abi/cakeFlexibleSideVaultV2.json'
 import predictionsAbi from 'config/abi/predictions.json'
 import predictionsV1Abi from 'config/abi/predictionsV1.json'
@@ -128,6 +129,7 @@ import type {
   Erc721collection,
   PointCenterIfo,
   CakeVaultV2,
+  CakeVault,
   CakeFlexibleSideVaultV2,
   TradingCompetitionMobox,
   ICake,
@@ -145,7 +147,7 @@ import { ChainId } from '@pancakeswap/sdk'
 export const getContract = ({
   abi,
   address,
-  chainId = ChainId.BSC,
+  chainId = ChainId.GOERLI,
   signer,
 }: {
   abi: any
@@ -191,7 +193,7 @@ export const getPointCenterIfoContract = (signer?: Signer | Provider) => {
 export const getCakeContract = (signer?: Signer | Provider, chainId?: number) => {
   return getContract({
     abi: cakeAbi,
-    address: chainId ? CAKE[chainId].address : CAKE[ChainId.BSC].address,
+    address: chainId ? CAKE[chainId].address : CAKE[ChainId.GOERLI].address,
     signer,
   }) as Cake
 }
@@ -255,6 +257,10 @@ export const getEasterNftContract = (signer?: Signer | Provider) => {
 }
 export const getCakeVaultV2Contract = (signer?: Signer | Provider) => {
   return getContract({ abi: cakeVaultV2Abi, address: getCakeVaultAddress(), signer }) as CakeVaultV2
+}
+
+export const getCakeVaultContract = (signer?: Signer | Provider) => {
+  return getContract({ abi: cakeVaultAbi, address: getCakeVaultAddress(), signer }) as CakeVault
 }
 
 export const getCakeFlexibleSideVaultV2Contract = (signer?: Signer | Provider) => {

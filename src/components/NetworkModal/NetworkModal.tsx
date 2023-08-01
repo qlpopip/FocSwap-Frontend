@@ -17,7 +17,7 @@ export const NetworkModal = ({ pageSupportedChains = SUPPORT_ONLY_BSC }: { pageS
   const [dismissWrongNetwork, setDismissWrongNetwork] = useAtom(hideWrongNetworkModalAtom)
 
   const isBNBOnlyPage = useMemo(() => {
-    return pageSupportedChains?.length === 1 && pageSupportedChains[0] === ChainId.BSC
+    return pageSupportedChains?.length === 1 && pageSupportedChains[0] === ChainId.GOERLI
   }, [pageSupportedChains])
 
   const isPageNotSupported = useMemo(
@@ -25,31 +25,31 @@ export const NetworkModal = ({ pageSupportedChains = SUPPORT_ONLY_BSC }: { pageS
     [chainId, pageSupportedChains],
   )
 
-  if (isPageNotSupported && isBNBOnlyPage) {
-    return (
-      <ModalV2 isOpen closeOnOverlayClick={false}>
-        <PageNetworkSupportModal />
-      </ModalV2>
-    )
-  }
+  // if (isPageNotSupported && isBNBOnlyPage) {
+  //   return (
+  //     <ModalV2 isOpen closeOnOverlayClick={false}>
+  //       <PageNetworkSupportModal />
+  //     </ModalV2>
+  //   )
+  // }
 
-  if ((chain?.unsupported ?? false) || isPageNotSupported) {
-    return (
-      <ModalV2 isOpen closeOnOverlayClick={false}>
-        <UnsupportedNetworkModal />
-      </ModalV2>
-    )
-  }
+  // if ((chain?.unsupported ?? false) || isPageNotSupported) {
+  //   return (
+  //     <ModalV2 isOpen closeOnOverlayClick={false}>
+  //       <UnsupportedNetworkModal />
+  //     </ModalV2>
+  //   )
+  // }
 
-  if (isWrongNetwork && !dismissWrongNetwork) {
-    const currentChain = chains.find((c) => c.id === chainId)
-    if (!currentChain) return null
-    return (
-      <ModalV2 isOpen={isWrongNetwork} closeOnOverlayClick onDismiss={() => setDismissWrongNetwork(true)}>
-        <WrongNetworkModal currentChain={currentChain} onDismiss={() => setDismissWrongNetwork(true)} />
-      </ModalV2>
-    )
-  }
+  // if (isWrongNetwork && !dismissWrongNetwork) {
+  //   const currentChain = chains.find((c) => c.id === chainId)
+  //   if (!currentChain) return null
+  //   return (
+  //     <ModalV2 isOpen={isWrongNetwork} closeOnOverlayClick onDismiss={() => setDismissWrongNetwork(true)}>
+  //       <WrongNetworkModal currentChain={currentChain} onDismiss={() => setDismissWrongNetwork(true)} />
+  //     </ModalV2>
+  //   )
+  // }
 
   return null
 }

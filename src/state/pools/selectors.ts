@@ -1,6 +1,7 @@
 import BigNumber from 'bignumber.js'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { createSelector } from '@reduxjs/toolkit'
+import { useSelector } from 'react-redux'
 import { State, VaultKey } from '../types'
 import { transformPool, transformVault } from './helpers'
 import { initialPoolVaultState } from './index'
@@ -24,7 +25,8 @@ export const poolsWithUserDataLoadingSelector = createSelector(
     return { pools: pools.map(transformPool), userDataLoaded }
   },
 )
-
+// const state = useSelector((state) => state);
+//   console.log('Current State:', state);
 export const makeVaultPoolByKey = (key) => createSelector([selectVault(key)], (vault) => transformVault(key, vault))
 
 export const poolsWithVaultSelector = createSelector(

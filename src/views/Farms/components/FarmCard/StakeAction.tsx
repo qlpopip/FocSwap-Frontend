@@ -62,6 +62,8 @@ const StakeAction: React.FC<React.PropsWithChildren<FarmCardActionsProps>> = ({
   const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
   const { boosterState } = useContext(YieldBoosterStateContext)
 
+  
+
   const handleStake = async (amount: string) => {
     const receipt = await fetchWithCatchTxError(() => {
       return onStake(amount)

@@ -207,7 +207,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
         if (!farm.lpTotalInQuoteToken || !farm.quoteTokenPriceBusd) {
           return farm
         }
-        const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken).times(farm.quoteTokenPriceBusd)
+        const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken)
         const { cakeRewardsApr, lpRewardsApr } = isActive
           ? getFarmApr(
               chainId,
@@ -328,19 +328,19 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
               {t('Stake LP tokens to earn.')}
             </FarmH2>
             <NextLinkFromReactRouter to="/farms/auction" prefetch={false}>
-              <Button p="0" variant="text">
+              {/* <Button p="0" variant="text">
                 <Text color="primary" bold fontSize="16px" mr="4px">
                   {t('Community Auctions')}
                 </Text>
                 <ArrowForwardIcon color="primary" />
-              </Button>
+              </Button> */}
             </NextLinkFromReactRouter>
           </Box>
-          {(chainId === ChainId.BSC || chainId === ChainId.BSC_TESTNET) && (
+          {/* {(chainId === ChainId.BSC || chainId === ChainId.BSC_TESTNET) && (
             <Box>
               <BCakeBoosterCard />
             </Box>
-          )}
+          )} */}
         </FarmFlexWrapper>
       </PageHeader>
       <Page>
@@ -440,7 +440,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
           </Flex>
         )}
         {poolLength && <div ref={observerRef} />}
-        <StyledImage src="/images/decorations/3dpan.png" alt="Pancake illustration" width={120} height={103} />
+        {/* <StyledImage src="/images/decorations/3dpan.png" alt="Pancake illustration" width={120} height={103} /> */}
       </Page>
       {createPortal(<ScrollToTopButton />, document.body)}
     </FarmsContext.Provider>

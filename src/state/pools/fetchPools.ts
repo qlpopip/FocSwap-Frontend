@@ -27,7 +27,7 @@ const startEndBlockCalls = poolsWithEnd.flatMap((poolConfig) => {
 })
 
 export const fetchPoolsBlockLimits = async () => {
-  const startEndBlockRaw = await multicall(sousChefABI, startEndBlockCalls)
+  const startEndBlockRaw = await multicall(sousChefABI, startEndBlockCalls, 5)
 
   const startEndBlockResult = startEndBlockRaw.reduce((resultArray, item, index) => {
     const chunkIndex = Math.floor(index / 2)
@@ -80,7 +80,7 @@ export const fetchPoolsStakingLimits = async (
   const poolStakingCalls = validPools
     .map((validPool) => {
       const contractAddress = getAddress(validPool.contractAddress)
-      return ['hasUserLimit', 'poolLimitPerUser', 'numberBlocksForUserLimit'].map((method) => ({
+      return ['hasUserLimit', 'poolLimitPerUser'].map((method) => ({
         address: contractAddress,
         name: method,
       }))
@@ -90,6 +90,7 @@ export const fetchPoolsStakingLimits = async (
   const poolStakingResultRaw = await multicallv2({
     abi: sousChefV2,
     calls: poolStakingCalls,
+    chainId: 5,
     options: { requireSuccess: false },
   })
   const chunkSize = poolStakingCalls.length / validPools.length

@@ -6,6 +6,8 @@ const getLpApr = (chainId: number) => {
   switch (chainId) {
     case 56:
       return lpAprs56
+    case 5:
+      return lpAprs56
     default:
       return {}
   }

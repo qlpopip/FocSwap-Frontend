@@ -44,9 +44,7 @@ const StakedCell: React.FC<React.PropsWithChildren<StakedCellProps>> = ({ pool, 
   )
 
   const labelText = `${pool.stakingToken.symbol} ${
-    pool.vaultKey === VaultKey.CakeVault && (vaultData as DeserializedPoolLockedVault).userData.locked
-      ? t('Locked')
-      : t('Staked')
+     t('Staked')
   }`
 
   const hasStaked = account && (stakedBalance.gt(0) || isVaultWithShares)
@@ -64,7 +62,7 @@ const StakedCell: React.FC<React.PropsWithChildren<StakedCellProps>> = ({ pool, 
           : '2 0 100px'
       }
     >
-      <CellContent>
+      {/* <CellContent>
         <Text fontSize="12px" color="textSubtle" textAlign="left">
           {labelText}
         </Text>
@@ -109,7 +107,7 @@ const StakedCell: React.FC<React.PropsWithChildren<StakedCellProps>> = ({ pool, 
             </Flex>
           </>
         )}
-      </CellContent>
+      </CellContent> */}
     </StyledCell>
   )
 }
