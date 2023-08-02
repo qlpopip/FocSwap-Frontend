@@ -19,7 +19,7 @@ import { getCakeVaultAddress, getCakeFlexibleSideVaultAddress } from 'utils/addr
 import { multicallv2 } from 'utils/multicall'
 import { bscTokens } from '@pancakeswap/tokens'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { bscRpcProvider } from 'utils/providers'
+import { bscRpcProvider, baobabRpcProvider } from 'utils/providers'
 import { getPoolsPriceHelperLpFiles } from 'config/constants/priceHelperLps/index'
 import fetchFarms from '../farms/fetchFarms'
 import getFarmsPrices from '../farms/getFarmsPrices'
@@ -40,6 +40,7 @@ import { getTokenPricesFromFarm } from './helpers'
 import { resetUserState } from '../global/actions'
 import { fetchUserIfoCredit, fetchPublicIfoData } from './fetchUserIfo'
 import { fetchVaultUser, fetchFlexibleSideVaultUser } from './fetchVaultUser'
+import pools from 'config/constants/pools'
 
 export const initialPoolVaultState = Object.freeze({
   totalShares: null,
@@ -139,14 +140,16 @@ export const fetchPoolsPublicDataAsync =
         fetchPoolsBlockLimits(),
         fetchPoolsTotalStaking(),
         fetchPoolsProfileRequirement(),
-        currentBlockNumber ? Promise.resolve(currentBlockNumber) : bscRpcProvider.getBlockNumber(),
+        currentBlockNumber ? Promise.resolve(currentBlockNumber) : baobabRpcProvider.getBlockNumber(),
       ])
 
       const blockLimitsSousIdMap = fromPairs(blockLimits.map((entry) => [entry.sousId, entry]))
       const totalStakingsSousIdMap = fromPairs(totalStakings.map((entry) => [entry.sousId, entry]))
-
+      
       const priceHelperLpsConfig = getPoolsPriceHelperLpFiles(chainId)
       const activePriceHelperLpsConfig = priceHelperLpsConfig.filter((priceHelperLpConfig) => {
+      
+      
         return (
           poolsConfig
             .filter(
@@ -196,7 +199,7 @@ export const fetchPoolsPublicDataAsync =
           : 0
 
         const profileRequirement = profileRequirements[pool.sousId] ? profileRequirements[pool.sousId] : undefined
-
+        
         return {
           ...blockLimit,
           ...totalStaking,
@@ -218,10 +221,9 @@ export const fetchPoolsStakingLimitsAsync = () => async (dispatch, getState) => 
   const poolsWithStakingLimit = getState()
     .pools.data.filter(({ stakingLimit }) => stakingLimit !== null && stakingLimit !== undefined)
     .map((pool) => pool.sousId)
-
   try {
     const stakingLimits = await fetchPoolsStakingLimits(poolsWithStakingLimit)
-
+    
     const stakingLimitData = poolsConfig.map((pool) => {
       if (poolsWithStakingLimit.includes(pool.sousId)) {
         return { sousId: pool.sousId }

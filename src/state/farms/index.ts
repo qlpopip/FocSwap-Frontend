@@ -65,7 +65,6 @@ export const fetchFarmsPublicDataAsync = createAsyncThunk<
     try {
       const { poolLength, totalRegularAllocPoint, cakePerBlock } =
         await farmFetcher.fetchMasterChefV2Data(chain.testnet)
-
       //console.log(poolLength, totalRegularAllocPoint, cakePerBlock)
       const regularCakePerBlock = formatEther(cakePerBlock)
       const farmsConfig = await getFarmConfig(chainId)
@@ -80,6 +79,8 @@ export const fetchFarmsPublicDataAsync = createAsyncThunk<
         chainId,
         totalRegularAllocPoint,
       })
+
+      //console.log(1, farms)
       const farmsWithPrices = farms.length > 0 ? getFarmsPrices(farms, chainId) : []
       
       return [farmsWithPrices, poolLength.toNumber(), +regularCakePerBlock]

@@ -77,6 +77,7 @@ export const fetchPublicFarmsData = async (
     const farmCalls = farms.flatMap((farm) => fetchFarmCalls(farm, chainId))
     const chunkSize = farmCalls.length / farms.length
     const farmMultiCallResult = await multicall({ abi, calls: farmCalls, chainId })
+    //
     return chunk(farmMultiCallResult, chunkSize)
   } catch (error) {
     console.error('MasterChef Public Data error ', error)

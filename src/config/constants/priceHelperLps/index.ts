@@ -38,7 +38,7 @@ export const getPoolsPriceHelperLpFiles = (chainId: ChainId) => {
       return PoolsEthereumPriceHelper
     case ChainId.GOERLI:
       return PoolsGoerliPriceHelper
-    case ChainId.GOERLI:
+    case ChainId.BAOBAB:
       return PoolsBaobabPriceHelper
     default:
       return []

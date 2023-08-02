@@ -8,7 +8,7 @@ import { SerializedFarmConfig } from '../../config/constants/types'
 
 const fetchFarmCalls = (farm: SerializedFarm, chainId: number) => {
   const { lpAddress, token, quoteToken } = farm
-  console.log(farm)
+  //console.log(farm)
   return [
     // Balance of token in the LP contract
     {
@@ -48,8 +48,8 @@ const fetchFarmCalls = (farm: SerializedFarm, chainId: number) => {
 
 export const fetchPublicFarmsData = async (farms: SerializedFarmConfig[], chainId = ChainId.BAOBAB): Promise<any[]> => {
   const farmCalls = farms.flatMap((farm) => fetchFarmCalls(farm, chainId))
-  console.log("farmcall did")
   const chunkSize = farmCalls.length / farms.length
   const farmMultiCallResult = await multicallv2({ abi: erc20, calls: farmCalls, chainId })
+  //console.log(farmMultiCallResult)
   return chunk(farmMultiCallResult, chunkSize)
 }

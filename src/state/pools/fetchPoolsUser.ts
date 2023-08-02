@@ -22,6 +22,7 @@ export const fetchPoolsAllowance = async (account) => {
   }))
 
   const allowances = await multicall(erc20ABI, calls)
+  //console.log(allowances)
   return fromPairs(nonBnbPools.map((pool, index) => [pool.sousId, new BigNumber(allowances[index]).toJSON()]))
 }
 
@@ -38,7 +39,7 @@ export const fetchUserBalances = async (account) => {
     bscRpcProvider.getBalance(account),
   ])
   const tokenBalances = fromPairs(tokens.map((token, index) => [token, tokenBalancesRaw[index]]))
-
+  
   const poolTokenBalances = fromPairs(
     nonBnbPools
       .map((pool) => {
@@ -47,7 +48,7 @@ export const fetchUserBalances = async (account) => {
       })
       .filter(Boolean),
   )
-
+  console.log(nonBnbPools)
   // BNB pools
   const bnbBalanceJson = new BigNumber(bnbBalance.toString()).toJSON()
   const bnbBalances = fromPairs(bnbPools.map((pool) => [pool.sousId, bnbBalanceJson]))

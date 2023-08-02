@@ -10,6 +10,14 @@ const farms: SerializedFarmConfig[] = [
     token: baobabTokens.weth,
     quoteToken: baobabTokens.odi,
   },
+  {
+    pid: 2,
+    vaultPid: 3,
+    lpSymbol: 'ODI-PT1 LP',
+    lpAddress: '0xefb4a3fefff58dadf61d6394efaee1de18202adf',
+    token: baobabTokens.PT1,
+    quoteToken: baobabTokens.odi,
+  },
 ].map((p) => ({ ...p, token: p.token.serialize, quoteToken: p.quoteToken.serialize }))
 
 export default farms

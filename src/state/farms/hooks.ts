@@ -39,6 +39,7 @@ export const usePollFarmsWithUserData = () => {
     chainId ? ['publicFarmData', chainId] : null,
     async () => {
       const farmsConfig = await getFarmConfig(chainId)
+      //console.log(farmsConfig)
       const pids = farmsConfig.map((farmToFetch) => farmToFetch.pid)
       dispatch(fetchFarmsPublicDataAsync({ pids, chainId }))
     },
@@ -75,6 +76,7 @@ const coreFarmPIDs = {
   56: [2, 3],
   97: [4, 10],
   5: [1, 2],
+  1001: [1,2],
 }
 
 export const usePollCoreFarmData = () => {
