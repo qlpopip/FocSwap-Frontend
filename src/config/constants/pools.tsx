@@ -74,7 +74,7 @@ export const livePools: SerializedPoolConfig[] = [
       5: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
       56: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
       97: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
-      1001: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2'
+      1001: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
     },
     poolCategory: PoolCategory.COMMUNITY,
     tokenPerBlock: '1',

@@ -221,6 +221,10 @@ export const fetchPoolsStakingLimitsAsync = () => async (dispatch, getState) => 
   const poolsWithStakingLimit = getState()
     .pools.data.filter(({ stakingLimit }) => stakingLimit !== null && stakingLimit !== undefined)
     .map((pool) => pool.sousId)
+<<<<<<< HEAD
+=======
+  //console.log(pools)
+>>>>>>> 092a9cb8428bf04068612349535ccbde8612f80c
   try {
     const stakingLimits = await fetchPoolsStakingLimits(poolsWithStakingLimit)
     

@@ -76,7 +76,11 @@ const coreFarmPIDs = {
   56: [2, 3],
   97: [4, 10],
   5: [1, 2],
+<<<<<<< HEAD
   1001: [1,2],
+=======
+  1001: [1, 2],
+>>>>>>> 092a9cb8428bf04068612349535ccbde8612f80c
 }
 
 export const usePollCoreFarmData = () => {
