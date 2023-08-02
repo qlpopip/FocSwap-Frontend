@@ -27,7 +27,7 @@ const startEndBlockCalls = poolsWithEnd.flatMap((poolConfig) => {
 })
 
 export const fetchPoolsBlockLimits = async () => {
-  const startEndBlockRaw = await multicall(sousChefABI, startEndBlockCalls, 5)
+  const startEndBlockRaw = await multicall(sousChefABI, startEndBlockCalls)
 
   const startEndBlockResult = startEndBlockRaw.reduce((resultArray, item, index) => {
     const chunkIndex = Math.floor(index / 2)
@@ -76,6 +76,7 @@ export const fetchPoolsStakingLimits = async (
     .filter((p) => p.stakingToken.symbol !== 'BNB' && !p.isFinished)
     .filter((p) => !poolsWithStakingLimit.includes(p.sousId))
 
+
   // Get the staking limit for each valid pool
   const poolStakingCalls = validPools
     .map((validPool) => {
@@ -90,7 +91,6 @@ export const fetchPoolsStakingLimits = async (
   const poolStakingResultRaw = await multicallv2({
     abi: sousChefV2,
     calls: poolStakingCalls,
-    chainId: 5,
     options: { requireSuccess: false },
   })
   const chunkSize = poolStakingCalls.length / validPools.length

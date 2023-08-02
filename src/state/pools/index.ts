@@ -40,6 +40,7 @@ import { getTokenPricesFromFarm } from './helpers'
 import { resetUserState } from '../global/actions'
 import { fetchUserIfoCredit, fetchPublicIfoData } from './fetchUserIfo'
 import { fetchVaultUser, fetchFlexibleSideVaultUser } from './fetchVaultUser'
+import pools from 'config/constants/pools'
 
 export const initialPoolVaultState = Object.freeze({
   totalShares: null,
@@ -218,7 +219,7 @@ export const fetchPoolsStakingLimitsAsync = () => async (dispatch, getState) => 
   const poolsWithStakingLimit = getState()
     .pools.data.filter(({ stakingLimit }) => stakingLimit !== null && stakingLimit !== undefined)
     .map((pool) => pool.sousId)
-
+  //console.log(pools)
   try {
     const stakingLimits = await fetchPoolsStakingLimits(poolsWithStakingLimit)
 

@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import Trans from 'components/Trans'
 import { VaultKey } from 'state/types'
-import { bscTokens, goerliTestnetTokens } from '@pancakeswap/tokens'
+import { baobabTokens, bscTokens, goerliTestnetTokens } from '@pancakeswap/tokens'
 import { SerializedPoolConfig, PoolCategory } from './types'
 
 export const MAX_LOCK_DURATION = 31536000
@@ -68,13 +68,13 @@ export const livePools: SerializedPoolConfig[] = [
   // },
   {
     sousId: 0,
-    stakingToken: goerliTestnetTokens.odi,
-    earningToken: goerliTestnetTokens.odi,
+    stakingToken: baobabTokens.odi,
+    earningToken: baobabTokens.odi,
     contractAddress: {
       5: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
       56: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
       97: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
-      1001: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2'
+      1001: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
     },
     poolCategory: PoolCategory.COMMUNITY,
     tokenPerBlock: '1',
