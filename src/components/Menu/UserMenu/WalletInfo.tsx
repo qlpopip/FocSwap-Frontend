@@ -1,4 +1,5 @@
-import { Box, Button, Flex, InjectedModalProps, LinkExternal, Message, Skeleton, Text, Image } from '@pancakeswap/uikit'
+import { Box, Button, Flex, InjectedModalProps, LinkExternal, Message, Skeleton, Text } from '@pancakeswap/uikit'
+import Image from 'next/future/image'
 import { ChainId } from '@pancakeswap/sdk'
 import { FetchStatus } from 'config/constants/types'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
@@ -66,9 +67,10 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
       </Flex>
       <Flex alignItems="center" justifyContent="space-between" mb="24px" mt="12px">
         <Flex alignItems="center">
-          {!isBSC && <Image src={`/images/tokens/0x30EB1AB7eA42dAb8d6839b929c11A0f4F2a1F2CE.png`} width={26} height={26} alt="ODI" />}
-          <Text ml={isBSC ? 0 : '24px'} color="textSubtle">
-            {t('ODI Balance')}
+          {!isBSC && <Image src={`/images/1001/tokens/0x30EB1AB7eA42dAb8d6839b929c11A0f4F2a1F2CE.png`} width={26} height={26} unoptimized alt='odi'/>}
+          
+          <Text ml={isBSC ? 0 : '8px'} color="textSubtle">
+            ODI
           </Text>
         </Flex>
         {cakeFetchStatus !== FetchStatus.Fetched ? (
