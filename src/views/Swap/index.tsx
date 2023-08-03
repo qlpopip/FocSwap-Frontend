@@ -452,8 +452,8 @@ export default function Swap() {
                 <CurrencyInputHeader
                   title={t('Swap')}
                   subtitle={t('Trade tokens in an instant')}
-                  setIsChartDisplayed={setIsChartDisplayed}
-                  isChartDisplayed={isChartDisplayed}
+                  // setIsChartDisplayed={setIsChartDisplayed}
+                  // isChartDisplayed={isChartDisplayed}
                   hasAmount={hasAmount}
                   onRefreshPrice={onRefreshPrice}
                 />
