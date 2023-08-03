@@ -34,7 +34,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     bscTokens.usdc,
   ],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.BAOBAB]: [WNATIVE[ChainId.BAOBAB], baobabTokens.odi],
+  [ChainId.BAOBAB]: [WNATIVE[ChainId.BAOBAB]],
 
 }
 
@@ -61,7 +61,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
   [ChainId.BSC]: [bscTokens.busd, bscTokens.cake, bscTokens.btcb],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.BAOBAB]: [USDC[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB], BUSD[ChainId.BAOBAB]],
+  [ChainId.BAOBAB]: [USDC[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB], baobabTokens.odi],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend

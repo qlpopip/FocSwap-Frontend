@@ -16,7 +16,9 @@ export const getFarmBaseTokenPrice = (
   stable: string,
 ): FixedNumber => {
   const hasTokenPriceVsQuote = Boolean(farm.tokenPriceVsQuote)
-
+  //console.log(hasTokenPriceVsQuote)
+  // console.log("farm",farm)
+  // console.log("quoteTokenFarm",quoteTokenFarm)
   if (farm.quoteToken.symbol === stable) {
     return hasTokenPriceVsQuote ? FixedNumber.from(farm.tokenPriceVsQuote) : FIXED_ONE
   }
@@ -126,7 +128,7 @@ export const getFarmsPrices = (farms: FarmData[], chainId: number): FarmWithPric
   const nativePriceUSD = nativeStableFarm?.tokenPriceVsQuote
     ? FIXED_ONE.divUnsafe(FixedNumber.from(nativeStableFarm.tokenPriceVsQuote))
     : FIXED_ZERO
-
+  //console.log(nativePriceUSD)
   const farmsWithPrices = farms.map((farm) => {
     const quoteTokenFarm = getFarmFromTokenSymbol(farms, farm.quoteToken.symbol, [
       nativeStableLpMap[chainId].wNative,
@@ -139,7 +141,7 @@ export const getFarmsPrices = (farms: FarmData[], chainId: number): FarmWithPric
       nativeStableLpMap[chainId].wNative,
       nativeStableLpMap[chainId].stable,
     )
-
+   // console.log("tokenpriceBusd",tokenPriceBusd)
     const quoteTokenPriceBusd = getFarmQuoteTokenPrice(
       farm,
       quoteTokenFarm,
@@ -147,6 +149,8 @@ export const getFarmsPrices = (farms: FarmData[], chainId: number): FarmWithPric
       nativeStableLpMap[chainId].wNative,
       nativeStableLpMap[chainId].stable,
     )
+    //console.log("quoteTokenPriceBusd",quoteTokenPriceBusd)
+
     const lpTokenPrice = getLpTokenPrice(
       FixedNumber.from(farm.lpTotalSupply),
       FixedNumber.from(farm.lpTotalInQuoteToken),
@@ -160,7 +164,7 @@ export const getFarmsPrices = (farms: FarmData[], chainId: number): FarmWithPric
       lpTokenPrice: lpTokenPrice.toString(),
     }
   })
-
+  //console.log(farmsWithPrices)
   return farmsWithPrices
 }
 
@@ -181,8 +185,9 @@ const nativeStableLpMap = {
     stable: 'BUSD',
   },
   [ChainId.BAOBAB]: {
-    address: '0x043c471bee060e00a56ccd02c0ca286808a5a436',
+    address: '0x378bc901891e718c0bddae7245295c6db21bfc7e',
     wNative: 'WKLAY',
     stable: 'USDC',
   },
+  
 }

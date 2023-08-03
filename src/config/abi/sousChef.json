@@ -1,34 +1,27 @@
 [
   {
+    "inputs": [],
+    "stateMutability": "nonpayable",
+    "type": "constructor"
+  },
+  {
+    "anonymous": false,
     "inputs": [
       {
-        "internalType": "contract ODIToken",
-        "name": "_ODI",
-        "type": "address"
-      },
-      {
-        "internalType": "contract SODiBar",
-        "name": "_SODi",
-        "type": "address"
-      },
-      {
+        "indexed": false,
         "internalType": "address",
-        "name": "_devaddr",
+        "name": "tokenRecovered",
         "type": "address"
       },
       {
+        "indexed": false,
         "internalType": "uint256",
-        "name": "_ODIPerBlock",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_startBlock",
+        "name": "amount",
         "type": "uint256"
       }
     ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    "name": "AdminTokenRecovery",
+    "type": "event"
   },
   {
     "anonymous": false,
@@ -38,12 +31,6 @@
         "internalType": "address",
         "name": "user",
         "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "pid",
-        "type": "uint256"
       },
       {
         "indexed": false,
@@ -65,12 +52,6 @@
         "type": "address"
       },
       {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "pid",
-        "type": "uint256"
-      },
-      {
         "indexed": false,
         "internalType": "uint256",
         "name": "amount",
@@ -78,6 +59,51 @@
       }
     ],
     "name": "EmergencyWithdraw",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "poolLimitPerUser",
+        "type": "uint256"
+      }
+    ],
+    "name": "NewPoolLimit",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "rewardPerBlock",
+        "type": "uint256"
+      }
+    ],
+    "name": "NewRewardPerBlock",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "startBlock",
+        "type": "uint256"
+      },
+      {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "endBlock",
+        "type": "uint256"
+      }
+    ],
+    "name": "NewStartAndEndBlocks",
     "type": "event"
   },
   {
@@ -103,16 +129,23 @@
     "anonymous": false,
     "inputs": [
       {
+        "indexed": false,
+        "internalType": "uint256",
+        "name": "blockNumber",
+        "type": "uint256"
+      }
+    ],
+    "name": "RewardsStop",
+    "type": "event"
+  },
+  {
+    "anonymous": false,
+    "inputs": [
+      {
         "indexed": true,
         "internalType": "address",
         "name": "user",
         "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "pid",
-        "type": "uint256"
       },
       {
         "indexed": false,
@@ -126,7 +159,7 @@
   },
   {
     "inputs": [],
-    "name": "BONUS_MULTIPLIER",
+    "name": "PRECISION_FACTOR",
     "outputs": [
       {
         "internalType": "uint256",
@@ -139,10 +172,10 @@
   },
   {
     "inputs": [],
-    "name": "ODI",
+    "name": "SMART_CHEF_FACTORY",
     "outputs": [
       {
-        "internalType": "contract ODIToken",
+        "internalType": "address",
         "name": "",
         "type": "address"
       }
@@ -152,7 +185,7 @@
   },
   {
     "inputs": [],
-    "name": "ODIPerBlock",
+    "name": "accTokenPerShare",
     "outputs": [
       {
         "internalType": "uint256",
@@ -165,19 +198,12 @@
   },
   {
     "inputs": [],
-    "name": "ODIharving",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "SODi",
+    "name": "bonusEndBlock",
     "outputs": [
       {
-        "internalType": "contract SODiBar",
+        "internalType": "uint256",
         "name": "",
-        "type": "address"
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -185,34 +211,6 @@
   },
   {
     "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_allocPoint",
-        "type": "uint256"
-      },
-      {
-        "internalType": "contract IBEP20",
-        "name": "_lpToken",
-        "type": "address"
-      },
-      {
-        "internalType": "bool",
-        "name": "_withUpdate",
-        "type": "bool"
-      }
-    ],
-    "name": "add",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      },
       {
         "internalType": "uint256",
         "name": "_amount",
@@ -227,133 +225,100 @@
   {
     "inputs": [
       {
-        "internalType": "address",
-        "name": "_devaddr",
-        "type": "address"
+        "internalType": "uint256",
+        "name": "_amount",
+        "type": "uint256"
       }
     ],
-    "name": "dev",
+    "name": "emergencyRewardWithdraw",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
     "inputs": [],
-    "name": "devaddr",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      }
-    ],
     "name": "emergencyWithdraw",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
   },
   {
-    "inputs": [
+    "inputs": [],
+    "name": "hasUserLimit",
+    "outputs": [
       {
-        "internalType": "uint256",
-        "name": "_amount",
-        "type": "uint256"
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
       }
     ],
-    "name": "enterStaking",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
     "inputs": [
       {
+        "internalType": "contract IBEP20",
+        "name": "_stakedToken",
+        "type": "address"
+      },
+      {
+        "internalType": "contract IBEP20",
+        "name": "_rewardToken",
+        "type": "address"
+      },
+      {
         "internalType": "uint256",
-        "name": "_from",
+        "name": "_rewardPerBlock",
         "type": "uint256"
       },
       {
         "internalType": "uint256",
-        "name": "_to",
+        "name": "_startBlock",
         "type": "uint256"
-      }
-    ],
-    "name": "getMultiplier",
-    "outputs": [
+      },
       {
         "internalType": "uint256",
-        "name": "",
+        "name": "_bonusEndBlock",
         "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "harvingBlock",
-    "outputs": [
+      },
       {
         "internalType": "uint256",
-        "name": "",
+        "name": "_poolLimitPerUser",
         "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [
+      },
       {
-        "internalType": "uint256",
-        "name": "_amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "leaveStaking",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "massUpdatePools",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      }
-    ],
-    "name": "migrate",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "migrator",
-    "outputs": [
-      {
-        "internalType": "contract IMigratorChef",
-        "name": "",
+        "internalType": "address",
+        "name": "_admin",
         "type": "address"
+      }
+    ],
+    "name": "initialize",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "isInitialized",
+    "outputs": [
+      {
+        "internalType": "bool",
+        "name": "",
+        "type": "bool"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "lastRewardBlock",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
       }
     ],
     "stateMutability": "view",
@@ -375,17 +340,25 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      },
-      {
         "internalType": "address",
         "name": "_user",
         "type": "address"
       }
     ],
-    "name": "pendingODI",
+    "name": "pendingReward",
+    "outputs": [
+      {
+        "internalType": "uint256",
+        "name": "",
+        "type": "uint256"
+      }
+    ],
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "poolLimitPerUser",
     "outputs": [
       {
         "internalType": "uint256",
@@ -399,48 +372,19 @@
   {
     "inputs": [
       {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "name": "poolInfo",
-    "outputs": [
-      {
-        "internalType": "contract IBEP20",
-        "name": "lpToken",
+        "internalType": "address",
+        "name": "_tokenAddress",
         "type": "address"
       },
       {
         "internalType": "uint256",
-        "name": "allocPoint",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "lastRewardBlock",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "accODIPerShare",
+        "name": "_tokenAmount",
         "type": "uint256"
       }
     ],
-    "stateMutability": "view",
-    "type": "function"
-  },
-  {
-    "inputs": [],
-    "name": "poolLength",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
+    "name": "recoverWrongTokens",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -451,39 +395,42 @@
     "type": "function"
   },
   {
-    "inputs": [
+    "inputs": [],
+    "name": "rewardPerBlock",
+    "outputs": [
       {
         "internalType": "uint256",
-        "name": "_pid",
+        "name": "",
         "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_allocPoint",
-        "type": "uint256"
-      },
-      {
-        "internalType": "bool",
-        "name": "_withUpdate",
-        "type": "bool"
       }
     ],
-    "name": "set",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
     "type": "function"
   },
   {
-    "inputs": [
+    "inputs": [],
+    "name": "rewardToken",
+    "outputs": [
       {
-        "internalType": "contract IMigratorChef",
-        "name": "_migrator",
+        "internalType": "contract IBEP20",
+        "name": "",
         "type": "address"
       }
     ],
-    "name": "setMigrator",
-    "outputs": [],
-    "stateMutability": "nonpayable",
+    "stateMutability": "view",
+    "type": "function"
+  },
+  {
+    "inputs": [],
+    "name": "stakedToken",
+    "outputs": [
+      {
+        "internalType": "contract IBEP20",
+        "name": "",
+        "type": "address"
+      }
+    ],
+    "stateMutability": "view",
     "type": "function"
   },
   {
@@ -501,15 +448,9 @@
   },
   {
     "inputs": [],
-    "name": "totalAllocPoint",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
+    "name": "stopReward",
+    "outputs": [],
+    "stateMutability": "nonpayable",
     "type": "function"
   },
   {
@@ -528,12 +469,17 @@
   {
     "inputs": [
       {
+        "internalType": "bool",
+        "name": "_hasUserLimit",
+        "type": "bool"
+      },
+      {
         "internalType": "uint256",
-        "name": "multiplierNumber",
+        "name": "_poolLimitPerUser",
         "type": "uint256"
       }
     ],
-    "name": "updateMultiplier",
+    "name": "updatePoolLimitPerUser",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -542,11 +488,11 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "_pid",
+        "name": "_rewardPerBlock",
         "type": "uint256"
       }
     ],
-    "name": "updatePool",
+    "name": "updateRewardPerBlock",
     "outputs": [],
     "stateMutability": "nonpayable",
     "type": "function"
@@ -555,9 +501,22 @@
     "inputs": [
       {
         "internalType": "uint256",
-        "name": "",
+        "name": "_startBlock",
         "type": "uint256"
       },
+      {
+        "internalType": "uint256",
+        "name": "_bonusEndBlock",
+        "type": "uint256"
+      }
+    ],
+    "name": "updateStartAndEndBlocks",
+    "outputs": [],
+    "stateMutability": "nonpayable",
+    "type": "function"
+  },
+  {
+    "inputs": [
       {
         "internalType": "address",
         "name": "",
@@ -582,11 +541,6 @@
   },
   {
     "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      },
       {
         "internalType": "uint256",
         "name": "_amount",

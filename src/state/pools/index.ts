@@ -17,7 +17,7 @@ import { BIG_ZERO } from 'utils/bigNumber'
 import cakeAbi from 'config/abi/cake.json'
 import { getCakeVaultAddress, getCakeFlexibleSideVaultAddress } from 'utils/addressHelpers'
 import { multicallv2 } from 'utils/multicall'
-import { bscTokens } from '@pancakeswap/tokens'
+import { baobabTokens, bscTokens } from '@pancakeswap/tokens'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { bscRpcProvider, baobabRpcProvider } from 'utils/providers'
 import { getPoolsPriceHelperLpFiles } from 'config/constants/priceHelperLps/index'
@@ -41,6 +41,7 @@ import { resetUserState } from '../global/actions'
 import { fetchUserIfoCredit, fetchPublicIfoData } from './fetchUserIfo'
 import { fetchVaultUser, fetchFlexibleSideVaultUser } from './fetchVaultUser'
 import pools from 'config/constants/pools'
+import { CONFIG_FILES } from 'next/dist/shared/lib/constants'
 
 export const initialPoolVaultState = Object.freeze({
   totalShares: null,
@@ -110,12 +111,12 @@ export const fetchCakePoolPublicDataAsync = () => async (dispatch, getState) => 
 
 export const fetchCakePoolUserDataAsync = (account: string) => async (dispatch) => {
   const allowanceCall = {
-    address: bscTokens.cake.address,
+    address: baobabTokens.odi.address,
     name: 'allowance',
     params: [account, cakeVaultAddress],
   }
   const balanceOfCall = {
-    address: bscTokens.cake.address,
+    address: baobabTokens.odi.address,
     name: 'balanceOf',
     params: [account],
   }
@@ -148,7 +149,7 @@ export const fetchPoolsPublicDataAsync =
       
       const priceHelperLpsConfig = getPoolsPriceHelperLpFiles(chainId)
       const activePriceHelperLpsConfig = priceHelperLpsConfig.filter((priceHelperLpConfig) => {
-      
+        
       
         return (
           poolsConfig
@@ -169,21 +170,18 @@ export const fetchPoolsPublicDataAsync =
       const farmsData = getState().farms.data
       const bnbBusdFarm =
         activePriceHelperLpsConfig.length > 0
-          ? farmsData.find((farm) => farm.token.symbol === 'BUSD' && farm.quoteToken.symbol === 'WBNB')
+          ? farmsData.find((farm) => farm.token.symbol === 'WKLAY' && farm.quoteToken.symbol === 'USDC')
           : null
       const farmsWithPricesOfDifferentTokenPools = bnbBusdFarm
         ? await getFarmsPrices([bnbBusdFarm, ...poolsWithDifferentFarmToken], chainId)
         : []
-
       const prices = getTokenPricesFromFarm([...farmsData, ...farmsWithPricesOfDifferentTokenPools])
-
       const liveData = poolsConfig.map((pool) => {
         const blockLimit = blockLimitsSousIdMap[pool.sousId]
         const totalStaking = totalStakingsSousIdMap[pool.sousId]
         const isPoolEndBlockExceeded =
           currentBlock > 0 && blockLimit ? currentBlock > Number(blockLimit.endBlock) : false
         const isPoolFinished = pool.isFinished || isPoolEndBlockExceeded
-
         const stakingTokenAddress = pool.stakingToken.address ? pool.stakingToken.address.toLowerCase() : null
         const stakingTokenPrice = stakingTokenAddress ? prices[stakingTokenAddress] : 0
 
@@ -197,9 +195,7 @@ export const fetchPoolsPublicDataAsync =
               parseFloat(pool.tokenPerBlock),
             )
           : 0
-
         const profileRequirement = profileRequirements[pool.sousId] ? profileRequirements[pool.sousId] : undefined
-        
         return {
           ...blockLimit,
           ...totalStaking,
@@ -210,7 +206,6 @@ export const fetchPoolsPublicDataAsync =
           isFinished: isPoolFinished,
         }
       })
-
       dispatch(setPoolsPublicData(liveData))
     } catch (error) {
       console.error('[Pools Action] error when getting public data', error)
@@ -221,10 +216,6 @@ export const fetchPoolsStakingLimitsAsync = () => async (dispatch, getState) => 
   const poolsWithStakingLimit = getState()
     .pools.data.filter(({ stakingLimit }) => stakingLimit !== null && stakingLimit !== undefined)
     .map((pool) => pool.sousId)
-<<<<<<< HEAD
-=======
-  //console.log(pools)
->>>>>>> 092a9cb8428bf04068612349535ccbde8612f80c
   try {
     const stakingLimits = await fetchPoolsStakingLimits(poolsWithStakingLimit)
     

@@ -56,7 +56,7 @@ export const USDC_TESTNET = new Token(
 
 export const USDC_BAOBAB = new Token(
   ChainId.BAOBAB,
-  '0x64544969ed7EBf5f083679233325356EbE738930',
+  '0x839c72c528397933681773ff48186875d845eb7a',
   18,
   'USDC',
   'Binance-Peg USD Coin',

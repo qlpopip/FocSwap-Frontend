@@ -805,6 +805,7 @@ export const getFarmsDynamicData = ({
   // Raw amount of token in the LP, including those not staked
   const tokenAmountTotal = getTokenAmount(tokenBalanceLP, token0Decimals)
   const quoteTokenAmountTotal = getTokenAmount(quoteTokenBalanceLP, token1Decimals)
+ // console.log(quoteTokenAmountTotal.divUnsafe(tokenAmountTotal).toString())
 
   // Ratio in % of LP tokens that are staked in the MC, vs the total number in circulation
   const lpTokenRatio =

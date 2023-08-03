@@ -53,6 +53,7 @@ const Balance: React.FC<React.PropsWithChildren<BalanceProps>> = ({
 export const BalanceWithLoading: React.FC<
   React.PropsWithChildren<Omit<BalanceProps, 'value'> & { value: string | number }>
 > = ({ value, fontSize, ...props }) => {
+ // console.log(value)
   const isValueUndefinedOrNull = useMemo(() => isUndefinedOrNull(value), [value])
   const finalValue = useMemo(() => {
     if (isValueUndefinedOrNull) return null

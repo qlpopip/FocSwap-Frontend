@@ -48,11 +48,11 @@ export const fetchUserBalances = async (account) => {
       })
       .filter(Boolean),
   )
-  console.log(nonBnbPools)
+ // console.log(nonBnbPools)
   // BNB pools
   const bnbBalanceJson = new BigNumber(bnbBalance.toString()).toJSON()
   const bnbBalances = fromPairs(bnbPools.map((pool) => [pool.sousId, bnbBalanceJson]))
-
+  //console.log(poolTokenBalances)
   return { ...poolTokenBalances, ...bnbBalances }
 }
 
@@ -62,7 +62,9 @@ export const fetchUserStakeBalances = async (account) => {
     name: 'userInfo',
     params: [account],
   }))
+  //console.log(calls)
   const userInfo = await multicall(sousChefABI, calls)
+ // console.log(userInfo)
   return fromPairs(
     nonMasterPools.map((pool, index) => [pool.sousId, new BigNumber(userInfo[index].amount._hex).toJSON()]),
   )

@@ -356,7 +356,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
               />
               <Text> {t('Staked only')}</Text>
             </ToggleWrapper>
-            <ToggleWrapper>
+            {/* <ToggleWrapper>
               <Toggle
                 id="staked-only-farms"
                 checked={boostedOnly}
@@ -364,7 +364,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
                 scale="sm"
               />
               <Text> {t('Booster Available')}</Text>
-            </ToggleWrapper>
+            </ToggleWrapper> */}
             <FarmTabButtons hasStakeInFinishedFarms={stakedInactiveFarms.length > 0} />
           </ViewControls>
           <FilterContainer>
@@ -408,10 +408,10 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
         </ControlContainer>
         {isInactive && (
           <FinishedTextContainer>
-            <Text fontSize={['16px', null, '20px']} color="failure" pr="4px">
+            {/* <Text fontSize={['16px', null, '20px']} color="failure" pr="4px">
               {t("Don't see the farm you are staking?")}
-            </Text>
-            <Flex>
+            </Text> */}
+            {/* <Flex>
               <FinishedTextLink href="/migration" fontSize={['16px', null, '20px']} color="failure">
                 {t('Go to migration page')}
               </FinishedTextLink>
@@ -426,7 +426,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
               >
                 {t('check out v1 farms')}.
               </FinishedTextLink>
-            </Flex>
+            </Flex> */}
           </FinishedTextContainer>
         )}
         {viewMode === ViewMode.TABLE ? (

@@ -83,7 +83,7 @@ export const livePools: SerializedPoolConfig[] = [
    {
     sousId: 1,
     stakingToken: baobabTokens.odi,
-    earningToken: baobabTokens.PT_1,
+    earningToken: baobabTokens.PT1,
     contractAddress: {
       5: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
       56: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',

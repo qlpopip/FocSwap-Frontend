@@ -416,7 +416,7 @@ export function useGasPrice(): string {
   if (chainId === ChainId.BSC_TESTNET) {
     return GAS_PRICE_GWEI.testnet
   }
-  if (chain?.testnet) {
+  if (chainId === ChainId.BAOBAB) {
     return userGas
   }
   return data?.formatted?.gasPrice

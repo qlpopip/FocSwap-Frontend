@@ -32,7 +32,7 @@ export const VaultRoiCalculatorModal = ({
   const buttonMenuItems = useMemo(
     () => [
       <ButtonMenuItem key="Flexible">{t('Flexible')}</ButtonMenuItem>,
-      <ButtonMenuItem key="Locked">{t('Locked')}</ButtonMenuItem>,
+      // <ButtonMenuItem key="Locked">{t('Locked')}</ButtonMenuItem>,
     ],
     [t],
   )

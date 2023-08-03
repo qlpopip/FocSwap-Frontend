@@ -1,7 +1,7 @@
 import { Flex, Link, LinkExternal, Skeleton, Text, TimerIcon } from '@pancakeswap/uikit'
 import Balance from 'components/Balance'
 import AddToWalletButton, { AddToWalletTextOptions } from 'components/AddToWallet/AddToWalletButton'
-import { BASE_BSC_SCAN_URL } from 'config'
+import { BASE_BSC_SCAN_URLS } from 'config'
 import { useTranslation } from '@pancakeswap/localization'
 import { memo } from 'react'
 import { useCurrentBlock } from 'state/block/hooks'
@@ -13,6 +13,7 @@ import { BIG_ZERO } from 'utils/bigNumber'
 import { getPoolBlockInfo } from 'views/Pools/helpers'
 import MaxStakeRow from './MaxStakeRow'
 import { AprInfo, DurationAvg, PerformanceFee, TotalLocked, TotalStaked } from './Stat'
+import { ChainId } from '../../../../packages/swap-sdk/src/constants'
 
 interface ExpandedFooterProps {
   pool: DeserializedPool
@@ -80,8 +81,8 @@ const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({
       {showTotalStaked && (
         <TotalStaked totalStaked={vaultKey ? totalCakeInVault : totalStaked} stakingToken={stakingToken} />
       )}
-      {vaultKey === VaultKey.CakeVault && <TotalLocked totalLocked={totalLockedAmount} lockedToken={stakingToken} />}
-      {vaultKey === VaultKey.CakeVault && <DurationAvg />}
+      {/* {vaultKey === VaultKey.CakeVault && <TotalLocked totalLocked={totalLockedAmount} lockedToken={stakingToken} />} */}
+      {/* {vaultKey === VaultKey.CakeVault && <DurationAvg />} */}
       {!isFinished && stakingLimit && stakingLimit.gt(0) && (
         <MaxStakeRow
           small
@@ -112,7 +113,7 @@ const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({
       )}
       {vaultKey && <PerformanceFee userData={userData} performanceFeeAsDecimal={performanceFeeAsDecimal} />}
       <Flex mb="2px" justifyContent={alignLinksToRight ? 'flex-end' : 'flex-start'}>
-        <LinkExternal href={`/info/token/${earningToken.address}`} bold={false} small>
+        <LinkExternal href={`${BASE_BSC_SCAN_URLS[ChainId.BAOBAB]}/address/${earningToken.address}`} bold={false} small>
           {t('See Token Info')}
         </LinkExternal>
       </Flex>
@@ -123,17 +124,17 @@ const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({
           </LinkExternal>
         </Flex>
       )}
-      {vaultKey && (
+      {/* {vaultKey && (
         <Flex mb="2px" justifyContent={alignLinksToRight ? 'flex-end' : 'flex-start'}>
           <LinkExternal href="https://docs.pancakeswap.finance/products/syrup-pool/new-cake-pool" bold={false} small>
             {t('View Tutorial')}
           </LinkExternal>
         </Flex>
-      )}
+      )} */}
       {poolContractAddress && (
         <Flex mb="2px" justifyContent={alignLinksToRight ? 'flex-end' : 'flex-start'}>
           <LinkExternal
-            href={`${BASE_BSC_SCAN_URL}/address/${vaultKey ? cakeVaultContractAddress : poolContractAddress}`}
+            href={`${BASE_BSC_SCAN_URLS[ChainId.BAOBAB]}/address/${vaultKey ? cakeVaultContractAddress : poolContractAddress}`}
             bold={false}
             small
           >
