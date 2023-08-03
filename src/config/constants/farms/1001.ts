@@ -19,7 +19,7 @@ const farms: SerializedFarmConfig[] = [
     quoteToken: baobabTokens.odi,
   },
   {
-    pid: 3,
+    pid: 5,
     vaultPid: 3,
     lpSymbol: 'WKLAY-USDC LP',
     lpAddress: '0x378bc901891e718c0bddae7245295c6db21bfc7e',
