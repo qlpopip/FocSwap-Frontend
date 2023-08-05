@@ -38,7 +38,7 @@ export class MiniProgramConnector extends InjectedConnector {
     try {
       const provider = await this.getProvider()
       if (!provider) throw new ConnectorNotFoundError()
-
+      
       if (provider.on) {
         provider.on('accountsChanged', this.onAccountsChanged)
         provider.on('chainChanged', this.onChainChanged)

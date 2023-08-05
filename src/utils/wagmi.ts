@@ -76,6 +76,7 @@ export const injectedConnector = new InjectedConnector({
     shimDisconnect: false,
     shimChainChangedDisconnect: true,
   },
+  
 })
 
 export const coinbaseConnector = new CoinbaseWalletConnector({
@@ -102,17 +103,16 @@ export const metaMaskConnector = new MetaMaskConnector({
 })
 
 export const bscConnector = new BinanceWalletConnector({ chains })
-
 export const client = createClient({
   autoConnect: false,
   provider,
   connectors: [
-    new SafeConnector({ chains }),
+    // new SafeConnector({ chains }),
     metaMaskConnector,
     injectedConnector,
-    coinbaseConnector,
-    walletConnectConnector,
-    bscConnector,
+    // coinbaseConnector,
+    // walletConnectConnector,
+    // bscConnector,
   ],
 })
 

@@ -16,6 +16,7 @@ const mappingNetwork: Record<number, string> = {
   1: 'eth-mainnet',
   56: 'bsc-mainnet',
   97: 'bsc-testnet',
+  1001: 'baobab'
 }
 
 export class BinanceWalletConnector extends InjectedConnector {
