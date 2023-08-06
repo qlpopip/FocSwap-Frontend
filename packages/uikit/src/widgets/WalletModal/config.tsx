@@ -1,6 +1,7 @@
 import Metamask from "../../components/Svg/Icons/Metamask";
 import WalletConnect from "../../components/Svg/Icons/WalletConnect";
 import TrustWallet from "../../components/Svg/Icons/TrustWallet";
+import Kaikas from "../../components/Svg/Icons/Kaikas";
 import MathWallet from "../../components/Svg/Icons/MathWallet";
 import TokenPocket from "../../components/Svg/Icons/TokenPocket";
 import BinanceChain from "../../components/Svg/Icons/BinanceChain";
@@ -35,8 +36,8 @@ const connectors: Config[] = [
   // },
   {
     title: "Kaikas",
-    icon: TrustWallet,
-    connectorId: ConnectorNames.Injected,
+    icon: Kaikas,
+    connectorId: ConnectorNames.Kaikas,
     priority: 1,
     href: "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi",
   },

@@ -6,6 +6,7 @@ import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
+import { KaikasConnector } from '@pancakeswap/wagmi/connectors/kaikas'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { SafeConnector } from '@gnosis.pm/safe-apps-wagmi'
 
@@ -101,7 +102,7 @@ export const metaMaskConnector = new MetaMaskConnector({
     shimChainChangedDisconnect: true,
   },
 })
-
+export const kaikasConnector = new KaikasConnector({chains})
 export const bscConnector = new BinanceWalletConnector({ chains })
 export const client = createClient({
   autoConnect: false,
@@ -109,7 +110,8 @@ export const client = createClient({
   connectors: [
     // new SafeConnector({ chains }),
     metaMaskConnector,
-    injectedConnector,
+    // injectedConnector,
+    kaikasConnector,
     // coinbaseConnector,
     // walletConnectConnector,
     // bscConnector,
