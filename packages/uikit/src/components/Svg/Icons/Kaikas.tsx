@@ -1,8 +1,12 @@
 import React from 'react';
 import { SvgProps } from "../types";
 
-
 const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
+  // Define the style with margin-bottom of 8px
+  const iconStyle = {
+    marginBottom: '8px',
+  };
+
   return (
     <svg
       version="1.1"
@@ -11,16 +15,17 @@ const Icon: React.FC<React.PropsWithChildren<SvgProps>> = (props) => {
       xmlnsXlink="http://www.w3.org/1999/xlink"
       x="0px"
       y="0px"
-      width="36px"
-      height="34px"
-      viewBox="0 0 36 34"
-      enableBackground="new 0 0 36 34"
+      width="40px"
+      height="40px"
+      viewBox="0 0 40 40"
+      enableBackground="new 0 0 40 40"
       xmlSpace="preserve"
+      style={iconStyle} // Apply the style to the SVG element
     >
       <image
         id="image0"
-        width="36"
-        height="34"
+        width="40"
+        height="40"
         x="0"
         y="0"
         xlinkHref="data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAACQAAAAiCAMAAAAAh4u3AAAABGdBTUEAALGPC/xhBQAAACBjSFJN
