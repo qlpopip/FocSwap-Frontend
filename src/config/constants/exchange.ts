@@ -9,9 +9,9 @@ export const ROUTER_ADDRESS: ChainMap<string> = {
   [ChainId.GOERLI]: '0x4cfF519Baa5F9D047c8671839B4A10EEE5088ef1',
   [ChainId.BSC]: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
   [ChainId.BSC_TESTNET]: '0xD99D1c33F9fC3444f8101754aBC46c52416550D1',
-  [ChainId.BAOBAB]: '0x1afE57F258551F10ef0bc462b0567ff12c12947E',
+  [ChainId.BAOBAB]: '0x6ee6911418a67574a3d2B47B2cB5784fE87407D3',
 
-}
+} //수정
 
 // used to construct intermediary pairs for trading
 export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {

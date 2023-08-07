@@ -96,15 +96,15 @@ const StyledFlex = styled(Flex)`
 
   ${css`
     @media screen and (max-width: 768px) {
-      height: 100vh; // 화면 너비가 768px 이하일 때 높이를 400px로 설정
+      height: 100%; // 화면 너비가 768px 이하일 때 높이를 400px로 설정
     }
 
     @media screen and (min-width: 769px) and (max-width: 1024px) {
-      height: 100vh; // 화면 너비가 769px 이상 1024px 이하일 때 높이를 600px로 설정
+      height: 100%; // 화면 너비가 769px 이상 1024px 이하일 때 높이를 600px로 설정
     }
 
     @media screen and (min-width: 1025px) {
-      height: 100vh; // 화면 너비가 1025px 이상일 때 높이를 800px로 설정
+      height: 100%; // 화면 너비가 1025px 이상일 때 높이를 800px로 설정
     }
   `}
 `;
@@ -120,7 +120,7 @@ const Hero = () => {
         <InnerWrapper>{theme.isDark ? <SlideSvgDark width="100%" /> : <SlideSvgLight width="100%" />}</InnerWrapper>
       </BgWrapper>
       <StyledFlex
-        height={['450px', null, null, '450px']}
+        height={['450px', null, null, '100%']}
         width={['192px', null, null, '100%']}
         flex={[null, null, null, '1']}
         mb={['24px', null, null, '0']}

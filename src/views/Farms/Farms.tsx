@@ -92,7 +92,6 @@ const FilterContainer = styled.div`
   align-items: center;
   width: 100%;
   padding: 8px 0px;
-
   ${({ theme }) => theme.mediaQueries.sm} {
     width: auto;
     padding: 0;
@@ -162,6 +161,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
   const isArchived = pathname.includes('archived')
   const isInactive = pathname.includes('history')
   const isActive = !isInactive && !isArchived
+  //console.log(isActive)
 
   useCakeVaultUserData()
 
@@ -179,13 +179,14 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
   )
   const inactiveFarms = farmsLP.filter((farm) => farm.pid !== 0 && farm.multiplier === '0X')
   const archivedFarms = farmsLP
-
+ // console.log(activeFarms)
   const stakedOnlyFarms = activeFarms.filter(
     (farm) =>
       farm.userData &&
       (new BigNumber(farm.userData.stakedBalance).isGreaterThan(0) ||
         new BigNumber(farm.userData.proxy?.stakedBalance).isGreaterThan(0)),
   )
+  //console.log("1",stakedOnlyFarms)
 
   const stakedInactiveFarms = inactiveFarms.filter(
     (farm) =>
@@ -208,6 +209,7 @@ const Farms: React.FC<React.PropsWithChildren> = ({ children }) => {
           return farm
         }
         const totalLiquidity = new BigNumber(farm.lpTotalInQuoteToken)
+        //console.log(totalLiquidity)
         const { cakeRewardsApr, lpRewardsApr } = isActive
           ? getFarmApr(
               chainId,

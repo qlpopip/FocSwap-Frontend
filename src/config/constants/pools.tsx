@@ -66,34 +66,21 @@ export const livePools: SerializedPoolConfig[] = [
   //   tokenPerBlock: '10',
   //   isFinished: false,
   // },
+  //수정
   {
     sousId: 0,
     stakingToken: baobabTokens.odi,
     earningToken: baobabTokens.odi,
     contractAddress: {
-      5: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
-      56: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
-      97: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
-      1001: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
+      5: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
+      56: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
+      97: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
+      1001: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
     },
     poolCategory: PoolCategory.COMMUNITY,
     tokenPerBlock: '1',
     isFinished: false,
   }, 
-   {
-    sousId: 1,
-    stakingToken: baobabTokens.odi,
-    earningToken: baobabTokens.PT1,
-    contractAddress: {
-      5: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
-      56: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
-      97: '0x03a416BAEA3c9aFA984489cAAD1620194fD7CdE2',
-      1001: '0x79f4beb56b4b996f8bc03b6fe783c0673edb717a'
-    },
-    poolCategory: PoolCategory.CORE,
-    tokenPerBlock: '1',
-    isFinished: false,
-  },
   // {
   //   sousId: 295,
   //   stakingToken: bscTokens.cake,

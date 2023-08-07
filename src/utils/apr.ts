@@ -9,7 +9,7 @@ const getLpApr = (chainId: number) => {
     case 5:
       return lpAprs56
     default:
-      return {}
+      return lpAprs56
   }
 }
 
@@ -58,6 +58,7 @@ export const getFarmApr = (
   if (!cakeRewardsApr.isNaN() && cakeRewardsApr.isFinite()) {
     cakeRewardsAprAsNumber = cakeRewardsApr.toNumber()
   }
+  console.log(chainId, poolWeight, cakePriceUsd, poolLiquidityUsd, farmAddress, regularCakePerBlock)
   const lpRewardsApr = getLpApr(chainId)[farmAddress?.toLowerCase()] ?? 0
   return { cakeRewardsApr: cakeRewardsAprAsNumber, lpRewardsApr }
 }

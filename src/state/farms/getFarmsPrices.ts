@@ -151,8 +151,8 @@ const nativeStableLpMap = {
     stable: 'BUSD',
   },
   1001: {
-    address: '0x378bc901891e718c0bddae7245295c6db21bfc7e',
+    address: '0x0a4588e45da5d43979aa664e9ae15cdedb561ac3',
     wNative: 'WKLAY',
-    stable: 'USDC',
+    stable: 'oUSDT',
   },
 }

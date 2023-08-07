@@ -24,7 +24,7 @@ import { CommitButton } from 'components/CommitButton'
 import { getLPSymbol } from 'utils/getLpSymbol'
 import useNativeCurrency from 'hooks/useNativeCurrency'
 import { useRouter } from 'next/router'
-import { callWithEstimateGas } from 'utils/calls'
+import { callWithEstimateGas, estimateGas } from 'utils/calls'
 import { SUPPORT_ZAP } from 'config/constants/supportChains'
 import { ContractMethodName } from 'utils/types'
 import { transactionErrorToUserReadableMessage } from 'utils/transactionErrorToUserReadableMessage'
@@ -296,7 +296,6 @@ export default function AddLiquidity() {
       ]
       value = null
     }
-
     setLiquidityState({ attemptingTxn: true, liquidityErrorMessage: undefined, txHash: undefined })
     await estimate(...args, value ? { value } : {})
       .then((estimatedGasLimit) =>

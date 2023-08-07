@@ -82,7 +82,6 @@ export const fetchFarmsPublicDataAsync = createAsyncThunk<
 
       //console.log(1, farms)
       const farmsWithPrices = farms.length > 0 ? getFarmsPrices(farms, chainId) : []
-      //console.log(farmsWithPrices)
       return [farmsWithPrices, poolLength.toNumber(), +regularCakePerBlock]
     } catch (error) {
       console.error(error)

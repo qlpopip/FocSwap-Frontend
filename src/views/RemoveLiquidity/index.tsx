@@ -157,7 +157,6 @@ export default function RemoveLiquidity() {
     parsedAmounts[Field.LIQUIDITY],
     isZap ? getZapAddress() : ROUTER_ADDRESS[chainId],
   )
-
   async function onAttemptToApprove() {
     if (!pairContract || !pair || !library || !deadline) throw new Error('missing dependencies')
     const liquidityAmount = parsedAmounts[Field.LIQUIDITY]
@@ -176,7 +175,7 @@ export default function RemoveLiquidity() {
       { name: 'verifyingContract', type: 'address' },
     ]
     const domain = {
-      name: 'Pancake LPs',
+      name: 'ODI LPs',
       version: '1',
       chainId,
       verifyingContract: pair.liquidityToken.address,
@@ -328,7 +327,6 @@ export default function RemoveLiquidity() {
       [Field.CURRENCY_A]: calculateSlippageAmount(currencyAmountA, allowedSlippage)[0],
       [Field.CURRENCY_B]: calculateSlippageAmount(currencyAmountB, allowedSlippage)[0],
     }
-
     if (!currencyA || !currencyB) {
       toastError(t('Error'), t('Missing tokens'))
       throw new Error('missing tokens')
@@ -338,7 +336,7 @@ export default function RemoveLiquidity() {
       toastError(t('Error'), t('Missing liquidity amount'))
       throw new Error('missing liquidity amount')
     }
-
+   // console.log(liquidityAmount)
     const currencyBIsNative = currencyB?.isNative
     const oneCurrencyIsNative = currencyA?.isNative || currencyBIsNative
 
@@ -416,7 +414,7 @@ export default function RemoveLiquidity() {
       toastError(t('Error'), t('Attempting to confirm without approval or a signature'))
       throw new Error('Attempting to confirm without approval or a signature')
     }
-
+    
     let methodSafeGasEstimate: { methodName: string; safeGasEstimate: BigNumber }
     for (let i = 0; i < methodNames.length; i++) {
       let safeGasEstimate

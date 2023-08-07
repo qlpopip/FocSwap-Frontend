@@ -244,6 +244,7 @@ function CurrencySearch({
             ref={inputRef as RefObject<HTMLInputElement>}
             onChange={handleInput}
             onKeyDown={handleEnter}
+            style={{ color: 'black' }}
           />
         </Row>
         {showCommonBases && (

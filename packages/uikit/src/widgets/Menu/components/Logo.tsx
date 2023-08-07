@@ -42,6 +42,13 @@ const StyledLink = styled("a")`
     }
   }
 `;
+const StyledText = styled.span`
+  font-family: 'YourCustomFont', sans-serif;
+  font-size: 24px;
+  font-weight: bold;
+  color: #FFF;
+  /* Add any other styles you want */
+`;
 
 const Logo: React.FC<React.PropsWithChildren<Props>> = ({ isDark, href }) => {
   const { linkComponent } = useContext(MenuContext);
@@ -49,7 +56,7 @@ const Logo: React.FC<React.PropsWithChildren<Props>> = ({ isDark, href }) => {
   const innerLogo = (
     <>
       <LogoIcon className="mobile-icon" />
-      <LogoWithTextIcon className="desktop-icon" isDark={isDark} />
+      {/* <LogoWithTextIcon className="desktop-icon" isDark={isDark} /> */}
     </>
   );
 
@@ -62,6 +69,7 @@ const Logo: React.FC<React.PropsWithChildren<Props>> = ({ isDark, href }) => {
       ) : (
         <StyledLink href={href} as={linkComponent} aria-label="Pancake home page">
           {innerLogo}
+          <StyledText>ODiswap</StyledText>
         </StyledLink>
       )}
     </Flex>

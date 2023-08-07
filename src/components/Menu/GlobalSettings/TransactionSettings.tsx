@@ -146,6 +146,7 @@ const SlippageTabs = () => {
                 }}
                 isWarning={!slippageInputIsValid}
                 isSuccess={![10, 50, 100].includes(userSlippageTolerance)}
+                style={{ color: 'black' }}
               />
             </Box>
             <Text color="primary" bold ml="2px">

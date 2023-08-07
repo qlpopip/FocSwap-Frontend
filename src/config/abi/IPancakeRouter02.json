@@ -1,7 +1,7 @@
 [
   {
     "inputs": [],
-    "name": "WETH",
+    "name": "WKLAY",
     "outputs": [
       {
         "internalType": "address",

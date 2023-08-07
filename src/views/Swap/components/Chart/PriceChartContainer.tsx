@@ -37,7 +37,6 @@ const PriceChartContainer: React.FC<React.PropsWithChildren<PriceChartContainerP
   const token1Address = getTokenAddress(outputCurrencyId)
   const [isPairReversed, setIsPairReversed] = useState(false)
   const togglePairReversed = useCallback(() => setIsPairReversed((prePairReversed) => !prePairReversed), [])
-
   const { isDark } = useTheme()
 
   if (!isChartDisplayed) {

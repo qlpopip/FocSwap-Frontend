@@ -92,6 +92,11 @@ const ListItem = styled.li`
   }
 `
 
+const StyledText = styled.span`
+  color: #000000;
+  /* Add any other styles you want */
+`;
+
 export interface SelectProps extends BoxProps {
   options: OptionProps[]
   onOptionChange?: (option: OptionProps) => void
@@ -152,7 +157,9 @@ const Select: React.FunctionComponent<React.PropsWithChildren<SelectProps>> = ({
     <DropDownContainer isOpen={isOpen} {...props}>
       <DropDownHeader onClick={toggling}>
         <Text color={!optionSelected && placeHolderText ? 'text' : undefined}>
+          <StyledText>
           {!optionSelected && placeHolderText ? placeHolderText : options[selectedOptionIndex].label}
+          </StyledText>
         </Text>
       </DropDownHeader>
       <ArrowDropDownIcon color="text" onClick={toggling} />
@@ -161,7 +168,7 @@ const Select: React.FunctionComponent<React.PropsWithChildren<SelectProps>> = ({
           {options.map((option, index) =>
             placeHolderText || index !== selectedOptionIndex ? (
               <ListItem onClick={onOptionClicked(index)} key={option.label}>
-                <Text>{option.label}</Text>
+                <Text><StyledText>{option.label}</StyledText></Text>
               </ListItem>
             ) : null,
           )}

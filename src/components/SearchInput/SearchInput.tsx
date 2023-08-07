@@ -7,6 +7,7 @@ import { useTranslation } from '@pancakeswap/localization'
 const StyledInput = styled(Input)`
   border-radius: 16px;
   margin-left: auto;
+  color: #000000;
 `
 
 const InputWrapper = styled.div`

@@ -1,8 +1,8 @@
 import { ChainId, Token } from '@pancakeswap/sdk'
-
+//수정
 export const CAKE_MAINNET = new Token(
   ChainId.BSC,
-  '0x30EB1AB7eA42dAb8d6839b929c11A0f4F2a1F2CE',
+  '0x90f193b165159345E0E61703Eb6A25480213480f',
   18,
   'ODI',
   'PancakeSwap Token',
@@ -26,13 +26,13 @@ export const CAKE_GOERLI = new Token(
   'PancakeSwap Token',
   'https://pancakeswap.finance/',
 )
-
+//수정
 export const CAKE_BAOBAB = new Token(
   ChainId.BAOBAB,
-  '0x30EB1AB7eA42dAb8d6839b929c11A0f4F2a1F2CE',
+  '0x90f193b165159345E0E61703Eb6A25480213480f',
   18,
   'ODI',
-  'PancakeSwap Token',
+  'ODI Token',
   'https://pancakeswap.finance/',
 )
 
@@ -86,6 +86,15 @@ export const USDT_BSC = new Token(
   '0x55d398326f99059fF775485246999027B3197955',
   18,
   'USDT',
+  'Tether USD',
+  'https://tether.to/',
+)
+
+export const USDT_BAOBAB = new Token(
+  ChainId.BAOBAB,
+  '0x80fc0d8652c784f1c5289fbea90f77ba474b489f',
+  18,
+  'oUSDT',
   'Tether USD',
   'https://tether.to/',
 )
@@ -181,4 +190,5 @@ export const USDC = {
 export const USDT = {
   [ChainId.BSC]: USDT_BSC,
   [ChainId.ETHEREUM]: USDT_ETH,
+  [ChainId.BAOBAB]: USDT_BAOBAB
 }

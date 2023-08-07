@@ -27,9 +27,10 @@ export const StyledBalanceInput = styled(Box)<{ isWarning: BalanceInputProps["is
 export const StyledInput = styled(Input)<{ textAlign?: string }>`
   background: transparent;
   border-radius: 0;
-  box-shadow: none;
+  box-shadow: #000000;
   padding-left: 0;
   padding-right: 0;
+  color: #000000;
   text-align: ${({ textAlign = "right" }) => textAlign};
   border: none;
 
