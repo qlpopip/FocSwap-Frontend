@@ -6,7 +6,7 @@ export const DEFAULT_META: PageMeta = {
   title: 'ODiswap',
   description:
     'odiswap',
-  image: 'https://pancakeswap.finance/images/hero.png',
+  image: 'https://odiswap.netlify.app/images/hero.png',
 }
 
 interface PathList {
