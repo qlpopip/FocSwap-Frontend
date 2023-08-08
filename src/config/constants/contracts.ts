@@ -1,5 +1,5 @@
 import { multicallAddresses } from '@pancakeswap/multicall'
-//수정
+// 수정
 export default {
   masterChef: {
     97: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
@@ -97,7 +97,7 @@ export default {
     97: '0x683433ba14e8F26774D43D3E90DA6Dd7a22044Fe',
     5: '0xd78A31f3690226f02cA6b85e4C35ee8cC95e3B7d',
     1001: '0x1b3D8124d4Fb6085bde4d3511f850b00e371186f',
-  }, //수정
+  }, // 수정
   cakeFlexibleSideVault: {
     56: '0x615e896A8C2CA8470A2e9dc2E9552998f8658Ea0',
     97: '',

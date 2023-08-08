@@ -27,7 +27,6 @@ import { getVaultPosition, VaultPosition } from 'utils/cakePool'
 import styled from 'styled-components'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { getBalanceNumber, getFullDisplayBalance } from 'utils/formatBalance'
-import { useProfileRequirement } from 'views/Pools/hooks/useProfileRequirement'
 import isUndefinedOrNull from 'utils/isUndefinedOrNull'
 import useUserDataInVaultPresenter from 'views/Pools/components/LockedPool/hooks/useUserDataInVaultPresenter'
 
@@ -35,7 +34,6 @@ import { useApprovePool, useCheckVaultApprovalStatus, useVaultApprove } from '..
 import VaultStakeModal from '../../CakeVaultCard/VaultStakeModal'
 import NotEnoughTokensModal from '../../PoolCard/Modals/NotEnoughTokensModal'
 import StakeModal from '../../PoolCard/Modals/StakeModal'
-import { ProfileRequirementWarning } from '../../ProfileRequirementWarning'
 import { ActionContainer, ActionContent, ActionTitles } from './styles'
 import { VaultStakeButtonGroup } from '../../Vault/VaultStakeButtonGroup'
 import AddCakeButton from '../../LockedPool/Buttons/AddCakeButton'
@@ -153,8 +151,6 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
     />,
   )
 
-  const { notMeetRequired, notMeetThreshold } = useProfileRequirement(profileRequirement)
-
   const onStake = () => {
     if (vaultKey) {
       onPresentVaultStake()
@@ -220,20 +216,20 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
     )
   }
 
-  if (notMeetRequired || notMeetThreshold) {
-    return (
-      <ActionContainer>
-        <ActionTitles>
-          <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
-            {t('Enable pool')}
-          </Text>
-        </ActionTitles>
-        <ActionContent>
-          <ProfileRequirementWarning profileRequirement={profileRequirement} />
-        </ActionContent>
-      </ActionContainer>
-    )
-  }
+  // if (notMeetRequired || notMeetThreshold) {
+  //   return (
+  //     <ActionContainer>
+  //       <ActionTitles>
+  //         <Text fontSize="12px" bold color="textSubtle" as="span" textTransform="uppercase">
+  //           {t('Enable pool')}
+  //         </Text>
+  //       </ActionTitles>
+  //       <ActionContent>
+  //         <ProfileRequirementWarning profileRequirement={profileRequirement} />
+  //       </ActionContent>
+  //     </ActionContainer>
+  //   )
+  // }
 
   if (needsApproval) {
     return (

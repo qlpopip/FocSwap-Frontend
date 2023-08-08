@@ -27,7 +27,7 @@ const getFarmBaseTokenPrice = (
   }
 
   if (farm.quoteToken.symbol === wNative) {
-    //console.log(farm.quoteToken.symbol, "==", farm.tokenPriceVsQuote)
+    // console.log(farm.quoteToken.symbol, "==", farm.tokenPriceVsQuote)
     return hasTokenPriceVsQuote ? nativePriceUSD.times(farm.tokenPriceVsQuote) : BIG_ZERO
   }
 
@@ -66,7 +66,7 @@ const getFarmQuoteTokenPrice = (
   wNative: string,
   stable: string,
 ): BigNumber => {
-  //console.log(quoteTokenFarm)
+  // console.log(quoteTokenFarm)
   if (farm.quoteToken.symbol === stable) {
     return BIG_ONE
   }
@@ -98,9 +98,9 @@ const getFarmsPrices = (farms: SerializedFarm[], chainId: number) => {
   const nativeStableFarm = farms.find(
     (farm) => farm.lpAddress.toLowerCase() === nativeStableLpMap[chainId].address.toLowerCase(),
   )
- // console.log(nativeStableFarm)
+  // console.log(nativeStableFarm)
   const nativePriceUSD = nativeStableFarm.tokenPriceVsQuote ? BIG_ONE.div(nativeStableFarm.tokenPriceVsQuote) : BIG_ZERO
-  //console.log(nativePriceUSD)
+  // console.log(nativePriceUSD)
   const farmsWithPrices = farms.map((farm) => {
     const quoteTokenFarm = getFarmFromTokenSymbol(farms, farm.quoteToken.symbol, [
       nativeStableLpMap[chainId].wNative,
@@ -113,7 +113,7 @@ const getFarmsPrices = (farms: SerializedFarm[], chainId: number) => {
       nativeStableLpMap[chainId].wNative,
       nativeStableLpMap[chainId].stable,
     )
-    //console.log("===", tokenPriceBusd)
+    // console.log("===", tokenPriceBusd)
     const quoteTokenPriceBusd = getFarmQuoteTokenPrice(
       farm,
       quoteTokenFarm,
@@ -128,7 +128,7 @@ const getFarmsPrices = (farms: SerializedFarm[], chainId: number) => {
       quoteTokenPriceBusd: quoteTokenPriceBusd.toJSON(),
     }
   })
-  //console.log(farmsWithPrices)
+  // console.log(farmsWithPrices)
   return farmsWithPrices
 }
 

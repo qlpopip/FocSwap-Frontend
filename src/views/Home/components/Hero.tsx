@@ -4,12 +4,8 @@ import ConnectWalletButton from 'components/ConnectWalletButton'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
-import Image from 'next/image'
-import styled, { keyframes } from 'styled-components'
-import bunnyImage from '../../../../public/images/home/lunar-bunny/bunny@2x.png'
+import styled, { keyframes, css } from 'styled-components'
 import CompositeImage, { CompositeImageProps } from './CompositeImage'
-import { SlideSvgDark, SlideSvgLight } from './SlideSvg'
-import { css } from 'styled-components'
 
 const flyingAnim = () => keyframes`
   from {
@@ -43,9 +39,7 @@ const BgWrapper = styled.div`
   height: 100%;
   bottom: 0px;
   left: 0px;
-`;
-
-
+`
 
 const InnerWrapper = styled.div`
   position: absolute;
@@ -109,8 +103,7 @@ const StyledFlex = styled(Flex)`
       width: 100%;
     }
   `}
-
-`;
+`
 
 const Hero = () => {
   const { t } = useTranslation()
@@ -129,14 +122,7 @@ const Hero = () => {
         alignItems="center" // Flex 컨테이너의 아이템을 수직 가운데 정렬
         justifyContent="center"
       >
-        <Flex
-          position="relative"
-          flexDirection="column"
-          justifyContent='center'
-
-          width="100%"
-          height="100%"
-        >
+        <Flex position="relative" flexDirection="column" justifyContent="center" width="100%" height="100%">
           <Heading scale="xxl" color="secondary" mb="24px" width="100%" textAlign="center">
             {t('ODiswap explanation')}
           </Heading>
@@ -150,16 +136,15 @@ const Hero = () => {
             </NextLinkFromReactRouter>
           </Flex>
         </Flex>
-        <Flex
+        {/* <Flex
           flex={[null, null, null, '1']}
           mb={['24px', null, null, '0']}
           position="relative"
         >
-        </Flex>
+        </Flex> */}
       </StyledFlex>
     </>
   )
-
 }
 
 export default Hero

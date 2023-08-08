@@ -54,7 +54,7 @@ export const vaultPoolConfig = {
 } as const
 
 export const livePools: SerializedPoolConfig[] = [
-  //수정
+  // 수정
   {
     sousId: 0,
     stakingToken: baobabTokens.odi,
@@ -68,7 +68,7 @@ export const livePools: SerializedPoolConfig[] = [
     poolCategory: PoolCategory.COMMUNITY,
     tokenPerBlock: '1',
     isFinished: false,
-  }, 
+  },
   {
     sousId: 1,
     stakingToken: baobabTokens.lcg,
@@ -82,7 +82,7 @@ export const livePools: SerializedPoolConfig[] = [
     poolCategory: PoolCategory.COMMUNITY,
     tokenPerBlock: '1',
     isFinished: false,
-  }, 
+  },
 ].map((p) => ({
   ...p,
   stakingToken: p.stakingToken.serialize,
@@ -90,8 +90,7 @@ export const livePools: SerializedPoolConfig[] = [
 }))
 
 // known finished pools
-const finishedPools = [
-].map((p) => ({
+const finishedPools = [].map((p) => ({
   ...p,
   isFinished: true,
   stakingToken: p.stakingToken.serialize,

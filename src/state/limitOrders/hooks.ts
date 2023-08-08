@@ -1,6 +1,6 @@
+import { ParsedUrlQuery } from 'querystring'
 import JSBI from 'jsbi'
 import { useDispatch, useSelector } from 'react-redux'
-import { ParsedUrlQuery } from 'querystring'
 import { Currency, CurrencyAmount, Trade, Token, Price, Native, TradeType } from '@pancakeswap/sdk'
 import { useState, useEffect, useCallback, useMemo } from 'react'
 import { DEFAULT_INPUT_CURRENCY, DEFAULT_OUTPUT_CURRENCY, BIG_INT_TEN } from 'config/constants/exchange'
@@ -498,8 +498,9 @@ export const useDefaultsFromURLSearch = ():
   const { chainId } = useActiveWeb3React()
   const dispatch = useAppDispatch()
   const { query } = useRouter()
-  const [result, setResult] =
-    useState<{ inputCurrencyId: string | undefined; outputCurrencyId: string | undefined } | undefined>()
+  const [result, setResult] = useState<
+    { inputCurrencyId: string | undefined; outputCurrencyId: string | undefined } | undefined
+  >()
 
   useEffect(() => {
     if (!chainId) return

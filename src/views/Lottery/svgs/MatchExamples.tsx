@@ -6,7 +6,7 @@ export const MatchExampleA: React.FC<React.PropsWithChildren<{ isDark: boolean }
 }) => {
   return (
     <Svg viewBox="0 0 258 46" {...rest}>
-      <svg width="258" height="46" viewBox="0 0 258 46" fill="none" xmlns="http://www.w3.org/2000/svg">
+      {/* <svg width="258" height="46" viewBox="0 0 258 46" fill="none" xmlns="http://www.w3.org/2000/svg">
         <path
           d="M0.995361 28.9362C0.995361 20.4114 7.94723 13.5007 16.5228 13.5007H113.569C122.145 13.5007 129.097 20.4114 129.097 28.9362C129.097 37.4609 122.145 44.3716 113.569 44.3716H16.5228C7.94723 44.3716 0.995361 37.4609 0.995361 28.9362Z"
           fill={isDark ? 'none' : 'white'}
@@ -92,7 +92,7 @@ export const MatchExampleA: React.FC<React.PropsWithChildren<{ isDark: boolean }
             <rect width="11.5363" height="11.468" fill="white" transform="translate(101.458 0.959473)" />
           </clipPath>
         </defs>
-      </svg>
+      </svg> */}
     </Svg>
   )
 }

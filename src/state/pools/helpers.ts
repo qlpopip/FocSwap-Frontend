@@ -158,8 +158,8 @@ export const getTokenPricesFromFarm = (farms: SerializedFarm[]) => {
   return farms.reduce((prices, farm) => {
     const quoteTokenAddress = farm.quoteToken.address.toLowerCase()
     const tokenAddress = farm.token.address.toLowerCase()
-    //console.log(prices[tokenAddress])
-    //console.log(prices)
+    // console.log(prices[tokenAddress])
+    // console.log(prices)
     /* eslint-disable no-param-reassign */
     if (!prices[quoteTokenAddress]) {
       prices[quoteTokenAddress] = new BigNumber(farm.quoteTokenPriceBusd).toNumber()
@@ -168,7 +168,7 @@ export const getTokenPricesFromFarm = (farms: SerializedFarm[]) => {
       prices[tokenAddress] = new BigNumber(farm.tokenPriceBusd).toNumber()
     }
     /* eslint-enable no-param-reassign */
-    //console.log(farm.tokenPriceBusd)
+    // console.log(farm.tokenPriceBusd)
     return prices
   }, {})
 }

@@ -1,6 +1,6 @@
+import { ParsedUrlQuery } from 'querystring'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { ChainId, Currency, CurrencyAmount, Pair, Trade, TradeType } from '@pancakeswap/sdk'
-import { ParsedUrlQuery } from 'querystring'
 import { useEffect, useMemo, useState } from 'react'
 import { SLOW_INTERVAL } from 'config/constants'
 import { DEFAULT_INPUT_CURRENCY, DEFAULT_OUTPUT_CURRENCY } from 'config/constants/exchange'
@@ -245,8 +245,9 @@ export function useDefaultsFromURLSearch():
   const dispatch = useAppDispatch()
   const native = useNativeCurrency()
   const { query } = useRouter()
-  const [result, setResult] =
-    useState<{ inputCurrencyId: string | undefined; outputCurrencyId: string | undefined } | undefined>()
+  const [result, setResult] = useState<
+    { inputCurrencyId: string | undefined; outputCurrencyId: string | undefined } | undefined
+  >()
 
   useEffect(() => {
     if (!chainId || !native) return

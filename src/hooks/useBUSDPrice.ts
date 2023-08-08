@@ -1,7 +1,6 @@
 import { ChainId, Currency, CurrencyAmount, JSBI, Pair, Price, Token, WNATIVE, WBNB } from '@pancakeswap/sdk'
 import { FAST_INTERVAL } from 'config/constants'
-import { BUSD, CAKE, USDC, USDT } from '@pancakeswap/tokens'
-import { baobabTokens } from '@pancakeswap/tokens'
+import { BUSD, CAKE, USDC, USDT, baobabTokens } from '@pancakeswap/tokens'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useMemo } from 'react'
 import useSWR from 'swr'

@@ -7,7 +7,6 @@
     "noFallthroughCasesInSwitch": true,
     "downlevelIteration": true,
     "target": "es5",
-    "noEmitOnError": false,
     "paths": {
       "@pancakeswap/sdk": ["../packages/swap-sdk/src/index.ts"],
       "@pancakeswap/wagmi/connectors/binanceWallet": ["../packages/wagmi/connectors/binanceWallet/index.ts"],

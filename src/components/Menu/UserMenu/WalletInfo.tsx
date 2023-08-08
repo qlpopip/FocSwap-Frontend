@@ -67,7 +67,15 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
       </Flex>
       <Flex alignItems="center" justifyContent="space-between" mb="24px" mt="12px">
         <Flex alignItems="center">
-          {!isBSC && <Image src={`/images/1001/tokens/0x90f193b165159345E0E61703Eb6A25480213480f.png`} width={26} height={26} unoptimized alt='odi'/>}
+          {!isBSC && (
+            <Image
+              src="/images/1001/tokens/0x90f193b165159345E0E61703Eb6A25480213480f.png"
+              width={26}
+              height={26}
+              unoptimized
+              alt="odi"
+            />
+          )}
           <Text ml={isBSC ? 0 : '8px'} color="textSubtle">
             ODI
           </Text>

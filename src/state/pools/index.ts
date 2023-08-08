@@ -21,7 +21,6 @@ import { baobabTokens, bscTokens } from '@pancakeswap/tokens'
 import { getBalanceNumber } from 'utils/formatBalance'
 import { bscRpcProvider, baobabRpcProvider } from 'utils/providers'
 import { getPoolsPriceHelperLpFiles } from 'config/constants/priceHelperLps/index'
-import fetchFarms from '../farms/fetchFarms'
 import getFarmsPrices from '../farms/getFarmsPrices'
 import {
   fetchPoolsBlockLimits,
@@ -40,8 +39,7 @@ import { getTokenPricesFromFarm } from './helpers'
 import { resetUserState } from '../global/actions'
 import { fetchUserIfoCredit, fetchPublicIfoData } from './fetchUserIfo'
 import { fetchVaultUser, fetchFlexibleSideVaultUser } from './fetchVaultUser'
-import pools from 'config/constants/pools'
-import { CONFIG_FILES } from 'next/dist/shared/lib/constants'
+import fetchFarms from '../farms/fetchFarms'
 
 export const initialPoolVaultState = Object.freeze({
   totalShares: null,
@@ -146,11 +144,9 @@ export const fetchPoolsPublicDataAsync =
 
       const blockLimitsSousIdMap = fromPairs(blockLimits.map((entry) => [entry.sousId, entry]))
       const totalStakingsSousIdMap = fromPairs(totalStakings.map((entry) => [entry.sousId, entry]))
-      
+
       const priceHelperLpsConfig = getPoolsPriceHelperLpFiles(chainId)
       const activePriceHelperLpsConfig = priceHelperLpsConfig.filter((priceHelperLpConfig) => {
-        
-      
         return (
           poolsConfig
             .filter(
@@ -218,7 +214,7 @@ export const fetchPoolsStakingLimitsAsync = () => async (dispatch, getState) => 
     .map((pool) => pool.sousId)
   try {
     const stakingLimits = await fetchPoolsStakingLimits(poolsWithStakingLimit)
-    
+
     const stakingLimitData = poolsConfig.map((pool) => {
       if (poolsWithStakingLimit.includes(pool.sousId)) {
         return { sousId: pool.sousId }

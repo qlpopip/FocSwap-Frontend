@@ -39,7 +39,7 @@ export const usePollFarmsWithUserData = () => {
     chainId ? ['publicFarmData', chainId] : null,
     async () => {
       const farmsConfig = await getFarmConfig(chainId)
-      //console.log(farmsConfig)
+      // console.log(farmsConfig)
       const pids = farmsConfig.map((farmToFetch) => farmToFetch.pid)
       dispatch(fetchFarmsPublicDataAsync({ pids, chainId }))
     },
@@ -76,7 +76,7 @@ const coreFarmPIDs = {
   56: [2, 3],
   97: [4, 10],
   5: [1, 2],
-  1001: [1,2,3],
+  1001: [1, 2, 3],
 }
 
 export const usePollCoreFarmData = () => {
@@ -130,7 +130,6 @@ export const useLpTokenPrice = (symbol: string) => {
   const lpTokenPriceFromLpSymbol = useMemo(() => makeLpTokenPriceFromLpSymbolSelector(symbol), [symbol])
   return useSelector(lpTokenPriceFromLpSymbol)
 }
-
 
 export const usePriceCakeBusd = ({ forceMainnet } = { forceMainnet: false }): BigNumber => {
   const price = useCakeBusdPrice({ forceMainnet })

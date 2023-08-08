@@ -63,9 +63,10 @@ export const fetchFarmsPublicDataAsync = createAsyncThunk<
     const chain = chains.find((c) => c.id === chainId)
     if (!chain || !farmFetcher.isChainSupported(chain.id)) throw new Error('chain not supported')
     try {
-      const { poolLength, totalRegularAllocPoint, cakePerBlock } =
-        await farmFetcher.fetchMasterChefV2Data(chain.testnet)
-      //console.log(poolLength, totalRegularAllocPoint, cakePerBlock)
+      const { poolLength, totalRegularAllocPoint, cakePerBlock } = await farmFetcher.fetchMasterChefV2Data(
+        chain.testnet,
+      )
+      // console.log(poolLength, totalRegularAllocPoint, cakePerBlock)
       const regularCakePerBlock = formatEther(cakePerBlock)
       const farmsConfig = await getFarmConfig(chainId)
       const farmsCanFetch = farmsConfig.filter(
@@ -75,12 +76,12 @@ export const fetchFarmsPublicDataAsync = createAsyncThunk<
 
       const farms = await farmFetcher.fetchFarms({
         farms: farmsCanFetch.concat(priceHelperLpsConfig),
-        isTestnet: (chain.testnet),
+        isTestnet: chain.testnet,
         chainId,
         totalRegularAllocPoint,
       })
 
-      //console.log(1, farms)
+      // console.log(1, farms)
       const farmsWithPrices = farms.length > 0 ? getFarmsPrices(farms, chainId) : []
       return [farmsWithPrices, poolLength.toNumber(), +regularCakePerBlock]
     } catch (error) {

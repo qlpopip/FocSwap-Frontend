@@ -1,8 +1,6 @@
 import { NoProfileAvatarIcon, Flex, Heading, Skeleton, Text, Box, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import styled from 'styled-components'
-import { useProfile } from 'state/profile/hooks'
-import ProfileAvatarWithTeam from 'components/ProfileAvatarWithTeam'
 import { useTranslation } from '@pancakeswap/localization'
 import truncateHash from 'utils/truncateHash'
 
@@ -35,14 +33,13 @@ const StyledNoProfileAvatarIcon = styled(NoProfileAvatarIcon)`
 `
 
 const UserDetail = () => {
-  const { profile, isLoading } = useProfile()
   const { t } = useTranslation()
   const { account } = useWeb3React()
   const { isMobile, isTablet, isDesktop } = useMatchBreakpoints()
 
   return (
     <>
-      {(isTablet || isDesktop) && (
+      {/* {(isTablet || isDesktop) && (
         <Desktop>
           <Box mr="24px">
             <Sticker>{profile ? <ProfileAvatarWithTeam profile={profile} /> : <StyledNoProfileAvatarIcon />}</Sticker>
@@ -71,7 +68,7 @@ const UserDetail = () => {
             <Skeleton width={120} height={20} mt="2px" mb="18px" />
           ) : null}
         </Mobile>
-      )}
+      )} */}
     </>
   )
 }

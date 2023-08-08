@@ -73,14 +73,13 @@ export function useVaultApy({ duration = MAX_LOCK_DURATION }: { duration?: numbe
       calls,
     })
 
-    
     const cakePoolSharesInSpecialFarms = FixedNumber.from(cakePoolInfo[1]).divUnsafe(
       FixedNumber.from(totalSpecialAllocPoint),
     )
     // console.log(FixedNumber.from(specialFarmsPerBlock)
     // .mulUnsafe(FixedNumber.from(BLOCKS_PER_YEAR))
     // .mulUnsafe(cakePoolSharesInSpecialFarms))
-    //console.log(cakePoolSharesInSpecialFarms)
+    // console.log(cakePoolSharesInSpecialFarms)
     return FixedNumber.from(specialFarmsPerBlock)
       .mulUnsafe(FixedNumber.from(BLOCKS_PER_YEAR))
       .mulUnsafe(cakePoolSharesInSpecialFarms)
