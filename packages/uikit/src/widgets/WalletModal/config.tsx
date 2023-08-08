@@ -20,7 +20,7 @@ const connectors: Config[] = [
     icon: Metamask,
     connectorId: ConnectorNames.MetaMask,
     priority: 2,
-    href: "https://metamask.app.link/dapp/pancakeswap.finance/",
+    href: "https://metamask.app.link/dapp/odiswap.netlify.app/",
   },
   // {
   //   title: "Binance Wallet",
@@ -39,7 +39,7 @@ const connectors: Config[] = [
     icon: Kaikas,
     connectorId: ConnectorNames.Kaikas,
     priority: 1,
-    href: "https://chrome.google.com/webstore/detail/kaikas/jblndlipeogpafnldhgmapagcccfchpi",
+    href: "https://odiswap.netlify.app/",
   },
   // {
   //   title: "WalletConnect",
