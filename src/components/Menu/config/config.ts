@@ -47,7 +47,7 @@ const config: (
       icon: SwapIcon,
       fillIcon: SwapFillIcon,
       href: '/swap',
-      showItemsOnMobile: false,
+      showItemsOnMobile: true,
       items: [
         {
           label: t('Swap'),

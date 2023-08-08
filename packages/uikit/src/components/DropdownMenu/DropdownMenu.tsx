@@ -17,7 +17,7 @@ import { DropdownMenuItemType, DropdownMenuProps } from "./types";
 const DropdownMenu: React.FC<React.PropsWithChildren<DropdownMenuProps>> = ({
   children,
   isBottomNav = false,
-  showItemsOnMobile = false,
+  showItemsOnMobile = true,
   activeItem = "",
   items = [],
   index,

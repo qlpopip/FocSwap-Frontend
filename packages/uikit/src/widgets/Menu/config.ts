@@ -42,12 +42,12 @@ export const links: MenuItemsType[] = [
         label: "Liquidity",
         href: "/liquidity",
       },
-      {
-        label: "Charts",
-        href: "/charts",
-        iconName: "Chart",
-        isMobileOnly: true,
-      },
+      // {
+      //   label: "Charts",
+      //   href: "/charts",
+      //   iconName: "Chart",
+      //   isMobileOnly: true,
+      // },
     ],
   },
   {

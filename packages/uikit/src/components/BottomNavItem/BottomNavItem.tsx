@@ -10,7 +10,7 @@ const BottomNavItem: React.FC<React.PropsWithChildren<BottomNavItemProps>> = ({
   icon,
   fillIcon,
   href,
-  showItemsOnMobile = false,
+  showItemsOnMobile = true,
   isActive = false,
   disabled = false,
   ...props

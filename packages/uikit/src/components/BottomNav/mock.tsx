@@ -19,7 +19,7 @@ const MenuItemsMock: MenuItemsType[] = [
     icon: SwapIcon,
     fillIcon: SwapFillIcon,
     items: ItemsMock,
-    showItemsOnMobile: false,
+    showItemsOnMobile: true,
   },
   {
     label: "Earn",
