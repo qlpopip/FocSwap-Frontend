@@ -127,7 +127,7 @@ const ModalProvider: React.FC<React.PropsWithChildren> = ({ children }) => {
               {React.isValidElement(modalNode) &&
                 React.cloneElement(modalNode, {
                   onDismiss: handleDismiss,
-                })}
+                } as React.DOMAttributes<HTMLElement>)} {/* 타입 명시 */}
             </ModalWrapper>
           )}
         </AnimatePresence>

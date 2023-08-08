@@ -28,6 +28,12 @@ import GlobalStyle from '../style/Global'
 
 const EasterEgg = dynamic(() => import('components/EasterEgg'), { ssr: false })
 
+interface CustomAppProps extends AppProps {
+  pageProps: {
+    initialReduxState: any;
+  };
+}
+
 // This config is required for number formatting
 BigNumber.config({
   EXPONENTIAL_AT: 1000,
@@ -55,7 +61,7 @@ function MPGlobalHooks() {
   return null
 }
 
-function MyApp(props: AppProps) {
+function MyApp(props: CustomAppProps) {
   const { pageProps, Component } = props
   const store = useStore(pageProps.initialReduxState)
 

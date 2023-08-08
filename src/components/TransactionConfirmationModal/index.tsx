@@ -152,7 +152,7 @@ interface ConfirmationModalProps {
   title: string
   customOnDismiss?: () => void
   hash: string | undefined
-  content: () => React.ReactNode
+  contents: () => React.ReactNode
   attemptingTxn: boolean
   pendingText: string
   currencyToAdd?: Currency | undefined
@@ -160,7 +160,7 @@ interface ConfirmationModalProps {
 
 const TransactionConfirmationModal: React.FC<
   React.PropsWithChildren<InjectedModalProps & ConfirmationModalProps & ModalProps>
-> = ({ title, onDismiss, customOnDismiss, attemptingTxn, hash, pendingText, content, currencyToAdd, ...props }) => {
+> = ({ title, onDismiss, customOnDismiss, attemptingTxn, hash, pendingText, contents, currencyToAdd, ...props }) => {
   const { chainId } = useActiveWeb3React()
 
   const handleDismiss = useCallback(() => {
@@ -184,7 +184,7 @@ const TransactionConfirmationModal: React.FC<
           currencyToAdd={currencyToAdd}
         />
       ) : (
-        content()
+        contents()
       )}
     </Modal>
   )
