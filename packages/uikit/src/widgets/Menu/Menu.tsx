@@ -18,6 +18,7 @@ import { MenuContext } from "./context";
 const Wrapper = styled.div`
   position: relative;
   width: 100%;
+  
 `;
 
 const StyledNav = styled.nav`
@@ -54,6 +55,8 @@ const TopBannerContainer = styled.div<{ height: number }>`
 const BodyWrapper = styled(Box)`
   position: relative;
   display: flex;
+  height: 90vh;
+  
 `;
 
 const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
@@ -61,6 +64,7 @@ const Inner = styled.div<{ isPushed: boolean; showMenu: boolean }>`
   transition: margin-top 0.2s, margin-left 0.2s cubic-bezier(0.4, 0, 0.2, 1);
   transform: translate3d(0, 0, 0);
   max-width: 100%;
+  
 `;
 
 const Menu: React.FC<React.PropsWithChildren<NavProps>> = ({

@@ -27,16 +27,36 @@ const BackgroundColor = styled(Flex)<BackgroundColorProps>`
   position: relative;
   flex-direction: column;
   align-items: center;
+  height: 100%;
   z-index: ${({ index }) => index - 1};
   background: ${({ background, theme }) => background || theme.colors.background};
   padding: ${({ padding }) => padding};
+  background-image: url('images/background-2560.png');
+  background-size: cover;
+
+  @media (max-width: 2180px) {
+    background-image: url('images/background-2560.png');
+    background-size: contain;
+  }
+  @media (max-width: 1920px) {
+    background-image: url('images/background-2180.png');
+    background-size: contain;
+  }
+  @media (max-width: 1680px) {
+    background-image: url('images/background-1920.png');
+    background-size: contain;
+  }
+  @media (max-width: 1024px) {
+    background-image: url('images/background-1024.png');
+    background-size: contain;
+  }
 `
 
 const ChildrenWrapper = styled(Container)`
   min-height: auto;
   padding-top: 16px;
   padding-bottom: 16px;
-
+  height: 100%;
   ${({ theme }) => theme.mediaQueries.sm} {
     padding-top: 32px;
     padding-bottom: 32px;
@@ -63,6 +83,7 @@ const PageSection: React.FC<React.PropsWithChildren<PageSectionProps>> = ({
   innerProps,
   ...props
 }) => {
+  
   const padding = useMemo(() => {
     // No curved divider
     if (!hasCurvedDivider) {
@@ -82,7 +103,7 @@ const PageSection: React.FC<React.PropsWithChildren<PageSectionProps>> = ({
   }, [dividerPosition, hasCurvedDivider])
 
   return (
-    <Box {...containerProps}>
+    <Box {...containerProps} style={{ height: '100%', overflow: 'hidden' }}>
       {hasCurvedDivider && dividerPosition === 'top' && (
         <CurvedDivider
           svgFill={svgFill}

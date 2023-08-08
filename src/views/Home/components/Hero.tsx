@@ -43,7 +43,9 @@ const BgWrapper = styled.div`
   height: 100%;
   bottom: 0px;
   left: 0px;
-`
+`;
+
+
 
 const InnerWrapper = styled.div`
   position: absolute;
@@ -91,22 +93,23 @@ const starsImage: CompositeImageProps = {
 }
 
 const StyledFlex = styled(Flex)`
-  background-image: url('/images/background.png');
-  background-size: contain;
-
   ${css`
     @media screen and (max-width: 768px) {
-      height: 100%; // 화면 너비가 768px 이하일 때 높이를 400px로 설정
+      height: 80vw;
+      width: 100%;
     }
 
     @media screen and (min-width: 769px) and (max-width: 1024px) {
-      height: 100%; // 화면 너비가 769px 이상 1024px 이하일 때 높이를 600px로 설정
+      height: 60vw;
+      width: 100%;
     }
 
     @media screen and (min-width: 1025px) {
-      height: 100%; // 화면 너비가 1025px 이상일 때 높이를 800px로 설정
+      height: 55%;
+      width: 100%;
     }
   `}
+
 `;
 
 const Hero = () => {
@@ -117,33 +120,30 @@ const Hero = () => {
   return (
     <>
       <BgWrapper>
-        <InnerWrapper>{theme.isDark ? <SlideSvgDark width="100%" /> : <SlideSvgLight width="100%" />}</InnerWrapper>
+        {/* <InnerWrapper>{theme.isDark ? <SlideSvgDark width="100%" /> : <SlideSvgLight width="100%" />}</InnerWrapper> */}
       </BgWrapper>
       <StyledFlex
-        height={['450px', null, null, '100%']}
-        width={['192px', null, null, '100%']}
         flex={[null, null, null, '1']}
         mb={['24px', null, null, '0']}
         position="relative"
         alignItems="center" // Flex 컨테이너의 아이템을 수직 가운데 정렬
         justifyContent="center"
       >
-      <Flex
-        position="relative"
-        flexDirection={['column-reverse', null, null, 'row']}
-        alignItems={['flex-end', null, null, 'center']}
-        justifyContent="center"
-        mt={[account ? '280px' : '50px', null, 0]}
-        id="homepage-hero"
-      >
-        <Flex flex="1" flexDirection="column">
-          <Heading scale="xxl" color="secondary" mb="24px" width="100%">
+        <Flex
+          position="relative"
+          flexDirection="column"
+          justifyContent='center'
+
+          width="100%"
+          height="100%"
+        >
+          <Heading scale="xxl" color="secondary" mb="24px" width="100%" textAlign="center">
             {t('ODiswap explanation')}
           </Heading>
-          <Heading scale="md" mb="24px" width="100%">
+          <Heading scale="md" mb="24px" width="100%" textAlign="center">
             {t('ODiswap explanation')}
           </Heading>
-          <Flex>
+          <Flex alignItems="center" justifyContent="center">
             {!account && <ConnectWalletButton mr="8px" />}
             <NextLinkFromReactRouter to="/swap">
               <Button variant={!account ? 'secondary' : 'primary'}>{t('Trade Now')}</Button>
@@ -151,17 +151,15 @@ const Hero = () => {
           </Flex>
         </Flex>
         <Flex
-          height={['192px', null, null, '100%']}
-          width={['192px', null, null, '100%']}
           flex={[null, null, null, '1']}
           mb={['24px', null, null, '0']}
           position="relative"
         >
         </Flex>
-      </Flex>
       </StyledFlex>
     </>
   )
+
 }
 
 export default Hero

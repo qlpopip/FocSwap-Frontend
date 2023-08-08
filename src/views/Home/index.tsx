@@ -21,10 +21,10 @@ import MultipleBanner from './components/Banners/MultipleBanner'
 
 const StyledHeroSection = styled(PageSection)`
   padding-top: 16px;
-
   ${({ theme }) => theme.mediaQueries.md} {
     padding-top: 48px;
   }
+  
 `
 
 const UserBannerWrapper = styled(Container)`
@@ -55,14 +55,15 @@ const Home: React.FC<React.PropsWithChildren> = () => {
   return (
     <>
       <PageMeta />
+      
       <StyledHeroSection
-        innerProps={{ style: { margin: '0', width: '100%' } }}
+        innerProps={{ style: { margin: '0', width: '100%'} }}
         // background={
         //   theme.isDark
         //     ? 'radial-gradient(103.12% 50% at 50% 50%, #21193A 0%, #191326 100%)'
         //     : 'linear-gradient(139.73deg, #E6FDFF 0%, #F3EFFF 100%)'
         // }
-        index={2}
+        index={1}
         hasCurvedDivider={false}
       >
         {/* {account && chainId === ChainId.BSC && (
@@ -84,8 +85,8 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         hasCurvedDivider={false}
       >
         <MetricsSection />
-      </PageSection>
-      <PageSection
+      </PageSection> */}
+      {/* <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
         background={theme.colors.background}
         index={2}
@@ -97,8 +98,8 @@ const Home: React.FC<React.PropsWithChildren> = () => {
           </InnerWedgeWrapper>
         </OuterWedgeWrapper>
         <SalesSection {...swapSectionData(t)} />
-      </PageSection>
-      <PageSection
+      </PageSection> */}
+      {/* <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
         background={theme.colors.gradients.cardHeader}
         index={2}
@@ -111,8 +112,8 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         </OuterWedgeWrapper>
         <SalesSection {...earnSectionData(t)} />
         <FarmsPoolsRow />
-      </PageSection>
-      <PageSection
+      </PageSection> */}
+      {/* <PageSection
         innerProps={{ style: HomeSectionContainerStyles }}
         background={
           theme.isDark

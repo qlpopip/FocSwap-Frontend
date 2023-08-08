@@ -26,6 +26,14 @@ const farms: SerializedFarmConfig[] = [
     token: baobabTokens.lcg,
     quoteToken: baobabTokens.odi,
   },
+  {
+    pid: 4,
+    vaultPid: 3,
+    lpSymbol: 'ODI-oUSDT LP',
+    lpAddress: '0x82b8d420afddf79e0bdd2a02ed859ad4ed843944',
+    token: baobabTokens.odi,
+    quoteToken: baobabTokens.usdt,
+  },
   
 ].map((p) => ({ ...p, token: p.token.serialize, quoteToken: p.quoteToken.serialize }))
 

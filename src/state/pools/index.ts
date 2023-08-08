@@ -170,7 +170,7 @@ export const fetchPoolsPublicDataAsync =
       const farmsData = getState().farms.data
       const bnbBusdFarm =
         activePriceHelperLpsConfig.length > 0
-          ? farmsData.find((farm) => farm.token.symbol === 'WKLAY' && farm.quoteToken.symbol === 'USDC')
+          ? farmsData.find((farm) => farm.token.symbol === 'WKLAY' && farm.quoteToken.symbol === 'USDT')
           : null
       const farmsWithPricesOfDifferentTokenPools = bnbBusdFarm
         ? await getFarmsPrices([bnbBusdFarm, ...poolsWithDifferentFarmToken], chainId)

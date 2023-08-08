@@ -10,6 +10,17 @@ import {
   SliderLabelContainer,
 } from "./styles";
 import SliderProps from "./types";
+import { Bar } from "../Progress/StyledProgress";
+
+const generateTickMarks = () => {
+  const tickMarks = [];
+  for (let i = 0; i <= 100; i += 25) {
+    tickMarks.push(
+      <div key={i} style={{ position: "absolute", left: `${i}%`, height: "10px", width: "2px", backgroundColor: "black" }} />
+    );
+  }
+  return tickMarks;
+};
 
 const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
   name,
@@ -33,11 +44,11 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
   const isMax = value === max;
   let progressWidth: string;
   if (progressPercentage <= 10) {
-    progressWidth = `${progressPercentage + 0.5}%`;
+    progressWidth = `${progressPercentage }%`;
   } else if (progressPercentage >= 90) {
-    progressWidth = `${progressPercentage - 4}%`;
+    progressWidth = `${progressPercentage}%`;
   } else if (progressPercentage >= 60) {
-    progressWidth = `${progressPercentage - 2.5}%`;
+    progressWidth = `${progressPercentage}%`;
   } else {
     progressWidth = `${progressPercentage}%`;
   }
@@ -47,8 +58,12 @@ const Slider: React.FC<React.PropsWithChildren<SliderProps>> = ({
     <Box position="relative" height="48px" {...props}>
       <BunnyButt disabled={disabled} />
       <BunnySlider>
-        <BarBackground disabled={disabled} />
-        <BarProgress style={{ width: progressWidth }} disabled={disabled} />
+      <BarBackground disabled={disabled}>
+          {/* 구간별 세로 모양 작대기 추가 */}
+          {generateTickMarks()}
+        </BarBackground>
+        <BarProgress style={{ width: progressWidth }} disabled={disabled} >
+          </BarProgress>
         <StyledInput
           name={name}
           type="range"
