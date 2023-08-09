@@ -58,10 +58,10 @@ export const VaultPositionTagWithLabel: FC<
   if (position) {
     return (
       <FlexGap alignItems="center" justifyContent="space-between" marginX="8px" mb="8px" gap="12px" {...props}>
-        <Text fontSize="12px" color="secondary" textTransform="uppercase" bold>
+        {/* <Text fontSize="12px" color="secondary" textTransform="uppercase" bold>
           {t('My Position')}
-        </Text>
-        <VaultPositionTag position={position} />
+        </Text> */}
+        {/* <VaultPositionTag position={position} /> */}
       </FlexGap>
     )
   }

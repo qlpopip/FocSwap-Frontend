@@ -40,11 +40,6 @@ const AutoEarningsCell: React.FC<React.PropsWithChildren<AutoEarningsCellProps>>
     userShares,
     pricePerFullShare,
     earningTokenPrice,
-    vaultKey === VaultKey.CakeVault
-      ? (vaultData as DeserializedPoolLockedVault).userData.currentPerformanceFee
-          .plus((vaultData as DeserializedPoolLockedVault).userData.currentOverdueFee)
-          .plus((vaultData as DeserializedPoolLockedVault).userData.userBoostedShare)
-      : null,
   )
 
   const labelText = t('Recent ODI profit')

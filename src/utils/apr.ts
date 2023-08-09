@@ -58,7 +58,7 @@ export const getFarmApr = (
   if (!cakeRewardsApr.isNaN() && cakeRewardsApr.isFinite()) {
     cakeRewardsAprAsNumber = cakeRewardsApr.toNumber()
   }
-  console.log(chainId, poolWeight, cakePriceUsd, poolLiquidityUsd, farmAddress, regularCakePerBlock)
+  // console.log(chainId, poolWeight, cakePriceUsd, poolLiquidityUsd, farmAddress, regularCakePerBlock)
   const lpRewardsApr = getLpApr(chainId)[farmAddress?.toLowerCase()] ?? 0
   return { cakeRewardsApr: cakeRewardsAprAsNumber, lpRewardsApr }
 }

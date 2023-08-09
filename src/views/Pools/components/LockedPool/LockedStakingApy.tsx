@@ -53,7 +53,7 @@ const LockedStakingApy: React.FC<React.PropsWithChildren<LockedStakingApyProps>>
     burnStartTime: userData?.burnStartTime,
   })
 
-  const { lockedApy } = useVaultApy({ duration: secondDuration })
+  // const { lockedApy } = useVaultApy({ duration: secondDuration })
 
   // earningTokenBalance includes overdue fee if any
   const earningTokenBalance = useMemo(() => {
@@ -130,7 +130,7 @@ const LockedStakingApy: React.FC<React.PropsWithChildren<LockedStakingApyProps>>
               {t('APY')}
             </Text>
           </TooltipText>
-          <BalanceWithLoading color="text" bold fontSize="16px" value={parseFloat(lockedApy)} decimals={2} unit="%" />
+          {/* <BalanceWithLoading color="text" bold fontSize="16px" decimals={2} unit="%" /> */}
         </Flex>
       )}
       <LockDurationRow weekDuration={weekDuration} />
@@ -139,7 +139,7 @@ const LockedStakingApy: React.FC<React.PropsWithChildren<LockedStakingApyProps>>
       )}
       <Flex alignItems="center" justifyContent="space-between">
         <Text color="textSubtle" textTransform="uppercase" bold fontSize="12px">
-          {t('Recent CAKE profit')}
+          {t('Recent ODI profit')}
         </Text>
         <BalanceWithLoading color="text" bold fontSize="16px" value={earningTokenBalance} decimals={5} />
       </Flex>

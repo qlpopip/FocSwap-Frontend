@@ -153,8 +153,8 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
       // .toString() being called to fix a BigNumber error in prod
       // as suggested here https://github.com/ChainSafe/web3.js/issues/2077
       return isWithdrawingAll
-        ? callWithGasPrice(vaultPoolContract, 'withdrawAll', undefined, callOptions)
-        : callWithGasPrice(vaultPoolContract, 'withdrawByAmount', [convertedStakeAmount.toString()], callOptions)
+        ? callWithGasPrice(vaultPoolContract, 'withdraw', undefined, callOptions)
+        : callWithGasPrice(vaultPoolContract, 'withdraw', [convertedStakeAmount.toString()], callOptions)
     })
 
     if (receipt?.status) {
@@ -287,7 +287,7 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
       )}
       {pool.vaultKey === VaultKey.CakeVault && cakeAsNumberBalance ? (
         <Box mt="8px" maxWidth="370px">
-          <ConvertToLock stakingToken={stakingToken} currentStakedAmount={cakeAsNumberBalance} />
+          {/* <ConvertToLock stakingToken={stakingToken} currentStakedAmount={cakeAsNumberBalance} /> */}
         </Box>
       ) : null}
       <Button

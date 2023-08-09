@@ -26,19 +26,15 @@ const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<Deseria
     userData: { userShares, cakeAtLastUserAction },
     pricePerFullShare,
   } = vaultData
+  // console.log(earningTokenPrice)
   const { hasAutoEarnings, autoCakeToDisplay, autoUsdToDisplay } = getCakeVaultEarnings(
     account,
     cakeAtLastUserAction,
     userShares,
     pricePerFullShare,
     earningTokenPrice,
-    vaultKey === VaultKey.CakeVault
-      ? (vaultData as DeserializedLockedCakeVault).userData.currentPerformanceFee
-          .plus((vaultData as DeserializedLockedCakeVault).userData.currentOverdueFee)
-          .plus((vaultData as DeserializedLockedCakeVault).userData.userBoostedShare)
-      : null,
   )
-
+  // console.log(hasAutoEarnings, autoCakeToDisplay, autoUsdToDisplay)
   const { secondDuration, weekDuration } = useUserDataInVaultPresenter({
     lockStartTime:
       vaultKey === VaultKey.CakeVault ? (vaultData as DeserializedLockedCakeVault).userData?.lockStartTime ?? '0' : '0',
@@ -46,13 +42,13 @@ const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<Deseria
       vaultKey === VaultKey.CakeVault ? (vaultData as DeserializedLockedCakeVault).userData?.lockEndTime ?? '0' : '0',
   })
 
-  const { boostFactor } = useVaultApy({ duration: secondDuration })
+  // const { boostFactor } = useVaultApy({ duration: secondDuration })
 
   const vaultPosition = getVaultPosition(vaultData.userData)
 
   const actionTitle = (
     <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
-      {t('Recent CAKE profit')}
+      {t('Recent ODI profit')}
     </Text>
   )
 
@@ -127,7 +123,7 @@ const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<Deseria
           </ActionTitles>
           <ActionContent>
             <Flex flex="1" flexDirection="column" alignSelf="flex-start">
-              <BalanceWithLoading
+              {/* <BalanceWithLoading
                 color="text"
                 lineHeight="1"
                 bold
@@ -135,7 +131,7 @@ const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<Deseria
                 value={boostFactor ? boostFactor?.toString() : '0'}
                 decimals={2}
                 unit="x"
-              />
+              /> */}
               <Text fontSize="12px" color="textSubtle">
                 {t('Lock for %duration%', { duration: weekDuration })}
               </Text>

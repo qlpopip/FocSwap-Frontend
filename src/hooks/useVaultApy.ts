@@ -94,16 +94,16 @@ export function useVaultApy({ duration = MAX_LOCK_DURATION }: { duration?: numbe
     [pricePerFullShareAsEtherBN, totalCakePoolEmissionPerYear, totalSharesAsEtherBN],
   )
 
-  const boostFactor = useMemo(() => _getBoostFactor(BOOST_WEIGHT, duration, DURATION_FACTOR), [duration])
+  // const boostFactor = useMemo(() => _getBoostFactor(BOOST_WEIGHT, duration, DURATION_FACTOR), [duration])
 
-  const lockedApy = useMemo(() => {
-    return flexibleApy && getLockedApy(flexibleApy, boostFactor).toString()
-  }, [boostFactor, flexibleApy])
+  // const lockedApy = useMemo(() => {
+  //   return flexibleApy && getLockedApy(flexibleApy, boostFactor).toString()
+  // }, [boostFactor, flexibleApy])
 
-  const getBoostFactor = useCallback(
-    (adjustDuration: number) => _getBoostFactor(BOOST_WEIGHT, adjustDuration, DURATION_FACTOR),
-    [],
-  )
+  // const getBoostFactor = useCallback(
+  //   (adjustDuration: number) => _getBoostFactor(BOOST_WEIGHT, adjustDuration, DURATION_FACTOR),
+  //   [],
+  // )
 
   const flexibleApyNoFee = useMemo(() => {
     if (flexibleApy && performanceFeeAsDecimal) {
@@ -117,15 +117,15 @@ export function useVaultApy({ duration = MAX_LOCK_DURATION }: { duration?: numbe
 
   return {
     flexibleApy: flexibleApyNoFee,
-    lockedApy,
-    getLockedApy: useCallback(
-      (adjustDuration: number) => flexibleApy && getLockedApy(flexibleApy, getBoostFactor(adjustDuration)).toString(),
-      [flexibleApy, getBoostFactor],
-    ),
-    boostFactor: useMemo(() => boostFactor.addUnsafe(FixedNumber.from('1')), [boostFactor]),
-    getBoostFactor: useCallback(
-      (adjustDuration: number) => getBoostFactor(adjustDuration).addUnsafe(FixedNumber.from('1')),
-      [getBoostFactor],
-    ),
+    // lockedApy,
+    // getLockedApy: useCallback(
+    //   (adjustDuration: number) => flexibleApy && getLockedApy(flexibleApy, getBoostFactor(adjustDuration)).toString(),
+    //   [flexibleApy, getBoostFactor],
+    // ),
+    // boostFactor: useMemo(() => boostFactor.addUnsafe(FixedNumber.from('1')), [boostFactor]),
+    // getBoostFactor: useCallback(
+    //   (adjustDuration: number) => getBoostFactor(adjustDuration).addUnsafe(FixedNumber.from('1')),
+    //   [getBoostFactor],
+    // ),
   }
 }

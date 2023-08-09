@@ -30,7 +30,7 @@ export const VaultStakeButtonGroup = ({
           </Button>
         )} */}
       </FlexGap>
-      {tooltipVisible && tooltip}
+      {/* {tooltipVisible && tooltip} */}
       {/* {onLockedClick && (
         <TooltipText mt="16px" small ref={targetRef}>
           {t('What’s the difference?')}

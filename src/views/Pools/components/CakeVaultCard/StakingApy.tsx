@@ -18,7 +18,7 @@ const AprLabelContainer = styled(Flex)`
 export const StakingApy = memo(({ pool }: { pool: DeserializedPool }) => {
   const { t } = useTranslation()
 
-  const { flexibleApy, lockedApy } = useVaultApy()
+  const { flexibleApy } = useVaultApy()
 
   const [onPresentFlexibleApyModal] = useModal(<VaultRoiCalculatorModal pool={pool} />)
 
@@ -56,7 +56,7 @@ export const StakingApy = memo(({ pool }: { pool: DeserializedPool }) => {
           <Text color="textSubtle" textTransform="uppercase" bold fontSize="12px">
             {t('Locked')} APY:
           </Text>
-          {lockedApy ? (
+          {/* {lockedApy ? (
             <FlexGap gap="4px" flexWrap="wrap" justifyContent="flex-end">
               <Text style={{ whiteSpace: 'nowrap' }} bold>
                 {t('Up to')}
@@ -78,9 +78,8 @@ export const StakingApy = memo(({ pool }: { pool: DeserializedPool }) => {
                 </Button>
               </AprLabelContainer>
             </FlexGap>
-          ) : (
+          ) : ( */}
             <Skeleton width="80px" height="16px" />
-          )}
         </Flex>
       )}
     </LightGreyCard>

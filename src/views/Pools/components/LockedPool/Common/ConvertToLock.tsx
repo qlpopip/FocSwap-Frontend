@@ -22,7 +22,7 @@ const ConvertToLock: React.FC<React.PropsWithChildren<ConvertToLockProps>> = ({
   const { isMobile } = useMatchBreakpoints()
   const isTableView = isInline && !isMobile
   const { avgLockDurationsInSeconds } = useAvgLockDuration()
-  const { lockedApy } = useVaultApy({ duration: avgLockDurationsInSeconds })
+  // const { lockedApy } = useVaultApy({ duration: avgLockDurationsInSeconds })
 
   return (
     <Message
@@ -42,11 +42,11 @@ const ConvertToLock: React.FC<React.PropsWithChildren<ConvertToLockProps>> = ({
       }
       actionInline={isTableView}
     >
-      <MessageText>
+      {/* <MessageText>
         {t('Lock staking users are earning an average of %amount%% APY. More benefits are coming soon.', {
           amount: lockedApy ? parseFloat(lockedApy).toFixed(2) : 0,
         })}
-      </MessageText>
+      </MessageText> */}
     </Message>
   )
 }

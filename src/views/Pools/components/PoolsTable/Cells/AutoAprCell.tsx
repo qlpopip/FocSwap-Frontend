@@ -29,7 +29,7 @@ const AutoAprCell: React.FC<React.PropsWithChildren<AprCellProps>> = ({ pool }) 
 
   const vaultPosition = getVaultPosition(userData)
 
-  const { flexibleApy, lockedApy } = useVaultApy({
+  const { flexibleApy } = useVaultApy({
     duration:
       vaultPosition > VaultPosition.Flexible
         ? +(userData as DeserializedLockedVaultUser).lockEndTime -
@@ -137,7 +137,7 @@ const AutoAprCell: React.FC<React.PropsWithChildren<AprCellProps>> = ({ pool }) 
           <AprLabelContainer alignItems="center" justifyContent="flex-start">
             <Balance
               fontSize="16px"
-              value={vaultPosition > VaultPosition.Flexible ? parseFloat(lockedApy) : parseFloat(flexibleApy)}
+              value={vaultPosition > VaultPosition.Flexible ? parseFloat(flexibleApy) : parseFloat(flexibleApy)}
               decimals={2}
               unit="%"
             />

@@ -101,7 +101,7 @@ export const StakedCakeStatus: React.FC<React.PropsWithChildren<VaultPositionPar
     const { t } = useTranslation()
     return (
       <Text fontSize="12px" bold color={stakedStatus[vaultPosition].color} textTransform="uppercase">
-        {t(stakedStatus[vaultPosition].text)}
+        {/* {t(stakedStatus[vaultPosition].text)} */}
       </Text>
     )
   },

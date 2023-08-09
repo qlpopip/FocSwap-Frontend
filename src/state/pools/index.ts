@@ -322,7 +322,7 @@ export const fetchCakeFlexibleSideVaultFees = createAsyncThunk<SerializedVaultFe
   },
 )
 
-export const fetchCakeVaultUserData = createAsyncThunk<SerializedLockedVaultUser, { account: string }>(
+export const fetchCakeVaultUserData = createAsyncThunk<SerializedVaultUser, { account: string }>(
   'cakeVault/fetchUser',
   async ({ account }) => {
     const userData = await fetchVaultUser(account)
@@ -437,7 +437,7 @@ export const PoolsSlice = createSlice({
       state.cakeFlexibleSideVault = { ...state.cakeFlexibleSideVault, fees }
     })
     // Vault user data
-    builder.addCase(fetchCakeVaultUserData.fulfilled, (state, action: PayloadAction<SerializedLockedVaultUser>) => {
+    builder.addCase(fetchCakeVaultUserData.fulfilled, (state, action: PayloadAction<SerializedVaultUser>) => {
       const userData = action.payload
       state.cakeVault = { ...state.cakeVault, userData }
     })

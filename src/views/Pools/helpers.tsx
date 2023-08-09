@@ -19,7 +19,7 @@ export const convertSharesToCake = (
   fee?: BigNumber,
 ) => {
   const sharePriceNumber = getBalanceNumber(cakePerFullShare, decimals)
-  const amountInCake = new BigNumber(shares.multipliedBy(sharePriceNumber)).minus(fee || BIG_ZERO)
+  const amountInCake = new BigNumber(shares.multipliedBy(sharePriceNumber)).minus(BIG_ZERO)
   const cakeAsNumberBalance = getBalanceNumber(amountInCake, decimals)
   const cakeAsBigNumber = getDecimalAmount(new BigNumber(cakeAsNumberBalance), decimals)
   const cakeAsDisplayBalance = getFullDisplayBalance(amountInCake, decimals, decimalsToRound)
@@ -67,9 +67,8 @@ export const getCakeVaultEarnings = (
 ) => {
   const hasAutoEarnings = account && cakeAtLastUserAction?.gt(0) && userShares?.gt(0)
   const { cakeAsBigNumber } = convertSharesToCake(userShares, pricePerFullShare)
-  const autoCakeProfit = cakeAsBigNumber.minus(fee || BIG_ZERO).minus(cakeAtLastUserAction)
+  const autoCakeProfit = cakeAsBigNumber.minus(BIG_ZERO).minus(cakeAtLastUserAction)
   const autoCakeToDisplay = autoCakeProfit.gte(0) ? getBalanceNumber(autoCakeProfit, 18) : 0
-
   const autoUsdProfit = autoCakeProfit.times(earningTokenPrice)
   const autoUsdToDisplay = autoUsdProfit.gte(0) ? getBalanceNumber(autoUsdProfit, 18) : 0
   return { hasAutoEarnings, autoCakeToDisplay, autoUsdToDisplay }

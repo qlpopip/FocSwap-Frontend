@@ -16,7 +16,7 @@ interface CakeVaultAprProps {
 const CakeVaultApr: React.FC<React.PropsWithChildren<CakeVaultAprProps>> = ({ pool, userData, vaultPosition }) => {
   const { t } = useTranslation()
 
-  const { flexibleApy, lockedApy } = useVaultApy({
+  const { flexibleApy } = useVaultApy({
     duration:
       vaultPosition > VaultPosition.Flexible
         ? +(userData as DeserializedLockedVaultUser).lockEndTime -
@@ -62,7 +62,7 @@ const CakeVaultApr: React.FC<React.PropsWithChildren<CakeVaultAprProps>> = ({ po
             <Text fontSize="16px" color="textSubtle" textAlign="left">
               {t('Locked APY')}
             </Text>
-            {lockedApy ? (
+            {/* {lockedApy ? (
               <Flex alignItems="center" justifyContent="flex-start">
                 <Text fontSize="16px" style={{ whiteSpace: 'nowrap' }} fontWeight="600">
                   {t('Up to')}
@@ -89,9 +89,9 @@ const CakeVaultApr: React.FC<React.PropsWithChildren<CakeVaultAprProps>> = ({ po
                   <CalculateIcon color="textSubtle" width="20px" />
                 </Button>
               </Flex>
-            ) : (
+            ) :  */}
               <Skeleton width="80px" height="16px" />
-            )}
+            
           </Flex>
         </Box>
       )}

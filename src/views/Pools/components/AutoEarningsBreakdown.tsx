@@ -21,11 +21,6 @@ const AutoEarningsBreakdown: React.FC<React.PropsWithChildren<AutoEarningsBreakd
     userData.userShares,
     pricePerFullShare,
     earningTokenPrice,
-    pool.vaultKey === VaultKey.CakeVault
-      ? (userData as DeserializedLockedVaultUser).currentPerformanceFee
-          .plus((userData as DeserializedLockedVaultUser).currentOverdueFee)
-          .plus((userData as DeserializedLockedVaultUser).userBoostedShare)
-      : null,
   )
 
   const lastActionInMs = userData.lastUserActionTime ? parseInt(userData.lastUserActionTime) * 1000 : 0

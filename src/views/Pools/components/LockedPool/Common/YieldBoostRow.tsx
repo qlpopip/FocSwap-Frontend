@@ -5,7 +5,7 @@ import { BalanceWithLoading } from 'components/Balance'
 import { useTranslation } from '@pancakeswap/localization'
 
 const YieldBoostRow = ({ secondDuration }) => {
-  const { boostFactor } = useVaultApy({ duration: secondDuration })
+  // const { boostFactor } = useVaultApy({ duration: secondDuration })
   const { t } = useTranslation()
 
   const tooltipContent = t(
@@ -18,18 +18,18 @@ const YieldBoostRow = ({ secondDuration }) => {
     <Flex alignItems="center" justifyContent="space-between">
       {tooltipVisible && tooltip}
       <TooltipText>
-        <Text ref={targetRef} color="textSubtle" textTransform="uppercase" bold fontSize="12px">
+        {/* <Text ref={targetRef} color="textSubtle" textTransform="uppercase" bold fontSize="12px">
           {t('Yield boost')}
-        </Text>
+        </Text> */}
       </TooltipText>
-      <BalanceWithLoading
+      {/* <BalanceWithLoading
         color="text"
         bold
         fontSize="16px"
         value={boostFactor ? boostFactor?.toString() : '0'}
         decimals={2}
         unit="x"
-      />
+      /> */}
     </Flex>
   )
 }

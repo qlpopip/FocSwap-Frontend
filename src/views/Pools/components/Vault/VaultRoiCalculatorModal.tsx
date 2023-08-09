@@ -22,7 +22,7 @@ export const VaultRoiCalculatorModal = ({
     },
   } = useVaultPoolByKey(pool.vaultKey)
 
-  const { getLockedApy, flexibleApy } = useVaultApy()
+  const { flexibleApy } = useVaultApy()
   const { t } = useTranslation()
 
   const [cakeVaultView, setCakeVaultView] = useState(initialView || 0)
@@ -31,15 +31,15 @@ export const VaultRoiCalculatorModal = ({
 
   const buttonMenuItems = useMemo(
     () => [
-      <ButtonMenuItem key="Flexible">{t('Flexible')}</ButtonMenuItem>,
+      <ButtonMenuItem key="Flexible">{t('Staked in Vault')}</ButtonMenuItem>,
       // <ButtonMenuItem key="Locked">{t('Locked')}</ButtonMenuItem>,
     ],
     [t],
   )
 
   const apy = useMemo(() => {
-    return cakeVaultView === 0 ? flexibleApy : getLockedApy(duration)
-  }, [cakeVaultView, getLockedApy, flexibleApy, duration])
+    return flexibleApy
+  }, [cakeVaultView, flexibleApy, duration])
 
   return (
     <RoiCalculatorModal
@@ -99,57 +99,56 @@ export const VaultRoiCalculatorModal = ({
 }
 
 function LockedRoiStrategy({ state, dispatch, earningTokenPrice, duration, stakingTokenPrice }) {
-  const { getLockedApy } = useVaultApy()
   const { principalAsUSD, roiUSD } = state.data
   const { compounding, compoundingFrequency, stakingDuration, mode } = state.controls
 
-  useEffect(() => {
-    if (mode === CalculatorMode.ROI_BASED_ON_PRINCIPAL) {
-      const principalInUSDAsNumber = parseFloat(principalAsUSD)
-      const interest =
-        (principalInUSDAsNumber / earningTokenPrice) * (+getLockedApy(duration) / 100) * (duration / 31449600)
+  // useEffect(() => {
+  //   if (mode === CalculatorMode.ROI_BASED_ON_PRINCIPAL) {
+  //     const principalInUSDAsNumber = parseFloat(principalAsUSD)
+  //     // const interest =
+  //     //   (principalInUSDAsNumber / earningTokenPrice) * (+getLockedApy(duration) / 100) * (duration / 31449600)
 
-      const hasInterest = !Number.isNaN(interest)
-      const roiTokens = hasInterest ? interest : 0
-      const roiAsUSD = hasInterest ? roiTokens * earningTokenPrice : 0
-      const roiPercentage = hasInterest
-        ? getRoi({
-            amountEarned: roiAsUSD,
-            amountInvested: principalInUSDAsNumber,
-          })
-        : 0
-      dispatch({ type: 'setRoi', payload: { roiUSD: roiAsUSD, roiTokens, roiPercentage } })
-    }
-  }, [
-    principalAsUSD,
-    stakingDuration,
-    earningTokenPrice,
-    compounding,
-    compoundingFrequency,
-    mode,
-    duration,
-    dispatch,
-    getLockedApy,
-  ])
+  //     const hasInterest = !Number.isNaN(interest)
+  //     const roiTokens = hasInterest ? interest : 0
+  //     const roiAsUSD = hasInterest ? roiTokens * earningTokenPrice : 0
+  //     const roiPercentage = hasInterest
+  //       ? getRoi({
+  //           amountEarned: roiAsUSD,
+  //           amountInvested: principalInUSDAsNumber,
+  //         })
+  //       : 0
+  //     dispatch({ type: 'setRoi', payload: { roiUSD: roiAsUSD, roiTokens, roiPercentage } })
+  //   }
+  // }, [
+  //   principalAsUSD,
+  //   stakingDuration,
+  //   earningTokenPrice,
+  //   compounding,
+  //   compoundingFrequency,
+  //   mode,
+  //   duration,
+  //   dispatch,
+  //   getLockedApy,
+  // ])
 
-  useEffect(() => {
-    if (mode === CalculatorMode.PRINCIPAL_BASED_ON_ROI) {
-      const principalUSD = roiUSD / (+getLockedApy(duration) / 100) / (duration / 31449600)
-      const roiPercentage = getRoi({
-        amountEarned: roiUSD,
-        amountInvested: principalUSD,
-      })
-      const principalToken = principalUSD / stakingTokenPrice
-      dispatch({
-        type: 'setPrincipalForTargetRoi',
-        payload: {
-          principalAsUSD: principalUSD.toFixed(2),
-          principalAsToken: principalToken.toFixed(10),
-          roiPercentage,
-        },
-      })
-    }
-  }, [dispatch, duration, getLockedApy, mode, roiUSD, stakingTokenPrice])
+  // useEffect(() => {
+  //   if (mode === CalculatorMode.PRINCIPAL_BASED_ON_ROI) {
+  //     const principalUSD = roiUSD / (+getLockedApy(duration) / 100) / (duration / 31449600)
+  //     const roiPercentage = getRoi({
+  //       amountEarned: roiUSD,
+  //       amountInvested: principalUSD,
+  //     })
+  //     const principalToken = principalUSD / stakingTokenPrice
+  //     dispatch({
+  //       type: 'setPrincipalForTargetRoi',
+  //       payload: {
+  //         principalAsUSD: principalUSD.toFixed(2),
+  //         principalAsToken: principalToken.toFixed(10),
+  //         roiPercentage,
+  //       },
+  //     })
+  //   }
+  // }, [dispatch, duration, getLockedApy, mode, roiUSD, stakingTokenPrice])
 
   return null
 }

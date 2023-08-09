@@ -55,9 +55,9 @@ export const CakeVaultDetail: React.FC<React.PropsWithChildren<CakeVaultDetailPr
   return (
     <>
       <StyledCardBody isLoading={isLoading}>
-        {account && pool.vaultKey === VaultKey.CakeVault && (
+        {/* {account && pool.vaultKey === VaultKey.CakeVault && (
           <VaultPositionTagWithLabel userData={(vaultPool as DeserializedLockedCakeVault).userData} />
-        )}
+        )} */}
         {account &&
         pool.vaultKey === VaultKey.CakeVault &&
         (vaultPool as DeserializedLockedCakeVault).userData.locked ? (

@@ -31,7 +31,7 @@ const FarmsPoolsRow = () => {
   const { observerRef, isIntersecting } = useIntersectionObserver()
   const { topFarms, fetched } = useGetTopFarmsByApr(isIntersecting)
   const { topPools } = useGetTopPoolsByApr(fetched && isIntersecting)
-  const { lockedApy } = useVaultApy()
+  // const { lockedApy } = useVaultApy()
 
   const timer = useRef<ReturnType<typeof setTimeout>>(null)
   const isLoaded = topFarms[0] && topPools[0]
@@ -100,7 +100,7 @@ const FarmsPoolsRow = () => {
                 // eslint-disable-next-line react/no-array-index-key
                 key={index}
                 title={topPool && getPoolText(topPool)}
-                percentage={topPool?.sousId === 0 ? +lockedApy : topPool?.apr}
+                percentage={topPool?.sousId === 0 ? topPool?.apr : topPool?.apr}
                 index={index}
                 isApy={topPool?.sousId === 0}
                 visible={!showFarms}

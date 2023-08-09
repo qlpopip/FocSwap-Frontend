@@ -119,9 +119,9 @@ const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({
       </Flex>
       {!vaultKey && (
         <Flex mb="2px" justifyContent={alignLinksToRight ? 'flex-end' : 'flex-start'}>
-          <LinkExternal href={earningToken.projectLink} bold={false} small>
+          {/* <LinkExternal href={earningToken.projectLink} bold={false} small>
             {t('View Project Site')}
-          </LinkExternal>
+          </LinkExternal> */}
         </Flex>
       )}
       {/* {vaultKey && (

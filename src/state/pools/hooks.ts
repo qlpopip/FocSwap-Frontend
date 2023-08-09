@@ -147,7 +147,6 @@ export const useCakeVault = () => {
 
 export const useVaultPoolByKey = (key: VaultKey) => {
   const vaultPoolByKey = useMemo(() => makeVaultPoolByKey(key), [key])
-
   return useSelector(vaultPoolByKey)
 }
 

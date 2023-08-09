@@ -28,21 +28,21 @@ const Overview: React.FC<React.PropsWithChildren<OverviewPropsType>> = ({
   showLockWarning,
   ceiling,
 }) => {
-  const { getLockedApy, getBoostFactor } = useVaultApy()
+  // const { getLockedApy, getBoostFactor } = useVaultApy()
   const { t } = useTranslation()
 
-  const lockedApy = useMemo(() => getLockedApy(duration), [getLockedApy, duration])
-  const boostFactor = useMemo(() => getBoostFactor(duration), [getBoostFactor, duration])
-  const newLockedApy = useMemo(() => (newDuration && getLockedApy(newDuration)) || 0, [getLockedApy, newDuration])
-  const newBoost = useMemo(() => (newDuration && getBoostFactor(newDuration)) || 0, [getBoostFactor, newDuration])
+  // const lockedApy = useMemo(() => getLockedApy(duration), [getLockedApy, duration])
+  // const boostFactor = useMemo(() => getBoostFactor(duration), [getBoostFactor, duration])
+  // const newLockedApy = useMemo(() => (newDuration && getLockedApy(newDuration)) || 0, [getLockedApy, newDuration])
+  // const newBoost = useMemo(() => (newDuration && getBoostFactor(newDuration)) || 0, [getBoostFactor, newDuration])
 
-  const formattedRoi = useMemo(() => {
-    return formatRoi({ usdValueStaked, lockedApy, duration })
-  }, [lockedApy, usdValueStaked, duration])
+  // const formattedRoi = useMemo(() => {
+  //   return formatRoi({ usdValueStaked, lockedApy, duration })
+  // }, [lockedApy, usdValueStaked, duration])
 
-  const newFormattedRoi = useMemo(() => {
-    return newLockedApy && formatRoi({ usdValueStaked, lockedApy: newLockedApy, duration: newDuration })
-  }, [newLockedApy, usdValueStaked, newDuration])
+  // const newFormattedRoi = useMemo(() => {
+  //   return newLockedApy && formatRoi({ usdValueStaked, lockedApy: newLockedApy, duration: newDuration })
+  // }, [newLockedApy, usdValueStaked, newDuration])
 
   const now = new Date()
 
@@ -77,7 +77,7 @@ const Overview: React.FC<React.PropsWithChildren<OverviewPropsType>> = ({
         <LightGreyCard>
           <BalanceRow title={t('Cake to be locked')} value={lockedAmount} newValue={newLockedAmount} decimals={2} />
           <BalanceRow title="iCake" decimals={2} value={formattediCake} newValue={newFormattediCake} />
-          <BalanceRow
+          {/* <BalanceRow
             title="apy"
             unit="%"
             value={_toNumber(lockedApy)}
@@ -86,13 +86,13 @@ const Overview: React.FC<React.PropsWithChildren<OverviewPropsType>> = ({
             tooltipContent={t(
               'Calculated based on current rates and subject to change based on pool conditions. It is an estimate provided for your convenience only, and by no means represents guaranteed returns.',
             )}
-          />
+          /> */}
           <TextRow
             title={t('duration')}
             value={isValidDuration && formatSecondsToWeeks(duration)}
             newValue={isValidDuration && newDuration && formatSecondsToWeeks(newDuration)}
           />
-          <BalanceRow
+          {/* <BalanceRow
             title={t('Yield boost')}
             unit="x"
             value={_toNumber(boostFactor)}
@@ -101,13 +101,13 @@ const Overview: React.FC<React.PropsWithChildren<OverviewPropsType>> = ({
             tooltipContent={t(
               'Your yield will be boosted based on the total lock duration of your current fixed term staking position.',
             )}
-          />
+          /> */}
           <DateRow
             color={_toNumber(newDuration) ? 'failure' : 'text'}
             title={t('Unlock on')}
             value={isValidDuration && unlockDate}
           />
-          <BalanceRow
+          {/* <BalanceRow
             title={t('Expected ROI')}
             value={formattedRoi}
             newValue={newFormattedRoi}
@@ -117,15 +117,15 @@ const Overview: React.FC<React.PropsWithChildren<OverviewPropsType>> = ({
             tooltipContent={t(
               'Calculated based on current rates and subject to change based on pool conditions. It is an estimate provided for your convenience only, and by no means represents guaranteed returns.',
             )}
-          />
+          /> */}
         </LightGreyCard>
       </Box>
       {showLockWarning && (
         <Box mt="16px" maxWidth="370px">
           <Message variant="warning">
-            <MessageText>
+            {/* <MessageText>
               {t('You will be able to withdraw the staked CAKE and profit only when the staking position is unlocked')}
-            </MessageText>
+            </MessageText> */}
           </Message>
         </Box>
       )}

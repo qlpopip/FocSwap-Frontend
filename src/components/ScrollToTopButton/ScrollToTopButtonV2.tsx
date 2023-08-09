@@ -5,7 +5,7 @@ import throttle from 'lodash/throttle'
 
 const FixedContainer = styled.div`
   position: fixed;
-  right: 5%;
+  right: 2%;
   bottom: calc(110px + env(safe-area-inset-bottom));
 `
 
@@ -39,9 +39,9 @@ const ScrollToTopButton = () => {
   return (
     <FixedContainer style={{ display: visible ? 'inline' : 'none' }}>
       <Button
-        width={48}
-        height={48}
-        endIcon={<ArrowUpIcon color="white" style={{ marginLeft: 0 }} />}
+        width={42}
+        height={46}
+        endIcon={<ArrowUpIcon color="white" />}
         onClick={scrollToTop}
       />
     </FixedContainer>
