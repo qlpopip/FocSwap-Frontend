@@ -59,7 +59,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
   [ChainId.BSC]: [bscTokens.busd, bscTokens.cake, bscTokens.btcb],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.BAOBAB]: [USDC[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB], baobabTokens.odi],
+  [ChainId.BAOBAB]: [USDT[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB], baobabTokens.odi],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -75,7 +75,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
   [ChainId.BSC]: [bscTokens.wbnb, bscTokens.dai, bscTokens.busd, bscTokens.usdt, bscTokens.cake],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.BAOBAB]: [USDC[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB]],
+  [ChainId.BAOBAB]: [USDT[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB]],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
