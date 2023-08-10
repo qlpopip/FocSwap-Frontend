@@ -1,4 +1,4 @@
-# 🥞 ODi Frontend
+# ODi Frontend
 
 ## Quick Start
 
