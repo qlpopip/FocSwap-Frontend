@@ -72,6 +72,7 @@ import ImportTokenWarningModal from '../../components/ImportTokenWarningModal'
 import { CommonBasesType } from '../../components/SearchModal/types'
 import replaceBrowserHistory from '../../utils/replaceBrowserHistory'
 import { currencyId } from '../../utils/currencyId'
+import SwapRoute from './components/SwapRoute'
 
 const Label = styled(Text)`
   font-size: 12px;
@@ -552,6 +553,12 @@ export default function Swap() {
                             {allowedSlippage / 100}%
                           </Text>
                         </RowBetween>
+                        <Flex justifyContent="space-between" alignItems="center">
+                          <Label>Route</Label>
+                          <Text>
+                            {trade && <SwapRoute trade={trade} />}
+                          </Text>
+                        </Flex>
                       </AutoColumn>
                     )}
                   </AutoColumn>

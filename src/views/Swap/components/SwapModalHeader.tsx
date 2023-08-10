@@ -9,6 +9,7 @@ import { CurrencyLogo } from 'components/Logo'
 import { RowBetween, RowFixed } from 'components/Layout/Row'
 import truncateHash from 'utils/truncateHash'
 import { TruncatedText, SwapShowAcceptChanges } from './styleds'
+import SwapRoute from './SwapRoute'
 
 export default function SwapModalHeader({
   trade,
@@ -121,6 +122,15 @@ export default function SwapModalHeader({
             {`${basisPointsToPercent(allowedSlippage).toFixed(1)}%`}
           </Text>
         </RowFixed>
+        <RowFixed style={{ width: '100%' }}>
+          <Text color="secondary" bold textTransform="uppercase">
+            Route
+          </Text>
+          <Text bold ml="auto" textAlign="end">
+            {trade && <SwapRoute trade={trade} />}
+          </Text>
+        </RowFixed>
+          
         {trade.tradeType === TradeType.EXACT_OUTPUT && !isEnoughInputBalance && (
           <Text small color="failure" textAlign="left" style={{ width: '100%' }}>
             {t('Insufficient input token balance. Your transaction may fail.')}
