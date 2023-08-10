@@ -13,9 +13,6 @@ import { InjectedConnector } from 'wagmi/connectors/injected'
 import { hexValue } from '@ethersproject/bytes'
 
 const mappingNetwork: Record<number, string> = {
-  1: 'eth-mainnet',
-  56: 'bsc-mainnet',
-  97: 'bsc-testnet',
   1001: 'baobab',
   8217: 'klaytn',
 }
@@ -51,7 +48,7 @@ export class KaikasConnector extends InjectedConnector {
 
       if (provider.on) {
         provider.on('accountsChanged', this.onAccountsChanged)
-        provider.on('chainChanged', this.onChainChanged)
+        provider.on('networkChanged', this.onChainChanged)
         provider.on('disconnect', this.onDisconnect)
       }
 
@@ -92,7 +89,10 @@ export class KaikasConnector extends InjectedConnector {
 
     if (mappingNetwork[chainId]) {
       try {
-        await provider.switchNetwork?.(mappingNetwork[chainId])
+        await provider.request?.({
+          method: 'wallet_switchKlaytnChain',
+          params: [{ chainId: id}]
+        })
 
         return (
           this.chains.find((x) => x.id === chainId) ?? {
