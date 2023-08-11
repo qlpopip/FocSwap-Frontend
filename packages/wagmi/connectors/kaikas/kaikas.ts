@@ -90,7 +90,7 @@ export class KaikasConnector extends InjectedConnector {
     if (mappingNetwork[chainId]) {
       try {
         await provider.request?.({
-          method: 'wallet_switchKlaytnChain',
+          method: 'wallet_switchEthereumChain',
           params: [{ chainId: id}]
         })
 
