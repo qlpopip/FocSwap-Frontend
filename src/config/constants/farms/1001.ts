@@ -2,13 +2,13 @@ import { baobabTokens } from '@pancakeswap/tokens'
 import { SerializedFarmConfig } from '../types'
 
 const farms: SerializedFarmConfig[] = [
-  // {
-  //   pid: 1,
-  //   lpSymbol: 'LCG-oUSDT LP',
-  //   lpAddress: '0xaf4753bf31110028e2716738b939643a71a53b96',
-  //   token: baobabTokens.lcg,
-  //   quoteToken: baobabTokens.usdt,
-  // },
+   {
+     pid: 1,
+     lpSymbol: 'KLAY-ODi LP',
+     lpAddress: '0x7a62962cf415acfa7433d95ae7c1a985d3f809ff',
+     token: baobabTokens.lcg,
+     quoteToken: baobabTokens.usdt,
+   },
   // {
   //   pid: 2,
   //   lpSymbol: 'KLAY-oUSDT LP',
