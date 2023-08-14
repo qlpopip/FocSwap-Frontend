@@ -40,7 +40,7 @@ const AutoEarningsBreakdown: React.FC<React.PropsWithChildren<AutoEarningsBreakd
       {hourDiffSinceLastAction ? (
         <>
           <Text>{t('Your average per hour')}:</Text>
-          <Text bold>{t('CAKE per hour: %amount%', { amount: earnedCakePerHour.toFixed(2) })}</Text>
+          <Text bold>{t('ODI per hour: %amount%', { amount: earnedCakePerHour.toFixed(2) })}</Text>
           <Text bold>{t('per hour: ~$%amount%', { amount: earnedUsdPerHour.toFixed(2) })}</Text>
         </>
       ) : null}
