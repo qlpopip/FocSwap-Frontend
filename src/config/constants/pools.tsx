@@ -97,6 +97,20 @@ export const livePools: SerializedPoolConfig[] = [
     tokenPerBlock: '1',
     isFinished: false,
   },
+  {
+    sousId: 3,
+    stakingToken: baobabTokens.aaa,
+    earningToken: baobabTokens.odi,
+    contractAddress: {
+      5: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
+      56: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
+      97: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
+      1001: '0x6a6cfa3b4c228e6985cfe20b3cd8445af70fd669',
+    },
+    poolCategory: PoolCategory.COMMUNITY,
+    tokenPerBlock: '1',
+    isFinished: false,
+  },
 ].map((p) => ({
   ...p,
   stakingToken: p.stakingToken.serialize,
