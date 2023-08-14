@@ -6,8 +6,8 @@ const farms: SerializedFarmConfig[] = [
      pid: 1,
      lpSymbol: 'KLAY-ODi LP',
      lpAddress: '0x7a62962cf415acfa7433d95ae7c1a985d3f809ff',
-     token: baobabTokens.lcg,
-     quoteToken: baobabTokens.usdt,
+     token: baobabTokens.weth,
+     quoteToken: baobabTokens.odi,
    },
   // {
   //   pid: 2,
