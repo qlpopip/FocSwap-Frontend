@@ -1386,7 +1386,7 @@
   "Sale Finished!": "Chào bán đã kết thúc!",
   "Start in": "Bắt đầu trong",
   "Exceeded max CAKE entry": "Đã vượt quá đầu vào CAKE tối đa",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "Chỉ áp dụng trong vòng %num% ngày kể từ ngày đặt cọc. Việc hủy cọc sau %num% ngày sẽ không mất phí. Đồng hồ sẽ được đặt lại mỗi khi bạn đặt cọc CAKE mới trong quỹ.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "Chỉ áp dụng trong vòng %num% ngày kể từ ngày đặt cọc. Việc hủy cọc sau %num% ngày sẽ không mất phí. Đồng hồ sẽ được đặt lại mỗi khi bạn đặt cọc CAKE mới trong quỹ.",
   "unstaking fee if withdrawn within %num%h": "phí huỷ cọc nếu được rút trong vòng %num% giờ",
   "Earn %asset%": "Kiếm %asset%",
   "IFO Pool": "Quỹ IFO",

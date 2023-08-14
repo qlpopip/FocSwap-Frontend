@@ -1386,7 +1386,7 @@
   "Sale Finished!": "Продаж завершено!",
   "Start in": "Початок через",
   "Exceeded max CAKE entry": "Перевищено максимальну вхідну позицію в CAKE",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "Діє лише протягом %num% д. із моменту стейкінгу. Якщо вивести токени зі стейкінгу через %num% д., комісія не включатиметься. Таймер скидається після кожного нового внесення CAKE у пул.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "Діє лише протягом %num% д. із моменту стейкінгу. Якщо вивести токени зі стейкінгу через %num% д., комісія не включатиметься. Таймер скидається після кожного нового внесення CAKE у пул.",
   "unstaking fee if withdrawn within %num%h": "комісії за умови виведення зі стейкінгу протягом %num% год",
   "Earn %asset%": "Заробіть %asset%",
   "IFO Pool": "Пул IFO",

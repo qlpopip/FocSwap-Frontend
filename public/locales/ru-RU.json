@@ -1386,7 +1386,7 @@
   "Sale Finished!": "Продажа завершена!",
   "Start in": "До начала",
   "Exceeded max CAKE entry": "Превышен максимум CAKE",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "Действует в течение %num% сут с момента вложения. Возврат токенов спустя %num% сут не будет включать в себя комиссию. Таймер сбрасывается каждый раз, когда вы вкладываете в пул новые CAKE.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "Действует в течение %num% сут с момента вложения. Возврат токенов спустя %num% сут не будет включать в себя комиссию. Таймер сбрасывается каждый раз, когда вы вкладываете в пул новые CAKE.",
   "unstaking fee if withdrawn within %num%h": "комиссия за возврат токенов в течение %num% ч",
   "Earn %asset%": "Зарабатывайте %asset%",
   "IFO Pool": "Пул IFO",

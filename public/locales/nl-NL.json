@@ -1386,7 +1386,7 @@
   "Sale Finished!": "Verkoop afgelopen!",
   "Start in": "Begint over",
   "Exceeded max CAKE entry": "Max. CAKE-inzet overschreden",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "Geldt alleen binnen %num% dagen na het staken. Bij unstaken na %num% dagen worden geen kosten in rekening gebracht. De timer wordt gereset telkens wanneer je nieuwe CAKE in de pool staket.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "Geldt alleen binnen %num% dagen na het staken. Bij unstaken na %num% dagen worden geen kosten in rekening gebracht. De timer wordt gereset telkens wanneer je nieuwe CAKE in de pool staket.",
   "unstaking fee if withdrawn within %num%h": "unstakekosten bij opname binnen %num% u",
   "Earn %asset%": "Verdien %asset%",
   "IFO Pool": "IFO-pool",

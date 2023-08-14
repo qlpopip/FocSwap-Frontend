@@ -1386,7 +1386,7 @@
   "Sale Finished!": "销售已完成！",
   "Start in": "开始时间倒计时：",
   "Exceeded max CAKE entry": "超出最大 CAKE 输入",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "仅在质押后 %num% 天内适用。%num% 天后取消质押无需收取费用。每当您在糖浆池中质押新的 CAKE 时，计时器将会被重置。",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "仅在质押后 %num% 天内适用。%num% 天后取消质押无需收取费用。每当您在糖浆池中质押新的 CAKE 时，计时器将会被重置。",
   "unstaking fee if withdrawn within %num%h": "取消质押费用（在 %num% 小时内提取）",
   "Earn %asset%": "赚取 %asset%",
   "IFO Pool": "IFO 糖浆池",

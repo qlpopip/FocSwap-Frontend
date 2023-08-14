@@ -1386,7 +1386,7 @@
   "Sale Finished!": "सेल समाप्त हुई!",
   "Start in": "शुरू होगा:",
   "Exceeded max CAKE entry": "अधिकतम CAKE एंट्री की सीमा पार हुई",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "स्टेक पर लगाए जाने के %num% दिनों तक ही लागू होता है। %num% दिन बाद स्टेक से हटाने पर कोई फ़ीस नहीं लगेगी। जब भी आप पूल में कोई नया CAKE स्टेक पर लगाते हैं, टाइमर रीसेट हो जाता है।",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "स्टेक पर लगाए जाने के %num% दिनों तक ही लागू होता है। %num% दिन बाद स्टेक से हटाने पर कोई फ़ीस नहीं लगेगी। जब भी आप पूल में कोई नया CAKE स्टेक पर लगाते हैं, टाइमर रीसेट हो जाता है।",
   "unstaking fee if withdrawn within %num%h": "अगर %num%घंटे के अंदर वापस ले लिया जाता है, तब स्टेक से हटाने की फ़ीस",
   "Earn %asset%": "%asset% जीतें",
   "IFO Pool": "IFO पूल",

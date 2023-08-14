@@ -1386,7 +1386,7 @@
   "Sale Finished!": "Tapos na ang Bentahan!",
   "Start in": "Magsimula sa",
   "Exceeded max CAKE entry": "Lumampas sa max na maipapasok na CAKE",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "Nalalapat lang sa loob ng %num% (na) araw ng pag-stake. Walang bayarin kapag nag-unstake pagkatapos ng %num% (na) araw. Mare-reset ang timer sa tuwing magse-stake ka ng bagong CAKE sa pool.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "Nalalapat lang sa loob ng %num% (na) araw ng pag-stake. Walang bayarin kapag nag-unstake pagkatapos ng %num% (na) araw. Mare-reset ang timer sa tuwing magse-stake ka ng bagong CAKE sa pool.",
   "unstaking fee if withdrawn within %num%h": "bayarin sa pag-unstake kung iwi-withdraw sa loob ng %num%h",
   "Earn %asset%": "Makakuha ng %asset%",
   "IFO Pool": "IFO Pool",

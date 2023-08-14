@@ -1386,7 +1386,7 @@
   "Sale Finished!": "販売終了！",
   "Start in": "開始まで",
   "Exceeded max CAKE entry": "最大CAKEエントリーを超えています",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "ステーキングして%num%日以内の場合にしか該当しません。%num%日後にステーキングを解除しても手数料はかかりません。タイマーは、プールに新しいCAKEをステーキングするたびにリセットされます。",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "ステーキングして%num%日以内の場合にしか該当しません。%num%日後にステーキングを解除しても手数料はかかりません。タイマーは、プールに新しいCAKEをステーキングするたびにリセットされます。",
   "unstaking fee if withdrawn within %num%h": "%num%時間以内に出金した場合のステーキング解除の手数料",
   "Earn %asset%": "%asset%を獲得",
   "IFO Pool": "IFOプール",

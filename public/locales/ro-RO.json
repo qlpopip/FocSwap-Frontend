@@ -1386,7 +1386,7 @@
   "Sale Finished!": "Vânzarea s-a încheiat!",
   "Start in": "Începe în",
   "Exceeded max CAKE entry": "Intrarea max. de CAKE a fost depășită",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "Se aplică numai în %num% zile de la investiție. Anularea investiției după %num% zile nu va include un comision. Cronometrul se resetează de fiecare dată când investești din nou CAKE în portofoliu.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "Se aplică numai în %num% zile de la investiție. Anularea investiției după %num% zile nu va include un comision. Cronometrul se resetează de fiecare dată când investești din nou CAKE în portofoliu.",
   "unstaking fee if withdrawn within %num%h": "comision de anulare a investiției dacă te retragi în %num%h",
   "Earn %asset%": "Câștigă %asset%",
   "IFO Pool": "Portofoliu IFO",

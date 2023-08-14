@@ -1386,7 +1386,7 @@
   "Sale Finished!": "Penjualan Selesai!",
   "Start in": "Mulai dalam",
   "Exceeded max CAKE entry": "Entri CAKE maks. terlampaui",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "Hanya berlaku dalam %num% hari penumpukan. Pembongkaran tumpukan setelah %num% hari tidak akan menyertakan biaya. Timer akan reset setiap kali Anda menumpuk CAKE baru di dalam pool.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "Hanya berlaku dalam %num% hari penumpukan. Pembongkaran tumpukan setelah %num% hari tidak akan menyertakan biaya. Timer akan reset setiap kali Anda menumpuk CAKE baru di dalam pool.",
   "unstaking fee if withdrawn within %num%h": "biaya pembongkaran jika ditarik dalam %num% j",
   "Earn %asset%": "Hasilkan %asset%",
   "IFO Pool": "Pool IFO",

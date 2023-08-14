@@ -1386,7 +1386,7 @@
   "Sale Finished!": "Satış Bitti!",
   "Start in": "Başlamasına",
   "Exceeded max CAKE entry": "Maks. CAKE girişi aşıldı",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "Sadece fon yatırmadan sonraki %num% gün için geçerlidir. %num% gün sonra geri alınan yatırımlar için ücret alınmaz. Sayaç, havuza yatırdığınız her yeni CAKE ile birlikte sıfırlanır.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "Sadece fon yatırmadan sonraki %num% gün için geçerlidir. %num% gün sonra geri alınan yatırımlar için ücret alınmaz. Sayaç, havuza yatırdığınız her yeni CAKE ile birlikte sıfırlanır.",
   "unstaking fee if withdrawn within %num%h": "%num% sa. içinde çekilirse yatırımı geri alma ücreti",
   "Earn %asset%": "%asset% kazanın",
   "IFO Pool": "IFO Havuzu",

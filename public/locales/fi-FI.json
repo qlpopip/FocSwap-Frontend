@@ -1386,7 +1386,7 @@
   "Sale Finished!": "Kauppa on päättynyt!",
   "Start in": "Alkamiseen",
   "Exceeded max CAKE entry": "Ylittää enimmäis-CAKE-merkinnän",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "Sovellettavissa vain %num% päivän sisällä panostamisesta. Panostuksen peruminen %num% päivän jälkeen ei sisällä maksua. Ajastin nollataan aina, kun panostat uutta CAKEa pooliin.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "Sovellettavissa vain %num% päivän sisällä panostamisesta. Panostuksen peruminen %num% päivän jälkeen ei sisällä maksua. Ajastin nollataan aina, kun panostat uutta CAKEa pooliin.",
   "unstaking fee if withdrawn within %num%h": "panostuksen petumismaksu, jos nostettu %num% tunnin kuluessa",
   "Earn %asset%": "Ansaitse %asset%",
   "IFO Pool": "IFO-pooli",

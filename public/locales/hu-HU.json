@@ -1386,7 +1386,7 @@
   "Sale Finished!": "Eladás befejeződött!",
   "Start in": "Kezdődik ekkor:",
   "Exceeded max CAKE entry": "A maximális CAKE bevitel túllépése",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "Csak a tétre lekötés %num% napján belül érvényes. A tét lemondása %num% nap után nem tartalmaz díjat. A stopper visszaáll minden alkalommal, amikor új CAKE tortát köt le tétként az összevont alapban.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "Csak a tétre lekötés %num% napján belül érvényes. A tét lemondása %num% nap után nem tartalmaz díjat. A stopper visszaáll minden alkalommal, amikor új CAKE tortát köt le tétként az összevont alapban.",
   "unstaking fee if withdrawn within %num%h": "tét lemondási díja, ha %num%h órán belül visszavonják",
   "Earn %asset%": "Nyerd el ezt: %asset%",
   "IFO Pool": "IFO összevont alap",

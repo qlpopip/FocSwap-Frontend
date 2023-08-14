@@ -1386,7 +1386,7 @@
   "Sale Finished!": "¡Venta terminada!",
   "Start in": "Comienza en",
   "Exceeded max CAKE entry": "Se superó la inscripción máxima de CAKE",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "Esto solo aplica en el transcurso de los %num% días posteriores al depósito (Stake). Si la retiras después de %num% días, no se cobrará ninguna comisión. El cronómetro se reinicia cada vez que depositas CAKE en el pool.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "Esto solo aplica en el transcurso de los %num% días posteriores al depósito (Stake). Si la retiras después de %num% días, no se cobrará ninguna comisión. El cronómetro se reinicia cada vez que depositas CAKE en el pool.",
   "unstaking fee if withdrawn within %num%h": "retirar la comisión si desistes en un plazo de %num% horas",
   "Earn %asset%": "Ganar %asset%",
   "IFO Pool": "Pool de la IFO",

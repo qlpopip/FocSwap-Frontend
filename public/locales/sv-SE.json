@@ -1386,7 +1386,7 @@
   "Sale Finished!": "Försäljning klar!",
   "Start in": "Börjar om",
   "Exceeded max CAKE entry": "Maxgränsen för antal CAKE-tokens har överskridits",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "Gäller endast i %num% dagar efter att insatsen lagts. Om den tas bort efter %num% dagar utgår ingen avgift. Timern nollställs varje gång man satsar en ny CAKE-token i poolen.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "Gäller endast i %num% dagar efter att insatsen lagts. Om den tas bort efter %num% dagar utgår ingen avgift. Timern nollställs varje gång man satsar en ny CAKE-token i poolen.",
   "unstaking fee if withdrawn within %num%h": "avgift för återkallad satsning om det sker inom %num% tim",
   "Earn %asset%": "Tjäna %asset%",
   "IFO Pool": "IF-pool",

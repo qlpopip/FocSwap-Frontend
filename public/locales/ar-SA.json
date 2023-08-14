@@ -1386,7 +1386,7 @@
   "Sale Finished!": "انتهى البيع!",
   "Start in": "يبدأ في",
   "Exceeded max CAKE entry": "تم تجاوز أقصى إدخال لـ CAKE",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "ينطبق خلال %num% من الأيام من الرهن فقط. ولن يتضمَّن فك الرهن بعد مرور %num% من الأيام أي رسوم. ستتم إعادة تعيين المؤقِّت في كل مرة ترهن فيها CAKE جديدة في التجمُّع.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "ينطبق خلال %num% من الأيام من الرهن فقط. ولن يتضمَّن فك الرهن بعد مرور %num% من الأيام أي رسوم. ستتم إعادة تعيين المؤقِّت في كل مرة ترهن فيها CAKE جديدة في التجمُّع.",
   "unstaking fee if withdrawn within %num%h": "رسوم فك الرهن في حال السحب خلال %num% س",
   "Earn %asset%": "اربح %asset%",
   "IFO Pool": "تجمُّع العرض الأولي للمزرعة (IFO)",

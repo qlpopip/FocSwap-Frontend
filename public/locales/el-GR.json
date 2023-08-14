@@ -1386,7 +1386,7 @@
   "Sale Finished!": "Η πώληση έχει τελειώσει!",
   "Start in": "Ξεκινάει σε",
   "Exceeded max CAKE entry": "Υπερβαίνει τη μέγιστη συμμετοχή σε CAKE",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "Ισχύει μόνο για τις %num% μέρες του staking. Η κατάργηση του stake όταν περάσουν οι %num% μέρες δεν χρεώνεται. Ο χρονοδιακόπτης μηδενίζει κάθε φορά που κάνετε stake νέο CAKE στην δεξαμενή.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "Ισχύει μόνο για τις %num% μέρες του staking. Η κατάργηση του stake όταν περάσουν οι %num% μέρες δεν χρεώνεται. Ο χρονοδιακόπτης μηδενίζει κάθε φορά που κάνετε stake νέο CAKE στην δεξαμενή.",
   "unstaking fee if withdrawn within %num%h": "χρώση για την κατάργηση stake, εάν γίνει πριν περάσουν %num% ώρες",
   "Earn %asset%": "Κερδίστε %asset%",
   "IFO Pool": "Δεξαμενή IFO",

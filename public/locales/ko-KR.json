@@ -1386,7 +1386,7 @@
   "Sale Finished!": "판매 완료!",
   "Start in": "시작:",
   "Exceeded max CAKE entry": "최대 CAKE 엔트리 초과함",
-  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new CAKE in the pool.": "스테이킹 후 %num%일 내에만 적용됩니다. %num%일 후 스테이킹 취소하면 수수료가 포함되지 않습니다. 풀에서 새로운 CAKE를 스테이킹할 때마다 타이머가 재설정됩니다.",
+  "Only applies within %num% days of staking. Unstaking after %num% days will not include a fee. Timer resets every time you stake new ODI in the pool.": "스테이킹 후 %num%일 내에만 적용됩니다. %num%일 후 스테이킹 취소하면 수수료가 포함되지 않습니다. 풀에서 새로운 CAKE를 스테이킹할 때마다 타이머가 재설정됩니다.",
   "unstaking fee if withdrawn within %num%h": "%num%시간 내에 인출하는 경우 예치 취소 수수료",
   "Earn %asset%": "%asset% 획득",
   "IFO Pool": "IFO 풀",
