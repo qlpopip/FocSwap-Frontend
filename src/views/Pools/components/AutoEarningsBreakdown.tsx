@@ -32,7 +32,7 @@ const AutoEarningsBreakdown: React.FC<React.PropsWithChildren<AutoEarningsBreakd
     <>
       <Text bold>
         {autoCakeToDisplay.toFixed(3)}
-        {' CAKE'}
+        {' ODI'}
       </Text>
       <Text bold>~${autoUsdToDisplay.toFixed(2)}</Text>
       <Text>{t('Earned since your last action')}:</Text>
