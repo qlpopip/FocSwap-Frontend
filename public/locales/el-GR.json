@@ -591,7 +591,7 @@
   "Your winnings": "Τα κέρδη σας",
   "Includes your original position and your winnings, minus the %fee% fee.": "Περιλαμβάνει την αρχική σας θέση και τα κέρδη σας, μείον τα τέλη %fee%.",
   "Your funds have been staked in the farm": "Τα χρήματά σας έχουν γίνει stake στην farm",
-  "Base APR (CAKE yield only)": "Βασικό APR (μόνο απόδοση CAKE)",
+  "Base APR (ODI yield only)": "Βασικό APR (μόνο απόδοση CAKE)",
   "View/Edit Numbers": "Προβολή/Επεξεργασία αριθμών",
   "Total cost": "Συνολικό κόστος",
   "Numbers are randomized, with no duplicates among your tickets. Tap a number to edit it. Available digits: 0-9": "Οι αριθμοί είναι τυχαίοι και δεν υπάρχουν διπλότυπα στα λαχεία σας. Πατήστε έναν αριθμό για να τον αλλάξετε. Διαθέσιμα ψηφία: 0-9",

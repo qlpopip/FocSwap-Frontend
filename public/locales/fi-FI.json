@@ -591,7 +591,7 @@
   "Your winnings": "Voittosi",
   "Includes your original position and your winnings, minus the %fee% fee.": "Sisältää alkuperäisen positiosi ja voittosi vähennettynä %fee% maksulla.",
   "Your funds have been staked in the farm": "Varasi on panostettu viljelmään",
-  "Base APR (CAKE yield only)": "Perus-APR (vain CAKE-tuotto)",
+  "Base APR (ODI yield only)": "Perus-APR (vain CAKE-tuotto)",
   "View/Edit Numbers": "Tarkastele/muokkaa numeroita",
   "Total cost": "Kokonaiskustannus",
   "Numbers are randomized, with no duplicates among your tickets. Tap a number to edit it. Available digits: 0-9": "Numerot on satunnaistettu siten, ettei lipuissasi ole päällekkäisiä numeroita. Muokkaa numeroa napauttamalla sitä. Käytettävissä olevat numerot: 0–9",

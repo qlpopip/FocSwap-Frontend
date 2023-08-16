@@ -591,7 +591,7 @@
   "Your winnings": "Kazançlarınız",
   "Includes your original position and your winnings, minus the %fee% fee.": "İlk pozisyonunuz ile kazançlarınızın toplamından %fee% ücretin düşülmesi ile hesaplanır.",
   "Your funds have been staked in the farm": "Fonun farm'a yatırıldı",
-  "Base APR (CAKE yield only)": "Baz APR (Yalnızca CAKE hasadı)",
+  "Base APR (ODI yield only)": "Baz APR (Yalnızca CAKE hasadı)",
   "View/Edit Numbers": "Sayıları Görüntüle/Düzenle",
   "Total cost": "Toplam maliyet",
   "Numbers are randomized, with no duplicates among your tickets. Tap a number to edit it. Available digits: 0-9": "Rakamlar rastgeledir ve biletlerin arasında yinelenen yoktur. Düzenlemek için bir numaraya dokun. Mevcut rakamlar: 0-9",

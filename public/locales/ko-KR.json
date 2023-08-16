@@ -591,7 +591,7 @@
   "Your winnings": "내 당첨",
   "Includes your original position and your winnings, minus the %fee% fee.": "원래 포지션과 당첨액을 포함하고 %fee% 수수료를 뺍니다.",
   "Your funds have been staked in the farm": "자금이 팜에 스테이킹되었습니다",
-  "Base APR (CAKE yield only)": "기본 APR(CAKE 일드만)",
+  "Base APR (ODI yield only)": "기본 APR(CAKE 일드만)",
   "View/Edit Numbers": "숫자 보기/편집",
   "Total cost": "총 비용",
   "Numbers are randomized, with no duplicates among your tickets. Tap a number to edit it. Available digits: 0-9": "숫자는 무작위로 선택되며, 티켓 간에 중복되지 않습니다. 편집하려면 숫자를 탭하세요. 사용 가능한 숫자: 0-9",

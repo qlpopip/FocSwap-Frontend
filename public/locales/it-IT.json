@@ -591,7 +591,7 @@
   "Your winnings": "Le tue vincite",
   "Includes your original position and your winnings, minus the %fee% fee.": "Include la tua posizione originale e le tue vincite, meno la commissione di %fee%.",
   "Your funds have been staked in the farm": "I tuoi fondi sono stati messi in stake nella farm",
-  "Base APR (CAKE yield only)": "APR base (solo rendimento CAKE)",
+  "Base APR (ODI yield only)": "APR base (solo rendimento CAKE)",
   "View/Edit Numbers": "Visualizza/modifica numeri",
   "Total cost": "Costo totale",
   "Numbers are randomized, with no duplicates among your tickets. Tap a number to edit it. Available digits: 0-9": "I numeri sono casuali, senza duplicati tra i tuoi biglietti. Tocca un numero per modificarlo. Cifre possibili: 0-9",

@@ -591,7 +591,7 @@
   "Your winnings": "أرباحك",
   "Includes your original position and your winnings, minus the %fee% fee.": "تتضمَّن مبلغ الرهان الأصلي وأرباحك مطروحًا منها الرسوم بقيمة %fee%.",
   "Your funds have been staked in the farm": "تم رهن أموالك في المزرعة",
-  "Base APR (CAKE yield only)": "معدل الفائدة السنوية الأساسي (عائد CAKE فقط)",
+  "Base APR (ODI yield only)": "معدل الفائدة السنوية الأساسي (عائد CAKE فقط)",
   "View/Edit Numbers": "عرض/تحرير الأرقام",
   "Total cost": "إجمالي التكلفة",
   "Numbers are randomized, with no duplicates among your tickets. Tap a number to edit it. Available digits: 0-9": "الأرقام عشوائية، دون أي تكرارات بين تذاكرك. انقر على رقم لتحريره. الأرقام المتوفرة: 0-9",

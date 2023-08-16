@@ -591,7 +591,7 @@
   "Your winnings": "Tus ganancias",
   "Includes your original position and your winnings, minus the %fee% fee.": "Incluye tu posición original y tus ganancias, menos el %fee% de comisiones.",
   "Your funds have been staked in the farm": "Tus fondos se invirtieron en la granja",
-  "Base APR (CAKE yield only)": "APR básico (solo el rendimiento en CAKE)",
+  "Base APR (ODI yield only)": "APR básico (solo el rendimiento en CAKE)",
   "View/Edit Numbers": "Visualizar/Editar los números",
   "Total cost": "Costo total",
   "Numbers are randomized, with no duplicates among your tickets. Tap a number to edit it. Available digits: 0-9": "Los números se distribuyen aleatoriamente, y no hay duplicados entre tus billetes. Pulsa sobre un número para editarlo. Dígitos disponibles: del 0 al 9",

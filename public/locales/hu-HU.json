@@ -591,7 +591,7 @@
   "Your winnings": "Az Ön nyereménye",
   "Includes your original position and your winnings, minus the %fee% fee.": "Tartalmazza az eredeti pozícióját és a nyereményét, a %fee% díj levonásával.",
   "Your funds have been staked in the farm": "Pénzeszközeit lekötötte a hozamfarmban",
-  "Base APR (CAKE yield only)": "Alap APR (csak CAKE hozam)",
+  "Base APR (ODI yield only)": "Alap APR (csak CAKE hozam)",
   "View/Edit Numbers": "Számok megtekintése/szerkesztése",
   "Total cost": "Teljes költség",
   "Numbers are randomized, with no duplicates among your tickets. Tap a number to edit it. Available digits: 0-9": "A számok véletlenszerűek, a szelvények között nincs másolat. Koppintson egy számra a szerkesztéshez. Elérhető számjegyek: 0–9",

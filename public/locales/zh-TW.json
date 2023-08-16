@@ -591,7 +591,7 @@
   "Your winnings": "您的彩金",
   "Includes your original position and your winnings, minus the %fee% fee.": "包括您的原始部位和您的彩金，減去 %fee% 費用。",
   "Your funds have been staked in the farm": "您的資金已在農場中質押",
-  "Base APR (CAKE yield only)": "基準年利率 (僅 CAKE 收益)",
+  "Base APR (ODI yield only)": "基準年利率 (僅 CAKE 收益)",
   "View/Edit Numbers": "檢視/編輯號碼",
   "Total cost": "總成本",
   "Numbers are randomized, with no duplicates among your tickets. Tap a number to edit it. Available digits: 0-9": "號碼隨機選取，且您的票券中無重複號碼。點按一個號碼即可進行編輯。可用數字：0-9",
