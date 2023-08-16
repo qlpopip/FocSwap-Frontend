@@ -63,7 +63,7 @@ export const livePools: SerializedPoolConfig[] = [
       5: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
       56: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
       97: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
-      1001: '0xdE2e61AccDe6e7C9a0061D2B80427B6F2710FFEf',
+      1001: '0xdd195cE84Dd35b1615e73b1259DA88A03372E4fE',
     },
     poolCategory: PoolCategory.COMMUNITY,
     tokenPerBlock: '1',
