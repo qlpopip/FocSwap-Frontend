@@ -89,6 +89,7 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
   const { theme } = useTheme()
   const { toastSuccess } = useToast()
   const [stakeAmount, setStakeAmount] = useState('')
+  const [vaultAmount, setVaultAmount] = useState('')
   const [percent, setPercent] = useState(0)
   const [showRoiCalculator, setShowRoiCalculator] = useState(false)
   const { hasUnstakingFee } = useWithdrawalFeeTimer(parseInt(lastDepositedTime, 10), userShares)
@@ -115,6 +116,7 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
 
   const getTokenLink = stakingToken.address ? `/swap?outputCurrency=${stakingToken.address}` : '/swap'
   const convertedStakeAmount = getDecimalAmount(new BigNumber(stakeAmount), stakingToken.decimals)
+  const VaultStakeAmount = getDecimalAmount(new BigNumber(vaultAmount), stakingToken.decimals)
 
   const handleStakeInputChange = (input: string) => {
     if (input) {
@@ -130,25 +132,24 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
   const handleChangePercent = useCallback(
     (sliderPercent: number) => {
       if (sliderPercent > 0) {
-        if (isRemovingStake && vaultKey) {
-          const percentageOfUserShares = userShares.dividedBy(100).multipliedBy(sliderPercent);
-          const amountToStake = getFullDisplayBalance(
-            percentageOfUserShares,
-            stakingToken.decimals,
-            stakingToken.decimals
-          );
-          setStakeAmount(amountToStake);
-        } else {
-          const percentageOfStakingMax = stakingMax.dividedBy(100).multipliedBy(sliderPercent);
-          const amountToStake = getFullDisplayBalance(
-            percentageOfStakingMax,
-            stakingToken.decimals,
-            stakingToken.decimals
-          );
-          setStakeAmount(amountToStake);
-        }
+        const percentageOfStakingMax = stakingMax.dividedBy(100).multipliedBy(sliderPercent)
+        const percentageOfVaultMax = userShares.dividedBy(100).multipliedBy(sliderPercent)
+        const amountToStake = getFullDisplayBalance(
+          percentageOfStakingMax,
+          stakingToken.decimals,
+          stakingToken.decimals,
+        )
+
+        const amountToVaultStake = getFullDisplayBalance(
+          percentageOfVaultMax,
+          stakingToken.decimals,
+          stakingToken.decimals,
+        )
+        setStakeAmount(amountToStake)
+        setVaultAmount(amountToVaultStake)
       } else {
         setStakeAmount('');
+        setVaultAmount('');
       }
       setPercent(sliderPercent);
     },
@@ -165,8 +166,8 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
       // as suggested here https://github.com/ChainSafe/web3.js/issues/2077
       return isWithdrawingAll
         ? callWithGasPrice(vaultPoolContract, 'withdraw', undefined, callOptions)
-        : callWithGasPrice(vaultPoolContract, 'withdraw', [convertedStakeAmount.toString()], callOptions)
-    })
+        : callWithGasPrice(vaultPoolContract, 'withdraw', [vaultKey ? VaultStakeAmount.toString() : convertedStakeAmount.toString()], callOptions)
+    });    
 
     if (receipt?.status) {
       toastSuccess(
@@ -246,11 +247,7 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
         decimals={stakingToken.decimals}
       />
       <Text mt="8px" ml="auto" color="textSubtle" fontSize="12px" mb="8px">
-        {isRemovingStake && vaultKey ? (
-          t('Balance: %balance%', { balance: getFullDisplayBalance(userShares, stakingToken.decimals) })
-        ) : (
-          t('Balance: %balance%', { balance: getFullDisplayBalance(stakingMax, stakingToken.decimals) })
-        )}
+        {t('Balance: %balance%', { balance: getFullDisplayBalance(stakingMax, stakingToken.decimals) })}
       </Text>
       <Slider
         min={0}
