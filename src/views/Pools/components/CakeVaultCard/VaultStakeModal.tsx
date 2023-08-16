@@ -130,20 +130,31 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
   const handleChangePercent = useCallback(
     (sliderPercent: number) => {
       if (sliderPercent > 0) {
-        const percentageOfStakingMax = stakingMax.dividedBy(100).multipliedBy(sliderPercent)
-        const amountToStake = getFullDisplayBalance(
-          percentageOfStakingMax,
-          stakingToken.decimals,
-          stakingToken.decimals,
-        )
-        setStakeAmount(amountToStake)
+        if (isRemovingStake && vaultKey) {
+          const percentageOfUserShares = userShares.dividedBy(100).multipliedBy(sliderPercent);
+          const amountToStake = getFullDisplayBalance(
+            percentageOfUserShares,
+            stakingToken.decimals,
+            stakingToken.decimals
+          );
+          setStakeAmount(amountToStake);
+        } else {
+          const percentageOfStakingMax = stakingMax.dividedBy(100).multipliedBy(sliderPercent);
+          const amountToStake = getFullDisplayBalance(
+            percentageOfStakingMax,
+            stakingToken.decimals,
+            stakingToken.decimals
+          );
+          setStakeAmount(amountToStake);
+        }
       } else {
-        setStakeAmount('')
+        setStakeAmount('');
       }
-      setPercent(sliderPercent)
+      setPercent(sliderPercent);
     },
-    [stakingMax, stakingToken.decimals],
-  )
+    [isRemovingStake, vaultKey, stakingMax, userShares, stakingToken.decimals]
+  );
+  
 
   const handleWithdrawal = async () => {
     // trigger withdrawAll function if the withdrawal will leave 0.00001 CAKE or less
@@ -235,7 +246,11 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
         decimals={stakingToken.decimals}
       />
       <Text mt="8px" ml="auto" color="textSubtle" fontSize="12px" mb="8px">
-        {t('Balance: %balance%', { balance: getFullDisplayBalance(stakingMax, stakingToken.decimals) })}
+        {isRemovingStake && vaultKey ? (
+          t('Balance: %balance%', { balance: getFullDisplayBalance(userShares, stakingToken.decimals) })
+        ) : (
+          t('Balance: %balance%', { balance: getFullDisplayBalance(stakingMax, stakingToken.decimals) })
+        )}
       </Text>
       <Slider
         min={0}
@@ -256,7 +271,7 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
         <StyledButton scale="xs" mx="2px" p="4px 16px" variant="tertiary" onClick={() => handleChangePercent(75)}>
           75%
         </StyledButton>
-        <StyledButton scale="xs" mx="2px" p="4px 16px" variant="tertiary" onClick={() => handleChangePercent(100)}>
+        <StyledButton scale="xs" mx="2px" p="4px 16px" variant="tertiary" onClick={() => handleChangePercent(99.999)}>
           {t('Max')}
         </StyledButton>
       </Flex>
