@@ -92,7 +92,7 @@ export const USDT_BSC = new Token(
 
 export const USDT_BAOBAB = new Token(
   ChainId.BAOBAB,
-  '0x80fc0d8652c784f1c5289fbea90f77ba474b489f',
+  '0x861F86BC2671fD1E2c60602F5b7f24BB731f5F95',
   18,
   'oUSDT',
   'Tether USD',

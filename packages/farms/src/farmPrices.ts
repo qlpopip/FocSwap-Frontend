@@ -187,7 +187,7 @@ const nativeStableLpMap = {
   [ChainId.BAOBAB]: {
     address: '0x378bc901891e718c0bddae7245295c6db21bfc7e',
     wNative: 'WKLAY',
-    stable: 'USDC',
+    stable: 'oUSDT',
   },
   
 }
