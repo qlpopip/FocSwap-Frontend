@@ -122,7 +122,14 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
     if (input) {
       const convertedInput = new BigNumber(input).multipliedBy(getFullDecimalMultiplier(stakingToken.decimals))
       const percentage = Math.floor(convertedInput.dividedBy(stakingMax).multipliedBy(100).toNumber())
+      const percentageOfVaultMax = userShares.dividedBy(100).multipliedBy(percentage)
       setPercent(percentage > 100 ? 100 : percentage)
+      const amountToVaultStake = getFullDisplayBalance(
+        percentageOfVaultMax,
+        stakingToken.decimals,
+        stakingToken.decimals,
+      )
+      setVaultAmount(amountToVaultStake)
     } else {
       setPercent(0)
     }

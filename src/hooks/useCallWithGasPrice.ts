@@ -35,7 +35,6 @@ export function useCallWithGasPrice() {
       })
 
       const contractMethod = get(contract, methodName)
-      console.log(methodName)
       const hasManualGasPriceOverride = overrides?.gasPrice
       const tx = await contractMethod(
         ...methodArgs,
