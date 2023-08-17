@@ -121,7 +121,7 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
   const handleStakeInputChange = (input: string) => {
     if (input) {
       const convertedInput = new BigNumber(input).multipliedBy(getFullDecimalMultiplier(stakingToken.decimals))
-      const percentage = Math.floor(convertedInput.dividedBy(stakingMax).multipliedBy(100).toNumber())
+      const percentage = convertedInput.dividedBy(stakingMax).multipliedBy(100).toNumber()
       const percentageOfVaultMax = userShares.dividedBy(100).multipliedBy(percentage)
       setPercent(percentage > 100 ? 100 : percentage)
       const amountToVaultStake = getFullDisplayBalance(
@@ -135,7 +135,6 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
     }
     setStakeAmount(input)
   }
-
   const handleChangePercent = useCallback(
     (sliderPercent: number) => {
       if (sliderPercent > 0) {
@@ -275,7 +274,7 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
         <StyledButton scale="xs" mx="2px" p="4px 16px" variant="tertiary" onClick={() => handleChangePercent(75)}>
           75%
         </StyledButton>
-        <StyledButton scale="xs" mx="2px" p="4px 16px" variant="tertiary" onClick={() => handleChangePercent(99.999)}>
+        <StyledButton scale="xs" mx="2px" p="4px 16px" variant="tertiary" onClick={() => handleChangePercent(99.99999)}>
           {t('Max')}
         </StyledButton>
       </Flex>
