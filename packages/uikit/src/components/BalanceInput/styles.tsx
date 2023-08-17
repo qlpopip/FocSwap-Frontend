@@ -12,11 +12,12 @@ export const SwitchUnitsButton = styled(IconButton)`
 export const UnitContainer = styled(Text)`
   margin-left: 4px;
   text-align: right;
-  color: ${({ theme }) => theme.colors.textSubtle};
+  color: ${({ theme }) => theme.colors.primaryDark};
   white-space: nowrap;
 `;
 
 export const StyledBalanceInput = styled(Box)<{ isWarning: BalanceInputProps["isWarning"] }>`
+  color: '#FFF';
   background-color: ${({ theme }) => theme.colors.input};
   border: 1px solid ${({ theme }) => theme.colors.inputSecondary};
   border-radius: 16px;
