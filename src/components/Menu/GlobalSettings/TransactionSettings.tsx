@@ -177,6 +177,7 @@ const SlippageTabs = () => {
           <Box width="52px" mt="4px">
             <Input
               scale="sm"
+              style={{ color: 'black' }}
               inputMode="numeric"
               pattern="^[0-9]+$"
               isWarning={!!deadlineError}
