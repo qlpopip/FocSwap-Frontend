@@ -6,23 +6,20 @@ import { BalanceWithLoading } from 'components/Balance'
 import { useVaultPoolByKey } from 'state/pools/hooks'
 import { DeserializedPool, VaultKey, DeserializedLockedCakeVault } from 'state/types'
 import { getVaultPosition, VaultPosition } from 'utils/cakePool'
-import BigNumber from 'bignumber.js'
-// import { useVaultApy } from 'hooks/useVaultApy'
-import { BIG_ZERO } from 'utils/bigNumber'
 import useToast from 'hooks/useToast'
 import { ToastDescriptionWithTx } from 'components/Toast'
 import { PoolCategory } from 'config/constants/types'
+import useCatchTxError from 'hooks/useCatchTxError'
 import useHarvestPool from '../../../hooks/useHarvestPool'
 import { ActionContainer, ActionTitles, ActionContent, RowActionContainer } from './styles'
 import UnstakingFeeCountdownRow from '../../CakeVaultCard/UnstakingFeeCountdownRow'
 import useUserDataInVaultPresenter from '../../LockedPool/hooks/useUserDataInVaultPresenter'
-import useCatchTxError from 'hooks/useCatchTxError'
+
 
 const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<DeserializedPool>> = ({
   sousId,
   poolCategory,
   earningToken,
-  userData,
   userDataLoaded,
   earningTokenPrice,
   vaultKey,
@@ -53,10 +50,7 @@ const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<Deseria
   })
 
   // const { boostFactor } = useVaultApy({ duration: secondDuration })
-  const earnings = vaultData.userData?.userShares ? new BigNumber(vaultData.userData.userShares) : BIG_ZERO
-  const hasEarnings = earnings.gt(0)
   const isBnbPool = poolCategory === PoolCategory.BINANCE
-  const isCompoundPool = sousId === 0
   const vaultPosition = getVaultPosition(vaultData.userData)
   const { onReward } = useHarvestPool(sousId, isBnbPool)
   const { fetchWithCatchTxError, loading: pendingTx } = useCatchTxError()
@@ -75,7 +69,7 @@ const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<Deseria
         toastSuccess(
           `${t('Harvested')}!`,
           <ToastDescriptionWithTx txHash={receipt.transactionHash}>
-            {t('Your %symbol% earnings have been sent to your wallet!', { symbol: earningToken.symbol })}
+            {t('Your %symbol% fee have been sent to your wallet!', { symbol: earningToken.symbol })}
           </ToastDescriptionWithTx>,
         )
       }
@@ -143,7 +137,7 @@ const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<Deseria
             {/* IFO credit here */}
           </Flex>
           <Button onClick={handleHarvestConfirm}>
-          {isCompoundPool ? t('Harvest') : t('Harvest')}
+            {t('Harvest')}
         </Button>
         </ActionContent>
       </Box>

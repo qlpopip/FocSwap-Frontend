@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import Trans from 'components/Trans'
 import { VaultKey } from 'state/types'
-import { baobabTokens, bscTokens, goerliTestnetTokens } from '@pancakeswap/tokens'
+import { baobabTokens, bscTokens} from '@pancakeswap/tokens'
 import { SerializedPoolConfig, PoolCategory } from './types'
 
 export const MAX_LOCK_DURATION = 31536000

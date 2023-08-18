@@ -3,8 +3,8 @@ import { BIG_ZERO } from 'utils/bigNumber'
 import getGasPrice from 'utils/getGasPrice'
 import { useSousChef, useVaultPoolContract } from 'hooks/useContract'
 import { BOOSTED_FARM_GAS_LIMIT } from 'config'
-import { CakeVault } from 'config/abi/types'
 import { VaultKey } from 'state/types'
+
 const options = {
   gasLimit: BOOSTED_FARM_GAS_LIMIT,
 }
@@ -25,26 +25,22 @@ const harvestVault = async (VaultContract) => {
 }
 
 const useHarvestPool = (sousId, isUsingBnb = false) => {
-  let vaultkey;
-  const sousChefContract = useSousChef(sousId)
-  if(sousId === 0){
-    vaultkey = VaultKey.CakeVault
-    const VaultContract = useVaultPoolContract(vaultkey)
-    const handleVault = useCallback(async () => {
-      return harvestVault(VaultContract)
-    },[VaultContract])
+  const sousChefContract = useSousChef(sousId);
+  const VaultContract = useVaultPoolContract(VaultKey.CakeVault);
 
-    return {onReward: handleVault}
-  }
+  const handleVault = useCallback(async () => {
+    return harvestVault(VaultContract);
+  }, [VaultContract]);
+
   const handleHarvest = useCallback(async () => {
     if (isUsingBnb) {
-      return harvestPoolBnb(sousChefContract)
+      return harvestPoolBnb(sousChefContract);
     }
+    return harvestPool(sousChefContract);
+  }, [isUsingBnb, sousChefContract]);
 
-    return harvestPool(sousChefContract)
-  }, [isUsingBnb, sousChefContract])
+  return sousId === 0 ? { onReward: handleVault } : { onReward: handleHarvest };
+};
 
-  return { onReward: handleHarvest }
-}
 
 export default useHarvestPool
