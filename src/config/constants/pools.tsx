@@ -125,7 +125,7 @@ export const livePools: SerializedPoolConfig[] = [
     tokenPerBlock: '1',
     isFinished: false,
   },
-  {
+  /*{
     sousId: 5,
     stakingToken: baobabTokens.lcg,
     earningToken: baobabTokens.odi,
@@ -138,7 +138,7 @@ export const livePools: SerializedPoolConfig[] = [
     poolCategory: PoolCategory.COMMUNITY,
     tokenPerBlock: '0.1',
     isFinished: false,
-  },
+  },*/
   {
     sousId: 6,
     stakingToken: baobabTokens.aaa,
