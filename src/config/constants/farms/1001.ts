@@ -12,7 +12,7 @@ const farms: SerializedFarmConfig[] = [
   {
     pid: 2,
     lpSymbol: 'KLAY-oUSDT LP',
-    lpAddress: '0x4a70d74cf66b1d8bbeddaceb058943aa78dd2c8b',
+    lpAddress: '0x4A70d74Cf66B1d8bbEddacEB058943Aa78DD2C8B',
     token: baobabTokens.weth,
     quoteToken: baobabTokens.usdt,
   },
