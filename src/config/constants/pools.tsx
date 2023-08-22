@@ -125,20 +125,20 @@ export const livePools: SerializedPoolConfig[] = [
     tokenPerBlock: '1',
     isFinished: false,
   },
-  /*{
-    sousId: 5,
-    stakingToken: baobabTokens.lcg,
-    earningToken: baobabTokens.odi,
-    contractAddress: {
-      5: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
-      56: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
-      97: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
-      1001: '0x2f2fed97188f54409ccabd85ea0a25e3a436dc1a',
-    },
-    poolCategory: PoolCategory.COMMUNITY,
-    tokenPerBlock: '0.1',
-    isFinished: false,
-  },*/
+  //{
+   // sousId: 5,
+    //stakingToken: baobabTokens.lcg,
+    //earningToken: baobabTokens.odi,
+    //contractAddress: {
+    //  5: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
+    //  56: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
+    //  97: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
+    //  1001: '0x2f2fed97188f54409ccabd85ea0a25e3a436dc1a',
+    //},
+    //poolCategory: PoolCategory.COMMUNITY,
+    //tokenPerBlock: '0.1',
+    //isFinished: false,
+  //},
   {
     sousId: 6,
     stakingToken: baobabTokens.aaa,
