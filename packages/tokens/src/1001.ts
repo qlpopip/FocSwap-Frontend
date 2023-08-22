@@ -3,9 +3,9 @@ import { USDC_BAOBAB } from './common'
 //수정
 export const baobabTokens = {
   weth: WETH9[ChainId.BAOBAB],
-  odi: new Token(ChainId.BAOBAB, '0xdE2e61AccDe6e7C9a0061D2B80427B6F2710FFEf', 18, 'ODI', 'ODI Token', ''),
-  usdt: new Token(ChainId.BAOBAB, '0x80Fc0d8652C784f1C5289FBea90f77Ba474B489f', 18, 'oUSDT', 'oUSDT Token', ''),
-  lcg: new Token(ChainId.BAOBAB, '0xccd181cab7bd20fb7b4b4fdf6d8fe0f77dd6db35', 18, 'LCG', 'LCG Token', ''),
+  odi: new Token(ChainId.BAOBAB, '0xA3cC8931C919023240aD9eE3Df6497ae5a40b4D1', 18, 'ODI', 'ODI Token', ''),
+  usdt: new Token(ChainId.BAOBAB, '0x86eF3B9d8FA7050F8CbBf56CAB762F5C642D054d', 18, 'oUSDT', 'oUSDT Token', ''),
+  lcg: new Token(ChainId.BAOBAB, '0x286A9832a28aD177EdCBAa1f78A842B1013019d4', 18, 'LCG', 'LCG Token', ''),
   aaa: new Token(ChainId.BAOBAB, '0x9967a82d580a94724471ce331c8eb7b882e41ac5', 18, 'AAA', 'AAA Token', ''),
   usdc: USDC_BAOBAB
 }

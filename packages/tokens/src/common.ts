@@ -29,7 +29,7 @@ export const CAKE_GOERLI = new Token(
 //수정
 export const CAKE_BAOBAB = new Token(
   ChainId.BAOBAB,
-  '0xdE2e61AccDe6e7C9a0061D2B80427B6F2710FFEf',
+  '0xA3cC8931C919023240aD9eE3Df6497ae5a40b4D1',
   18,
   'ODI',
   'ODI Token',
