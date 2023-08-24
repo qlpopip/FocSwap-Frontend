@@ -4,7 +4,8 @@ import { ChainLogo } from 'components/Logo/ChainLogo'
 const mapping = {
   [ChainId.BSC]: 'smartchain',
   [ChainId.ETHEREUM]: 'ethereum',
-  [ChainId.BAOBAB]: 'klaytn'
+  [ChainId.BAOBAB]: 'klaytn',
+  [ChainId.KLAYTN]: 'klaytn'
 }
 
 const getTokenLogoURL = (token?: Token) => {

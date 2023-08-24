@@ -419,6 +419,9 @@ export function useGasPrice(): string {
   if (chainId === ChainId.BAOBAB) {
     return userGas
   }
+  if (chainId === ChainId.KLAYTN) {
+    return userGas
+  }
   return data?.formatted?.gasPrice
 }
 

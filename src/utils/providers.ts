@@ -6,6 +6,10 @@ export const bscRpcProvider = new StaticJsonRpcProvider(BSC_PROD_NODE)
 
 export const Baobabprodnode = 'https://public-en-baobab.klaytn.net/'
 
+export const Klaytnprodnode = 'https://public-en-cypress.klaytn.net/'
+
 export const baobabRpcProvider = new StaticJsonRpcProvider(Baobabprodnode)
+
+export const klaytnRpcProvider = new StaticJsonRpcProvider(Klaytnprodnode)
 
 export default null

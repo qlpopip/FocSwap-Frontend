@@ -1,6 +1,6 @@
 import { ChainId, JSBI, Percent, Token, WNATIVE, WBNB } from '@pancakeswap/sdk'
 import { BigNumber } from '@ethersproject/bignumber'
-import { bscTokens, bscTestnetTokens, USDC, USDT, BUSD, baobabTokens } from '@pancakeswap/tokens'
+import { bscTokens, bscTestnetTokens, USDC, USDT, BUSD, baobabTokens, klaytnTokens } from '@pancakeswap/tokens'
 import { ChainMap, ChainTokenList } from './types'
 
 export const ROUTER_ADDRESS: ChainMap<string> = {
@@ -10,6 +10,7 @@ export const ROUTER_ADDRESS: ChainMap<string> = {
   [ChainId.BSC]: '0x10ED43C718714eb63d5aA57B78B54704E256024E',
   [ChainId.BSC_TESTNET]: '0xD99D1c33F9fC3444f8101754aBC46c52416550D1',
   [ChainId.BAOBAB]: '0xec439a2b276DE791c0fCEE73450f6DcB96A7726A',
+  [ChainId.KLAYTN]: '0x6FC56a0D502AA30791e949E1b7D05dA58635023b',
 } // 수정
 
 // used to construct intermediary pairs for trading
@@ -34,6 +35,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
   [ChainId.BAOBAB]: [WNATIVE[ChainId.BAOBAB], USDT[ChainId.BAOBAB], baobabTokens.odi],
+  [ChainId.KLAYTN]: [WNATIVE[ChainId.KLAYTN], USDT[ChainId.KLAYTN], klaytnTokens.odi, klaytnTokens.lcg],
 }
 
 /**
@@ -60,6 +62,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.BSC]: [bscTokens.busd, bscTokens.cake, bscTokens.btcb],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
   [ChainId.BAOBAB]: [USDT[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB], baobabTokens.odi, baobabTokens.aaa],
+  [ChainId.KLAYTN]: [USDT[ChainId.KLAYTN], WNATIVE[ChainId.KLAYTN], klaytnTokens.odi, klaytnTokens.lcg],
 }
 
 // used to construct the list of all pairs we consider by default in the frontend
@@ -76,6 +79,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.BSC]: [bscTokens.wbnb, bscTokens.dai, bscTokens.busd, bscTokens.usdt, bscTokens.cake],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
   [ChainId.BAOBAB]: [USDT[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB], baobabTokens.odi],
+  [ChainId.KLAYTN]: [USDT[ChainId.KLAYTN], WNATIVE[ChainId.KLAYTN], klaytnTokens.odi],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {

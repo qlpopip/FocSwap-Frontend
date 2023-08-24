@@ -11,6 +11,7 @@ export enum ChainId {
   BSC = 56,
   BSC_TESTNET = 97,
   BAOBAB = 1001,
+  KLAYTN = 8217,
 }
 
 export enum TradeType {
@@ -36,6 +37,7 @@ export const FACTORY_ADDRESS_MAP: Record<number, string> = {
   [ChainId.BSC]: FACTORY_ADDRESS,
   [ChainId.BSC_TESTNET]: '0x6725f303b657a9451d8ba641348b6761a6cc7a17',
   [ChainId.BAOBAB]: '0xcb78A0AC1DfEfDD1b0a6F317AFA181D7B2bcCace',
+  [ChainId.KLAYTN]: '0xef2E94DDB76e128B1aB74a7433d26879A1a15f75',
 }
 export const INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5'
 
@@ -47,6 +49,7 @@ export const INIT_CODE_HASH_MAP: Record<number, string> = {
   [ChainId.BSC]: INIT_CODE_HASH,
   [ChainId.BSC_TESTNET]: '0xd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66',
   [ChainId.BAOBAB]: '0x29bd6d25b5a86f6ac94daf96ae9932a8109dee0e95aff78c7c9d38ee24fd6f88',
+  [ChainId.KLAYTN]: '0x29bd6d25b5a86f6ac94daf96ae9932a8109dee0e95aff78c7c9d38ee24fd6f88',
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
@@ -107,6 +110,14 @@ export const WETH9 = {
     'Wrapped KLAY',
     'https://weth.io'
   ),
+  [ChainId.KLAYTN]: new Token(
+    ChainId.KLAYTN,
+    '0x19aac5f612f524b754ca7e7c41cbfa2e981a4432',
+    18,
+    'WKLAY',
+    'Wrapped KLAY',
+    'https://weth.io'
+  ),
 }
 
 export const WBNB = {
@@ -143,6 +154,8 @@ export const WNATIVE: Record<number, Token> = {
   [ChainId.BSC]: WBNB[ChainId.BSC],
   [ChainId.BSC_TESTNET]: WBNB[ChainId.BSC_TESTNET],
   [ChainId.BAOBAB]: WETH9[ChainId.BAOBAB],
+  [ChainId.KLAYTN]: WETH9[ChainId.KLAYTN],
+
 }
 
 export const NATIVE: Record<
@@ -157,6 +170,8 @@ export const NATIVE: Record<
   [ChainId.RINKEBY]: { name: 'Rinkeby Ether', symbol: 'RIN', decimals: 18 },
   [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
   [ChainId.BAOBAB]: { name: 'Baobab Klay', symbol: 'KLAY', decimals: 18 },
+  [ChainId.KLAYTN]: { name: 'Klay', symbol: 'KLAY', decimals: 18 },
+
   [ChainId.BSC]: {
     name: 'Binance Chain Native Token',
     symbol: 'BNB',

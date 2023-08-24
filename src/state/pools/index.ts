@@ -19,7 +19,7 @@ import { getCakeVaultAddress, getCakeFlexibleSideVaultAddress } from 'utils/addr
 import { multicallv2 } from 'utils/multicall'
 import { baobabTokens, bscTokens } from '@pancakeswap/tokens'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { bscRpcProvider, baobabRpcProvider } from 'utils/providers'
+import { bscRpcProvider, baobabRpcProvider, klaytnRpcProvider} from 'utils/providers'
 import { getPoolsPriceHelperLpFiles } from 'config/constants/priceHelperLps/index'
 import getFarmsPrices from '../farms/getFarmsPrices'
 import {
@@ -139,7 +139,7 @@ export const fetchPoolsPublicDataAsync =
         fetchPoolsBlockLimits(),
         fetchPoolsTotalStaking(),
         fetchPoolsProfileRequirement(),
-        currentBlockNumber ? Promise.resolve(currentBlockNumber) : baobabRpcProvider.getBlockNumber(),
+        currentBlockNumber ? Promise.resolve(currentBlockNumber) : klaytnRpcProvider.getBlockNumber(),
       ])
 
       const blockLimitsSousIdMap = fromPairs(blockLimits.map((entry) => [entry.sousId, entry]))

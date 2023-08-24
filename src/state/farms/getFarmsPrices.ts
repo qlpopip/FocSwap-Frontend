@@ -155,4 +155,9 @@ const nativeStableLpMap = {
     wNative: 'WKLAY',
     stable: 'oUSDT',
   }, // 수정
+  8217: {
+    address: '0x4A70d74Cf66B1d8bbEddacEB058943Aa78DD2C8B',
+    wNative: 'WKLAY',
+    stable: 'oUSDT',
+  }, // 수정
 }

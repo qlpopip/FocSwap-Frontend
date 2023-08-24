@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import Trans from 'components/Trans'
 import { VaultKey } from 'state/types'
-import { baobabTokens, bscTokens} from '@pancakeswap/tokens'
+import { baobabTokens, bscTokens, klaytnTokens} from '@pancakeswap/tokens'
 import { SerializedPoolConfig, PoolCategory } from './types'
 
 export const MAX_LOCK_DURATION = 31536000
@@ -57,32 +57,33 @@ export const livePools: SerializedPoolConfig[] = [
   // 수정
   {
     sousId: 0,
-    stakingToken: baobabTokens.odi,
-    earningToken: baobabTokens.odi,
+    stakingToken: klaytnTokens.odi,
+    earningToken: klaytnTokens.odi,
     contractAddress: {
       5: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
       56: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
       97: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
       1001: '0xF0681e41ee14467FF719BF86677c9F7246CA97FB',
+      8217: '0xF90F20175539218044277D2862D301CF5ffaf190'
     },
     poolCategory: PoolCategory.COMMUNITY,
     tokenPerBlock: '1',
     isFinished: false,
   },
-  {
-    sousId: 1,
-    stakingToken: baobabTokens.lcg,
-    earningToken: baobabTokens.odi,
-    contractAddress: {
-      5: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
-      56: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
-      97: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
-      1001: '0x5339da8da6049e74b9e3f30b376c08ea81d96752',
-    },
-    poolCategory: PoolCategory.COMMUNITY,
-    tokenPerBlock: '0.1',
-    isFinished: false,
-  },
+  // {
+  //   sousId: 1,
+  //   stakingToken: baobabTokens.lcg,
+  //   earningToken: baobabTokens.odi,
+  //   contractAddress: {
+  //     5: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
+  //     56: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
+  //     97: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
+  //     1001: '0x5339da8da6049e74b9e3f30b376c08ea81d96752',
+  //   },
+  //   poolCategory: PoolCategory.COMMUNITY,
+  //   tokenPerBlock: '0.1',
+  //   isFinished: false,
+  // },
   //  {
   //   sousId: 2,
   //   stakingToken: baobabTokens.lcg,

@@ -36,6 +36,15 @@ export const CAKE_BAOBAB = new Token(
   'https://pancakeswap.finance/',
 )
 
+export const CAKE_KLAYTN = new Token(
+  ChainId.KLAYTN,
+  '0x044925B7c6AA8EF03Ad294Bc48EDC1a2c3877a6D',
+  18,
+  'ODI',
+  'ODI Token',
+  'https://pancakeswap.finance/',
+)
+
 export const USDC_BSC = new Token(
   ChainId.BSC,
   '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
@@ -99,6 +108,15 @@ export const USDT_BAOBAB = new Token(
   'https://tether.to/',
 )
 
+export const USDT_KLAYTN = new Token(
+  ChainId.KLAYTN,
+  '0xceE8FAF64bB97a73bb51E115Aa89C17FfA8dD167',
+  18,
+  'oUSDT',
+  'Tether USD',
+  'https://tether.to/',
+)
+
 export const USDT_ETH = new Token(
   ChainId.ETHEREUM,
   '0xdAC17F958D2ee523a2206206994597C13D831ec7',
@@ -155,7 +173,7 @@ export const BUSD_GOERLI = new Token(
 
 export const BUSD_BAOBAB = new Token(
   ChainId.BAOBAB,
-  '0xb809b9B2dc5e93CB863176Ea2D565425B03c0540',
+  '0x210bc03f49052169d5588a52c317f71cf2078b85',
   18,
   'BUSD',
   'Binance USD',
@@ -169,6 +187,7 @@ export const BUSD: Record<ChainId, Token> = {
   [ChainId.BSC]: BUSD_BSC,
   [ChainId.BSC_TESTNET]: BUSD_TESTNET,
   [ChainId.BAOBAB]: BUSD_BAOBAB,
+  [ChainId.KLAYTN]: BUSD_BAOBAB,
 }
 
 export const CAKE = {
@@ -176,6 +195,7 @@ export const CAKE = {
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
   [ChainId.GOERLI]: CAKE_GOERLI,
   [ChainId.BAOBAB]: CAKE_BAOBAB,
+  [ChainId.KLAYTN]: CAKE_KLAYTN,
 }
 
 export const USDC = {
@@ -190,5 +210,7 @@ export const USDC = {
 export const USDT = {
   [ChainId.BSC]: USDT_BSC,
   [ChainId.ETHEREUM]: USDT_ETH,
-  [ChainId.BAOBAB]: USDT_BAOBAB
+  [ChainId.BAOBAB]: USDT_BAOBAB,
+  [ChainId.KLAYTN]: USDT_KLAYTN,
+
 }

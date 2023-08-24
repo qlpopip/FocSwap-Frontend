@@ -1,5 +1,5 @@
 import { BinanceWalletConnector } from '@pancakeswap/wagmi/connectors/binanceWallet'
-import { baobab, bsc, bscTest, goerli, rinkeby } from '@pancakeswap/wagmi/chains'
+import { baobab, bsc, bscTest, goerli, klaytn, rinkeby } from '@pancakeswap/wagmi/chains'
 import { configureChains, createClient } from 'wagmi'
 import memoize from 'lodash/memoize'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
@@ -18,6 +18,7 @@ const CHAINS = [
   // rinkeby,
   // goerli,
   baobab,
+  klaytn,
 ]
 
 const getNodeRealUrl = (networkName: string) => {

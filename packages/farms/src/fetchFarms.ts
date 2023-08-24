@@ -670,7 +670,7 @@ const masterChefV2Abi = [
 
 const masterChefFarmCalls = (farm: SerializedFarmConfig, isTestnet: boolean, masterChefAddresses) => {
   const { pid } = farm
-  const masterChefAddress = isTestnet ? masterChefAddresses[ChainId.BAOBAB] : masterChefAddresses[ChainId.BAOBAB]
+  const masterChefAddress = isTestnet ? masterChefAddresses[ChainId.KLAYTN] : masterChefAddresses[ChainId.KLAYTN]
 
   return pid || pid === 0
     ? {
@@ -694,7 +694,7 @@ export const fetchMasterChefData = async (
     const masterChefMultiCallResult = await multicall({
       abi: masterChefV2Abi,
       calls: masterChefAggregatedCalls,
-      chainId: isTestnet ? ChainId.BAOBAB : ChainId.BSC,
+      chainId: isTestnet ? ChainId.KLAYTN : ChainId.KLAYTN,
     })
 
     let masterChefChunkedResultCounter = 0
@@ -722,7 +722,7 @@ export const fetchMasterChefV2Data = async ({
   masterChefAddresses
 }) => {
   try {
-    const masterChefV2Address = isTestnet ? masterChefAddresses[ChainId.BAOBAB] : masterChefAddresses[ChainId.BSC]
+    const masterChefV2Address = isTestnet ? masterChefAddresses[ChainId.KLAYTN] : masterChefAddresses[ChainId.KLAYTN]
 
     const [[poolLength], [totalRegularAllocPoint], [cakePerBlock]] = await multicall<
       [[BigNumber], [BigNumber], [BigNumber]]
@@ -742,7 +742,7 @@ export const fetchMasterChefV2Data = async ({
           name: 'ODIPerBlock',
         }
       ],
-      chainId: isTestnet ? ChainId.BAOBAB : ChainId.BAOBAB,
+      chainId: isTestnet ? ChainId.KLAYTN : ChainId.KLAYTN,
     })
 
     return {
