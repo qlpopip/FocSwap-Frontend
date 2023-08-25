@@ -2,13 +2,27 @@ import { klaytnTokens } from '@pancakeswap/tokens'
 import { SerializedFarmConfig } from '../types'
 
 const farms: SerializedFarmConfig[] = [
-//   {
-//     pid: 1,
-//     lpSymbol: 'LCG-oUSDT LP',
-//     lpAddress: '0xc6803af025ae46a0d700991eafddbc3a0f68d151',
-//     token: klaytnTokens.lcg,
-//     quoteToken: klaytnTokens.usdt,
-//   },
+   {
+     pid: 1,
+     lpSymbol: 'KLAY-oUSDT LP',
+     lpAddress: '0x07cae31cebfb44961f7bf6619e5f05aa5df8d749',
+     token: klaytnTokens.weth,
+     quoteToken: klaytnTokens.usdt,
+   },
+   {
+    pid: 3,
+    lpSymbol: 'LCG-oETH LP',
+    lpAddress: '0xd527939a7edc167614c100e255939329d4198f1d',
+    token: klaytnTokens.lcg,
+    quoteToken: klaytnTokens.oETH,
+  },
+  {
+    pid: 2,
+    lpSymbol: 'oETH-oUSDT LP',
+    lpAddress: '0xdc1fdbd7e3523f2c8c0c160f30e47383fb34cf1e',
+    token: klaytnTokens.oETH,
+    quoteToken: klaytnTokens.usdt,
+  },
 //   {
 //     pid: 2,
 //     lpSymbol: 'KLAY-oUSDT LP',
