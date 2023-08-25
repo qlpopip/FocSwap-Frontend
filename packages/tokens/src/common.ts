@@ -111,7 +111,7 @@ export const USDT_BAOBAB = new Token(
 export const USDT_KLAYTN = new Token(
   ChainId.KLAYTN,
   '0xceE8FAF64bB97a73bb51E115Aa89C17FfA8dD167',
-  18,
+  6,
   'oUSDT',
   'Tether USD',
   'https://tether.to/',
