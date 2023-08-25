@@ -35,7 +35,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
   [ChainId.BAOBAB]: [WNATIVE[ChainId.BAOBAB], USDT[ChainId.BAOBAB], baobabTokens.odi],
-  [ChainId.KLAYTN]: [WNATIVE[ChainId.KLAYTN], USDT[ChainId.KLAYTN], klaytnTokens.odi, klaytnTokens.lcg],
+  [ChainId.KLAYTN]: [WNATIVE[ChainId.KLAYTN], USDT[ChainId.KLAYTN], klaytnTokens.odi, klaytnTokens.lcg, klaytnTokens.oeth],
 }
 
 /**
