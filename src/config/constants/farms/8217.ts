@@ -37,6 +37,13 @@ const farms: SerializedFarmConfig[] = [
     token: klaytnTokens.odi,
     quoteToken: klaytnTokens.lcg,
   },
+  {
+    pid: 6,
+    lpSymbol: 'LCG-oUSDT LP',
+    lpAddress: '0xcd0b6a4418170d33e6d23625c24ebefea19ce388',
+    token: klaytnTokens.lcg,
+    quoteToken: klaytnTokens.usdt,
+  },
 //   {
 //     pid: 2,
 //     lpSymbol: 'KLAY-oUSDT LP',
