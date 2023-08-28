@@ -12,14 +12,14 @@ const farms: SerializedFarmConfig[] = [
    {
     pid: 3,
     lpSymbol: 'LCG-oETH LP',
-    lpAddress: '0xd527939a7edc167614c100e255939329d4198f1d',
-    token: klaytnTokens.lcg,
-    quoteToken: klaytnTokens.oETH,
+    lpAddress: '0xd527939A7edC167614c100e255939329D4198f1d',
+    token: klaytnTokens.oETH,
+    quoteToken: klaytnTokens.lcg,
   },
   {
     pid: 2,
     lpSymbol: 'oETH-oUSDT LP',
-    lpAddress: '0xdc1fdbd7e3523f2c8c0c160f30e47383fb34cf1e',
+    lpAddress: '0xdC1fDBD7e3523f2c8C0c160F30e47383FB34Cf1e',
     token: klaytnTokens.oETH,
     quoteToken: klaytnTokens.usdt,
   },
