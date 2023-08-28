@@ -176,9 +176,9 @@ export const klaytn: Chain = {
     symbol: 'KLAY',
   },
   rpcUrls: {
-    default: 'https://public-en-cypress.klaytn.net',
+    default: 'https://public-node-api.klaytnapi.com/v1/cypress',
     // https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key
-    nodeReal: 'https://public-en-cypress.klaytn.net',
+    nodeReal: 'https://public-node-api.klaytnapi.com/v1/cypress',
   },
   blockExplorers: {
     default: { name: 'klaytnscope', url: 'https://scope.klaytn.com' },
