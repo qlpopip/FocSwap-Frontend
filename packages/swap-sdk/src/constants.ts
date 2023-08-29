@@ -110,14 +110,14 @@ export const WETH9 = {
     'Wrapped KLAY',
     'https://weth.io'
   ),
-  //[ChainId.KLAYTN]: new Token(
-    //ChainId.KLAYTN,
-    //'0x19aac5f612f524b754ca7e7c41cbfa2e981a4432',
-   // 18,
-   // 'WKLAY',
-   // 'Wrapped KLAY',
-   // 'https://weth.io'
- // ),
+  [ChainId.KLAYTN]: new Token(
+    ChainId.KLAYTN,
+    '0x19aac5f612f524b754ca7e7c41cbfa2e981a4432',
+    18,
+    'WKLAY',
+    'Wrapped KLAY',
+    'https://weth.io'
+  ),
 }
 
 export const WBNB = {
