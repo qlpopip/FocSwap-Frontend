@@ -32,11 +32,11 @@ const BaseWrapper = styled.div<{ disable?: boolean }>`
 `
 
 const RowWrapper = styled.div`
-  white-space: nowrap;
-  overflow-x: auto;
-  scroll-snap-type: x mandatory;
-  scroll-behavior: smooth;
-  -webkit-overflow-scrolling: touch;
+  white-space: normal; /* 기본값으로 변경 */
+  overflow-x: visible; /* 스크롤 제거 */
+  scroll-snap-type: none; /* 스크롤 스냅 제거 */
+  scroll-behavior: auto; /* 스크롤 애니메이션 제거 */
+  -webkit-overflow-scrolling: auto; /* 스크롤 애니메이션 제거 */
   &::-webkit-scrollbar {
     display: none;
     -ms-overflow-style: none; /* IE and Edge */
