@@ -24,7 +24,7 @@ const AutoEarningsCell: React.FC<React.PropsWithChildren<AutoEarningsCellProps>>
 }) => {
   const { t } = useTranslation()
   const { isMobile } = useMatchBreakpoints()
-  const labelText = t('Recent ODI profit')
+  const labelText = t('Recent FOC profit')
 
   return (
     <StyledCell role="cell">

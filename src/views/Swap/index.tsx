@@ -98,7 +98,7 @@ const SwitchIconButton = styled(IconButton)`
   }
 `
 
-const CHART_SUPPORT_CHAIN_IDS = [ChainId.KLAYTN]
+const CHART_SUPPORT_CHAIN_IDS = [ChainId.SEPOLIA]
 
 const SettingsModalWithCustomDismiss = withCustomOnDismiss(SettingsModal)
 
@@ -555,9 +555,7 @@ export default function Swap() {
                         </RowBetween>
                         <Flex justifyContent="space-between" alignItems="center">
                           <Label>Route</Label>
-                          <Text>
-                            {trade && <SwapRoute trade={trade} />}
-                          </Text>
+                          <Text>{trade && <SwapRoute trade={trade} />}</Text>
                         </Flex>
                       </AutoColumn>
                     )}

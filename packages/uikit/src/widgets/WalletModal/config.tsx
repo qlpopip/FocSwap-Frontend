@@ -34,13 +34,13 @@ const connectors: Config[] = [
   //   connectorId: ConnectorNames.WalletLink,
   //   priority: 3,
   // },
-  {
-    title: "Kaikas",
-    icon: Kaikas,
-    connectorId: ConnectorNames.Kaikas,
-    priority: 1,
-    href: "https://odiswap.netlify.app/",
-  },
+  // {
+  //   title: "Kaikas",
+  //   icon: Kaikas,
+  //   connectorId: ConnectorNames.Kaikas,
+  //   priority: 1,
+  //   href: "https://odiswap.netlify.app/",
+  // },
   // {
   //   title: "WalletConnect",
   //   icon: WalletConnect,

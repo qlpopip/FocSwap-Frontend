@@ -34,11 +34,11 @@ const Multiplier: React.FunctionComponent<React.PropsWithChildren<MultiplierProp
     <>
       <Text>
         {t(
-          'The Multiplier represents the proportion of ODI rewards each farm receives, as a proportion of the ODI produced each block.',
+          'The Multiplier represents the proportion of FOC rewards each farm receives, as a proportion of the FOC produced each block.',
         )}
       </Text>
       <Text my="24px">
-        {t('For example, if a 1x farm received 1 ODI per block, a 40x farm would receive 40 ODI per block.')}
+        {t('For example, if a 1x farm received 1 FOC per block, a 40x farm would receive 40 FOC per block.')}
       </Text>
       <Text>{t('This amount is already included in all APR calculations for the farm.')}</Text>
     </>

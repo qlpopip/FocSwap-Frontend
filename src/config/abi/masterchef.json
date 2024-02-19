@@ -2,13 +2,13 @@
   {
     "inputs": [
       {
-        "internalType": "contract ODIToken",
-        "name": "_ODI",
+        "internalType": "contract FOCToken",
+        "name": "_FOC",
         "type": "address"
       },
       {
-        "internalType": "contract SODiBar",
-        "name": "_SODi",
+        "internalType": "contract SFOCBar",
+        "name": "_SFOC",
         "type": "address"
       },
       {
@@ -18,7 +18,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "_ODIPerBlock",
+        "name": "_FOCPerBlock",
         "type": "uint256"
       },
       {
@@ -139,10 +139,10 @@
   },
   {
     "inputs": [],
-    "name": "ODI",
+    "name": "FOC",
     "outputs": [
       {
-        "internalType": "contract ODIToken",
+        "internalType": "contract FOCToken",
         "name": "",
         "type": "address"
       }
@@ -152,7 +152,7 @@
   },
   {
     "inputs": [],
-    "name": "ODIPerBlock",
+    "name": "FOCPerBlock",
     "outputs": [
       {
         "internalType": "uint256",
@@ -165,10 +165,10 @@
   },
   {
     "inputs": [],
-    "name": "SODi",
+    "name": "SFOC",
     "outputs": [
       {
-        "internalType": "contract SODiBar",
+        "internalType": "contract SFOCBar",
         "name": "",
         "type": "address"
       }
@@ -365,7 +365,7 @@
         "type": "address"
       }
     ],
-    "name": "pendingODI",
+    "name": "pendingFOC",
     "outputs": [
       {
         "internalType": "uint256",
@@ -403,7 +403,7 @@
       },
       {
         "internalType": "uint256",
-        "name": "accODIPerShare",
+        "name": "accFOCPerShare",
         "type": "uint256"
       }
     ],

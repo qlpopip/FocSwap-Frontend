@@ -1,5 +1,7 @@
-# ODi Frontend
+# FOC Frontend
+
 Foked Pancakeswap
+
 ## Quick Start
 
 install dependencies using **yarn**
@@ -9,11 +11,13 @@ yarn
 ```
 
 start the development server
+
 ```sh
 yarn dev
 ```
 
 build with production mode
+
 ```sh
 yarn run build
 

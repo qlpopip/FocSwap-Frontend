@@ -15,7 +15,6 @@ import { ActionContainer, ActionTitles, ActionContent, RowActionContainer } from
 import UnstakingFeeCountdownRow from '../../CakeVaultCard/UnstakingFeeCountdownRow'
 import useUserDataInVaultPresenter from '../../LockedPool/hooks/useUserDataInVaultPresenter'
 
-
 const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<DeserializedPool>> = ({
   sousId,
   poolCategory,
@@ -58,7 +57,7 @@ const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<Deseria
 
   const actionTitle = (
     <Text fontSize="12px" bold color="secondary" as="span" textTransform="uppercase">
-      {t('Recent ODI profit')}
+      {t('Recent FOC profit')}
     </Text>
   )
   const handleHarvestConfirm = async () => {
@@ -66,15 +65,14 @@ const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<Deseria
       return onReward()
     })
     if (receipt?.status) {
-        toastSuccess(
-          `${t('Harvested')}!`,
-          <ToastDescriptionWithTx txHash={receipt.transactionHash}>
-            {t('Your %symbol% fee have been sent to your wallet!', { symbol: earningToken.symbol })}
-          </ToastDescriptionWithTx>,
-        )
-      }
+      toastSuccess(
+        `${t('Harvested')}!`,
+        <ToastDescriptionWithTx txHash={receipt.transactionHash}>
+          {t('Your %symbol% fee have been sent to your wallet!', { symbol: earningToken.symbol })}
+        </ToastDescriptionWithTx>,
+      )
     }
-  
+  }
 
   if (!account) {
     return (
@@ -136,9 +134,7 @@ const AutoHarvestAction: React.FunctionComponent<React.PropsWithChildren<Deseria
             )}
             {/* IFO credit here */}
           </Flex>
-          <Button onClick={handleHarvestConfirm}>
-            {t('Harvest')}
-        </Button>
+          <Button onClick={handleHarvestConfirm}>{t('Harvest')}</Button>
         </ActionContent>
       </Box>
       {!isMobile && vaultKey === VaultKey.CakeVault && (vaultData as DeserializedLockedCakeVault).userData.locked && (

@@ -5,7 +5,7 @@ import { AddressZero } from '@ethersproject/constants'
 import { Contract } from '@ethersproject/contracts'
 import type { Provider } from '@ethersproject/providers'
 import { ChainId, Currency } from '@pancakeswap/sdk'
-import { klaytn ,baobab, bsc } from '@pancakeswap/wagmi/chains'
+import { klaytn, baobab, bsc } from '@pancakeswap/wagmi/chains'
 import memoize from 'lodash/memoize'
 import { TokenAddressMap } from '@pancakeswap/tokens'
 import { BASE_BSC_SCAN_URLS } from '../config'
@@ -25,7 +25,7 @@ export function getBlockExploreLink(
   type: 'transaction' | 'token' | 'address' | 'block' | 'countdown',
   chainIdOverride?: number,
 ): string {
-  const chainId = chainIdOverride || ChainId.KLAYTN
+  const chainId = chainIdOverride || ChainId.SEPOLIA
   const chain = chains.find((c) => c.id === chainId)
   if (!chain) return klaytn.blockExplorers.default.url
   switch (type) {

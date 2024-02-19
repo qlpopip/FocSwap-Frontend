@@ -124,10 +124,10 @@ const Hero = () => {
       >
         <Flex position="relative" flexDirection="column" justifyContent="center" width="100%" height="100%">
           <Heading scale="xxl" color="secondary" mb="24px" width="100%" textAlign="center">
-            {t('ODiswap explanation')}
+            {t('FOCswap explanation')}
           </Heading>
           <Heading scale="md" mb="24px" width="100%" textAlign="center">
-            {t('ODiswap explanation')}
+            {t('FOCswap explanation')}
           </Heading>
           <Flex alignItems="center" justifyContent="center">
             {!account && <ConnectWalletButton mr="8px" />}

@@ -175,7 +175,7 @@ export default function RemoveLiquidity() {
       { name: 'verifyingContract', type: 'address' },
     ]
     const domain = {
-      name: 'ODI LPs',
+      name: 'FOC LPs',
       version: '1',
       chainId,
       verifyingContract: pair.liquidityToken.address,
@@ -336,7 +336,7 @@ export default function RemoveLiquidity() {
       toastError(t('Error'), t('Missing liquidity amount'))
       throw new Error('missing liquidity amount')
     }
-   // console.log(liquidityAmount)
+    // console.log(liquidityAmount)
     const currencyBIsNative = currencyB?.isNative
     const oneCurrencyIsNative = currencyA?.isNative || currencyBIsNative
 
@@ -414,7 +414,7 @@ export default function RemoveLiquidity() {
       toastError(t('Error'), t('Attempting to confirm without approval or a signature'))
       throw new Error('Attempting to confirm without approval or a signature')
     }
-    
+
     let methodSafeGasEstimate: { methodName: string; safeGasEstimate: BigNumber }
     for (let i = 0; i < methodNames.length; i++) {
       let safeGasEstimate

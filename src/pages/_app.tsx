@@ -30,8 +30,8 @@ const EasterEgg = dynamic(() => import('components/EasterEgg'), { ssr: false })
 
 interface CustomAppProps extends AppProps {
   pageProps: {
-    initialReduxState: any;
-  };
+    initialReduxState: any
+  }
 }
 
 // This config is required for number formatting
@@ -72,17 +72,13 @@ function MyApp(props: CustomAppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover"
         />
-        <meta
-          name="description"
-        />
+        <meta name="description" />
         <meta name="theme-color" content="#1FC7D4" />
         <meta name="twitter:image" />
-        <meta
-          name="twitter:description"
-        />
+        <meta name="twitter:description" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" />
-        <title>ODiswap</title>
+        <title>FOCswap</title>
         {(Component as NextPageWithLayout).mp && (
           // eslint-disable-next-line @next/next/no-sync-scripts
           <script src="https://public.bnbstatic.com/static/js/mp-webview-sdk/webview-v1.0.0.min.js" id="mp-webview" />

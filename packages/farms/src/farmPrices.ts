@@ -16,7 +16,7 @@ export const getFarmBaseTokenPrice = (
   stable: string,
 ): FixedNumber => {
   const hasTokenPriceVsQuote = Boolean(farm.tokenPriceVsQuote)
-  //console.log(hasTokenPriceVsQuote)
+  // console.log(hasTokenPriceVsQuote)
   // console.log("farm",farm)
   // console.log("quoteTokenFarm",quoteTokenFarm)
   if (farm.quoteToken.symbol === stable) {
@@ -128,7 +128,7 @@ export const getFarmsPrices = (farms: FarmData[], chainId: number): FarmWithPric
   const nativePriceUSD = nativeStableFarm?.tokenPriceVsQuote
     ? FIXED_ONE.divUnsafe(FixedNumber.from(nativeStableFarm.tokenPriceVsQuote))
     : FIXED_ZERO
-  //console.log(nativePriceUSD)
+  // console.log(nativePriceUSD)
   const farmsWithPrices = farms.map((farm) => {
     const quoteTokenFarm = getFarmFromTokenSymbol(farms, farm.quoteToken.symbol, [
       nativeStableLpMap[chainId].wNative,
@@ -141,7 +141,7 @@ export const getFarmsPrices = (farms: FarmData[], chainId: number): FarmWithPric
       nativeStableLpMap[chainId].wNative,
       nativeStableLpMap[chainId].stable,
     )
-   // console.log("tokenpriceBusd",tokenPriceBusd)
+    // console.log("tokenpriceBusd",tokenPriceBusd)
     const quoteTokenPriceBusd = getFarmQuoteTokenPrice(
       farm,
       quoteTokenFarm,
@@ -149,7 +149,7 @@ export const getFarmsPrices = (farms: FarmData[], chainId: number): FarmWithPric
       nativeStableLpMap[chainId].wNative,
       nativeStableLpMap[chainId].stable,
     )
-    //console.log("quoteTokenPriceBusd",quoteTokenPriceBusd)
+    // console.log("quoteTokenPriceBusd",quoteTokenPriceBusd)
 
     const lpTokenPrice = getLpTokenPrice(
       FixedNumber.from(farm.lpTotalSupply),
@@ -164,7 +164,7 @@ export const getFarmsPrices = (farms: FarmData[], chainId: number): FarmWithPric
       lpTokenPrice: lpTokenPrice.toString(),
     }
   })
-  //console.log(farmsWithPrices)
+  // console.log(farmsWithPrices)
   return farmsWithPrices
 }
 
@@ -194,5 +194,9 @@ const nativeStableLpMap = {
     wNative: 'WKLAY',
     stable: 'oUSDT',
   },
-  
+  [ChainId.SEPOLIA]: {
+    address: '0x1af1a4EeCc1C22e682Df5290ee4a53eabFbfe0D9',
+    wNative: 'WETH',
+    stable: 'USDC',
+  },
 }

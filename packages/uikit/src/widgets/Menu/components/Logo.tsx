@@ -43,10 +43,10 @@ const StyledLink = styled("a")`
   }
 `;
 const StyledText = styled.span`
-  font-family: 'YourCustomFont', sans-serif;
+  font-family: "YourCustomFont", sans-serif;
   font-size: 24px;
   font-weight: bold;
-  color: #FFF;
+  color: #fff;
   /* Add any other styles you want */
 `;
 
@@ -69,7 +69,7 @@ const Logo: React.FC<React.PropsWithChildren<Props>> = ({ isDark, href }) => {
       ) : (
         <StyledLink href={href} as={linkComponent} aria-label="Pancake home page">
           {innerLogo}
-          <StyledText>ODiswap</StyledText>
+          <StyledText>FOCswap</StyledText>
         </StyledLink>
       )}
     </Flex>

@@ -1,4 +1,9 @@
-import { rinkeby as defaultRinkeby, mainnet as defaultMainnet, goerli as defaultGoerli } from 'wagmi/chains'
+import {
+  rinkeby as defaultRinkeby,
+  mainnet as defaultMainnet,
+  goerli as defaultGoerli,
+  sepolia as defaultSepolia,
+} from 'wagmi/chains'
 import { Chain } from 'wagmi'
 
 export const avalandche: Chain = {
@@ -142,6 +147,13 @@ export const goerli: Chain = {
   },
 }
 
+export const sepolia: Chain = {
+  ...defaultSepolia,
+  rpcUrls: {
+    default: 'https://rpc2.sepolia.org',
+  },
+}
+
 export const baobab: Chain = {
   id: 1001,
   name: 'Baobab Klaytn',
@@ -185,7 +197,6 @@ export const klaytn: Chain = {
   },
   multicall: {
     address: '0xd11dfc2ab34abd3e1abfba80b99aefbd6255c4b8',
-    blockCreated:
-      103742609,
+    blockCreated: 103742609,
   },
 }

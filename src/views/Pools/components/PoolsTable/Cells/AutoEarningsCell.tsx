@@ -42,7 +42,7 @@ const AutoEarningsCell: React.FC<React.PropsWithChildren<AutoEarningsCellProps>>
     earningTokenPrice,
   )
 
-  const labelText = t('Recent ODI profit')
+  const labelText = t('Recent FOC profit')
   const earningTokenBalance = autoCakeToDisplay
   const hasEarnings = hasAutoEarnings
   const earningTokenDollarBalance = autoUsdToDisplay

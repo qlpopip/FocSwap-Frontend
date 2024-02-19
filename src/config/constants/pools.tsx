@@ -1,7 +1,7 @@
 import { BigNumber } from '@ethersproject/bignumber'
 import Trans from 'components/Trans'
 import { VaultKey } from 'state/types'
-import { baobabTokens, bscTokens, klaytnTokens} from '@pancakeswap/tokens'
+import { baobabTokens, bscTokens, klaytnTokens, sepoliaTokens } from '@pancakeswap/tokens'
 import { SerializedPoolConfig, PoolCategory } from './types'
 
 export const MAX_LOCK_DURATION = 31536000
@@ -22,7 +22,7 @@ export const vaultPoolConfig = {
     },
   },
   [VaultKey.CakeVault]: {
-    name: <Trans>Stake ODI</Trans>,
+    name: <Trans>Stake FOC</Trans>,
     description: <Trans>Stake, Earn – And more!</Trans>,
     autoCompoundFrequency: 5000,
     gasLimit: 500000,
@@ -57,14 +57,15 @@ export const livePools: SerializedPoolConfig[] = [
   // 수정
   {
     sousId: 0,
-    stakingToken: klaytnTokens.odi,
-    earningToken: klaytnTokens.odi,
+    stakingToken: sepoliaTokens.foc,
+    earningToken: sepoliaTokens.foc,
     contractAddress: {
       5: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
       56: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
       97: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
       1001: '0xF0681e41ee14467FF719BF86677c9F7246CA97FB',
-      8217: '0xF90F20175539218044277D2862D301CF5ffaf190'
+      8217: '0xF90F20175539218044277D2862D301CF5ffaf190',
+      11155111: '0x45c6e79eb05F25D20d30888b70cFD9fcdb9B4d1A',
     },
     poolCategory: PoolCategory.COMMUNITY,
     tokenPerBlock: '1',

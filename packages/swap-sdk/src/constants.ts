@@ -12,6 +12,7 @@ export enum ChainId {
   BSC_TESTNET = 97,
   BAOBAB = 1001,
   KLAYTN = 8217,
+  SEPOLIA = 11155111,
 }
 
 export enum TradeType {
@@ -34,6 +35,7 @@ export const FACTORY_ADDRESS_MAP: Record<number, string> = {
   [ChainId.ETHEREUM]: FACTORY_ADDRESS_ETH,
   [ChainId.RINKEBY]: FACTORY_ADDRESS_ETH,
   [ChainId.GOERLI]: '0x0d53887A7EE0a6e941b496Bef8a41CaC4a03124c',
+  [ChainId.SEPOLIA]: '0x28a134F438f800bd48df5C8154a2fe21D2470Ee0',
   [ChainId.BSC]: FACTORY_ADDRESS,
   [ChainId.BSC_TESTNET]: '0x6725f303b657a9451d8ba641348b6761a6cc7a17',
   [ChainId.BAOBAB]: '0xcb78A0AC1DfEfDD1b0a6F317AFA181D7B2bcCace',
@@ -46,6 +48,7 @@ export const INIT_CODE_HASH_MAP: Record<number, string> = {
   [ChainId.ETHEREUM]: INIT_CODE_HASH_ETH,
   [ChainId.RINKEBY]: INIT_CODE_HASH_ETH,
   [ChainId.GOERLI]: '0x29bd6d25b5a86f6ac94daf96ae9932a8109dee0e95aff78c7c9d38ee24fd6f88',
+  [ChainId.SEPOLIA]: '0x50368cf9d6b394e5bf92ece698ed924a1d0dd04b6e8d6bbc50020afa3e460bed',
   [ChainId.BSC]: INIT_CODE_HASH,
   [ChainId.BSC_TESTNET]: '0xd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66',
   [ChainId.BAOBAB]: '0x29bd6d25b5a86f6ac94daf96ae9932a8109dee0e95aff78c7c9d38ee24fd6f88',
@@ -102,6 +105,14 @@ export const WETH9 = {
     'Wrapped Ether',
     'https://weth.io'
   ),
+  [ChainId.SEPOLIA]: new Token(
+    ChainId.SEPOLIA,
+    '0x7b79995e5f793A07Bc00c21412e50Ecae098E7f9',
+    18,
+    'WETH',
+    'Wrapped Ether',
+    'https://weth.io'
+  ),
   [ChainId.BAOBAB]: new Token(
     ChainId.BAOBAB,
     '0x043c471bee060e00a56ccd02c0ca286808a5a436',
@@ -151,11 +162,11 @@ export const WNATIVE: Record<number, Token> = {
   [ChainId.ETHEREUM]: WETH9[ChainId.ETHEREUM],
   [ChainId.RINKEBY]: WETH9[ChainId.RINKEBY],
   [ChainId.GOERLI]: WETH9[ChainId.GOERLI],
+  [ChainId.SEPOLIA]: WETH9[ChainId.SEPOLIA],
   [ChainId.BSC]: WBNB[ChainId.BSC],
   [ChainId.BSC_TESTNET]: WBNB[ChainId.BSC_TESTNET],
   [ChainId.BAOBAB]: WETH9[ChainId.BAOBAB],
   [ChainId.KLAYTN]: WETH9[ChainId.KLAYTN],
-
 }
 
 export const NATIVE: Record<
@@ -169,6 +180,7 @@ export const NATIVE: Record<
   [ChainId.ETHEREUM]: { name: 'Ether', symbol: 'ETH', decimals: 18 },
   [ChainId.RINKEBY]: { name: 'Rinkeby Ether', symbol: 'RIN', decimals: 18 },
   [ChainId.GOERLI]: { name: 'Goerli Ether', symbol: 'GOR', decimals: 18 },
+  [ChainId.SEPOLIA]: { name: 'Sepolia Ether', symbol: 'SepoliaETH', decimals: 18 },
   [ChainId.BAOBAB]: { name: 'Baobab Klay', symbol: 'KLAY', decimals: 18 },
   [ChainId.KLAYTN]: { name: 'Klay', symbol: 'KLAY', decimals: 18 },
 

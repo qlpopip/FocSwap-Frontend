@@ -61,19 +61,13 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover"
         />
-        <meta
-          name="description"
-          content="ODiswap"
-        />
+        <meta name="description" content="FOCswap" />
         <meta name="theme-color" content="#1FC7D4" />
         <meta name="twitter:image" content="https://pancakeswap.finance/images/hero.png" />
-        <meta
-          name="twitter:description"
-          content="ODiswap"
-        />
+        <meta name="twitter:description" content="FOCswap" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="ODiswap" />
-        <title>ODI Bridge</title>
+        <meta name="twitter:title" content="FOCswap" />
+        <title>FOC Bridge</title>
       </Head>
       <NextThemeProvider>
         <StyledThemeProvider>

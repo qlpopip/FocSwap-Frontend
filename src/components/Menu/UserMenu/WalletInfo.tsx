@@ -73,11 +73,11 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
               width={26}
               height={26}
               unoptimized
-              alt="odi"
+              alt="FOC"
             />
           )}
           <Text ml={isBSC ? 0 : '8px'} color="textSubtle">
-            ODI
+            FOC
           </Text>
         </Flex>
         {cakeFetchStatus !== FetchStatus.Fetched ? (

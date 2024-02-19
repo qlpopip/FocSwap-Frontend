@@ -5,8 +5,6 @@ import { BIG_TEN, FIXED_TWO, FIXED_ZERO } from './const'
 import { getFarmQuoteTokenPrice, getFarmsPrices } from './farmPrices'
 import { fetchPublicFarmsData } from './fetchPublicFarmData'
 import { SerializedFarmConfig } from './types'
-import priceHelperLps from 'config/constants/priceHelperLps/farms/8217'
-import getPriceForOneToken from 'views/LimitOrders/utils/getPriceForOneToken'
 
 export const getTokenAmount = (balance: FixedNumber, decimals: number) => {
   const tokenDividerFixed = FixedNumber.from(BIG_TEN.pow(decimals))
@@ -48,7 +46,6 @@ export async function farmV2FetchFarms({
           token0Decimals: farm.token.decimals,
           token1Decimals: farm.quoteToken.decimals,
           totalRegularAllocPoint,
-
         }),
       }
     } catch (error) {
@@ -62,16 +59,16 @@ export async function farmV2FetchFarms({
       throw error
     }
   })
-  const farmsDataWithPrices = getFarmsPrices(farmsData, chainId);
+  const farmsDataWithPrices = getFarmsPrices(farmsData, chainId)
   const farmsDataWithUpdatedPrices = farmsDataWithPrices.map((farm) => {
-    if (farm.quoteToken.symbol !== "oUSDT") {
+    if (farm.quoteToken.symbol !== 'USDC') {
       const newLpTotalInQuoteToken = parseFloat(farm.lpTotalInQuoteToken) * parseFloat(farm.quoteTokenPriceBusd)
       return {
         ...farm,
         lpTotalInQuoteToken: newLpTotalInQuoteToken.toFixed(18),
-      };
+      }
     }
-    return farm;
+    return farm
   })
 
   return farmsDataWithUpdatedPrices
@@ -79,616 +76,325 @@ export async function farmV2FetchFarms({
 
 const masterChefV2Abi = [
   {
-    "inputs": [
-      {
-        "internalType": "contract ODIToken",
-        "name": "_ODI",
-        "type": "address"
-      },
-      {
-        "internalType": "contract SODiBar",
-        "name": "_SODi",
-        "type": "address"
-      },
-      {
-        "internalType": "address",
-        "name": "_devaddr",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_ODIPerBlock",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_startBlock",
-        "type": "uint256"
-      }
+    inputs: [
+      { internalType: 'contract FOCToken', name: '_FOC', type: 'address' },
+      { internalType: 'contract SFOCBar', name: '_SFOC', type: 'address' },
+      { internalType: 'address', name: '_devaddr', type: 'address' },
+      { internalType: 'uint256', name: '_FOCPerBlock', type: 'uint256' },
+      { internalType: 'uint256', name: '_startBlock', type: 'uint256' },
+      { internalType: 'address', name: '_treasury', type: 'address' },
     ],
-    "stateMutability": "nonpayable",
-    "type": "constructor"
+    stateMutability: 'nonpayable',
+    type: 'constructor',
   },
   {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "user",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "pid",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
+    anonymous: false,
+    inputs: [
+      { indexed: true, internalType: 'address', name: 'user', type: 'address' },
+      { indexed: true, internalType: 'uint256', name: 'pid', type: 'uint256' },
+      { indexed: false, internalType: 'uint256', name: 'amount', type: 'uint256' },
     ],
-    "name": "Deposit",
-    "type": "event"
+    name: 'Deposit',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "user",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "pid",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
+    anonymous: false,
+    inputs: [
+      { indexed: true, internalType: 'address', name: 'user', type: 'address' },
+      { indexed: true, internalType: 'uint256', name: 'pid', type: 'uint256' },
+      { indexed: false, internalType: 'uint256', name: 'amount', type: 'uint256' },
     ],
-    "name": "EmergencyWithdraw",
-    "type": "event"
+    name: 'EmergencyWithdraw',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "previousOwner",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "newOwner",
-        "type": "address"
-      }
+    anonymous: false,
+    inputs: [
+      { indexed: true, internalType: 'address', name: 'previousOwner', type: 'address' },
+      { indexed: true, internalType: 'address', name: 'newOwner', type: 'address' },
     ],
-    "name": "OwnershipTransferred",
-    "type": "event"
+    name: 'OwnershipTransferred',
+    type: 'event',
   },
   {
-    "anonymous": false,
-    "inputs": [
-      {
-        "indexed": true,
-        "internalType": "address",
-        "name": "user",
-        "type": "address"
-      },
-      {
-        "indexed": true,
-        "internalType": "uint256",
-        "name": "pid",
-        "type": "uint256"
-      },
-      {
-        "indexed": false,
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      }
+    anonymous: false,
+    inputs: [
+      { indexed: true, internalType: 'address', name: 'user', type: 'address' },
+      { indexed: true, internalType: 'uint256', name: 'pid', type: 'uint256' },
+      { indexed: false, internalType: 'uint256', name: 'amount', type: 'uint256' },
     ],
-    "name": "Withdraw",
-    "type": "event"
+    name: 'Withdraw',
+    type: 'event',
   },
   {
-    "inputs": [],
-    "name": "BONUS_MULTIPLIER",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    inputs: [],
+    name: 'BONUS_MULTIPLIER',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [],
-    "name": "ODI",
-    "outputs": [
-      {
-        "internalType": "contract ODIToken",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    inputs: [],
+    name: 'FOC',
+    outputs: [{ internalType: 'contract FOCToken', name: '', type: 'address' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [],
-    "name": "ODIPerBlock",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    inputs: [],
+    name: 'FOCPerBlock',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [],
-    "name": "ODIharving",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [],
+    name: 'Fee',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [],
-    "name": "SODi",
-    "outputs": [
-      {
-        "internalType": "contract SODiBar",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    inputs: [],
+    name: 'MAX_FEE',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_allocPoint",
-        "type": "uint256"
-      },
-      {
-        "internalType": "contract IBEP20",
-        "name": "_lpToken",
-        "type": "address"
-      },
-      {
-        "internalType": "bool",
-        "name": "_withUpdate",
-        "type": "bool"
-      }
-    ],
-    "name": "add",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [],
+    name: 'MAX_RewardFEE',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "deposit",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [],
+    name: 'RewardFee',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "_devaddr",
-        "type": "address"
-      }
-    ],
-    "name": "dev",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [],
+    name: 'SFOC',
+    outputs: [{ internalType: 'contract SFOCBar', name: '', type: 'address' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [],
-    "name": "devaddr",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
+    inputs: [
+      { internalType: 'uint256', name: '_allocPoint', type: 'uint256' },
+      { internalType: 'contract IERC20', name: '_lpToken', type: 'address' },
+      { internalType: 'bool', name: '_withUpdate', type: 'bool' },
     ],
-    "stateMutability": "view",
-    "type": "function"
+    name: 'add',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      }
+    inputs: [
+      { internalType: 'uint256', name: '_pid', type: 'uint256' },
+      { internalType: 'uint256', name: '_amount', type: 'uint256' },
     ],
-    "name": "emergencyWithdraw",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'deposit',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "enterStaking",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [{ internalType: 'address', name: '_devaddr', type: 'address' }],
+    name: 'dev',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_from",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_to",
-        "type": "uint256"
-      }
-    ],
-    "name": "getMultiplier",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    inputs: [],
+    name: 'devaddr',
+    outputs: [{ internalType: 'address', name: '', type: 'address' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [],
-    "name": "harvingBlock",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    inputs: [{ internalType: 'uint256', name: '_pid', type: 'uint256' }],
+    name: 'emergencyWithdraw',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "leaveStaking",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [{ internalType: 'uint256', name: '_amount', type: 'uint256' }],
+    name: 'enterStaking',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "inputs": [],
-    "name": "massUpdatePools",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [
+      { internalType: 'uint256', name: '_from', type: 'uint256' },
+      { internalType: 'uint256', name: '_to', type: 'uint256' },
+    ],
+    name: 'getMultiplier',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      }
-    ],
-    "name": "migrate",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [],
+    name: 'harvingBlock',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [],
-    "name": "migrator",
-    "outputs": [
-      {
-        "internalType": "contract IMigratorChef",
-        "name": "",
-        "type": "address"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    inputs: [{ internalType: 'uint256', name: '_amount', type: 'uint256' }],
+    name: 'leaveStaking',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
+  },
+  { inputs: [], name: 'massUpdatePools', outputs: [], stateMutability: 'nonpayable', type: 'function' },
+  {
+    inputs: [],
+    name: 'owner',
+    outputs: [{ internalType: 'address', name: '', type: 'address' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [],
-    "name": "owner",
-    "outputs": [
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
+    inputs: [
+      { internalType: 'uint256', name: '_pid', type: 'uint256' },
+      { internalType: 'address', name: '_user', type: 'address' },
     ],
-    "stateMutability": "view",
-    "type": "function"
+    name: 'pendingFOC',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "_user",
-        "type": "address"
-      }
+    inputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    name: 'poolInfo',
+    outputs: [
+      { internalType: 'contract IERC20', name: 'lpToken', type: 'address' },
+      { internalType: 'uint256', name: 'allocPoint', type: 'uint256' },
+      { internalType: 'uint256', name: 'lastRewardBlock', type: 'uint256' },
+      { internalType: 'uint256', name: 'accFOCPerShare', type: 'uint256' },
     ],
-    "name": "pendingODI",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
+    inputs: [],
+    name: 'poolLength',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
+  },
+  { inputs: [], name: 'renounceOwnership', outputs: [], stateMutability: 'nonpayable', type: 'function' },
+  {
+    inputs: [
+      { internalType: 'uint256', name: '_pid', type: 'uint256' },
+      { internalType: 'uint256', name: '_allocPoint', type: 'uint256' },
+      { internalType: 'bool', name: '_withUpdate', type: 'bool' },
     ],
-    "name": "poolInfo",
-    "outputs": [
-      {
-        "internalType": "contract IBEP20",
-        "name": "lpToken",
-        "type": "address"
-      },
-      {
-        "internalType": "uint256",
-        "name": "allocPoint",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "lastRewardBlock",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "accODIPerShare",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    name: 'set',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "inputs": [],
-    "name": "poolLength",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    inputs: [{ internalType: 'uint256', name: '_Fee', type: 'uint256' }],
+    name: 'setFee',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "inputs": [],
-    "name": "renounceOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [{ internalType: 'uint256', name: '_RewardFee', type: 'uint256' }],
+    name: 'setRewardFee',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_allocPoint",
-        "type": "uint256"
-      },
-      {
-        "internalType": "bool",
-        "name": "_withUpdate",
-        "type": "bool"
-      }
-    ],
-    "name": "set",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [],
+    name: 'startBlock',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "contract IMigratorChef",
-        "name": "_migrator",
-        "type": "address"
-      }
-    ],
-    "name": "setMigrator",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [],
+    name: 'totalAllocPoint',
+    outputs: [{ internalType: 'uint256', name: '', type: 'uint256' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [],
-    "name": "startBlock",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    inputs: [{ internalType: 'address', name: 'newOwner', type: 'address' }],
+    name: 'transferOwnership',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "inputs": [],
-    "name": "totalAllocPoint",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    inputs: [],
+    name: 'treasury',
+    outputs: [{ internalType: 'address', name: '', type: 'address' }],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "address",
-        "name": "newOwner",
-        "type": "address"
-      }
-    ],
-    "name": "transferOwnership",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [{ internalType: 'uint256', name: 'multiplierNumber', type: 'uint256' }],
+    name: 'updateMultiplier',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "multiplierNumber",
-        "type": "uint256"
-      }
-    ],
-    "name": "updateMultiplier",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    inputs: [{ internalType: 'uint256', name: '_pid', type: 'uint256' }],
+    name: 'updatePool',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      }
+    inputs: [
+      { internalType: 'uint256', name: '', type: 'uint256' },
+      { internalType: 'address', name: '', type: 'address' },
     ],
-    "name": "updatePool",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
+    name: 'userInfo',
+    outputs: [
+      { internalType: 'uint256', name: 'amount', type: 'uint256' },
+      { internalType: 'uint256', name: 'rewardDebt', type: 'uint256' },
+    ],
+    stateMutability: 'view',
+    type: 'function',
   },
   {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "",
-        "type": "uint256"
-      },
-      {
-        "internalType": "address",
-        "name": "",
-        "type": "address"
-      }
+    inputs: [
+      { internalType: 'uint256', name: '_pid', type: 'uint256' },
+      { internalType: 'uint256', name: '_amount', type: 'uint256' },
     ],
-    "name": "userInfo",
-    "outputs": [
-      {
-        "internalType": "uint256",
-        "name": "amount",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "rewardDebt",
-        "type": "uint256"
-      }
-    ],
-    "stateMutability": "view",
-    "type": "function"
+    name: 'withdraw',
+    outputs: [],
+    stateMutability: 'nonpayable',
+    type: 'function',
   },
-  {
-    "inputs": [
-      {
-        "internalType": "uint256",
-        "name": "_pid",
-        "type": "uint256"
-      },
-      {
-        "internalType": "uint256",
-        "name": "_amount",
-        "type": "uint256"
-      }
-    ],
-    "name": "withdraw",
-    "outputs": [],
-    "stateMutability": "nonpayable",
-    "type": "function"
-  }
 ]
 
 const masterChefFarmCalls = (farm: SerializedFarmConfig, isTestnet: boolean, masterChefAddresses) => {
   const { pid } = farm
-  const masterChefAddress = isTestnet ? masterChefAddresses[ChainId.KLAYTN] : masterChefAddresses[ChainId.KLAYTN]
+  const masterChefAddress = isTestnet ? masterChefAddresses[ChainId.SEPOLIA] : masterChefAddresses[ChainId.ETHEREUM]
 
   return pid || pid === 0
     ? {
-      address: masterChefAddress,
-      name: 'poolInfo',
-      params: [pid],
-    }
+        address: masterChefAddress,
+        name: 'poolInfo',
+        params: [pid],
+      }
     : null
 }
 
@@ -705,7 +411,7 @@ export const fetchMasterChefData = async (
     const masterChefMultiCallResult = await multicall({
       abi: masterChefV2Abi,
       calls: masterChefAggregatedCalls,
-      chainId: isTestnet ? ChainId.KLAYTN : ChainId.KLAYTN,
+      chainId: isTestnet ? ChainId.SEPOLIA : ChainId.ETHEREUM,
     })
 
     let masterChefChunkedResultCounter = 0
@@ -733,8 +439,7 @@ export const fetchMasterChefV2Data = async ({
   masterChefAddresses
 }) => {
   try {
-    const masterChefV2Address = isTestnet ? masterChefAddresses[ChainId.KLAYTN] : masterChefAddresses[ChainId.KLAYTN]
-
+    const masterChefV2Address = isTestnet ? masterChefAddresses[ChainId.SEPOLIA] : masterChefAddresses[ChainId.ETHEREUM]
     const [[poolLength], [totalRegularAllocPoint], [cakePerBlock]] = await multicall<
       [[BigNumber], [BigNumber], [BigNumber]]
     >({
@@ -750,10 +455,10 @@ export const fetchMasterChefV2Data = async ({
         },
         {
           address: masterChefV2Address,
-          name: 'ODIPerBlock',
-        }
+          name: 'FOCPerBlock',
+        },
       ],
-      chainId: isTestnet ? ChainId.KLAYTN : ChainId.KLAYTN,
+      chainId: isTestnet ? ChainId.SEPOLIA : ChainId.ETHEREUM,
     })
 
     return {

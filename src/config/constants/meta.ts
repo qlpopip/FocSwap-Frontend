@@ -3,9 +3,8 @@ import { ContextApi } from '@pancakeswap/localization'
 import { PageMeta } from './types'
 
 export const DEFAULT_META: PageMeta = {
-  title: 'ODiswap',
-  description:
-    'odiswap',
+  title: 'FOCswap',
+  description: 'focswap',
   image: 'https://odiswap.netlify.app/images/hero.png',
 }
 
@@ -45,7 +44,7 @@ const getPathList = (t: ContextApi['t']): PathList => {
       // '/pancake-squad': { basePath: true, title: t('Pancake Squad') },
       // '/pottery': { basePath: true, title: t('Pottery') },
     },
-    defaultTitleSuffix: t('ODiswap'),
+    defaultTitleSuffix: t('FOCswap'),
   }
 }
 

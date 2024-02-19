@@ -19,7 +19,7 @@ import { getCakeVaultAddress, getCakeFlexibleSideVaultAddress } from 'utils/addr
 import { multicallv2 } from 'utils/multicall'
 import { baobabTokens, bscTokens } from '@pancakeswap/tokens'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { bscRpcProvider, baobabRpcProvider, klaytnRpcProvider} from 'utils/providers'
+import { bscRpcProvider, baobabRpcProvider, sepoliaRpcProvider } from 'utils/providers'
 import { getPoolsPriceHelperLpFiles } from 'config/constants/priceHelperLps/index'
 import getFarmsPrices from '../farms/getFarmsPrices'
 import {
@@ -139,7 +139,7 @@ export const fetchPoolsPublicDataAsync =
         fetchPoolsBlockLimits(),
         fetchPoolsTotalStaking(),
         fetchPoolsProfileRequirement(),
-        currentBlockNumber ? Promise.resolve(currentBlockNumber) : klaytnRpcProvider.getBlockNumber(),
+        currentBlockNumber ? Promise.resolve(currentBlockNumber) : sepoliaRpcProvider.getBlockNumber(),
       ])
 
       const blockLimitsSousIdMap = fromPairs(blockLimits.map((entry) => [entry.sousId, entry]))
@@ -172,7 +172,7 @@ export const fetchPoolsPublicDataAsync =
         ? await getFarmsPrices([bnbBusdFarm, ...poolsWithDifferentFarmToken], chainId)
         : []
       const prices = getTokenPricesFromFarm([...farmsData, ...farmsWithPricesOfDifferentTokenPools])
-     // console.log(prices)
+      // console.log(prices)
       const liveData = poolsConfig.map((pool) => {
         const blockLimit = blockLimitsSousIdMap[pool.sousId]
         const totalStaking = totalStakingsSousIdMap[pool.sousId]

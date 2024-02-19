@@ -7,7 +7,7 @@ import { ChainId } from '@pancakeswap/sdk'
 export const getBscChainId = async (chainId: number) => {
   try {
     if (!chainId) {
-      return ChainId.KLAYTN
+      return ChainId.SEPOLIA
     }
 
     const calls = [

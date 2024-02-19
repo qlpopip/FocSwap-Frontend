@@ -5,7 +5,8 @@ const mapping = {
   [ChainId.BSC]: 'smartchain',
   [ChainId.ETHEREUM]: 'ethereum',
   [ChainId.BAOBAB]: 'klaytn',
-  [ChainId.KLAYTN]: 'klaytn'
+  [ChainId.KLAYTN]: 'klaytn',
+  [ChainId.SEPOLIA]: 'ethereum',
 }
 
 const getTokenLogoURL = (token?: Token) => {

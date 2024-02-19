@@ -1,5 +1,5 @@
 import { BinanceWalletConnector } from '@pancakeswap/wagmi/connectors/binanceWallet'
-import { baobab, bsc, bscTest, goerli, klaytn, rinkeby } from '@pancakeswap/wagmi/chains'
+import { bsc, sepolia } from '@pancakeswap/wagmi/chains'
 import { configureChains, createClient } from 'wagmi'
 import memoize from 'lodash/memoize'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
@@ -13,12 +13,12 @@ import { SafeConnector } from '@gnosis.pm/safe-apps-wagmi'
 const CHAINS = [
   // bsc,
   // // TODO: ETH
-  // // mainnet,
+  sepolia,
   // bscTest,
   // rinkeby,
   // goerli,
-  baobab,
-  klaytn,
+  // baobab,
+  // klaytn,
 ]
 
 const getNodeRealUrl = (networkName: string) => {
@@ -78,7 +78,6 @@ export const injectedConnector = new InjectedConnector({
     shimDisconnect: false,
     shimChainChangedDisconnect: true,
   },
-  
 })
 
 export const coinbaseConnector = new CoinbaseWalletConnector({
@@ -103,7 +102,7 @@ export const metaMaskConnector = new MetaMaskConnector({
     shimChainChangedDisconnect: true,
   },
 })
-export const kaikasConnector = new KaikasConnector({chains})
+export const kaikasConnector = new KaikasConnector({ chains })
 export const bscConnector = new BinanceWalletConnector({ chains })
 export const client = createClient({
   autoConnect: false,
@@ -112,7 +111,7 @@ export const client = createClient({
     // new SafeConnector({ chains }),
     metaMaskConnector,
     // injectedConnector,
-    kaikasConnector,
+    // kaikasConnector,
     // coinbaseConnector,
     // walletConnectConnector,
     // bscConnector,

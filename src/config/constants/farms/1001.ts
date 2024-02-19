@@ -18,19 +18,18 @@ const farms: SerializedFarmConfig[] = [
   },
   // {
   //   pid: 3,
-  //   lpSymbol: 'LCG-ODI LP',
+  //   lpSymbol: 'LCG-FOC LP',
   //   lpAddress: '0x967bb714d5756dc56e7767b20c3c7bc0b962927d',
   //   token: baobabTokens.lcg,
   //   quoteToken: baobabTokens.odi,
   // },
   // {
   //   pid: 4,
-  //   lpSymbol: 'ODI-oUSDT LP',
+  //   lpSymbol: 'FOC-oUSDT LP',
   //   lpAddress: '0x82b8d420afddf79e0bdd2a02ed859ad4ed843944',
   //   token: baobabTokens.odi,
   //   quoteToken: baobabTokens.usdt,
   // },
-  
 ].map((p) => ({ ...p, token: p.token.serialize, quoteToken: p.quoteToken.serialize }))
 
 export default farms

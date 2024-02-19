@@ -16,7 +16,7 @@ import {
 } from 'config/constants/types'
 
 export enum GAS_PRICE {
-  default = '55',
+  default = '30',
   fast = '60',
   instant = '70',
   testnet = '55',

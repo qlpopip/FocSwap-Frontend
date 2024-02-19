@@ -73,7 +73,7 @@ const ApyButton: React.FC<React.PropsWithChildren<ApyButtonProps>> = ({
         {t('APR (incl. LP rewards)')}: {displayApr}%
       </Text>
       <Text ml="5px">
-        *{t('Base APR (ODI yield only)')}: {apr.toFixed(2)}%
+        *{t('Base APR (FOC yield only)')}: {apr.toFixed(2)}%
       </Text>
       {lpRewardsApr !== 0 && (
         <Text ml="5px">
