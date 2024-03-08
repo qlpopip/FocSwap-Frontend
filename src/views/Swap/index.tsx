@@ -98,7 +98,7 @@ const SwitchIconButton = styled(IconButton)`
   }
 `
 
-const CHART_SUPPORT_CHAIN_IDS = [ChainId.SEPOLIA]
+const CHART_SUPPORT_CHAIN_IDS = [ChainId.SAIGON]
 
 const SettingsModalWithCustomDismiss = withCustomOnDismiss(SettingsModal)
 
@@ -427,7 +427,7 @@ export default function Swap() {
             currentSwapPrice={singleTokenPrice}
           />
         )} */}
-        {isChartSupported && (
+        {/* {isChartSupported && (
           <BottomDrawer
             content={
               <PriceChartContainer
@@ -445,7 +445,7 @@ export default function Swap() {
             isOpen={isChartDisplayed}
             setIsOpen={setIsChartDisplayed}
           />
-        )}
+        )} */}
         <Flex flexDirection="column">
           <StyledSwapContainer $isChartExpanded={isChartExpanded}>
             <StyledInputCurrencyWrapper mt={isChartExpanded ? '24px' : '0'}>

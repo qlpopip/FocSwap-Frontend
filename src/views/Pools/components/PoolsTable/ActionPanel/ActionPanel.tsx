@@ -166,11 +166,11 @@ const ActionPanel: React.FC<React.PropsWithChildren<ActionPanelProps>> = ({ acco
         <Flex flexDirection="column" mb="8px">
           <PoolStatsInfo pool={pool} account={account} showTotalStaked={isMobile} alignLinksToRight={isMobile} />
         </Flex>
-        {vaultKey ? <CompoundingPoolTag /> : <ManualPoolTag />}
-        {tagTooltipVisible && tagTooltip}
-        <span ref={tagTargetRef}>
+        {/* {vaultKey ? <CompoundingPoolTag /> : <ManualPoolTag />}
+        {tagTooltipVisible && tagTooltip} */}
+        {/* <span ref={tagTargetRef}>
           <HelpIcon ml="4px" width="20px" height="20px" color="textSubtle" />
-        </span>
+        </span> */}
       </InfoSection>
       <ActionContainer>
         {isMobile && vaultKey === VaultKey.CakeVault && vaultPosition === VaultPosition.None && (

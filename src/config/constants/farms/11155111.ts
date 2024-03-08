@@ -2,20 +2,20 @@ import { sepoliaTokens } from '@pancakeswap/tokens'
 import { SerializedFarmConfig } from '../types'
 
 const farms: SerializedFarmConfig[] = [
-  {
-    pid: 1,
-    lpSymbol: 'ETH-FOC LP',
-    lpAddress: '0x339003825449ecC6A02309Fb2396d56a51244FA8',
-    token: sepoliaTokens.weth,
-    quoteToken: sepoliaTokens.foc,
-  },
-  {
-    pid: 2,
-    lpSymbol: 'ETH-USDC LP',
-    lpAddress: '0x1af1a4EeCc1C22e682Df5290ee4a53eabFbfe0D9',
-    token: sepoliaTokens.weth,
-    quoteToken: sepoliaTokens.usdc,
-  },
+  // {
+  //   pid: 1,
+  //   lpSymbol: 'ETH-FOC LP',
+  //   lpAddress: '0x339003825449ecC6A02309Fb2396d56a51244FA8',
+  //   token: sepoliaTokens.weth,
+  //   quoteToken: sepoliaTokens.foc,
+  // },
+  // {
+  //   pid: 2,
+  //   lpSymbol: 'ETH-USDC LP',
+  //   lpAddress: '0x1af1a4EeCc1C22e682Df5290ee4a53eabFbfe0D9',
+  //   token: sepoliaTokens.weth,
+  //   quoteToken: sepoliaTokens.usdc,
+  // },
   //   {
   //     pid: 2,
   //     lpSymbol: 'KLAY-oUSDT LP',

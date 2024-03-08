@@ -308,7 +308,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c68 {
-  color: #1FC7D4;
+  color: #0171BD;
   font-weight: 600;
   line-height: 1.5;
   margin-right: 24px;
@@ -316,7 +316,7 @@ exports[`renders correctly 1`] = `
 }
 
 .c72 {
-  color: #1FC7D4;
+  color: #0171BD;
   font-weight: 600;
   line-height: 1.5;
   margin-right: 0;
@@ -726,11 +726,11 @@ exports[`renders correctly 1`] = `
 }
 
 .c77:focus + .c78 {
-  box-shadow: 0px 0px 0px 1px #7645D9,0px 0px 0px 4px rgba(118,69,217,0.6);
+  box-shadow: 0px 0px 0px 1px #0171BD,0px 0px 0px 4px rgba(118,69,217,0.6);
 }
 
 .c77:hover + .c78:not(:disabled):not(:checked) {
-  box-shadow: 0px 0px 0px 1px #7645D9,0px 0px 0px 4px rgba(118,69,217,0.6);
+  box-shadow: 0px 0px 0px 1px #0171BD,0px 0px 0px 4px rgba(118,69,217,0.6);
 }
 
 .c76 {
@@ -787,7 +787,7 @@ exports[`renders correctly 1`] = `
   font-size: 12px;
   padding: 0 8px;
   background-color: transparent;
-  color: #1FC7D4;
+  color: #0171BD;
   box-shadow: none;
 }
 
@@ -845,7 +845,7 @@ exports[`renders correctly 1`] = `
   height: 48px;
   padding: 0 24px;
   background-color: transparent;
-  color: #1FC7D4;
+  color: #0171BD;
   box-shadow: none;
   width: sm;
   height: sm;
@@ -905,7 +905,7 @@ exports[`renders correctly 1`] = `
   height: 48px;
   padding: 0 24px;
   background-color: transparent;
-  color: #1FC7D4;
+  color: #0171BD;
   box-shadow: none;
 }
 
@@ -962,7 +962,7 @@ exports[`renders correctly 1`] = `
   transition: background-color 0.2s,opacity 0.2s;
   height: 32px;
   padding: 0 16px;
-  background-color: #1FC7D4;
+  background-color: #0171BD;
   color: white;
 }
 
@@ -1960,7 +1960,7 @@ exports[`renders correctly 1`] = `
                     />
                     <stop
                       offset="1"
-                      stop-color="#1FC7D4"
+                      stop-color="#0171BD"
                     />
                   </lineargradient>
                 </defs>
@@ -3193,7 +3193,7 @@ exports[`renders correctly 1`] = `
                           />
                           <stop
                             offset="1"
-                            stop-color="#1FC7D4"
+                            stop-color="#0171BD"
                           />
                         </lineargradient>
                       </defs>

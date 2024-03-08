@@ -23,7 +23,7 @@ const StyledThemeProvider: React.FC<React.PropsWithChildren> = (props) => {
 
 const GlobalStyle = createGlobalStyle`
   * {
-    font-family: 'Kanit', sans-serif;
+    font-family: 'Inter', sans-serif;
   }
   html, body, #__next {
     height: 100%;
@@ -62,7 +62,7 @@ function MyApp({ Component, pageProps }: AppProps) {
           content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover"
         />
         <meta name="description" content="FOCswap" />
-        <meta name="theme-color" content="#1FC7D4" />
+        <meta name="theme-color" content="#0171BD" />
         <meta name="twitter:image" content="https://pancakeswap.finance/images/hero.png" />
         <meta name="twitter:description" content="FOCswap" />
         <meta name="twitter:card" content="summary_large_image" />

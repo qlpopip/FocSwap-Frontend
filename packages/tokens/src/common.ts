@@ -27,6 +27,15 @@ export const CAKE_GOERLI = new Token(
   'https://pancakeswap.finance/',
 )
 
+export const CAKE_SAIGON = new Token(
+  ChainId.SAIGON,
+  '0xcBff9d27af2e13Df19C9082276764426DC50eFF7',
+  18,
+  'FOC',
+  'FOC Token',
+  'https://pancakeswap.finance/',
+)
+
 export const CAKE_SEPOLIA = new Token(
   ChainId.SEPOLIA,
   '0x7D26dcDB329d38d979863f0425b4cF0Dc29Df074',
@@ -90,6 +99,15 @@ export const USDC_BAOBAB = new Token(
   'https://www.centre.io/usdc',
 )
 
+export const USDC_SAIGON = new Token(
+  ChainId.SAIGON,
+  '0x22Ca52E4A56f7CF58AB0F87B9Fa10663844a00CC',
+  18,
+  'USDC',
+  'USD Coin',
+  'https://www.centre.io/usdc',
+)
+
 export const USDC_ETH = new Token(ChainId.ETHEREUM, '0xA0b86991c6218b36c1d19D4a2e9Eb0cE3606eB48', 6, 'USDC', 'USD Coin')
 
 export const USDC_RINKEBY = new Token(
@@ -120,6 +138,15 @@ export const USDT_BSC = new Token(
 export const USDT_SEPOLIA = new Token(
   ChainId.SEPOLIA,
   '0x643aDE6A46b9184E33eccB6d20F66176950dd8Bb',
+  18,
+  'USDT',
+  'Tether USD',
+  'https://tether.to/',
+)
+
+export const USDT_SAIGON = new Token(
+  ChainId.SAIGON,
+  '0x1a29215512f7eD3994C3B335F67b03E70890ca57',
   18,
   'USDT',
   'Tether USD',
@@ -207,6 +234,15 @@ export const BUSD_SEPOLIA = new Token(
   'https://www.paxos.com/busd/',
 )
 
+export const BUSD_SAIGON = new Token(
+  ChainId.SAIGON,
+  '0xa8C4c48d714FBEB878b68243482aDEc013D28Ffe',
+  18,
+  'BUSD',
+  'Binance USD',
+  'https://www.paxos.com/busd/',
+)
+
 export const BUSD_BAOBAB = new Token(
   ChainId.BAOBAB,
   '0x210bc03f49052169d5588a52c317f71cf2078b85',
@@ -225,6 +261,7 @@ export const BUSD: Record<ChainId, Token> = {
   [ChainId.BSC_TESTNET]: BUSD_TESTNET,
   [ChainId.BAOBAB]: BUSD_BAOBAB,
   [ChainId.KLAYTN]: BUSD_BAOBAB,
+  [ChainId.SAIGON]: BUSD_SAIGON,
 }
 
 export const CAKE = {
@@ -234,6 +271,7 @@ export const CAKE = {
   [ChainId.SEPOLIA]: CAKE_SEPOLIA,
   [ChainId.BAOBAB]: CAKE_BAOBAB,
   [ChainId.KLAYTN]: CAKE_KLAYTN,
+  [ChainId.SAIGON]: CAKE_SAIGON,
 }
 
 export const USDC = {
@@ -244,6 +282,7 @@ export const USDC = {
   [ChainId.GOERLI]: USDC_GOERLI,
   [ChainId.SEPOLIA]: USDC_SEPOLIA,
   [ChainId.BAOBAB]: USDC_BAOBAB,
+  [ChainId.SAIGON]: USDC_SAIGON,
 }
 
 export const USDT = {
@@ -252,4 +291,5 @@ export const USDT = {
   [ChainId.BAOBAB]: USDT_BAOBAB,
   [ChainId.KLAYTN]: USDT_KLAYTN,
   [ChainId.SEPOLIA]: USDT_SEPOLIA,
+  [ChainId.SAIGON]: USDT_SAIGON,
 }

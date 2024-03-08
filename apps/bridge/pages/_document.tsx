@@ -34,7 +34,7 @@ class MyDocument extends Document {
       <Html translate="no">
         <Head>
           <link rel="preconnect" href="https://fonts.gstatic.com" />
-          {/* <link href="https://fonts.googleapis.com/css2?family=Kanit:wght@400;600&amp;display=swap" rel="stylesheet" /> */}
+          <link href="https://fonts.googleapis.com/css2?family=Inter:wght@100..900&display=swap" rel="stylesheet" />
           <link rel="shortcut icon" href="https://odiswap.netlify.app/favicon.ico" />
           <link rel="apple-touch-icon" href="https://odiswap.netlify.app/logo.png" />
         </Head>

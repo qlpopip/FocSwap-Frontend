@@ -28,11 +28,11 @@ const StyledTokenInput = styled.div<InputProps>`
 `
 
 const StyledInput = styled(Input)`
-  box-shadow: #FFC000;
+  box-shadow: #0171bd;
   width: 60px;
   margin: 0 8px;
   padding: 0 8px;
-  border: #FFC000;
+  border: #0171bd;
   color: ${({ theme }) => theme.colors.primaryDark};
 
   ${({ theme }) => theme.mediaQueries.xs} {
@@ -78,8 +78,12 @@ const ModalInput: React.FC<React.PropsWithChildren<ModalInputProps>> = ({
     <div style={{ position: 'relative' }}>
       <StyledTokenInput isWarning={isBalanceZero}>
         <Flex justifyContent="space-between" pl="16px">
-          <Text color="#000000" fontSize="14px">{inputTitle}</Text>
-          <Text color="#000000" fontSize="14px">{t('Balance: %balance%', { balance: displayBalance(max) })}</Text>
+          <Text color="#000000" fontSize="14px">
+            {inputTitle}
+          </Text>
+          <Text color="#000000" fontSize="14px">
+            {t('Balance: %balance%', { balance: displayBalance(max) })}
+          </Text>
         </Flex>
         <Flex alignItems="flex-end" justifyContent="space-around">
           <StyledInput

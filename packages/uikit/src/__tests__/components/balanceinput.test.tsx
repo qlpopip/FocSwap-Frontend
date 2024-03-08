@@ -79,7 +79,7 @@ it("renders correctly", () => {
     }
 
     .c3:focus:not(:disabled) {
-      box-shadow: 0px 0px 0px 1px #7645D9,0px 0px 0px 4px rgba(118,69,217,0.6);
+      box-shadow: 0px 0px 0px 1px #0171BD,0px 0px 0px 4px rgba(118,69,217,0.6);
     }
 
     .c0 {
@@ -238,7 +238,7 @@ it("renders correctly with unit prop", () => {
     }
 
     .c3:focus:not(:disabled) {
-      box-shadow: 0px 0px 0px 1px #7645D9,0px 0px 0px 4px rgba(118,69,217,0.6);
+      box-shadow: 0px 0px 0px 1px #0171BD,0px 0px 0px 4px rgba(118,69,217,0.6);
     }
 
     .c6 {
@@ -431,7 +431,7 @@ it("renders correctly with unit prop and switchEditingUnits", () => {
     }
 
     .c3:focus:not(:disabled) {
-      box-shadow: 0px 0px 0px 1px #7645D9,0px 0px 0px 4px rgba(118,69,217,0.6);
+      box-shadow: 0px 0px 0px 1px #0171BD,0px 0px 0px 4px rgba(118,69,217,0.6);
     }
 
     .c9 {
@@ -467,7 +467,7 @@ it("renders correctly with unit prop and switchEditingUnits", () => {
       height: 32px;
       padding: 0 16px;
       background-color: transparent;
-      color: #1FC7D4;
+      color: #0171BD;
       box-shadow: none;
     }
 

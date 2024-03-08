@@ -387,7 +387,7 @@ const masterChefV2Abi = [
 
 const masterChefFarmCalls = (farm: SerializedFarmConfig, isTestnet: boolean, masterChefAddresses) => {
   const { pid } = farm
-  const masterChefAddress = isTestnet ? masterChefAddresses[ChainId.SEPOLIA] : masterChefAddresses[ChainId.ETHEREUM]
+  const masterChefAddress = isTestnet ? masterChefAddresses[ChainId.SAIGON] : masterChefAddresses[ChainId.ETHEREUM]
 
   return pid || pid === 0
     ? {
@@ -411,7 +411,7 @@ export const fetchMasterChefData = async (
     const masterChefMultiCallResult = await multicall({
       abi: masterChefV2Abi,
       calls: masterChefAggregatedCalls,
-      chainId: isTestnet ? ChainId.SEPOLIA : ChainId.ETHEREUM,
+      chainId: isTestnet ? ChainId.SAIGON : ChainId.ETHEREUM,
     })
 
     let masterChefChunkedResultCounter = 0
@@ -439,7 +439,7 @@ export const fetchMasterChefV2Data = async ({
   masterChefAddresses
 }) => {
   try {
-    const masterChefV2Address = isTestnet ? masterChefAddresses[ChainId.SEPOLIA] : masterChefAddresses[ChainId.ETHEREUM]
+    const masterChefV2Address = isTestnet ? masterChefAddresses[ChainId.SAIGON] : masterChefAddresses[ChainId.ETHEREUM]
     const [[poolLength], [totalRegularAllocPoint], [cakePerBlock]] = await multicall<
       [[BigNumber], [BigNumber], [BigNumber]]
     >({
@@ -458,7 +458,7 @@ export const fetchMasterChefV2Data = async ({
           name: 'FOCPerBlock',
         },
       ],
-      chainId: isTestnet ? ChainId.SEPOLIA : ChainId.ETHEREUM,
+      chainId: isTestnet ? ChainId.SAIGON : ChainId.ETHEREUM,
     })
 
     return {

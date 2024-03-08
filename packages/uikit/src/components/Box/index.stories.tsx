@@ -49,10 +49,10 @@ export const Grid: React.FC<React.PropsWithChildren> = () => {
       alignContent="center"
       gridTemplateColumns="1fr 1fr"
       gridColumnGap="16px"
-      style={{ backgroundColor: "#7645D9" }}
+      style={{ backgroundColor: "#0171BD" }}
     >
-      <BoxComponent style={{ backgroundColor: "#FFC000", width: "300px", height: "300px" }} />
-      <BoxComponent style={{ backgroundColor: "#FFC000", width: "300px", height: "300px" }} />
+      <BoxComponent style={{ backgroundColor: "#0171BD", width: "300px", height: "300px" }} />
+      <BoxComponent style={{ backgroundColor: "#0171BD", width: "300px", height: "300px" }} />
     </GridComponent>
   );
 };

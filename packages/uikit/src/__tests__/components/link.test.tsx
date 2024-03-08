@@ -7,7 +7,7 @@ it("renders link correctly", () => {
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       .c0 {
-      color: #1FC7D4;
+      color: #0171BD;
       font-weight: 600;
       line-height: 1.5;
       font-size: 16px;
@@ -49,7 +49,7 @@ it("renders link external link correctly", () => {
   expect(asFragment()).toMatchInlineSnapshot(`
     <DocumentFragment>
       .c0 {
-      color: #1FC7D4;
+      color: #0171BD;
       font-weight: 600;
       line-height: 1.5;
       font-size: 16px;
@@ -78,7 +78,7 @@ it("renders link external link correctly", () => {
       -webkit-align-self: center;
       -ms-flex-item-align: center;
       align-self: center;
-      fill: #1FC7D4;
+      fill: #0171BD;
       -webkit-flex-shrink: 0;
       -ms-flex-negative: 0;
       flex-shrink: 0;

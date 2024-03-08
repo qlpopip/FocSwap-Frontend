@@ -38,7 +38,7 @@ export const fetchFarmsPublicDataAsync = createAsyncThunk<
 >(
   'farmsV1/fetchFarmsPublicDataAsync',
   async (pids) => {
-    const farmsConfig = await getFarmConfig(ChainId.SEPOLIA)
+    const farmsConfig = await getFarmConfig(ChainId.SAIGON)
     const poolLength = await fetchMasterChefFarmPoolLength()
     const farmsToFetch = farmsConfig.filter((farmConfig) => pids.includes(farmConfig.v1pid))
     const farmsCanFetch = farmsToFetch.filter((f) => poolLength.gt(f.v1pid))

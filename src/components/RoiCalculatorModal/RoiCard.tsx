@@ -8,7 +8,7 @@ const MILLION = 1000000
 const TRILLION = 1000000000000
 
 const RoiCardWrapper = styled(Box)`
-  background: linear-gradient(180deg, #FFC0, #FFC000);
+  background: linear-gradient(180deg, #ffc0, #0171bd);
   padding: 1px;
   width: 100%;
   border-radius: ${({ theme }) => theme.radii.default};

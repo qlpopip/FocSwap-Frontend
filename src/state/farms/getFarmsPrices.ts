@@ -165,4 +165,9 @@ const nativeStableLpMap = {
     wNative: 'WETH',
     stable: 'USDC',
   },
+  2021: {
+    address: '0xac1750d5613c6db372108dc9d0543ab4a9310919',
+    wNative: 'WRON',
+    stable: 'USDC',
+  },
 }

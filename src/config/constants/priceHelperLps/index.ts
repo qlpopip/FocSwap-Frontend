@@ -4,6 +4,7 @@ import FarmsBscTestnetPriceHelper from './farms/97'
 import FarmsEthereumPriceHelper from './farms/1'
 import FarmsGoerliPriceHelper from './farms/5'
 import FarmsBaobabPriceHelper from './farms/1001'
+import FarmsSaigonPriceHelper from './farms/2021'
 import FarmsKlaytnPriceHelper from './farms/8217'
 import FarmsSepoliaPriceHelper from './farms/11155111'
 import PoolsBscPriceHelper from './pools/56'
@@ -11,6 +12,7 @@ import PoolsBscTestnetPriceHelper from './pools/97'
 import PoolsEthereumPriceHelper from './pools/1'
 import PoolsGoerliPriceHelper from './pools/5'
 import PoolsBaobabPriceHelper from './pools/1001'
+import PoolsSaigonPriceHelper from './pools/2021'
 import PoolsKlaytnPriceHelper from './pools/8217'
 import PoolsSepoliaPriceHelper from './pools/11155111'
 
@@ -30,6 +32,8 @@ export const getFarmsPriceHelperLpFiles = (chainId: ChainId) => {
       return FarmsKlaytnPriceHelper
     case ChainId.SEPOLIA:
       return FarmsSepoliaPriceHelper
+    case ChainId.SAIGON:
+      return FarmsSaigonPriceHelper
     default:
       return []
   }
@@ -51,6 +55,8 @@ export const getPoolsPriceHelperLpFiles = (chainId: ChainId) => {
       return PoolsKlaytnPriceHelper
     case ChainId.SEPOLIA:
       return PoolsSepoliaPriceHelper
+    case ChainId.SAIGON:
+      return PoolsSaigonPriceHelper
     default:
       return []
   }

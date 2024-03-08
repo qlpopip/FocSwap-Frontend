@@ -13,6 +13,7 @@ export enum ChainId {
   BAOBAB = 1001,
   KLAYTN = 8217,
   SEPOLIA = 11155111,
+  SAIGON = 2021,
 }
 
 export enum TradeType {
@@ -40,6 +41,7 @@ export const FACTORY_ADDRESS_MAP: Record<number, string> = {
   [ChainId.BSC_TESTNET]: '0x6725f303b657a9451d8ba641348b6761a6cc7a17',
   [ChainId.BAOBAB]: '0xcb78A0AC1DfEfDD1b0a6F317AFA181D7B2bcCace',
   [ChainId.KLAYTN]: '0xef2E94DDB76e128B1aB74a7433d26879A1a15f75',
+  [ChainId.SAIGON]: '0x8498E2d7a9d579fAB3AA1056F18A863e789b6321',
 }
 export const INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5'
 
@@ -53,6 +55,7 @@ export const INIT_CODE_HASH_MAP: Record<number, string> = {
   [ChainId.BSC_TESTNET]: '0xd0d4c4cd0848c93cb4fd1f498d7013ee6bfb25783ea21593d5834f5d250ece66',
   [ChainId.BAOBAB]: '0x29bd6d25b5a86f6ac94daf96ae9932a8109dee0e95aff78c7c9d38ee24fd6f88',
   [ChainId.KLAYTN]: '0x29bd6d25b5a86f6ac94daf96ae9932a8109dee0e95aff78c7c9d38ee24fd6f88',
+  [ChainId.SAIGON]: '0x50368cf9d6b394e5bf92ece698ed924a1d0dd04b6e8d6bbc50020afa3e460bed',
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
@@ -129,6 +132,14 @@ export const WETH9 = {
     'Wrapped KLAY',
     'https://weth.io'
   ),
+  [ChainId.SAIGON]: new Token(
+    ChainId.SAIGON,
+    '0xa959726154953bae111746e265e6d754f48570e6',
+    18,
+    'WRON',
+    'Wrapped RON',
+    'https://weth.io'
+  ),
 }
 
 export const WBNB = {
@@ -167,6 +178,7 @@ export const WNATIVE: Record<number, Token> = {
   [ChainId.BSC_TESTNET]: WBNB[ChainId.BSC_TESTNET],
   [ChainId.BAOBAB]: WETH9[ChainId.BAOBAB],
   [ChainId.KLAYTN]: WETH9[ChainId.KLAYTN],
+  [ChainId.SAIGON]: WETH9[ChainId.SAIGON],
 }
 
 export const NATIVE: Record<
@@ -183,6 +195,7 @@ export const NATIVE: Record<
   [ChainId.SEPOLIA]: { name: 'Sepolia Ether', symbol: 'SepoliaETH', decimals: 18 },
   [ChainId.BAOBAB]: { name: 'Baobab Klay', symbol: 'KLAY', decimals: 18 },
   [ChainId.KLAYTN]: { name: 'Klay', symbol: 'KLAY', decimals: 18 },
+  [ChainId.SAIGON]: { name: 'Saigon Ron', symbol: 'RON', decimals: 18 },
 
   [ChainId.BSC]: {
     name: 'Binance Chain Native Token',

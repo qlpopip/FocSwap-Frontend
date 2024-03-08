@@ -10,8 +10,12 @@ export const Klaytnprodnode = 'https://public-node-api.klaytnapi.com/v1/cypress/
 
 export const Sepoliaprodnode = 'https://rpc2.sepolia.org'
 
+export const Saigonprodnode = 'https://saigon-testnet.roninchain.com/rpc'
+
 export const baobabRpcProvider = new StaticJsonRpcProvider(Baobabprodnode)
 
 export const sepoliaRpcProvider = new StaticJsonRpcProvider(Sepoliaprodnode)
+
+export const saigonRpcProvider = new StaticJsonRpcProvider(Saigonprodnode)
 
 export default null

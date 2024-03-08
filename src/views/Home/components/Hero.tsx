@@ -5,6 +5,7 @@ import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
 import styled, { keyframes, css } from 'styled-components'
+import { SlideSvgLight } from './SlideSvg'
 import CompositeImage, { CompositeImageProps } from './CompositeImage'
 
 const flyingAnim = () => keyframes`
@@ -78,19 +79,16 @@ const StarsWrapper = styled.div`
 `
 
 const starsImage: CompositeImageProps = {
-  path: '/images/home/lunar-bunny/',
-  attributes: [
-    { src: 'star-l', alt: '3D Star' },
-    { src: 'star-r', alt: '3D Star' },
-    { src: 'star-top-r', alt: '3D Star' },
-  ],
+  path: '/images/',
+  attributes: [{ src: 'robot', alt: '3D Robot' }],
 }
 
 const StyledFlex = styled(Flex)`
   ${css`
     @media screen and (max-width: 768px) {
-      height: 80vw;
+      height: 100vh;
       width: 100%;
+      flex-direction: column-reverse;
     }
 
     @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -99,7 +97,7 @@ const StyledFlex = styled(Flex)`
     }
 
     @media screen and (min-width: 1025px) {
-      height: 55%;
+      height: 70%;
       width: 100%;
     }
   `}
@@ -113,7 +111,7 @@ const Hero = () => {
   return (
     <>
       <BgWrapper>
-        {/* <InnerWrapper>{theme.isDark ? <SlideSvgDark width="100%" /> : <SlideSvgLight width="100%" />}</InnerWrapper> */}
+        <InnerWrapper>{<SlideSvgLight width="100%" />}</InnerWrapper>
       </BgWrapper>
       <StyledFlex
         flex={[null, null, null, '1']}
@@ -123,19 +121,20 @@ const Hero = () => {
         justifyContent="center"
       >
         <Flex position="relative" flexDirection="column" justifyContent="center" width="100%" height="100%">
-          <Heading scale="xxl" color="secondary" mb="24px" width="100%" textAlign="center">
-            {t('FOCswap explanation')}
+          <Heading scale="xxl" color="#0171BD" mb="24px" width="100%" textAlign="left">
+            {t('Favorite DEX')}
           </Heading>
-          <Heading scale="md" mb="24px" width="100%" textAlign="center">
-            {t('FOCswap explanation')}
+          <Heading scale="lg" mb="24px" width="100%" textAlign="left" color="#5b97bf">
+            {t('Trade, earn, and own crypto on the all-in-one DEX')}
           </Heading>
-          <Flex alignItems="center" justifyContent="center">
+          <Flex alignItems="center" justifyContent="left">
             {!account && <ConnectWalletButton mr="8px" />}
             <NextLinkFromReactRouter to="/swap">
               <Button variant={!account ? 'secondary' : 'primary'}>{t('Trade Now')}</Button>
             </NextLinkFromReactRouter>
           </Flex>
         </Flex>
+        <CompositeImage {...starsImage} maxHeight="512px" />
         {/* <Flex
           flex={[null, null, null, '1']}
           mb={['24px', null, null, '0']}

@@ -9,6 +9,7 @@ export const BASE_BSC_SCAN_URLS = {
   [ChainId.BAOBAB]: 'https://baobab.scope.klaytn.com',
   [ChainId.KLAYTN]: 'https://scope.klaytn.com',
   [ChainId.SEPOLIA]: 'https://sepolia.etherscan.io',
+  [ChainId.SAIGON]: 'https://saigon-app.roninchain.com',
 }
 
 // CAKE_PER_BLOCK details

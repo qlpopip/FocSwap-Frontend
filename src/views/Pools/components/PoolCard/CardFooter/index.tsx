@@ -46,8 +46,8 @@ const Footer: React.FC<React.PropsWithChildren<FooterProps>> = ({ pool, account,
     <CardFooter>
       <ExpandableButtonWrapper>
         <Flex alignItems="center">
-          {vaultKey ? <CompoundingPoolTag /> : <ManualPoolTag />}
-          {tooltipVisible && tooltip}
+          {/* {vaultKey ? <CompoundingPoolTag /> : <ManualPoolTag />}
+          {tooltipVisible && tooltip} */}
           <Flex ref={targetRef}>
             <HelpIcon ml="4px" width="20px" height="20px" color="textSubtle" />
           </Flex>

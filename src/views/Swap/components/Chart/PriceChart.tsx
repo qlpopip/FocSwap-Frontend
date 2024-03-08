@@ -1,3 +1,4 @@
+import { useState, useCallback } from 'react'
 import {
   Button,
   ExpandIcon,
@@ -6,20 +7,20 @@ import {
   ShrinkIcon,
   SyncAltIcon,
   Text,
-  // TradingViewIcon,
+  TradingViewIcon,
   LineGraphIcon,
   useMatchBreakpoints,
 } from '@pancakeswap/uikit'
 import { CurrencyLogo, DoubleCurrencyLogo } from 'components/Logo'
-// import { TradingViewLabel } from 'components/TradingView'
+import { TradingViewLabel } from 'components/TradingView'
 import { useTranslation } from '@pancakeswap/localization'
 import { ChartViewMode } from 'state/user/actions'
 import { useExchangeChartViewManager } from 'state/user/hooks'
 import styled from 'styled-components'
 import BasicChart from './BasicChart'
 import { StyledPriceChart } from './styles'
-// import TradingViewChart from './TradingViewChart'
-// import PairPriceDisplay from '../../../../components/PairPriceDisplay'
+import TradingViewChart from './TradingViewChart'
+import PairPriceDisplay from '../../../../components/PairPriceDisplay'
 
 const ChartButton = styled(Button)`
   background-color: ${({ $active, theme }) => $active && `${theme.colors.primary}0f`};
@@ -43,12 +44,12 @@ const PriceChart = ({
   const { isDesktop } = useMatchBreakpoints()
   const toggleExpanded = () => setIsChartExpanded((currentIsExpanded) => !currentIsExpanded)
   const [chartView, setChartView] = useExchangeChartViewManager()
-  // const [twChartSymbol, setTwChartSymbol] = useState('')
+  const [twChartSymbol, setTwChartSymbol] = useState('')
   const { t } = useTranslation()
 
-  // const handleTwChartSymbol = useCallback((symbol) => {
-  //   setTwChartSymbol(symbol)
-  // }, [])
+  const handleTwChartSymbol = useCallback((symbol) => {
+    setTwChartSymbol(symbol)
+  }, [])
 
   return (
     <StyledPriceChart
@@ -86,7 +87,7 @@ const PriceChart = ({
             >
               {isDesktop ? t('Basic') : <LineGraphIcon color="primary" />}
             </ChartButton>
-            {/* <ChartButton
+            <ChartButton
               aria-label="TradingView"
               title="TradingView"
               $active={chartView === ChartViewMode.TRADING_VIEW}
@@ -95,7 +96,7 @@ const PriceChart = ({
               onClick={() => setChartView(ChartViewMode.TRADING_VIEW)}
             >
               {isDesktop ? 'TradingView' : <TradingViewIcon color="primary" />}
-            </ChartButton> */}
+            </ChartButton>
           </Flex>
         </Flex>
         {!isMobile && (
@@ -117,7 +118,7 @@ const PriceChart = ({
           currentSwapPrice={currentSwapPrice}
         />
       )}
-      {/* {chartView === ChartViewMode.TRADING_VIEW && (
+      {chartView === ChartViewMode.TRADING_VIEW && (
         <Flex
           flexDirection="column"
           justifyContent="space-between"
@@ -142,7 +143,7 @@ const PriceChart = ({
             onTwChartSymbol={handleTwChartSymbol}
           />
         </Flex>
-      ) */}
+      )}
     </StyledPriceChart>
   )
 }

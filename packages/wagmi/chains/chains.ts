@@ -120,6 +120,49 @@ export const bscTest: Chain = {
   testnet: true,
 }
 
+export const saigon: Chain = {
+  id: 2021,
+  name: 'Saigon Testnet',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'RON',
+    symbol: 'RON',
+  },
+  rpcUrls: {
+    default: 'https://saigon-testnet.roninchain.com/rpc',
+  },
+  blockExplorers: {
+    default: { name: 'Saigon Exploer', url: 'https://saigon-app.roninchain.com' },
+  },
+  multicall: {
+    address: '0xca11bde05977b3631167028862be2a173976ca11',
+    blockCreated: 18736871,
+  },
+  testnet: true,
+  network: 'saigon tesnet',
+}
+
+export const ronin: Chain = {
+  id: 2021,
+  name: 'Ronin',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'RON',
+    symbol: 'RON',
+  },
+  rpcUrls: {
+    default: 'https://api.roninchain.com/rpc',
+  },
+  blockExplorers: {
+    default: { name: 'Ronin Exploer', url: 'https://app.roninchain.com' },
+  },
+  multicall: {
+    address: '0xca11bde05977b3631167028862be2a173976ca11',
+    blockCreated: 26023535,
+  },
+  network: 'ronin mainnet',
+}
+
 export const rinkeby: Chain = {
   ...defaultRinkeby,
   rpcUrls: {

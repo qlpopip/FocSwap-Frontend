@@ -25,7 +25,7 @@ export function getBlockExploreLink(
   type: 'transaction' | 'token' | 'address' | 'block' | 'countdown',
   chainIdOverride?: number,
 ): string {
-  const chainId = chainIdOverride || ChainId.SEPOLIA
+  const chainId = chainIdOverride || ChainId.SAIGON
   const chain = chains.find((c) => c.id === chainId)
   if (!chain) return klaytn.blockExplorers.default.url
   switch (type) {

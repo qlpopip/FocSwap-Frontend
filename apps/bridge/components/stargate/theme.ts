@@ -21,7 +21,7 @@ function pointsToRem(size: number) {
 // theme definition
 
 export const FontFamily = {
-  KANIT: "'Kanit', sans-serif",
+  KANIT: "'Inter', sans-serif",
 }
 
 const FontWeight = {
@@ -264,7 +264,7 @@ export const darkTheme: Theme = {
         },
       },
       thumb: {
-        backgroundColor: '#999999',
+        backgroundColor: '#ffffff',
       },
     },
     MuiTableCell: {
@@ -730,7 +730,7 @@ export const lightTheme: Theme = {
         },
       },
       thumb: {
-        backgroundColor: '#999999',
+        backgroundColor: '#ffffff',
       },
     },
     MuiTableCell: {

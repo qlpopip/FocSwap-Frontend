@@ -1,5 +1,5 @@
 import { BinanceWalletConnector } from '@pancakeswap/wagmi/connectors/binanceWallet'
-import { bsc, sepolia } from '@pancakeswap/wagmi/chains'
+import { bsc, saigon, sepolia } from '@pancakeswap/wagmi/chains'
 import { configureChains, createClient } from 'wagmi'
 import memoize from 'lodash/memoize'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
@@ -7,13 +7,15 @@ import { InjectedConnector } from 'wagmi/connectors/injected'
 import { MetaMaskConnector } from 'wagmi/connectors/metaMask'
 import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { KaikasConnector } from '@pancakeswap/wagmi/connectors/kaikas'
+import { RoninConnector } from '@pancakeswap/wagmi/connectors/roninWallet'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 import { SafeConnector } from '@gnosis.pm/safe-apps-wagmi'
 
 const CHAINS = [
   // bsc,
   // // TODO: ETH
-  sepolia,
+  // sepolia,
+  saigon,
   // bscTest,
   // rinkeby,
   // goerli,
@@ -103,13 +105,15 @@ export const metaMaskConnector = new MetaMaskConnector({
   },
 })
 export const kaikasConnector = new KaikasConnector({ chains })
+export const roninConnector = new RoninConnector({ chains })
 export const bscConnector = new BinanceWalletConnector({ chains })
 export const client = createClient({
   autoConnect: false,
   provider,
   connectors: [
     // new SafeConnector({ chains }),
-    metaMaskConnector,
+    // metaMaskConnector,
+    roninConnector,
     // injectedConnector,
     // kaikasConnector,
     // coinbaseConnector,

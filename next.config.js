@@ -35,7 +35,7 @@ const config = {
       allowFutureImage: true,
     },
   },
-  reactStrictMode: true,
+  reactStrictMode: false,
   swcMinify: true,
   images: {
     domains: ['static-nft.pancakeswap.com'],

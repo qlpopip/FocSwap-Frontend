@@ -19,7 +19,7 @@ const useTheme = () => {
     }
   }
 
-  return { isDark: resolvedTheme === 'dark', theme, setTheme: handleSwitchTheme }
+  return { isDark: resolvedTheme === 'light', theme, setTheme: handleSwitchTheme }
 }
 
 export default useTheme

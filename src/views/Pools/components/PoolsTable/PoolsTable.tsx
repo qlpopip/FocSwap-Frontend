@@ -13,7 +13,7 @@ const StyledTable = styled.div`
   border-radius: ${({ theme }) => theme.radii.card};
   scroll-margin-top: 64px;
 
-  background-color: ${({ theme }) => theme.card.background};
+  background: #ffffff;
   > div:not(:last-child) {
     border-bottom: 2px solid ${({ theme }) => theme.colors.disabled};
   }

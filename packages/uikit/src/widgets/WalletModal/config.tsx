@@ -1,27 +1,35 @@
 import Metamask from "../../components/Svg/Icons/Metamask";
-import WalletConnect from "../../components/Svg/Icons/WalletConnect";
-import TrustWallet from "../../components/Svg/Icons/TrustWallet";
-import Kaikas from "../../components/Svg/Icons/Kaikas";
-import MathWallet from "../../components/Svg/Icons/MathWallet";
-import TokenPocket from "../../components/Svg/Icons/TokenPocket";
-import BinanceChain from "../../components/Svg/Icons/BinanceChain";
-import SafePal from "../../components/Svg/Icons/SafePal";
-import Coin98 from "../../components/Svg/Icons/Coin98";
-import Blocto from "../../components/Svg/Icons/Blocto";
-import Brave from "../../components/Svg/Icons/Brave";
-import CoinbaseWallet from "../../components/Svg/Icons/CoinbaseWallet";
-import Opera from "../../components/Svg/Icons/Opera";
+import Ronin from "../../components/Svg/Icons/Ronin";
+// import WalletConnect from "../../components/Svg/Icons/WalletConnect";
+// import TrustWallet from "../../components/Svg/Icons/TrustWallet";
+// import Kaikas from "../../components/Svg/Icons/Kaikas";
+// import MathWallet from "../../components/Svg/Icons/MathWallet";
+// import TokenPocket from "../../components/Svg/Icons/TokenPocket";
+// import BinanceChain from "../../components/Svg/Icons/BinanceChain";
+// import SafePal from "../../components/Svg/Icons/SafePal";
+// import Coin98 from "../../components/Svg/Icons/Coin98";
+// import Blocto from "../../components/Svg/Icons/Blocto";
+// import Brave from "../../components/Svg/Icons/Brave";
+// import CoinbaseWallet from "../../components/Svg/Icons/CoinbaseWallet";
+// import Opera from "../../components/Svg/Icons/Opera";
 
 import { Config, ConnectorNames } from "./types";
 
 const connectors: Config[] = [
   {
-    title: "Metamask",
-    icon: Metamask,
-    connectorId: ConnectorNames.MetaMask,
-    priority: 2,
-    href: "https://metamask.app.link/dapp/odiswap.netlify.app/",
+    title: "Ronin Wallet",
+    icon: Ronin,
+    connectorId: ConnectorNames.Ronin,
+    priority: 1,
+    href: "https://wallet.roninchain.com/",
   },
+  // {
+  //   title: "Metamask",
+  //   icon: Metamask,
+  //   connectorId: ConnectorNames.MetaMask,
+  //   priority: 2,
+  //   href: "https://metamask.app.link/dapp/odiswap.netlify.app/",
+  // },
   // {
   //   title: "Binance Wallet",
   //   icon: BinanceChain,

@@ -73,7 +73,7 @@ function MyApp(props: CustomAppProps) {
           content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover"
         />
         <meta name="description" />
-        <meta name="theme-color" content="#1FC7D4" />
+        <meta name="theme-color" content="#0171BD" />
         <meta name="twitter:image" />
         <meta name="twitter:description" />
         <meta name="twitter:card" content="summary_large_image" />
