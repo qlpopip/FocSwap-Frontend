@@ -2,7 +2,7 @@
   "short_name": "FOCSwap",
   "name": "FOCSwap",
   "description": "Farm FOC with FOC LP Tokens",
-  "homepage_url": "https://odiswap.netlify.app",
+  "homepage_url": "https://focswap-test.netlify.app/",
   "start_url": ".",
   "display": "standalone",
   "theme_color": "#0171BD",
@@ -12,7 +12,7 @@
     {
       "src": "favicon.ico",
       "type": "image/x-icon",
-      "sizes": "16x16"
+      "sizes": "71x44"
     },
     {
       "src": "logo.png",
