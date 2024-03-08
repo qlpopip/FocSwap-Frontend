@@ -74,10 +74,6 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         index={2}
         hasCurvedDivider={false}
       >
-        <div style={{ zIndex: '1', position: 'absolute', top: '-18%', right: '0%' }}>
-          <img src="/images/map.png" alt="map" width={200} />
-        </div>
-
         <OuterWedgeWrapper>
           <InnerWedgeWrapper width="100%" top fill="#72b8f2">
             <WedgeBottomLeft />
