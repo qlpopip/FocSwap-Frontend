@@ -12,6 +12,12 @@ import {
 import { InjectedConnector } from 'wagmi/connectors/injected'
 import { hexValue } from '@ethersproject/bytes'
 
+declare global {
+  interface Window {
+    klaytn: any
+  }
+}
+
 const mappingNetwork: Record<number, string> = {
   1001: 'baobab',
   8217: 'klaytn',
@@ -91,7 +97,7 @@ export class KaikasConnector extends InjectedConnector {
       try {
         await provider.request?.({
           method: 'wallet_switchEthereumChain',
-          params: [{ chainId: id}]
+          params: [{ chainId: id }],
         })
 
         return (
