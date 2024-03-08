@@ -6,7 +6,6 @@ const mapping = {
   [ChainId.ETHEREUM]: 'ethereum',
   [ChainId.BAOBAB]: 'klaytn',
   [ChainId.KLAYTN]: 'klaytn',
-  [ChainId.SEPOLIA]: 'ethereum',
   [ChainId.SAIGON]: 'saigon',
 }
 

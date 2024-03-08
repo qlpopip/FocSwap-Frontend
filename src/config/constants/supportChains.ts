@@ -7,7 +7,6 @@ export const SUPPORT_FARMS = [
   ChainId.GOERLI,
   ChainId.BAOBAB,
   ChainId.KLAYTN,
-  ChainId.SEPOLIA,
   ChainId.SAIGON,
 ]
 

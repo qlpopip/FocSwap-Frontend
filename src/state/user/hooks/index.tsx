@@ -422,9 +422,6 @@ export function useGasPrice(): string {
   if (chainId === ChainId.KLAYTN) {
     return userGas
   }
-  if (chainId === ChainId.SEPOLIA) {
-    return userGas
-  }
   if (chainId === ChainId.SAIGON) {
     return userGas
   }

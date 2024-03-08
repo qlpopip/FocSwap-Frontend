@@ -8,7 +8,6 @@ import {
   BUSD,
   baobabTokens,
   klaytnTokens,
-  sepoliaTokens,
   saigonTokens,
 } from '@pancakeswap/tokens'
 import { ChainMap, ChainTokenList } from './types'
@@ -21,7 +20,6 @@ export const ROUTER_ADDRESS: ChainMap<string> = {
   [ChainId.BSC_TESTNET]: '0xD99D1c33F9fC3444f8101754aBC46c52416550D1',
   [ChainId.BAOBAB]: '0xec439a2b276DE791c0fCEE73450f6DcB96A7726A',
   [ChainId.KLAYTN]: '0x6FC56a0D502AA30791e949E1b7D05dA58635023b',
-  [ChainId.SEPOLIA]: '0x9C5221CBb68369f8ACf37F6d2a6C79a3e69c8521',
   [ChainId.SAIGON]: '0x45d29Fa8F9Db474BE7653Fb3e88eB45aA60a2e46',
 } // 수정
 
@@ -36,7 +34,6 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   ],
   [ChainId.RINKEBY]: [WNATIVE[ChainId.RINKEBY], USDC[ChainId.RINKEBY], BUSD[ChainId.RINKEBY]],
   [ChainId.GOERLI]: [WNATIVE[ChainId.GOERLI], USDC[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
-  [ChainId.SEPOLIA]: [WNATIVE[ChainId.SEPOLIA], USDC[ChainId.SEPOLIA], USDT[ChainId.SEPOLIA]],
   [ChainId.SAIGON]: [WNATIVE[ChainId.SAIGON], USDC[ChainId.SAIGON], USDT[ChainId.SAIGON]],
   [ChainId.BSC]: [
     bscTokens.wbnb,
@@ -79,7 +76,6 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.ETHEREUM]: [USDC[ChainId.ETHEREUM], WBNB[ChainId.ETHEREUM], BUSD[ChainId.ETHEREUM], USDT[ChainId.ETHEREUM]],
   [ChainId.RINKEBY]: [USDC[ChainId.RINKEBY], WNATIVE[ChainId.RINKEBY], BUSD[ChainId.RINKEBY]],
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
-  [ChainId.SEPOLIA]: [USDC[ChainId.SEPOLIA], WNATIVE[ChainId.SEPOLIA], USDT[ChainId.SEPOLIA], sepoliaTokens.foc],
   [ChainId.SAIGON]: [USDC[ChainId.SAIGON], WNATIVE[ChainId.SAIGON], USDT[ChainId.SAIGON], saigonTokens.foc],
   [ChainId.BSC]: [bscTokens.busd, bscTokens.cake, bscTokens.btcb],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
@@ -98,7 +94,6 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   ],
   [ChainId.RINKEBY]: [USDC[ChainId.RINKEBY], WNATIVE[ChainId.RINKEBY], BUSD[ChainId.RINKEBY]],
   [ChainId.GOERLI]: [USDC[ChainId.GOERLI], WNATIVE[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
-  [ChainId.SEPOLIA]: [USDC[ChainId.SEPOLIA], WNATIVE[ChainId.SEPOLIA], sepoliaTokens.foc],
   [ChainId.SAIGON]: [USDC[ChainId.SAIGON], WNATIVE[ChainId.SAIGON], saigonTokens.foc],
   [ChainId.BSC]: [bscTokens.wbnb, bscTokens.dai, bscTokens.busd, bscTokens.usdt, bscTokens.cake],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],

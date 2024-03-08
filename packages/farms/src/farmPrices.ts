@@ -194,11 +194,6 @@ const nativeStableLpMap = {
     wNative: 'WKLAY',
     stable: 'oUSDT',
   },
-  [ChainId.SEPOLIA]: {
-    address: '0x1af1a4EeCc1C22e682Df5290ee4a53eabFbfe0D9',
-    wNative: 'WETH',
-    stable: 'USDC',
-  },
   [ChainId.SAIGON]: {
     address: '0xac1750d5613c6db372108dc9d0543ab4a9310919',
     wNative: 'WRON',

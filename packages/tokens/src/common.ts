@@ -36,14 +36,6 @@ export const CAKE_SAIGON = new Token(
   'https://pancakeswap.finance/',
 )
 
-export const CAKE_SEPOLIA = new Token(
-  ChainId.SEPOLIA,
-  '0x7D26dcDB329d38d979863f0425b4cF0Dc29Df074',
-  18,
-  'FOC',
-  'FOC Token',
-  'https://pancakeswap.finance/',
-)
 // 수정
 export const CAKE_BAOBAB = new Token(
   ChainId.BAOBAB,
@@ -78,15 +70,6 @@ export const USDC_TESTNET = new Token(
   18,
   'USDC',
   'Binance-Peg USD Coin',
-  'https://www.centre.io/usdc',
-)
-
-export const USDC_SEPOLIA = new Token(
-  ChainId.SEPOLIA,
-  '0x91b957Af6aFF2B086A2470A4D24F4Ca029A05864',
-  18,
-  'USDC',
-  'USD Coin',
   'https://www.centre.io/usdc',
 )
 
@@ -129,15 +112,6 @@ export const USDC_GOERLI = new Token(
 export const USDT_BSC = new Token(
   ChainId.BSC,
   '0x55d398326f99059fF775485246999027B3197955',
-  18,
-  'USDT',
-  'Tether USD',
-  'https://tether.to/',
-)
-
-export const USDT_SEPOLIA = new Token(
-  ChainId.SEPOLIA,
-  '0x643aDE6A46b9184E33eccB6d20F66176950dd8Bb',
   18,
   'USDT',
   'Tether USD',
@@ -225,15 +199,6 @@ export const BUSD_GOERLI = new Token(
   'https://www.paxos.com/busd/',
 )
 
-export const BUSD_SEPOLIA = new Token(
-  ChainId.GOERLI,
-  '0xa8C4c48d714FBEB878b68243482aDEc013D28Ffe',
-  18,
-  'BUSD',
-  'Binance USD',
-  'https://www.paxos.com/busd/',
-)
-
 export const BUSD_SAIGON = new Token(
   ChainId.SAIGON,
   '0xa8C4c48d714FBEB878b68243482aDEc013D28Ffe',
@@ -256,7 +221,6 @@ export const BUSD: Record<ChainId, Token> = {
   [ChainId.ETHEREUM]: BUSD_ETH,
   [ChainId.RINKEBY]: BUSD_RINKEBY,
   [ChainId.GOERLI]: BUSD_GOERLI,
-  [ChainId.SEPOLIA]: BUSD_SEPOLIA,
   [ChainId.BSC]: BUSD_BSC,
   [ChainId.BSC_TESTNET]: BUSD_TESTNET,
   [ChainId.BAOBAB]: BUSD_BAOBAB,
@@ -268,7 +232,6 @@ export const CAKE = {
   [ChainId.BSC]: CAKE_MAINNET,
   [ChainId.BSC_TESTNET]: CAKE_TESTNET,
   [ChainId.GOERLI]: CAKE_GOERLI,
-  [ChainId.SEPOLIA]: CAKE_SEPOLIA,
   [ChainId.BAOBAB]: CAKE_BAOBAB,
   [ChainId.KLAYTN]: CAKE_KLAYTN,
   [ChainId.SAIGON]: CAKE_SAIGON,
@@ -280,7 +243,6 @@ export const USDC = {
   [ChainId.ETHEREUM]: USDC_ETH,
   [ChainId.RINKEBY]: USDC_RINKEBY,
   [ChainId.GOERLI]: USDC_GOERLI,
-  [ChainId.SEPOLIA]: USDC_SEPOLIA,
   [ChainId.BAOBAB]: USDC_BAOBAB,
   [ChainId.SAIGON]: USDC_SAIGON,
 }
@@ -290,6 +252,5 @@ export const USDT = {
   [ChainId.ETHEREUM]: USDT_ETH,
   [ChainId.BAOBAB]: USDT_BAOBAB,
   [ChainId.KLAYTN]: USDT_KLAYTN,
-  [ChainId.SEPOLIA]: USDT_SEPOLIA,
   [ChainId.SAIGON]: USDT_SAIGON,
 }

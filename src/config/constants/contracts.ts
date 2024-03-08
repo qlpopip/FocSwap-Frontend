@@ -7,7 +7,6 @@ export default {
     5: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
     1001: '0xF0681e41ee14467FF719BF86677c9F7246CA97FB',
     8217: '0xF90F20175539218044277D2862D301CF5ffaf190',
-    11155111: '0x45c6e79eb05F25D20d30888b70cFD9fcdb9B4d1A',
     2021: '0xA14a3778ED736965Fb47303bA1ac1bC57B2f5a61',
   },
   masterChefV1: {
@@ -16,7 +15,6 @@ export default {
     5: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
     1001: '0xF0681e41ee14467FF719BF86677c9F7246CA97FB',
     8217: '0xF90F20175539218044277D2862D301CF5ffaf190',
-    11155111: '0x45c6e79eb05F25D20d30888b70cFD9fcdb9B4d1A',
     2021: '0xA14a3778ED736965Fb47303bA1ac1bC57B2f5a61',
   },
   sousChef: {
@@ -25,7 +23,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   lotteryV2: {
@@ -34,7 +31,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   multiCall: multicallAddresses,
@@ -44,7 +40,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   pancakeBunnies: {
@@ -53,7 +48,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   bunnyFactory: {
@@ -62,7 +56,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   claimRefund: {
@@ -71,7 +64,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   pointCenterIfo: {
@@ -80,7 +72,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   bunnySpecial: {
@@ -89,7 +80,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   tradingCompetitionEaster: {
@@ -98,7 +88,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   tradingCompetitionFanToken: {
@@ -107,7 +96,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   tradingCompetitionMobox: {
@@ -116,7 +104,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   tradingCompetitionMoD: {
@@ -125,7 +112,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   easterNft: {
@@ -134,7 +120,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   cakeVault: {
@@ -143,7 +128,6 @@ export default {
     5: '0x1b3D8124d4Fb6085bde4d3511f850b00e371186f',
     1001: '0x05FC4BaEFe6E1C8715e06B5BE11e263BA657779c',
     8217: '0xE3Ef6D9D88787490549618F5792ecF472447d24e',
-    11155111: '0x6023D8dc2E2b88c4094CCbDAB7aE86A9f05105bf',
     2021: '0x1881895Fd353f0675DBaDcd1ef1558cAf4080160',
   }, // 수정
   cakeFlexibleSideVault: {
@@ -152,7 +136,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   predictionsBNB: {
@@ -161,7 +144,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   predictionsCAKE: {
@@ -170,7 +152,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   chainlinkOracleBNB: {
@@ -179,7 +160,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   chainlinkOracleCAKE: {
@@ -188,7 +168,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   predictionsV1: {
@@ -197,7 +176,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   bunnySpecialCakeVault: {
@@ -205,7 +183,6 @@ export default {
     97: '',
     5: '',
     1001: '',
-    11155111: '',
     8217: '',
     2021: '',
   },
@@ -215,7 +192,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   bunnySpecialLottery: {
@@ -224,7 +200,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   bunnySpecialXmas: {
@@ -233,7 +208,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   farmAuction: {
@@ -242,7 +216,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   AnniversaryAchievement: {
@@ -251,7 +224,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   nftMarket: {
@@ -260,7 +232,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   nftSale: {
@@ -269,7 +240,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   pancakeSquad: {
@@ -278,7 +248,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   potteryDraw: {
@@ -287,7 +256,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   // TODO: multi
@@ -297,7 +265,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   iCake: {
@@ -306,7 +273,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   bCakeFarmBooster: {
@@ -315,7 +281,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
   bCakeFarmBoosterProxyFactory: {
@@ -324,7 +289,6 @@ export default {
     5: '',
     1001: '',
     8217: '',
-    11155111: '',
     2021: '',
   },
 }
