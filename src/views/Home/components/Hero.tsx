@@ -111,7 +111,9 @@ const Hero = () => {
   return (
     <>
       <BgWrapper>
-        <InnerWrapper>{<SlideSvgLight width="100%" />}</InnerWrapper>
+        <InnerWrapper>
+          <SlideSvgLight width="100%" />
+        </InnerWrapper>
       </BgWrapper>
       <StyledFlex
         flex={[null, null, null, '1']}

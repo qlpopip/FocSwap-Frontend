@@ -134,9 +134,9 @@ const About = () => {
               {t('About FOC')}
             </Heading>
             <Heading scale="md" mb="24px" width="100%" textAlign="center" color="#5b97bf">
-              {
-                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.'
-              }
+              {t(
+                'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+              )}
             </Heading>
           </Flex>
         </div>
