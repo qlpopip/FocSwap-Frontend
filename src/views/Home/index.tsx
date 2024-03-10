@@ -9,7 +9,9 @@ import { useActiveChainId } from 'hooks/useActiveChainId'
 import { OuterWedgeWrapper, InnerWedgeWrapper, WedgeBottomLeft } from './components/WedgeSvgs'
 import Hero from './components/Hero'
 import About from './components/About'
-import Point from './components/Point'
+import Stats from './components/MetricsSection'
+import ConnectWithUs from './components/ConnectWithUs'
+import Join from './components/Join'
 
 const StyledHeroSection = styled(PageSection)`
   padding-top: 16px;
@@ -48,28 +50,73 @@ const Home: React.FC<React.PropsWithChildren> = () => {
       <PageMeta />
 
       <StyledHeroSection
-        innerProps={{ style: { margin: '0', width: '100%' } }}
-        background="linear-gradient(180deg, #ffffff 50%, #0172bd 100%)"
+        innerProps={{ style: { margin: '0', width: '100%', height: '80vh' } }}
+        // background="linear-gradient(180deg, #ffffff 50%, #0172bd 100%)"
         index={1}
         hasCurvedDivider={false}
       >
         <Hero />
       </StyledHeroSection>
-      <StyledHeroSection
+      <PageSection
         innerProps={{ style: { margin: '0', width: '100%' } }}
-        background="#ffffff"
+        background="linear-gradient(180deg, #ffffff 30%, #ffe587 100%)"
+        containerProps={{
+          id: 'home-1',
+        }}
+        index={2}
+        hasCurvedDivider={true}
+      >
+        <Stats />
+      </PageSection>
+      <PageSection
+        innerProps={{ style: { margin: '0', width: '100%' } }}
+        background="linear-gradient(180deg, #ffffff 5%, #ffebcd 20%, #ffa621 100%)"
+        containerProps={{
+          id: 'home-2',
+        }}
+        bottomshadow="20px 25px 0px #cc01ff, -20px 25px 0px 0px #cc01ff"
+        borderRadius="0 0 20% 20%"
+        margin="0 0 2.5rem 0"
         index={2}
         hasCurvedDivider={false}
       >
+        <About />
+      </PageSection>
+      <PageSection
+        innerProps={{ style: { margin: '0', width: '100%', paddingBottom: '0' } }}
+        background="#FFF"
+        containerProps={{
+          id: 'home-3',
+        }}
+        index={3}
+        paddingBottom="0"
+        hasCurvedDivider={false}
+      >
         {/* <OuterWedgeWrapper>
-          <InnerWedgeWrapper width="100%" top fill="#05080a">
-            <WedgeTopLeft />
+          <InnerWedgeWrapper width="100%" top fill="#cc00ff">
+            <WedgeBottomLeft />
           </InnerWedgeWrapper>
         </OuterWedgeWrapper> */}
-        <Point />
-      </StyledHeroSection>
-      <StyledHeroSection
-        innerProps={{ style: { margin: '0', width: '100%', height: '80%', display: 'flex', alignItems: 'center' } }}
+        <ConnectWithUs />
+      </PageSection>
+      <PageSection
+        innerProps={{ style: { margin: '0', width: '100%', paddingBottom: '0' } }}
+        background="radial-gradient(ellipse at 50% 60%, rgba(255, 255, 255, 0.2) 30%, #cc00ff 60%)"
+        containerProps={{
+          id: 'home-4',
+        }}
+        index={4}
+        hasCurvedDivider={false}
+      >
+        <OuterWedgeWrapper>
+          <InnerWedgeWrapper width="100%" top fill="#cc00ff">
+            <WedgeBottomLeft />
+          </InnerWedgeWrapper>
+        </OuterWedgeWrapper>
+        <Join />
+      </PageSection>
+      {/* <StyledHeroSection
+        innerProps={{ style: { margin: '0', width: '100%', height: '100vh', display: 'flex', alignItems: 'center' } }}
         background="linear-gradient(180deg,#6fb6f1 0%,#eaf2f6 100%)"
         index={2}
         hasCurvedDivider={false}
@@ -80,7 +127,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
           </InnerWedgeWrapper>
         </OuterWedgeWrapper>
         <About />
-      </StyledHeroSection>
+      </StyledHeroSection> */}
     </>
   )
 }

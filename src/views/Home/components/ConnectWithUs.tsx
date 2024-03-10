@@ -56,7 +56,7 @@ const StyledFlex = styled(Flex)`
   `}
 `
 
-const About = () => {
+const ConnectWithUs = () => {
   const { t } = useTranslation()
   const { account } = useWeb3React()
   const { theme } = useTheme()
@@ -73,114 +73,101 @@ const About = () => {
       >
         <Flex position="relative" flexDirection="column" justifyContent="center" width="100%" height="100%">
           <Heading scale="xl" color="#17022d" mb="24px" width="100%" textAlign="center">
-            {t('Discover the')} <span style={{ color: '#f26622' }}>YES! FREE WIFI</span>
+            {t('Connect with Us')}
           </Heading>
-          {/* <Heading scale="md" mb="24px" width="100%" textAlign="center" color="#2f678d">
+          <Heading scale="md" mb="24px" width="100%" textAlign="center" color="#6234b8">
             {t(
               'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
             )}
-          </Heading> */}
+          </Heading>
         </Flex>
       </StyledFlex>
+      <Flex alignItems="center" justifyContent="center">
+        <Button variant="secondary">{t('Connect')}</Button>
+      </Flex>
       <MobileFlex>
-        <img src="/images/map__gradient.svg" alt="map" width={250} />
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', alignItems: 'center' }}>
+        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: '1rem', alignItems: 'center' }}>
           <div
             style={{
-              backgroundColor: '#ffefd6',
               borderRadius: '10px',
-              boxShadow: 'rgba(0, 0, 0, 0.5) 0px 1px 3px 0px',
               display: 'grid',
               height: '-webkit-fill-available',
               padding: '1rem',
               gap: '1rem',
             }}
           >
-            <img src="/images/free-wifi.svg" alt="free-wifi" width={50} />
-            <span style={{ color: '#623494', fontSize: '20px', fontWeight: '700' }}>Unlimited Access</span>
-            <span style={{ color: '#8b767e', fontSize: '16px', fontWeight: '300', lineHeight: '1.3' }}>
-              Users enjoy unrestricted access to the internet without any data caps or limitations on usage
+            <span style={{ color: '#17022d', fontSize: '24px', fontWeight: '500' }}>Circulating Supply</span>
+            <span style={{ color: '#f0aa1e', fontSize: '24px', fontWeight: '700', lineHeight: '1.3' }}>
+              241,756,367
             </span>
           </div>
 
           <div
             style={{
-              backgroundColor: '#ffefd6',
               borderRadius: '10px',
-              boxShadow: 'rgba(0, 0, 0, 0.5) 0px 1px 3px 0px',
               display: 'grid',
               height: '-webkit-fill-available',
               padding: '1rem',
               gap: '1rem',
             }}
           >
-            <img src="/images/privacy-protection.svg" alt="privacy-protection" width={50} />
-            <span style={{ color: '#623494', fontSize: '20px', fontWeight: '700' }}>Privacy Protection</span>
-            <span style={{ color: '#8b767e', fontSize: '16px', fontWeight: '300', lineHeight: '1.3' }}>
-              Implementing measures to safeguard personal information and ensure a secure browsing experience.
+            <span style={{ color: '#17022d', fontSize: '24px', fontWeight: '500' }}>Total Supply</span>
+            <span style={{ color: '#f0aa1e', fontSize: '24px', fontWeight: '700', lineHeight: '1.3' }}>
+              241,756,367
             </span>
           </div>
 
           <div
             style={{
-              backgroundColor: '#ffefd6',
               borderRadius: '10px',
-              boxShadow: 'rgba(0, 0, 0, 0.5) 0px 1px 3px 0px',
               display: 'grid',
               height: '-webkit-fill-available',
               padding: '1rem',
               gap: '1rem',
             }}
           >
-            <img src="/images/user-friendly.svg" alt="user-friendly" width={50} />
-            <span style={{ color: '#623494', fontSize: '20px', fontWeight: '700' }}>User-Friendly Interface</span>
-            <span style={{ color: '#8b767e', fontSize: '16px', fontWeight: '300', lineHeight: '1.3' }}>
-              An intuitive interface that makes it easy for users to connect to the WiFi network and interact with
-              advertisements.
+            <span style={{ color: '#17022d', fontSize: '24px', fontWeight: '500' }}>Market Cap</span>
+            <span style={{ color: '#f0aa1e', fontSize: '24px', fontWeight: '700', lineHeight: '1.3' }}>
+              241,756,367
             </span>
           </div>
 
           <div
             style={{
-              backgroundColor: '#ffefd6',
               borderRadius: '10px',
-              boxShadow: 'rgba(0, 0, 0, 0.5) 0px 1px 3px 0px',
               display: 'grid',
               height: '-webkit-fill-available',
               padding: '1rem',
               gap: '1rem',
             }}
           >
-            <img src="/images/ad-based.svg" alt="ad-based" width={50} />
-            <span style={{ color: '#623494', fontSize: '20px', fontWeight: '700' }}>Ad-Based Access</span>
-            <span style={{ color: '#8b767e', fontSize: '16px', fontWeight: '300', lineHeight: '1.3' }}>
-              Users access the service by watching shor advertisements, which serve as a form of currency for utilizing
-              the WiFi.
+            <span style={{ color: '#17022d', fontSize: '24px', fontWeight: '500' }}>Token Burn</span>
+            <span style={{ color: '#f0aa1e', fontSize: '24px', fontWeight: '700', lineHeight: '1.3' }}>
+              241,756,367
             </span>
           </div>
 
           <div
             style={{
-              backgroundColor: '#ffefd6',
               borderRadius: '10px',
-              boxShadow: 'rgba(0, 0, 0, 0.5) 0px 1px 3px 0px',
               display: 'grid',
               height: '-webkit-fill-available',
               padding: '1rem',
               gap: '1rem',
             }}
           >
-            <img src="/images/community-impact.svg" alt="community-impact" width={50} />
-            <span style={{ color: '#623494', fontSize: '20px', fontWeight: '700' }}>Community Impact</span>
-            <span style={{ color: '#8b767e', fontSize: '16px', fontWeight: '300', lineHeight: '1.3' }}>
-              A positive impact on communities, empowering individuals with access to information, education, &
-              oppertunities.
+            <span style={{ color: '#17022d', fontSize: '24px', fontWeight: '500' }}>Current Emissions</span>
+            <span style={{ color: '#f0aa1e', fontSize: '24px', fontWeight: '700', lineHeight: '1.3' }}>
+              241,756,367
             </span>
           </div>
         </div>
       </MobileFlex>
+      <div style={{ display: 'grid', justifyItems: 'center' }}>
+        <img src="/images/mobile__trio.svg" alt="mobile__trio" />
+      </div>
     </>
   )
 }
 
-export default About
+export default ConnectWithUs

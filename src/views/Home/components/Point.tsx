@@ -92,7 +92,7 @@ const Point = () => {
           <Heading scale="xxl" color="#0171BD" mb="24px" width="100%" textAlign="left">
             {t('Reward Dashboard')}
           </Heading>
-          <Heading scale="lg" mb="24px" width="100%" textAlign="left" color="#5b97bf">
+          <Heading scale="lg" mb="24px" width="100%" textAlign="left" color="#2f678d">
             {t('Manage your daily Check-in and Rewards from your own Dashboard')}
           </Heading>
           <Flex alignItems="center" justifyContent="left">

@@ -21,6 +21,10 @@ interface BackgroundColorProps extends FlexProps {
   index: number
   background?: string
   padding?: string
+  paddingBottom?: string
+  borderRadius?: string
+  bottomshadow?: string
+  margin?: string
 }
 
 const BackgroundColor = styled(Flex)<BackgroundColorProps>`
@@ -31,7 +35,11 @@ const BackgroundColor = styled(Flex)<BackgroundColorProps>`
   z-index: ${({ index }) => index - 1};
   background: ${({ background, theme }) => background || theme.colors.background};
   padding: ${({ padding }) => padding};
+  padding-bottom: ${({ paddingBottom }) => paddingBottom};
   background-size: cover;
+  border-radius: ${({ borderRadius }) => borderRadius};
+  box-shadow: ${({ bottomshadow }) => bottomshadow};
+  margin: ${({ margin }) => margin};
 `
 
 const ChildrenWrapper = styled(Container)`

@@ -40,42 +40,9 @@ const BgWrapper = styled.div`
   height: 100%;
   bottom: 0px;
   left: 0px;
-`
-
-const InnerWrapper = styled.div`
-  position: absolute;
-  width: 100%;
-  bottom: -3px;
-`
-
-const BunnyWrapper = styled.div`
-  width: 100%;
-  animation: ${flyingAnim} 3.5s ease-in-out infinite;
-  will-change: transform;
-  > span {
-    overflow: visible !important; // make sure the next-image pre-build blur image not be cropped
-  }
-`
-
-const StarsWrapper = styled.div`
-  position: absolute;
-  top: 0;
-  left: 0;
-
-  & :nth-child(2) {
-    animation: ${fading} 2s ease-in-out infinite;
-    animation-delay: 1s;
-  }
-
-  & :nth-child(3) {
-    animation: ${fading} 5s ease-in-out infinite;
-    animation-delay: 0.66s;
-  }
-
-  & :nth-child(4) {
-    animation: ${fading} 2.5s ease-in-out infinite;
-    animation-delay: 0.33s;
-  }
+  background: url('/images/hero-background.svg');
+  background-size: cover;
+  background-repeat: no-repeat;
 `
 
 const starsImage: CompositeImageProps = {
@@ -85,6 +52,7 @@ const starsImage: CompositeImageProps = {
 
 const StyledFlex = styled(Flex)`
   ${css`
+    align-items: flex-start;
     @media screen and (max-width: 768px) {
       height: 100vh;
       width: 100%;
@@ -99,6 +67,7 @@ const StyledFlex = styled(Flex)`
     @media screen and (min-width: 1025px) {
       height: 70%;
       width: 100%;
+      margin-top: 2rem;
     }
   `}
 `
@@ -111,9 +80,9 @@ const Hero = () => {
   return (
     <>
       <BgWrapper>
-        <InnerWrapper>
+        {/* <InnerWrapper>
           <SlideSvgLight width="100%" />
-        </InnerWrapper>
+        </InnerWrapper> */}
       </BgWrapper>
       <StyledFlex
         flex={[null, null, null, '1']}
@@ -123,10 +92,10 @@ const Hero = () => {
         justifyContent="center"
       >
         <Flex position="relative" flexDirection="column" justifyContent="center" width="100%" height="100%">
-          <Heading scale="xxl" color="#0171BD" mb="24px" width="100%" textAlign="left">
+          <Heading scale="xxl" color="#FFF" mb="24px" width="100%" textAlign="left">
             {t('Favorite DEX')}
           </Heading>
-          <Heading scale="lg" mb="24px" width="100%" textAlign="left" color="#5b97bf">
+          <Heading scale="md" mb="24px" width="100%" textAlign="left" color="#FFF">
             {t('Trade, earn, and own crypto on the all-in-one DEX')}
           </Heading>
           <Flex alignItems="center" justifyContent="left">
@@ -136,7 +105,7 @@ const Hero = () => {
             </NextLinkFromReactRouter>
           </Flex>
         </Flex>
-        <CompositeImage {...starsImage} maxHeight="512px" />
+        <img src="/images/robot.png" alt="robot" width={450} style={{ marginTop: '3rem' }} />
         {/* <Flex
           flex={[null, null, null, '1']}
           mb={['24px', null, null, '0']}

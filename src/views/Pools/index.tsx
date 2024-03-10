@@ -268,7 +268,7 @@ const Pools: React.FC<React.PropsWithChildren> = () => {
       <PageHeader>
         <Flex justifyContent="space-between" flexDirection={['column', null, null, 'row']}>
           <Flex flex="1" flexDirection="column" mr={['8px', 0]}>
-            <Heading as="h1" scale="xxl" color="secondary" mb="24px">
+            <Heading as="h1" scale="xl" color="secondary" mb="24px">
               {t('FOC Pools')}
             </Heading>
             <Heading scale="md" color="text">

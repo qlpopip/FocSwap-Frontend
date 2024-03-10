@@ -35,51 +35,81 @@ const Stats = () => {
 
   return (
     <Flex justifyContent="center" alignItems="center" flexDirection="column">
-      <GradientLogo height="48px" width="48px" mb="24px" />
+      {/* <GradientLogo height="48px" width="48px" mb="24px" /> */}
       <Heading textAlign="center" scale="xl">
-        {t('Used by millions.')}
+        {t(
+          'Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+        )}
       </Heading>
-      <Heading textAlign="center" scale="xl" mb="32px">
+      {/* <Heading textAlign="center" scale="xl" mb="32px">
         {t('Trusted with billions.')}
-      </Heading>
-      <Text textAlign="center" color="textSubtle">
-        {t('PancakeSwap has the most users of any decentralized platform, ever.')}
-      </Text>
-      <Flex flexWrap="wrap">
+      </Heading> */}
+      {/* <Flex flexWrap="wrap">
         <Text display="inline" textAlign="center" color="textSubtle" mb="20px">
           {entrusting}
           <>{tvl ? <>{tvlString}</> : <Skeleton display="inline-block" height={16} width={70} mt="2px" />}</>
           {inFunds}
         </Text>
-      </Flex>
-
-      <Text textAlign="center" color="textSubtle" bold mb="32px">
-        {t('Will you join them?')}
-      </Text>
+      </Flex> */}
 
       <Flex flexDirection={['column', null, null, 'row']}>
-        <IconCard {...UsersCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
+        <IconCard
+          {...UsersCardData}
+          mr={[null, null, null, '16px']}
+          mb={['16px', null, null, '0']}
+          borderColor="none"
+          background="none !important"
+        >
           <StatCardContent
-            headingText={t('%users% users', { users })}
+            headingText={t('Total Users: %users%', { users })}
             bodyText={t('in the last 30 days')}
-            highlightColor={theme.colors.secondary}
+            highlightColor="#f26622"
           />
         </IconCard>
-        <IconCard {...TradesCardData} mr={[null, null, null, '16px']} mb={['16px', null, null, '0']}>
+        <IconCard
+          {...TradesCardData}
+          mr={[null, null, null, '16px']}
+          mb={['16px', null, null, '0']}
+          borderColor="none"
+          background="none !important"
+        >
           <StatCardContent
-            headingText={t('%trades% trades', { trades })}
+            headingText={t('Total Trades: %trades% ', { trades })}
             bodyText={t('made in the last 30 days')}
-            highlightColor={theme.colors.primary}
+            highlightColor="#f26622"
           />
         </IconCard>
-        <IconCard {...StakedCardData}>
+        <IconCard {...StakedCardData} borderColor="none" background="none !important">
           <StatCardContent
-            headingText={t('$%tvl% staked', { tvl: tvlString })}
+            headingText={t('Total Staked: $%tvl% ', { tvl: tvlString })}
             bodyText={t('Total Value Locked')}
-            highlightColor={theme.colors.failure}
+            highlightColor="#f26622"
           />
         </IconCard>
       </Flex>
+      <div style={{ position: 'relative' }}>
+        <img
+          src="/images/routers.svg"
+          width={500}
+          alt="routers"
+          style={{ position: 'relative', right: '-65%', bottom: '-4rem' }}
+        />
+        <img
+          src="/images/coin-blur__large.svg"
+          alt="coin-blure-large"
+          style={{ position: 'relative', left: '-75%', top: '-4rem' }}
+        />
+        <img
+          src="/images/coin-blur__small.svg"
+          alt="coin-blure-small"
+          style={{ position: 'relative', left: '-100%', top: '-25rem' }}
+        />
+        <img
+          src="/images/coin-blur__medium.svg"
+          alt="coin-blure-medium"
+          style={{ position: 'relative', right: '-20%', top: '-25rem' }}
+        />
+      </div>
     </Flex>
   )
 }

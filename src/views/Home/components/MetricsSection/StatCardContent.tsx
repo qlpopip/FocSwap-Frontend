@@ -5,7 +5,7 @@ const StatCardContent: React.FC<
 > = ({ headingText, bodyText, highlightColor }) => {
   const { isMobile, isTablet } = useMatchBreakpoints()
   const isSmallerScreen = isMobile || isTablet
-  const split = headingText.split(' ')
+  const split = headingText.split(':')
   const lastWord = split.pop()
   const remainingWords = split.slice(0, split.length).join(' ')
 

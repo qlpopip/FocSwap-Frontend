@@ -17,7 +17,7 @@ const sharedStyles = (theme: DefaultTheme, clipPath: string, clipFill?: ClipFill
 
   background: ${() => {
     if (theme.isDark) {
-      return clipFill?.dark || clipFill?.light || theme.colors.background
+      return '#ff7b00'
     }
     return clipFill?.light || theme.colors.background
   }};
