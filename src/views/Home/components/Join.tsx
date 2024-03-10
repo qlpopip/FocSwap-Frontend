@@ -129,22 +129,22 @@ const Join = () => {
           </Flex>
 
           <SocialLogoGroups>
-            <a href="" target="_blank">
+            <a href="/" target="_blank">
               <img src="/images/tiktok-icon.svg" alt="tiktok-icon" width={24} />
             </a>
-            <a href="" target="_blank">
+            <a href="/" target="_blank">
               <img src="/images/twitter-icon.svg" alt="twitter" width={24} />
             </a>
-            <a href="" target="_blank">
+            <a href="/" target="_blank">
               <img src="/images/instagram-icon.svg" alt="instagram" width={24} />
             </a>
-            <a href="" target="_blank">
+            <a href="/" target="_blank">
               <img src="/images/facebook-icon.svg" alt="facebook" width={24} />
             </a>
-            <a href="" target="_blank">
+            <a href="/" target="_blank">
               <img src="/images/email-icon.svg" alt="email" width={24} />
             </a>
-            <a href="" target="_blank">
+            <a href="/" target="_blank">
               <img src="/images/discord-icon.svg" alt="discord" width={24} />
             </a>
           </SocialLogoGroups>
