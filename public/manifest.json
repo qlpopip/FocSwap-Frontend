@@ -12,13 +12,13 @@
     {
       "src": "favicon.ico",
       "type": "image/x-icon",
-      "sizes": "71x44"
+      "sizes": "96x96"
     },
     {
       "src": "logo.png",
       "type": "image/png",
-      "sizes": "71x44"
+      "sizes": "96x96"
     }
   ],
-  "iconPath": "/images/logo_yes_free_wifi.svg"
+  "iconPath": "/images/logo.png"
 }
