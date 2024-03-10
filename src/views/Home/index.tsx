@@ -64,7 +64,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
           id: 'home-1',
         }}
         index={2}
-        hasCurvedDivider={true}
+        hasCurvedDivider={false}
       >
         <Stats />
       </PageSection>
@@ -77,7 +77,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         bottomshadow="20px 25px 0px #cc01ff, -20px 25px 0px 0px #cc01ff"
         borderRadius="0 0 20% 20%"
         margin="0 0 2.5rem 0"
-        index={2}
+        index={3}
         hasCurvedDivider={false}
       >
         <About />
@@ -88,7 +88,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         containerProps={{
           id: 'home-3',
         }}
-        index={3}
+        index={4}
         paddingBottom="0"
         hasCurvedDivider={false}
       >
@@ -105,7 +105,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         containerProps={{
           id: 'home-4',
         }}
-        index={4}
+        index={5}
         hasCurvedDivider={false}
       >
         <OuterWedgeWrapper>
