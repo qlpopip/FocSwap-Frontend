@@ -13,6 +13,7 @@ const MobileFlex = styled.div`
   display: flex;
   gap: 2rem;
   margin: 4rem 0;
+  justify-content: center;
 
   ${css`
     @media screen and (max-width: 768px) {
@@ -20,6 +21,40 @@ const MobileFlex = styled.div`
       align-items: center;
     }
   `}
+`
+
+const ResponsiveFlex = styled.div`
+  display: flex;
+  flex-direction: row;
+  ${css`
+    @media screen and (max-width: 768px) {
+      flex-direction: column;
+    }
+  `}
+`
+
+const StyledSpan24 = styled.span`
+  text-align: center;
+  color: #17022d;
+  font-size: 24px;
+  font-weight: 600;
+`
+
+const StyledSpan = styled.span`
+  text-align: center;
+  color: #f0aa1e;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 1.3;
+`
+
+const GridDiv = styled.div`
+  border-radius: 10px;
+  display: grid;
+  height: -webkit-fill-available;
+  padding: 1rem;
+  gap: 1rem;
+  justify-items: center;
 `
 
 const BgWrapper = styled.div`
@@ -86,82 +121,32 @@ const ConnectWithUs = () => {
         <Button variant="secondary">{t('Connect')}</Button>
       </Flex>
       <MobileFlex>
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr 1fr 1fr', gap: '1rem', alignItems: 'center' }}>
-          <div
-            style={{
-              borderRadius: '10px',
-              display: 'grid',
-              height: '-webkit-fill-available',
-              padding: '1rem',
-              gap: '1rem',
-            }}
-          >
-            <span style={{ color: '#17022d', fontSize: '24px', fontWeight: '500' }}>Circulating Supply</span>
-            <span style={{ color: '#f0aa1e', fontSize: '24px', fontWeight: '700', lineHeight: '1.3' }}>
-              241,756,367
-            </span>
-          </div>
+        <ResponsiveFlex>
+          <GridDiv>
+            <StyledSpan24>Circulating Supply</StyledSpan24>
+            <StyledSpan>241,756,367</StyledSpan>
+          </GridDiv>
 
-          <div
-            style={{
-              borderRadius: '10px',
-              display: 'grid',
-              height: '-webkit-fill-available',
-              padding: '1rem',
-              gap: '1rem',
-            }}
-          >
-            <span style={{ color: '#17022d', fontSize: '24px', fontWeight: '500' }}>Total Supply</span>
-            <span style={{ color: '#f0aa1e', fontSize: '24px', fontWeight: '700', lineHeight: '1.3' }}>
-              241,756,367
-            </span>
-          </div>
+          <GridDiv>
+            <StyledSpan24>Total Supply</StyledSpan24>
+            <StyledSpan>241,756,367</StyledSpan>
+          </GridDiv>
 
-          <div
-            style={{
-              borderRadius: '10px',
-              display: 'grid',
-              height: '-webkit-fill-available',
-              padding: '1rem',
-              gap: '1rem',
-            }}
-          >
-            <span style={{ color: '#17022d', fontSize: '24px', fontWeight: '500' }}>Market Cap</span>
-            <span style={{ color: '#f0aa1e', fontSize: '24px', fontWeight: '700', lineHeight: '1.3' }}>
-              241,756,367
-            </span>
-          </div>
+          <GridDiv>
+            <StyledSpan24>Market Cap</StyledSpan24>
+            <StyledSpan>241,756,367</StyledSpan>
+          </GridDiv>
 
-          <div
-            style={{
-              borderRadius: '10px',
-              display: 'grid',
-              height: '-webkit-fill-available',
-              padding: '1rem',
-              gap: '1rem',
-            }}
-          >
-            <span style={{ color: '#17022d', fontSize: '24px', fontWeight: '500' }}>Token Burn</span>
-            <span style={{ color: '#f0aa1e', fontSize: '24px', fontWeight: '700', lineHeight: '1.3' }}>
-              241,756,367
-            </span>
-          </div>
+          <GridDiv>
+            <StyledSpan24>Token Burn</StyledSpan24>
+            <StyledSpan>241,756,367</StyledSpan>
+          </GridDiv>
 
-          <div
-            style={{
-              borderRadius: '10px',
-              display: 'grid',
-              height: '-webkit-fill-available',
-              padding: '1rem',
-              gap: '1rem',
-            }}
-          >
-            <span style={{ color: '#17022d', fontSize: '24px', fontWeight: '500' }}>Current Emissions</span>
-            <span style={{ color: '#f0aa1e', fontSize: '24px', fontWeight: '700', lineHeight: '1.3' }}>
-              241,756,367
-            </span>
-          </div>
-        </div>
+          <GridDiv>
+            <StyledSpan24>Current Emissions</StyledSpan24>
+            <StyledSpan>241,756,367</StyledSpan>
+          </GridDiv>
+        </ResponsiveFlex>
       </MobileFlex>
       <div style={{ display: 'grid', justifyItems: 'center' }}>
         <img src="/images/mobile__trio.svg" alt="mobile__trio" />

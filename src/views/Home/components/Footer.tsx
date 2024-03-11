@@ -1,123 +1,156 @@
-import styled from 'styled-components'
 import { Flex, Heading, Text, Link, useMatchBreakpoints } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
-import ConnectWalletButton from 'components/ConnectWalletButton'
-import Container from 'components/Layout/Container'
-import { useWeb3React } from '@pancakeswap/wagmi'
-import SunburstSvg from './SunburstSvg'
-import CompositeImage from './CompositeImage'
+import styled, { keyframes, css } from 'styled-components'
 
-const BgWrapper = styled.div`
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0px;
-  left: 0px;
+const FooterFlex = styled.div`
+  display: flex;
+  gap: 4rem;
+
+  ${css`
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      flex-direction: column;
+      align-items: center;
+    }
+  `}
 `
 
-const StyledSunburst = styled(SunburstSvg)`
-  height: 350%;
-  width: 350%;
-
-  ${({ theme }) => theme.mediaQueries.xl} {
-    height: 400%;
-    width: 400%;
-  }
-`
-
-const Wrapper = styled(Flex)`
-  z-index: 1;
-  position: relative;
+const StyledGridContainer = styled.div`
+  display: flex;
   flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  overflow: hidden;
+  gap: 1.25rem;
 `
 
-const FloatingPancakesWrapper = styled(Container)`
-  overflow: hidden;
-  position: absolute;
-  width: 100%;
-  height: 100%;
-  top: 0;
-  left: 50%;
-  transform: translateX(-50%);
-  visibility: hidden;
+const Title = styled.span`
+  font-size: 28px;
+  font-weight: 600;
+  color: #f0aa1e;
+  ${css`
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+  `}
+`
+const Items = styled.span`
+  font-size: 16px;
+  font-weight: 300;
+  color: #fff;
+  text-align: left;
 
-  ${({ theme }) => theme.mediaQueries.md} {
-    visibility: visible;
-  }
+  ${css`
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+  `}
 `
 
-const TopLeftImgWrapper = styled(Flex)`
-  position: absolute;
-  left: 0;
-  top: 0;
+const EcosystemLinks = [
+  { title: 'Trade', link: '/trade' },
+  { title: 'Earn', link: '/earn' },
+  { title: 'Game', link: '/' },
+  { title: 'NFT', link: '/' },
+  { title: 'Tokenomics', link: '/' },
+  { title: 'Litepaper', link: '/' },
+  { title: 'Merchandise', link: '/' },
+]
+
+const DeveloperLinks = [
+  { title: 'Github', link: '/' },
+  { title: 'Bug Bounty', link: '/' },
+  { title: 'Contributing', link: '/' },
+]
+
+const SupportLinks = [
+  { title: 'Contract', link: '/' },
+  { title: 'Troubleshooting', link: '/' },
+  { title: 'Documentation', link: '/' },
+]
+
+const AboutLinks = [
+  { title: 'Terms & Services', link: '/' },
+  { title: 'Blog', link: '/' },
+  { title: 'Brand & Assets', link: '/' },
+  { title: 'Career', link: '/' },
+]
+
+const StyledFlex = styled(Flex)`
+  justify-content: space-around;
+  gap: 1rem;
+  ${css`
+    @media screen and (max-width: 768px) {
+      width: 100%;
+      flex-direction: column-reverse;
+      align-items: center;
+    }
+
+    @media screen and (min-width: 769px) and (max-width: 1024px) {
+      height: 60vw;
+      width: 100%;
+    }
+
+    @media screen and (min-width: 1025px) {
+      height: 70%;
+      width: 100%;
+    }
+  `}
 `
-
-const BottomRightImgWrapper = styled(Flex)`
-  position: absolute;
-  right: 0;
-  bottom: 0;
-`
-
-const topLeftImage = {
-  path: '/images/home/flying-pancakes/',
-  attributes: [
-    { src: '1-bottom', alt: 'Pancake flying on the bottom' },
-    { src: '1-left', alt: 'Pancake flying on the left' },
-    { src: '1-top', alt: 'Pancake flying on the top' },
-  ],
-}
-
-const bottomRightImage = {
-  path: '/images/home/flying-pancakes/',
-  attributes: [
-    { src: '2-bottom', alt: 'Pancake flying on the bottom' },
-    { src: '2-top', alt: 'Pancake flying on the top' },
-    { src: '2-right', alt: 'Pancake flying on the right' },
-  ],
-}
 
 const Footer = () => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
-  const { isTablet, isDesktop } = useMatchBreakpoints()
 
   return (
     <>
-      <BgWrapper>
-        <Flex alignItems="center" justifyContent="center" width="100%" height="100%">
-          <StyledSunburst />
-        </Flex>
-      </BgWrapper>
-      {(isTablet || isDesktop) && (
-        <FloatingPancakesWrapper>
-          <TopLeftImgWrapper>
-            <CompositeImage {...topLeftImage} maxHeight="256px" />
-          </TopLeftImgWrapper>
-          <BottomRightImgWrapper>
-            <CompositeImage {...bottomRightImage} maxHeight="256px" />
-          </BottomRightImgWrapper>
-        </FloatingPancakesWrapper>
-      )}
-      <Wrapper>
-        <Heading mb="24px" scale="xl" color="white">
-          {t('Start in seconds.')}
-        </Heading>
-        <Text textAlign="center" color="white">
-          {t('Connect your crypto wallet to start using the app in seconds.')}
-        </Text>
-        <Text mb="24px" bold color="white">
-          {t('No registration needed.')}
-        </Text>
-
-        <Link external href="https://docs.pancakeswap.finance/">
-          {t('Learn how to start')}
-        </Link>
-        {!account && <ConnectWalletButton mt="24px" />}
-      </Wrapper>
+      <StyledFlex
+        flex={[null, null, null, '1']}
+        mb={['24px', null, null, '0']}
+        position="relative"
+        alignItems="center" // Flex 컨테이너의 아이템을 수직 가운데 정렬
+        justifyContent="center"
+      >
+        <FooterFlex>
+          <StyledGridContainer>
+            <Title>{t('Ecosystem')}</Title>
+            {EcosystemLinks.map((item, index) => (
+              <Items key={index}>
+                <a href={item.link} target="_blank">
+                  {item.title}
+                </a>
+              </Items>
+            ))}
+          </StyledGridContainer>
+          <StyledGridContainer>
+            <Title>{t('Developers')}</Title>
+            {DeveloperLinks.map((item, index) => (
+              <Items key={index}>
+                <a href={item.link} target="_blank">
+                  {item.title}
+                </a>
+              </Items>
+            ))}
+          </StyledGridContainer>
+          <StyledGridContainer>
+            <Title>{t('Support')}</Title>
+            {SupportLinks.map((item, index) => (
+              <Items key={index}>
+                <a href={item.link} target="_blank">
+                  {item.title}
+                </a>
+              </Items>
+            ))}
+          </StyledGridContainer>
+          <StyledGridContainer>
+            <Title>{t('About')}</Title>
+            {AboutLinks.map((item, index) => (
+              <Items key={index}>
+                <a href={item.link} target="_blank">
+                  {item.title}
+                </a>
+              </Items>
+            ))}
+          </StyledGridContainer>
+        </FooterFlex>
+        <img src="/images/logo_foc.svg" alt="logo" width={150} style={{ margin: '1rem 0' }} />
+      </StyledFlex>
     </>
   )
 }

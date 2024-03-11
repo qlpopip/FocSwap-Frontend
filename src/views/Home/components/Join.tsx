@@ -39,6 +39,62 @@ const Inner = styled.div`
   flex-direction: column;
   gap: 1rem;
   align-items: center;
+  margin: 2rem 0;
+  width: 75%;
+
+  ${css`
+    @media screen and (max-width: 768px) {
+      padding: 2rem;
+      width: 100%;
+    }
+  `}
+`
+
+const ResponsiveInner = styled.div`
+  background-color: #faf2ff;
+  border-radius: 40px;
+  width: fit-content;
+  padding: 2rem 5rem;
+  display: flex;
+  flex-direction: row;
+  gap: 2rem;
+  align-items: center;
+  width: 75%;
+
+  ${css`
+    @media screen and (max-width: 768px) {
+      padding: 2rem;
+      flex-direction: column;
+      width: 100%;
+    }
+  `}
+`
+
+const StyledGridContainer = styled.div`
+  display: grid;
+  gap: 1.5rem;
+`
+
+const StyledSpan = styled.span`
+  color: #897796;
+  font-size: 22px;
+  font-weight: 300;
+  line-height: 1.3;
+  max-width: 700px;
+`
+
+const StyledSpanBlack = styled.span`
+  color: #000;
+  font-weight: 700;
+  font-size: 20px;
+  text-align: center;
+`
+
+const StyledSpanYellowLarge = styled.span`
+  color: #f0aa1e;
+  font-weight: 900;
+  font-size: 32px;
+  text-align: center;
 `
 
 const StyledFlex = styled(Flex)`
@@ -56,6 +112,31 @@ const StyledFlex = styled(Flex)`
     @media screen and (min-width: 1025px) {
       height: 70%;
       width: 100%;
+    }
+  `}
+`
+
+const StyledBlurImg = styled.img`
+  position: absolute;
+  top: 25%;
+  right: 10%;
+
+  ${css`
+    @media screen and (max-width: 768px) {
+      top: 5%;
+      right: -8%;
+    }
+  `}
+`
+
+const StyledBlurImgStar = styled.img`
+  position: absolute;
+  top: 10%;
+  left: 5%;
+
+  ${css`
+    @media screen and (max-width: 768px) {
+      left: -10%;
     }
   `}
 `
@@ -78,12 +159,8 @@ const Join = () => {
           alt="socmed__right"
           style={{ position: 'absolute', bottom: '0', right: '0' }}
         />
-        <img src="/images/star-blur.svg" alt="star-blur" style={{ position: 'absolute', top: '10%', left: '5%' }} />
-        <img
-          src="/images/youtube-blur.svg"
-          alt="youtube-blur"
-          style={{ position: 'absolute', top: '25%', right: '10%' }}
-        />
+        <StyledBlurImgStar src="/images/star-blur.svg" alt="star-blur" />
+        <StyledBlurImg src="/images/youtube-blur.svg" alt="youtube-blur" />
       </BgWrapper>
       <StyledFlex
         flex={[null, null, null, '1']}
@@ -117,13 +194,13 @@ const Join = () => {
           <Heading scale="lg" color="#8c1fff" mb="24px" width="100%" textAlign="center">
             {t("Everyone's Favorite")}
           </Heading>
-          <span style={{ color: '#897796', fontSize: '22px', fontWeight: '300', lineHeight: '1.3', maxWidth: '700px' }}>
+          <StyledSpan>
             Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
             dolore magna aliqua. Aliquam ultrices sagittis orci a. Dignissim cras tincidunt lobortis feugiat vivamus at
             augue eget arcu. Adipiscing at in tellus integer feugiat scelerisque varius. Malesuada pellentesque elit
             eget gravida cum sociis natoque. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor.
             Suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse.
-          </span>
+          </StyledSpan>
           <Flex alignItems="center" justifyContent="center">
             <Button variant="secondary">{t('Web link')}</Button>
           </Flex>
@@ -149,6 +226,20 @@ const Join = () => {
             </a>
           </SocialLogoGroups>
         </Inner>
+        <ResponsiveInner>
+          <StyledGridContainer>
+            <StyledSpanBlack>Multilingual Communities</StyledSpanBlack>
+            <StyledSpanYellowLarge>15+</StyledSpanYellowLarge>
+          </StyledGridContainer>
+          <StyledGridContainer>
+            <StyledSpanBlack>Community Members</StyledSpanBlack>
+            <StyledSpanYellowLarge>2.0M+</StyledSpanYellowLarge>
+          </StyledGridContainer>
+          <StyledGridContainer>
+            <StyledSpanBlack>Community Ambassadors</StyledSpanBlack>
+            <StyledSpanYellowLarge>35+</StyledSpanYellowLarge>
+          </StyledGridContainer>
+        </ResponsiveInner>
       </Flex>
     </>
   )

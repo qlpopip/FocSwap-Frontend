@@ -11,15 +11,36 @@ import CompositeImage, { CompositeImageProps } from './CompositeImage'
 const MobileFlex = styled.div`
   position: relative;
   display: flex;
-  gap: 2rem;
   margin: 4rem 0;
+  justify-content: space-between;
 
   ${css`
     @media screen and (max-width: 768px) {
       flex-direction: column-reverse;
       align-items: center;
+      gap: 2rem;
     }
   `}
+`
+
+const StyledSpan20 = styled.span`
+  color: #623494;
+  font-size: 20px;
+  font-weight: 700;
+`
+
+const StyledSpan16 = styled.span`
+  color: #8b767e;
+  font-size: 16px;
+  font-weight: 300;
+  line-height: 1.3;
+`
+
+const ResponsiveGrid = styled.div`
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+  gap: 1rem;
+  align-items: center;
 `
 
 const BgWrapper = styled.div`
@@ -84,7 +105,7 @@ const About = () => {
       </StyledFlex>
       <MobileFlex>
         <img src="/images/map__gradient.svg" alt="map" width={250} />
-        <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: '1rem', alignItems: 'center' }}>
+        <ResponsiveGrid>
           <div
             style={{
               backgroundColor: '#ffefd6',
@@ -97,10 +118,10 @@ const About = () => {
             }}
           >
             <img src="/images/free-wifi.svg" alt="free-wifi" width={50} />
-            <span style={{ color: '#623494', fontSize: '20px', fontWeight: '700' }}>Unlimited Access</span>
-            <span style={{ color: '#8b767e', fontSize: '16px', fontWeight: '300', lineHeight: '1.3' }}>
+            <StyledSpan20>Unlimited Access</StyledSpan20>
+            <StyledSpan16>
               Users enjoy unrestricted access to the internet without any data caps or limitations on usage
-            </span>
+            </StyledSpan16>
           </div>
 
           <div
@@ -115,10 +136,10 @@ const About = () => {
             }}
           >
             <img src="/images/privacy-protection.svg" alt="privacy-protection" width={50} />
-            <span style={{ color: '#623494', fontSize: '20px', fontWeight: '700' }}>Privacy Protection</span>
-            <span style={{ color: '#8b767e', fontSize: '16px', fontWeight: '300', lineHeight: '1.3' }}>
+            <StyledSpan20>Privacy Protection</StyledSpan20>
+            <StyledSpan16>
               Implementing measures to safeguard personal information and ensure a secure browsing experience.
-            </span>
+            </StyledSpan16>
           </div>
 
           <div
@@ -133,11 +154,11 @@ const About = () => {
             }}
           >
             <img src="/images/user-friendly.svg" alt="user-friendly" width={50} />
-            <span style={{ color: '#623494', fontSize: '20px', fontWeight: '700' }}>User-Friendly Interface</span>
-            <span style={{ color: '#8b767e', fontSize: '16px', fontWeight: '300', lineHeight: '1.3' }}>
+            <StyledSpan20>User-Friendly Interface</StyledSpan20>
+            <StyledSpan16>
               An intuitive interface that makes it easy for users to connect to the WiFi network and interact with
               advertisements.
-            </span>
+            </StyledSpan16>
           </div>
 
           <div
@@ -152,11 +173,11 @@ const About = () => {
             }}
           >
             <img src="/images/ad-based.svg" alt="ad-based" width={50} />
-            <span style={{ color: '#623494', fontSize: '20px', fontWeight: '700' }}>Ad-Based Access</span>
-            <span style={{ color: '#8b767e', fontSize: '16px', fontWeight: '300', lineHeight: '1.3' }}>
+            <StyledSpan20>Ad-Based Access</StyledSpan20>
+            <StyledSpan16>
               Users access the service by watching shor advertisements, which serve as a form of currency for utilizing
               the WiFi.
-            </span>
+            </StyledSpan16>
           </div>
 
           <div
@@ -177,7 +198,7 @@ const About = () => {
               oppertunities.
             </span>
           </div>
-        </div>
+        </ResponsiveGrid>
       </MobileFlex>
     </>
   )

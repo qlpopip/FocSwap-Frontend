@@ -1,17 +1,16 @@
 import styled from 'styled-components'
 import PageSection from 'components/PageSection'
-import { useWeb3React } from '@pancakeswap/wagmi'
-import useTheme from 'hooks/useTheme'
-import Container from 'components/Layout/Container'
 import { PageMeta } from 'components/Layout/Page'
 import { useTranslation } from '@pancakeswap/localization'
-import { useActiveChainId } from 'hooks/useActiveChainId'
 import { OuterWedgeWrapper, InnerWedgeWrapper, WedgeBottomLeft } from './components/WedgeSvgs'
 import Hero from './components/Hero'
 import About from './components/About'
 import Stats from './components/MetricsSection'
 import ConnectWithUs from './components/ConnectWithUs'
+import News from './components/News'
 import Join from './components/Join'
+import Favorite from './components/Favorite'
+import Footer from './components/Footer'
 
 const StyledHeroSection = styled(PageSection)`
   padding-top: 16px;
@@ -20,38 +19,14 @@ const StyledHeroSection = styled(PageSection)`
   }
 `
 
-const UserBannerWrapper = styled(Container)`
-  z-index: 1;
-  position: absolute;
-  width: 100%;
-  top: 0;
-  left: 50%;
-  transform: translate(-50%, 0);
-  padding-left: 0px;
-  padding-right: 0px;
-
-  ${({ theme }) => theme.mediaQueries.lg} {
-    padding-left: 24px;
-    padding-right: 24px;
-  }
-`
-
 const Home: React.FC<React.PropsWithChildren> = () => {
-  const { theme } = useTheme()
-  const { account } = useWeb3React()
-  const { chainId } = useActiveChainId()
-
-  const HomeSectionContainerStyles = { margin: '0', width: '100%', maxWidth: '968px' }
-
   const { t } = useTranslation()
 
   return (
     <>
       <PageMeta />
-
       <StyledHeroSection
         innerProps={{ style: { margin: '0', width: '100%', height: '80vh' } }}
-        // background="linear-gradient(180deg, #ffffff 50%, #0172bd 100%)"
         index={1}
         hasCurvedDivider={false}
       >
@@ -92,16 +67,11 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         paddingBottom="0"
         hasCurvedDivider={false}
       >
-        {/* <OuterWedgeWrapper>
-          <InnerWedgeWrapper width="100%" top fill="#cc00ff">
-            <WedgeBottomLeft />
-          </InnerWedgeWrapper>
-        </OuterWedgeWrapper> */}
         <ConnectWithUs />
       </PageSection>
       <PageSection
-        innerProps={{ style: { margin: '0', width: '100%', paddingBottom: '0' } }}
-        background="radial-gradient(ellipse at 50% 60%, rgba(255, 255, 255, 0.2) 30%, #cc00ff 60%)"
+        innerProps={{ style: { margin: '0', width: '100%' } }}
+        background="radial-gradient(ellipse at 50% 55%, rgba(255, 255, 255, 0.2) 30%, #cc00ff 60%)"
         containerProps={{
           id: 'home-4',
         }}
@@ -115,19 +85,42 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         </OuterWedgeWrapper>
         <Join />
       </PageSection>
-      {/* <StyledHeroSection
-        innerProps={{ style: { margin: '0', width: '100%', height: '100vh', display: 'flex', alignItems: 'center' } }}
-        background="linear-gradient(180deg,#6fb6f1 0%,#eaf2f6 100%)"
-        index={2}
+      <PageSection
+        innerProps={{ style: { margin: '0', width: '100%' } }}
+        background="#FFF"
+        containerProps={{
+          id: 'home-5',
+        }}
+        index={6}
+        paddingBottom="0"
         hasCurvedDivider={false}
       >
-        <OuterWedgeWrapper>
-          <InnerWedgeWrapper width="100%" top fill="#72b8f2">
-            <WedgeBottomLeft />
-          </InnerWedgeWrapper>
-        </OuterWedgeWrapper>
-        <About />
-      </StyledHeroSection> */}
+        <News />
+      </PageSection>
+      <PageSection
+        innerProps={{ style: { margin: '0', width: '100%', height: '66vh' } }}
+        background="#FFF"
+        containerProps={{
+          id: 'home-6',
+        }}
+        index={7}
+        paddingBottom="0"
+        hasCurvedDivider={false}
+      >
+        <Favorite />
+      </PageSection>
+      <PageSection
+        innerProps={{ style: { margin: '0', width: '100%' } }}
+        background="#17022d"
+        containerProps={{
+          id: 'home-7',
+        }}
+        index={8}
+        paddingBottom="0"
+        hasCurvedDivider={false}
+      >
+        <Footer />
+      </PageSection>
     </>
   )
 }

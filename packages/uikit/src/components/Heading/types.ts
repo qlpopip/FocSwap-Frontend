@@ -12,10 +12,11 @@ export const scales = {
   LG: "lg",
   XL: "xl",
   XXL: "xxl",
+  XXXL: "xxxl",
 } as const;
 
-export type Tags = typeof tags[keyof typeof tags];
-export type Scales = typeof scales[keyof typeof scales];
+export type Tags = (typeof tags)[keyof typeof tags];
+export type Scales = (typeof scales)[keyof typeof scales];
 
 export interface HeadingProps {
   as?: Tags;

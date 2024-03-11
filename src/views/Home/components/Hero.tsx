@@ -5,31 +5,15 @@ import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
 import styled, { keyframes, css } from 'styled-components'
-import { SlideSvgLight } from './SlideSvg'
-import CompositeImage, { CompositeImageProps } from './CompositeImage'
 
-const flyingAnim = () => keyframes`
-  from {
-    transform: translate(0,  0px);
-  }
-  50% {
-    transform: translate(-5px, -5px);
-  }
-  to {
-    transform: translate(0, 0px);
-  }
-`
+const Robot = styled.img`
+  margin-top: 3rem;
 
-const fading = () => keyframes`
-  from {
-    opacity: 0.9;
-  }
-  50% {
-    opacity: 0.1;
-  }
-  to {
-    opacity: 0.9;
-  }
+  ${css`
+    @media only screen and (max-width: 768px) {
+      width: 300px;
+    }
+  `}
 `
 
 const BgWrapper = styled.div`
@@ -45,18 +29,13 @@ const BgWrapper = styled.div`
   background-repeat: no-repeat;
 `
 
-const starsImage: CompositeImageProps = {
-  path: '/images/',
-  attributes: [{ src: 'robot', alt: '3D Robot' }],
-}
-
 const StyledFlex = styled(Flex)`
   ${css`
     align-items: flex-start;
     @media screen and (max-width: 768px) {
-      height: 100vh;
       width: 100%;
-      flex-direction: column-reverse;
+      flex-direction: column;
+      align-items: center;
     }
 
     @media screen and (min-width: 769px) and (max-width: 1024px) {
@@ -93,7 +72,10 @@ const Hero = () => {
       >
         <Flex position="relative" flexDirection="column" justifyContent="center" width="100%" height="100%">
           <Heading scale="xxl" color="#FFF" mb="24px" width="100%" textAlign="left">
-            {t('Favorite DEX')}
+            {t('Trade Smarter with')}
+          </Heading>
+          <Heading scale="xxxl" color="#f0aa1e" mb="24px" width="100%" textAlign="left">
+            {t('FocSwap')}
           </Heading>
           <Heading scale="md" mb="24px" width="100%" textAlign="left" color="#FFF">
             {t('Trade, earn, and own crypto on the all-in-one DEX')}
@@ -105,7 +87,7 @@ const Hero = () => {
             </NextLinkFromReactRouter>
           </Flex>
         </Flex>
-        <img src="/images/robot.png" alt="robot" width={450} style={{ marginTop: '3rem' }} />
+        <Robot src="/images/robot.png" alt="robot" width={420} style={{ marginTop: '3rem' }} />
         {/* <Flex
           flex={[null, null, null, '1']}
           mb={['24px', null, null, '0']}

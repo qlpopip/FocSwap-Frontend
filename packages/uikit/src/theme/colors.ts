@@ -8,6 +8,7 @@ export const baseColors = {
   secondary: "#17022d",
   success: "#42cc02",
   warning: "#FFB237",
+  primaryOrange: "#f26622",
 };
 
 export const additionalColors = {

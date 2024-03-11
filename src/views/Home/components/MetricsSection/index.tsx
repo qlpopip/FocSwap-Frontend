@@ -4,8 +4,59 @@ import useTheme from 'hooks/useTheme'
 import { formatLocalisedCompactNumber } from 'utils/formatBalance'
 import useSWRImmutable from 'swr/immutable'
 import IconCard, { IconCardData } from '../IconCard'
+import styled, { css } from 'styled-components'
 import StatCardContent from './StatCardContent'
 import GradientLogo from '../GradientLogoSvg'
+
+const ResponsiveRouter = styled.img`
+  position: relative;
+  right: -65%;
+  bottom: -4rem;
+
+  ${css`
+    @media screen and (max-width: 768px) {
+      right: 0;
+    }
+  `}
+`
+
+const ResponsiveCoinLarge = styled.img`
+  position: relative;
+  left: -75%;
+  top: 2rem;
+
+  ${css`
+    @media screen and (max-width: 768px) {
+      display: none;
+    }
+  `}
+`
+
+const ResponsiveCoinSmall = styled.img`
+  position: relative;
+  left: -100%;
+  top: -25rem;
+
+  ${css`
+    @media screen and (max-width: 768px) {
+      left: -20%;
+      top: -30rem;
+    }
+  `}
+`
+
+const ResponsiveCoinMedium = styled.img`
+  position: relative;
+  right: -20%;
+  bottom: 30rem;
+
+  ${css`
+    @media screen and (max-width: 768px) {
+      right: -45%;
+      bottom: 18rem;
+    }
+  `}
+`
 
 const Stats = () => {
   const { t } = useTranslation()
@@ -88,27 +139,10 @@ const Stats = () => {
         </IconCard>
       </Flex>
       <div style={{ position: 'relative' }}>
-        <img
-          src="/images/routers.svg"
-          width={500}
-          alt="routers"
-          style={{ position: 'relative', right: '-65%', bottom: '-4rem' }}
-        />
-        <img
-          src="/images/coin-blur__large.svg"
-          alt="coin-blure-large"
-          style={{ position: 'relative', left: '-75%', top: '-4rem' }}
-        />
-        <img
-          src="/images/coin-blur__small.svg"
-          alt="coin-blure-small"
-          style={{ position: 'relative', left: '-100%', top: '-25rem' }}
-        />
-        <img
-          src="/images/coin-blur__medium.svg"
-          alt="coin-blure-medium"
-          style={{ position: 'relative', right: '-20%', top: '-25rem' }}
-        />
+        <ResponsiveRouter src="/images/routers.svg" width={500} alt="routers" />
+        <ResponsiveCoinLarge src="/images/coin-blur__large.svg" alt="coin-blure-large" />
+        <ResponsiveCoinSmall src="/images/coin-blur__small.svg" alt="coin-blure-small" />
+        <ResponsiveCoinMedium src="/images/coin-blur__medium.svg" alt="coin-blure-medium" />
       </div>
     </Flex>
   )

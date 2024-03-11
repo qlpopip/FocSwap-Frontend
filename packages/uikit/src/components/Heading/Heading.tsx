@@ -8,7 +8,7 @@ const style = {
     fontSizeLg: "20px",
     textShadow: "none",
     fontFamily: "Inter",
-    fontWeignt: "500",
+    fontWeignt: "600",
   },
   [scales.LG]: {
     fontSize: "24px",
@@ -26,10 +26,17 @@ const style = {
   },
   [scales.XXL]: {
     fontSize: "48px",
-    fontSizeLg: "100px",
+    fontSizeLg: "78px",
     textShadow: "1px 1px 5px rgba(0, 0, 0, 0.7)",
     fontFamily: "Kanit",
     fontWeignt: "500",
+  },
+  [scales.XXXL]: {
+    fontSize: "48px",
+    fontSizeLg: "110px",
+    textShadow: "1px 1px 5px rgba(0, 0, 0, 0.7)",
+    fontFamily: "Kanit",
+    fontWeignt: "600",
   },
 };
 

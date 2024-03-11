@@ -1,5 +1,5 @@
 import { useMemo } from 'react'
-import styled from 'styled-components'
+import styled, { css } from 'styled-components'
 import { BoxProps, Box, Flex, FlexProps } from '@pancakeswap/uikit'
 import Container from 'components/Layout/Container'
 import CurvedDivider from './CurvedDivider'
@@ -38,6 +38,12 @@ const BackgroundColor = styled(Flex)<BackgroundColorProps>`
   padding-bottom: ${({ paddingBottom }) => paddingBottom};
   background-size: cover;
   border-radius: ${({ borderRadius }) => borderRadius};
+  ${css`
+    @media screen and (max-width: 768px) {
+      border-radius: 0;
+      box-shadow: none;
+    }
+  `}
   box-shadow: ${({ bottomshadow }) => bottomshadow};
   margin: ${({ margin }) => margin};
 `
