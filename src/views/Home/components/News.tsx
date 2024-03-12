@@ -132,15 +132,15 @@ const News = () => {
         </Heading>
       </StyledFlex>
       <ItemsCarousel
-        infiniteLoop={true}
+        infiniteLoop
         gutter={4}
-        activePosition={'center'}
+        activePosition="center"
         chevronWidth={30}
         disableSwipe={false}
-        alwaysShowChevrons={true}
+        alwaysShowChevrons
         numberOfCards={window.innerWidth > 768 ? 3 : 1}
         slidesToScroll={1}
-        outsideChevron={true}
+        outsideChevron
         showSlither={false}
         firstAndLastGutter={false}
         activeItemIndex={activeItemIndex}
