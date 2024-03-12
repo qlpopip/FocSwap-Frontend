@@ -58,7 +58,7 @@ const Hero = () => {
 
   return (
     <>
-      <BgWrapper></BgWrapper>
+      <BgWrapper />
       <StyledFlex
         flex={[null, null, null, '1']}
         mb={['24px', null, null, '0']}
