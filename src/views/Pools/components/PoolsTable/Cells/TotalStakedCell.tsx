@@ -27,7 +27,7 @@ const TotalStakedCell: React.FC<React.PropsWithChildren<TotalStakedCellProps>> =
     // }
 
     return getBalanceNumber(totalStaked, stakingToken.decimals)
-  }, [vaultKey, totalCakeInVault, totalStaked, stakingToken.decimals])
+  }, [totalStaked, stakingToken.decimals])
 
   return (
     <StyledCell role="cell">

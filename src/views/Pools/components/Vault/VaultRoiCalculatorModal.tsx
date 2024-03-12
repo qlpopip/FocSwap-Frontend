@@ -39,7 +39,7 @@ export const VaultRoiCalculatorModal = ({
 
   const apy = useMemo(() => {
     return flexibleApy
-  }, [cakeVaultView, flexibleApy, duration])
+  }, [flexibleApy])
 
   return (
     <RoiCalculatorModal

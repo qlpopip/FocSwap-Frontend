@@ -154,14 +154,13 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
         setStakeAmount(amountToStake)
         setVaultAmount(amountToVaultStake)
       } else {
-        setStakeAmount('');
-        setVaultAmount('');
+        setStakeAmount('')
+        setVaultAmount('')
       }
-      setPercent(sliderPercent);
+      setPercent(sliderPercent)
     },
-    [isRemovingStake, vaultKey, stakingMax, userShares, stakingToken.decimals]
-  );
-  
+    [vaultKey, stakingMax, userShares, stakingToken.decimals],
+  )
 
   const handleWithdrawal = async () => {
     // trigger withdrawAll function if the withdrawal will leave 0.00001 CAKE or less
@@ -172,8 +171,13 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
       // as suggested here https://github.com/ChainSafe/web3.js/issues/2077
       return isWithdrawingAll
         ? callWithGasPrice(vaultPoolContract, 'withdraw', undefined, callOptions)
-        : callWithGasPrice(vaultPoolContract, 'withdraw', [vaultKey ? VaultStakeAmount.toString() : convertedStakeAmount.toString()], callOptions)
-    });    
+        : callWithGasPrice(
+            vaultPoolContract,
+            'withdraw',
+            [vaultKey ? VaultStakeAmount.toString() : convertedStakeAmount.toString()],
+            callOptions,
+          )
+    })
 
     if (receipt?.status) {
       toastSuccess(
