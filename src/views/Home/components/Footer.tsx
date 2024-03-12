@@ -45,32 +45,32 @@ const Items = styled.span`
 `
 
 const EcosystemLinks = [
-  { title: 'Trade', link: '/trade' },
-  { title: 'Earn', link: '/earn' },
-  { title: 'Game', link: '/' },
-  { title: 'NFT', link: '/' },
-  { title: 'Tokenomics', link: '/' },
-  { title: 'Litepaper', link: '/' },
-  { title: 'Merchandise', link: '/' },
+  { title: 'Trade', link: '/trade', id: 1 },
+  { title: 'Earn', link: '/earn', id: 2 },
+  { title: 'Game', link: '/', id: 3 },
+  { title: 'NFT', link: '/', id: 4 },
+  { title: 'Tokenomics', link: '/', id: 5 },
+  { title: 'Litepaper', link: '/', id: 6 },
+  { title: 'Merchandise', link: '/', id: 7 },
 ]
 
 const DeveloperLinks = [
-  { title: 'Github', link: '/' },
-  { title: 'Bug Bounty', link: '/' },
-  { title: 'Contributing', link: '/' },
+  { title: 'Github', link: '/', id: 1 },
+  { title: 'Bug Bounty', link: '/', id: 2 },
+  { title: 'Contributing', link: '/', id: 3 },
 ]
 
 const SupportLinks = [
-  { title: 'Contract', link: '/' },
-  { title: 'Troubleshooting', link: '/' },
-  { title: 'Documentation', link: '/' },
+  { title: 'Contract', link: '/', id: 1 },
+  { title: 'Troubleshooting', link: '/', id: 2 },
+  { title: 'Documentation', link: '/', id: 3 },
 ]
 
 const AboutLinks = [
-  { title: 'Terms & Services', link: '/' },
-  { title: 'Blog', link: '/' },
-  { title: 'Brand & Assets', link: '/' },
-  { title: 'Career', link: '/' },
+  { title: 'Terms & Services', link: '/', id: 1 },
+  { title: 'Blog', link: '/', id: 2 },
+  { title: 'Brand & Assets', link: '/', id: 3 },
+  { title: 'Career', link: '/', id: 4 },
 ]
 
 const StyledFlex = styled(Flex)`
@@ -111,7 +111,7 @@ const Footer = () => {
           <StyledGridContainer>
             <Title>{t('Ecosystem')}</Title>
             {EcosystemLinks.map((item) => (
-              <Items>
+              <Items key={item.id}>
                 <a href={item.link} target="_blank" rel="noreferrer">
                   {item.title}
                 </a>
@@ -121,7 +121,7 @@ const Footer = () => {
           <StyledGridContainer>
             <Title>{t('Developers')}</Title>
             {DeveloperLinks.map((item) => (
-              <Items>
+              <Items key={item.id}>
                 <a href={item.link} target="_blank" rel="noreferrer">
                   {item.title}
                 </a>
@@ -131,7 +131,7 @@ const Footer = () => {
           <StyledGridContainer>
             <Title>{t('Support')}</Title>
             {SupportLinks.map((item) => (
-              <Items>
+              <Items key={item.id}>
                 <a href={item.link} target="_blank" rel="noreferrer">
                   {item.title}
                 </a>
@@ -141,7 +141,7 @@ const Footer = () => {
           <StyledGridContainer>
             <Title>{t('About')}</Title>
             {AboutLinks.map((item) => (
-              <Items>
+              <Items key={item.id}>
                 <a href={item.link} target="_blank" rel="noreferrer">
                   {item.title}
                 </a>

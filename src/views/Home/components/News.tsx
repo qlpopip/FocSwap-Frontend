@@ -9,6 +9,7 @@ import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 
 const newsFeedData = [
   {
+    id: 1,
     image: '/images/news_example.png',
     author: 'John Doe',
     date: '2023-03-10',
@@ -17,6 +18,7 @@ const newsFeedData = [
     link: '/',
   },
   {
+    id: 2,
     image: '/images/news_example.png',
     author: 'Jane Smith',
     date: '2023-03-09',
@@ -25,6 +27,7 @@ const newsFeedData = [
     link: '/',
   },
   {
+    id: 3,
     image: '/images/news_example.png',
     author: 'Bob Johnson',
     date: '2023-03-08',
@@ -33,6 +36,7 @@ const newsFeedData = [
     link: '/',
   },
   {
+    id: 4,
     image: '/images/news_example.png',
     author: 'Alice Williams',
     date: '2023-03-07',
@@ -41,6 +45,7 @@ const newsFeedData = [
     link: '/',
   },
   {
+    id: 5,
     image: '/images/news_example.png',
     author: 'Tim Johnson',
     date: '2023-03-07',
@@ -200,7 +205,7 @@ const News = () => {
       <MobileFlex>
         <NewsFeed>
           {newsFeedData.slice(currentIndex, currentIndex + (window.innerWidth > 768 ? 3 : 1)).map((newsItem) => (
-            <NewsItem onClick={() => handleNewsClick(newsItem.link)}>
+            <NewsItem onClick={() => handleNewsClick(newsItem.link)} key={newsItem.id}>
               <NewsImage src={newsItem.image} alt={newsItem.title} />
               <Flex justifyContent="space-around" width="100%">
                 <NewsAuthor>{newsItem.author}</NewsAuthor>

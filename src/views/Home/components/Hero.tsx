@@ -11,7 +11,7 @@ const Robot = styled.img`
 
   ${css`
     @media only screen and (max-width: 768px) {
-      width: 300px;
+      width: 242px;
     }
   `}
 `
@@ -24,7 +24,7 @@ const BgWrapper = styled.div`
   height: 100%;
   bottom: 0px;
   left: 0px;
-  background: url('/images/hero-background.svg');
+  background: url('/images/hero-background.png');
   background-size: cover;
   background-repeat: no-repeat;
 `
@@ -58,11 +58,7 @@ const Hero = () => {
 
   return (
     <>
-      <BgWrapper>
-        {/* <InnerWrapper>
-          <SlideSvgLight width="100%" />
-        </InnerWrapper> */}
-      </BgWrapper>
+      <BgWrapper></BgWrapper>
       <StyledFlex
         flex={[null, null, null, '1']}
         mb={['24px', null, null, '0']}
@@ -71,13 +67,31 @@ const Hero = () => {
         justifyContent="center"
       >
         <Flex position="relative" flexDirection="column" justifyContent="center" width="100%" height="100%">
-          <Heading scale="xxl" color="#FFF" mb="24px" width="100%" textAlign="left">
+          <Heading
+            scale="xxl"
+            color="#FFF"
+            mb="24px"
+            width="100%"
+            textAlign={window.innerWidth > 768 ? 'left' : 'center'}
+          >
             {t('Trade Smarter with')}
           </Heading>
-          <Heading scale="xxxl" color="#f0aa1e" mb="24px" width="100%" textAlign="left">
+          <Heading
+            scale="xxxl"
+            color="#f0aa1e"
+            mb="24px"
+            width="100%"
+            textAlign={window.innerWidth > 768 ? 'left' : 'center'}
+          >
             {t('FocSwap')}
           </Heading>
-          <Heading scale="md" mb="24px" width="100%" textAlign="left" color="#FFF">
+          <Heading
+            scale="md"
+            mb="24px"
+            width="100%"
+            textAlign={window.innerWidth > 768 ? 'left' : 'center'}
+            color="#FFF"
+          >
             {t('Trade, earn, and own crypto on the all-in-one DEX')}
           </Heading>
           <Flex alignItems="center" justifyContent="left">
@@ -87,7 +101,7 @@ const Hero = () => {
             </NextLinkFromReactRouter>
           </Flex>
         </Flex>
-        <Robot src="/images/robot.png" alt="robot" width={420} style={{ marginTop: '3rem' }} />
+        <Robot src="/images/robot.png" alt="robot" width={450} />
         {/* <Flex
           flex={[null, null, null, '1']}
           mb={['24px', null, null, '0']}

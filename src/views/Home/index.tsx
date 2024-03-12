@@ -110,7 +110,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         <Favorite />
       </PageSection>
       <PageSection
-        innerProps={{ style: { margin: '0', width: '100%' } }}
+        innerProps={{ style: { margin: '0', width: '100%', marginBottom: '2rem' } }}
         background="#17022d"
         containerProps={{
           id: 'home-7',

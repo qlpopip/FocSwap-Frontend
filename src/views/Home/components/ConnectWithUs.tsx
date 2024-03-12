@@ -48,7 +48,7 @@ const GridDiv = styled.div`
   display: grid;
   height: -webkit-fill-available;
   padding: 1rem;
-  gap: 1rem;
+  gap: 0.5rem;
   justify-items: center;
 `
 

@@ -32,7 +32,7 @@ const style = {
     fontWeignt: "500",
   },
   [scales.XXXL]: {
-    fontSize: "48px",
+    fontSize: "78px",
     fontSizeLg: "110px",
     textShadow: "1px 1px 5px rgba(0, 0, 0, 0.7)",
     fontFamily: "Kanit",
