@@ -159,7 +159,7 @@ const VaultStakeModal: React.FC<React.PropsWithChildren<VaultStakeModalProps>> =
       }
       setPercent(sliderPercent)
     },
-    [vaultKey, stakingMax, userShares, stakingToken.decimals],
+    [stakingMax, userShares, stakingToken.decimals],
   )
 
   const handleWithdrawal = async () => {
