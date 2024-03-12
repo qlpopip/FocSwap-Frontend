@@ -1,14 +1,13 @@
-import { Box, Flex, Skeleton, Text, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { useMatchBreakpoints } from '@pancakeswap/uikit'
 import BigNumber from 'bignumber.js'
-import Balance from 'components/Balance'
 import { useTranslation } from '@pancakeswap/localization'
 
 import { useVaultPoolByKey } from 'state/pools/hooks'
-import { DeserializedPool, VaultKey, DeserializedPoolLockedVault } from 'state/types'
+import { DeserializedPool, VaultKey } from 'state/types'
 import styled from 'styled-components'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { getBalanceNumber } from 'utils/formatBalance'
-import BaseCell, { CellContent } from './BaseCell'
+import BaseCell from './BaseCell'
 
 interface StakedCellProps {
   pool: DeserializedPool
@@ -19,7 +18,6 @@ const StyledCell = styled(BaseCell)``
 
 const StakedCell: React.FC<React.PropsWithChildren<StakedCellProps>> = ({ pool, account }) => {
   const { t } = useTranslation()
-  const { isMobile } = useMatchBreakpoints()
 
   // vault
   const vaultData = useVaultPoolByKey(pool.vaultKey)
@@ -43,9 +41,7 @@ const StakedCell: React.FC<React.PropsWithChildren<StakedCellProps>> = ({ pool, 
     stakingToken.decimals,
   )
 
-  const labelText = `${pool.stakingToken.symbol} ${
-     t('Staked')
-  }`
+  const labelText = `${pool.stakingToken.symbol} ${t('Staked')}`
 
   const hasStaked = account && (stakedBalance.gt(0) || isVaultWithShares)
 

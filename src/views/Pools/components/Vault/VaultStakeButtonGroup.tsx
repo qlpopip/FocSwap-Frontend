@@ -1,4 +1,4 @@
-import { Box, Button, TooltipText, useTooltip } from '@pancakeswap/uikit'
+import { Box, Button } from '@pancakeswap/uikit'
 import { FlexGap } from 'components/Layout/Flex'
 import { useTranslation } from '@pancakeswap/localization'
 
@@ -10,14 +10,6 @@ export const VaultStakeButtonGroup = ({
   onLockedClick: () => void
 }) => {
   const { t } = useTranslation()
-  const { targetRef, tooltip, tooltipVisible } = useTooltip(
-    <Box>
-      {t(
-        'Flexible staking offers flexibility for staking/unstaking whenever you want. Locked staking offers higher APY as well as other benefits.',
-      )}
-    </Box>,
-    {},
-  )
   return (
     <Box width="100%">
       <FlexGap gap="12px">

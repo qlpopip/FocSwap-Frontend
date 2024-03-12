@@ -1,25 +1,9 @@
-import React, { useState } from 'react'
-import { Button, Flex, Heading } from '@pancakeswap/uikit'
+import React from 'react'
+import { Flex, Heading } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useTranslation } from '@pancakeswap/localization'
-import useTheme from 'hooks/useTheme'
 import ConnectWalletButton from 'components/ConnectWalletButton'
-import styled, { keyframes, css } from 'styled-components'
-
-const MobileFlex = styled.div`
-  position: relative;
-  display: flex;
-  gap: 2rem;
-  margin: 4rem 0;
-  justify-content: center;
-
-  ${css`
-    @media screen and (max-width: 768px) {
-      flex-direction: column-reverse;
-      align-items: center;
-    }
-  `}
-`
+import styled, { css } from 'styled-components'
 
 const StyledFlex = styled(Flex)`
   ${css`
@@ -56,8 +40,6 @@ const BgWrapper = styled.div`
 const Favorite = () => {
   const { t } = useTranslation()
   const { account } = useWeb3React()
-  const { theme } = useTheme()
-  const [currentIndex, setCurrentIndex] = useState(0)
 
   return (
     <>

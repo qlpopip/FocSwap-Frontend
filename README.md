@@ -1,7 +1,5 @@
 # FOC Frontend
 
-Foked Pancakeswap
-
 ## Quick Start
 
 install dependencies using **yarn**

@@ -1,7 +1,6 @@
 import {
   Cake,
   CakeFlexibleSideVaultV2,
-  CakeVaultV2,
   CakeVault,
   Erc20,
   Erc20Bytes32,

@@ -1,12 +1,8 @@
 import { Button, Flex, Heading } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
-import ConnectWalletButton from 'components/ConnectWalletButton'
-import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
-import styled, { keyframes, css } from 'styled-components'
-import { SlideSvgLight } from './SlideSvg'
-import CompositeImage, { CompositeImageProps } from './CompositeImage'
+import styled, { css } from 'styled-components'
 
 const BgWrapper = styled.div`
   z-index: -1;
@@ -24,11 +20,6 @@ const SocialLogoGroups = styled.div`
   justify-contents: space-between;
   margin: 2rem 0;
 `
-
-const Image: CompositeImageProps = {
-  path: '/images/',
-  attributes: [{ src: 'map', alt: 'MAP' }],
-}
 
 const Inner = styled.div`
   background-color: #faf2ff;
@@ -143,8 +134,6 @@ const StyledBlurImgStar = styled.img`
 
 const Join = () => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
-  const { theme } = useTheme()
 
   return (
     <>

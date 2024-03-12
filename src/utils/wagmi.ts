@@ -9,19 +9,8 @@ import { WalletConnectConnector } from 'wagmi/connectors/walletConnect'
 import { KaikasConnector } from '@pancakeswap/wagmi/connectors/kaikas'
 import { RoninConnector } from '@pancakeswap/wagmi/connectors/roninWallet'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
-import { SafeConnector } from '@gnosis.pm/safe-apps-wagmi'
 
-const CHAINS = [
-  // bsc,
-  // // TODO: ETH
-  // sepolia,
-  saigon,
-  // bscTest,
-  // rinkeby,
-  // goerli,
-  // baobab,
-  // klaytn,
-]
+const CHAINS = [saigon]
 
 const getNodeRealUrl = (networkName: string) => {
   let host = null
@@ -110,16 +99,7 @@ export const bscConnector = new BinanceWalletConnector({ chains })
 export const client = createClient({
   autoConnect: false,
   provider,
-  connectors: [
-    // new SafeConnector({ chains }),
-    // metaMaskConnector,
-    roninConnector,
-    // injectedConnector,
-    // kaikasConnector,
-    // coinbaseConnector,
-    // walletConnectConnector,
-    // bscConnector,
-  ],
+  connectors: [roninConnector],
 })
 
 export const CHAIN_IDS = chains.map((c) => c.id)

@@ -1,9 +1,9 @@
 import React, { useState } from 'react'
-import { Button, Flex, Heading } from '@pancakeswap/uikit'
+import { Flex, Heading } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useTranslation } from '@pancakeswap/localization'
 import useTheme from 'hooks/useTheme'
-import styled, { keyframes, css } from 'styled-components'
+import styled, { css } from 'styled-components'
 import ArrowBackIcon from '@mui/icons-material/ArrowBack'
 import ArrowForwardIcon from '@mui/icons-material/ArrowForward'
 
@@ -165,8 +165,6 @@ const SlideButton = styled.button`
 
 const News = () => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
-  const { theme } = useTheme()
   const [currentIndex, setCurrentIndex] = useState(0)
 
   const handleSlide = (direction) => {
@@ -201,8 +199,8 @@ const News = () => {
       </StyledFlex>
       <MobileFlex>
         <NewsFeed>
-          {newsFeedData.slice(currentIndex, currentIndex + (window.innerWidth > 768 ? 3 : 1)).map((newsItem, index) => (
-            <NewsItem key={index} onClick={() => handleNewsClick(newsItem.link)}>
+          {newsFeedData.slice(currentIndex, currentIndex + (window.innerWidth > 768 ? 3 : 1)).map((newsItem) => (
+            <NewsItem onClick={() => handleNewsClick(newsItem.link)}>
               <NewsImage src={newsItem.image} alt={newsItem.title} />
               <Flex justifyContent="space-around" width="100%">
                 <NewsAuthor>{newsItem.author}</NewsAuthor>

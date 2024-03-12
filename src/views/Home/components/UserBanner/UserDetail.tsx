@@ -1,42 +1,4 @@
-import { NoProfileAvatarIcon, Flex, Heading, Skeleton, Text, Box, useMatchBreakpoints } from '@pancakeswap/uikit'
-import { useWeb3React } from '@pancakeswap/wagmi'
-import styled from 'styled-components'
-import { useTranslation } from '@pancakeswap/localization'
-import truncateHash from 'utils/truncateHash'
-
-const Desktop = styled(Flex)`
-  align-items: center;
-  display: none;
-  ${({ theme }) => theme.mediaQueries.md} {
-    display: flex;
-  }
-`
-
-const Mobile = styled(Flex)`
-  ${({ theme }) => theme.mediaQueries.md} {
-    display: none;
-  }
-`
-
-const Sticker = styled(Flex)`
-  height: 92px;
-  width: 92px;
-  background-color: ${({ theme }) => theme.colors.invertedContrast};
-  border: 3px solid ${({ theme }) => theme.colors.invertedContrast};
-  border-radius: ${({ theme }) => theme.radii.circle};
-  box-shadow: ${({ theme }) => theme.card.boxShadow};
-`
-
-const StyledNoProfileAvatarIcon = styled(NoProfileAvatarIcon)`
-  height: 100%;
-  width: 100%;
-`
-
 const UserDetail = () => {
-  const { t } = useTranslation()
-  const { account } = useWeb3React()
-  const { isMobile, isTablet, isDesktop } = useMatchBreakpoints()
-
   return (
     <>
       {/* {(isTablet || isDesktop) && (

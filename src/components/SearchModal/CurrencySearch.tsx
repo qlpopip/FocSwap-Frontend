@@ -18,7 +18,6 @@ import CommonBases from './CommonBases'
 import CurrencyList from './CurrencyList'
 import { createFilterToken, useSortedTokensByQuery } from './filtering'
 import useTokenComparator from './sorting'
-import { getSwapSound } from './swapSound'
 
 import ImportRow from './ImportRow'
 
@@ -137,7 +136,7 @@ function CurrencySearch({
       //   getSwapSound().play()
       // }
     },
-    [audioPlay, onCurrencySelect],
+    [onCurrencySelect],
   )
 
   // manage focus on modal show

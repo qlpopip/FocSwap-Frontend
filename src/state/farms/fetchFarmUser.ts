@@ -6,7 +6,6 @@ import multicall, { multicallv2 } from 'utils/multicall'
 import { getMasterChefAddress } from 'utils/addressHelpers'
 import { SerializedFarmConfig } from 'config/constants/types'
 import { verifyBscNetwork } from 'utils/verifyBscNetwork'
-import { getBscChainId } from 'state/farms/getBscChainId'
 
 export const fetchFarmUserAllowances = async (
   account: string,

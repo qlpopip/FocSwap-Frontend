@@ -1,12 +1,7 @@
 import { Button, Flex, Heading } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
-import ConnectWalletButton from 'components/ConnectWalletButton'
-import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from '@pancakeswap/localization'
-import useTheme from 'hooks/useTheme'
-import styled, { keyframes, css } from 'styled-components'
-import { SlideSvgLight } from './SlideSvg'
-import CompositeImage, { CompositeImageProps } from './CompositeImage'
+import styled, { css } from 'styled-components'
 
 const MobileFlex = styled.div`
   position: relative;
@@ -67,11 +62,6 @@ const BgWrapper = styled.div`
   left: 0px;
 `
 
-const Image: CompositeImageProps = {
-  path: '/images/',
-  attributes: [{ src: 'map', alt: 'MAP' }],
-}
-
 const StyledFlex = styled(Flex)`
   ${css`
     @media screen and (max-width: 768px) {
@@ -93,8 +83,6 @@ const StyledFlex = styled(Flex)`
 
 const ConnectWithUs = () => {
   const { t } = useTranslation()
-  const { account } = useWeb3React()
-  const { theme } = useTheme()
 
   return (
     <>

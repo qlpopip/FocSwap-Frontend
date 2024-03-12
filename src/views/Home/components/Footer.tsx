@@ -1,6 +1,6 @@
-import { Flex, Heading, Text, Link, useMatchBreakpoints } from '@pancakeswap/uikit'
+import { Flex } from '@pancakeswap/uikit'
 import { useTranslation } from '@pancakeswap/localization'
-import styled, { keyframes, css } from 'styled-components'
+import styled, { css } from 'styled-components'
 
 const FooterFlex = styled.div`
   display: flex;
@@ -110,9 +110,9 @@ const Footer = () => {
         <FooterFlex>
           <StyledGridContainer>
             <Title>{t('Ecosystem')}</Title>
-            {EcosystemLinks.map((item, index) => (
-              <Items key={index}>
-                <a href={item.link} target="_blank">
+            {EcosystemLinks.map((item) => (
+              <Items>
+                <a href={item.link} target="_blank" rel="noreferrer">
                   {item.title}
                 </a>
               </Items>
@@ -120,9 +120,9 @@ const Footer = () => {
           </StyledGridContainer>
           <StyledGridContainer>
             <Title>{t('Developers')}</Title>
-            {DeveloperLinks.map((item, index) => (
-              <Items key={index}>
-                <a href={item.link} target="_blank">
+            {DeveloperLinks.map((item) => (
+              <Items>
+                <a href={item.link} target="_blank" rel="noreferrer">
                   {item.title}
                 </a>
               </Items>
@@ -130,9 +130,9 @@ const Footer = () => {
           </StyledGridContainer>
           <StyledGridContainer>
             <Title>{t('Support')}</Title>
-            {SupportLinks.map((item, index) => (
-              <Items key={index}>
-                <a href={item.link} target="_blank">
+            {SupportLinks.map((item) => (
+              <Items>
+                <a href={item.link} target="_blank" rel="noreferrer">
                   {item.title}
                 </a>
               </Items>
@@ -140,9 +140,9 @@ const Footer = () => {
           </StyledGridContainer>
           <StyledGridContainer>
             <Title>{t('About')}</Title>
-            {AboutLinks.map((item, index) => (
-              <Items key={index}>
-                <a href={item.link} target="_blank">
+            {AboutLinks.map((item) => (
+              <Items>
+                <a href={item.link} target="_blank" rel="noreferrer">
                   {item.title}
                 </a>
               </Items>
