@@ -78,7 +78,7 @@ function MyApp(props: CustomAppProps) {
         <meta name="twitter:description" />
         <meta name="twitter:card" content="summary_large_image" />
         <meta name="twitter:title" />
-        <title>FOCswap</title>
+        <title>FocSwap</title>
         {(Component as NextPageWithLayout).mp && (
           // eslint-disable-next-line @next/next/no-sync-scripts
           <script src="https://public.bnbstatic.com/static/js/mp-webview-sdk/webview-v1.0.0.min.js" id="mp-webview" />

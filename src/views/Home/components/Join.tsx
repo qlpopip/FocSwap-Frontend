@@ -1,7 +1,5 @@
 import { Button, Flex, Heading } from '@pancakeswap/uikit'
-import { useWeb3React } from '@pancakeswap/wagmi'
 import { useTranslation } from '@pancakeswap/localization'
-import useTheme from 'hooks/useTheme'
 import styled, { css } from 'styled-components'
 
 const BgWrapper = styled.div`
@@ -47,6 +45,7 @@ const ResponsiveInner = styled.div`
   width: fit-content;
   padding: 2rem 5rem;
   display: flex;
+  justify-content: space-around;
   flex-direction: row;
   gap: 2rem;
   align-items: center;
@@ -217,15 +216,15 @@ const Join = () => {
         </Inner>
         <ResponsiveInner>
           <StyledGridContainer>
-            <StyledSpanBlack>Multilingual Communities</StyledSpanBlack>
+            <StyledSpanBlack>{t('Multilingual Communities')}</StyledSpanBlack>
             <StyledSpanYellowLarge>15+</StyledSpanYellowLarge>
           </StyledGridContainer>
           <StyledGridContainer>
-            <StyledSpanBlack>Community Members</StyledSpanBlack>
+            <StyledSpanBlack>{t('Community Members')}</StyledSpanBlack>
             <StyledSpanYellowLarge>2.0M+</StyledSpanYellowLarge>
           </StyledGridContainer>
           <StyledGridContainer>
-            <StyledSpanBlack>Community Ambassadors</StyledSpanBlack>
+            <StyledSpanBlack>{t('Community Ambassadors')}</StyledSpanBlack>
             <StyledSpanYellowLarge>35+</StyledSpanYellowLarge>
           </StyledGridContainer>
         </ResponsiveInner>

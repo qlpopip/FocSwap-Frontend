@@ -23,7 +23,7 @@ const QuestionHelper: React.FC<React.PropsWithChildren<Props>> = ({
   const { targetRef, tooltip, tooltipVisible } = useTooltip(text, { placement })
 
   return (
-    <Box {...props}>
+    <Box {...props} style={{ display: 'flex', alignItems: 'center' }}>
       {tooltipVisible && tooltip}
       <QuestionWrapper ref={targetRef}>
         <HelpIcon color="textSubtle" width={size} />

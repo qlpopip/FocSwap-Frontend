@@ -61,12 +61,12 @@ function MyApp({ Component, pageProps }: AppProps) {
           name="viewport"
           content="width=device-width, initial-scale=1, maximum-scale=5, minimum-scale=1, viewport-fit=cover"
         />
-        <meta name="description" content="FOCswap" />
+        <meta name="description" content="FocSwap" />
         <meta name="theme-color" content="#0171BD" />
         <meta name="twitter:image" content="https://pancakeswap.finance/images/hero.png" />
-        <meta name="twitter:description" content="FOCswap" />
+        <meta name="twitter:description" content="FocSwap" />
         <meta name="twitter:card" content="summary_large_image" />
-        <meta name="twitter:title" content="FOCswap" />
+        <meta name="twitter:title" content="FocSwap" />
         <title>FOC Bridge</title>
       </Head>
       <NextThemeProvider>

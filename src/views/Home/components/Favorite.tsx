@@ -53,7 +53,7 @@ const Favorite = () => {
       >
         <Flex alignItems="center" justifyContent="center" flexDirection="column">
           <Heading scale="xl" color="#17022d" mb="24px" width="100%" textAlign="center">
-            {t("Join Everyone's Favorite")}
+            {t("Join Everyone's Favorite DEX")}
           </Heading>
           {!account && <ConnectWalletButton mr="8px" />}
         </Flex>

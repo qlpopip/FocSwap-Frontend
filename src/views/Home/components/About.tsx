@@ -18,6 +18,16 @@ const MobileFlex = styled.div`
   `}
 `
 
+const StyledBox = styled.div`
+  background-color: #ffefd6;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.5) 0px 1px 3px 0px;
+  display: grid;
+  height: -webkit-fill-available;
+  padding: 1rem;
+  gap: 1rem;
+`
+
 const StyledSpan20 = styled.span`
   color: #623494;
   font-size: 20px;
@@ -93,98 +103,51 @@ const About = () => {
       <MobileFlex>
         <img src="/images/map__gradient.svg" alt="map" width={250} />
         <ResponsiveGrid>
-          <div
-            style={{
-              backgroundColor: '#ffefd6',
-              borderRadius: '10px',
-              boxShadow: 'rgba(0, 0, 0, 0.5) 0px 1px 3px 0px',
-              display: 'grid',
-              height: '-webkit-fill-available',
-              padding: '1rem',
-              gap: '1rem',
-            }}
-          >
+          <StyledBox>
             <img src="/images/free-wifi.svg" alt="free-wifi" width={50} />
-            <StyledSpan20>Unlimited Access</StyledSpan20>
+            <StyledSpan20>{t('Unlimited Access')}</StyledSpan20>
             <StyledSpan16>
-              Users enjoy unrestricted access to the internet without any data caps or limitations on usage
+              {t('Users enjoy unrestricted access to the internet without any data caps or limitations on usage')}
             </StyledSpan16>
-          </div>
+          </StyledBox>
 
-          <div
-            style={{
-              backgroundColor: '#ffefd6',
-              borderRadius: '10px',
-              boxShadow: 'rgba(0, 0, 0, 0.5) 0px 1px 3px 0px',
-              display: 'grid',
-              height: '-webkit-fill-available',
-              padding: '1rem',
-              gap: '1rem',
-            }}
-          >
+          <StyledBox>
             <img src="/images/privacy-protection.svg" alt="privacy-protection" width={50} />
-            <StyledSpan20>Privacy Protection</StyledSpan20>
+            <StyledSpan20>{t('Privacy Protection')}</StyledSpan20>
             <StyledSpan16>
-              Implementing measures to safeguard personal information and ensure a secure browsing experience.
+              {t('Implementing measures to safeguard personal information and ensure a secure browsing experience')}
             </StyledSpan16>
-          </div>
+          </StyledBox>
 
-          <div
-            style={{
-              backgroundColor: '#ffefd6',
-              borderRadius: '10px',
-              boxShadow: 'rgba(0, 0, 0, 0.5) 0px 1px 3px 0px',
-              display: 'grid',
-              height: '-webkit-fill-available',
-              padding: '1rem',
-              gap: '1rem',
-            }}
-          >
+          <StyledBox>
             <img src="/images/user-friendly.svg" alt="user-friendly" width={50} />
-            <StyledSpan20>User-Friendly Interface</StyledSpan20>
+            <StyledSpan20>{t('User-Friendly Interface')}</StyledSpan20>
             <StyledSpan16>
-              An intuitive interface that makes it easy for users to connect to the WiFi network and interact with
-              advertisements.
+              {t(
+                'An intuitive interface that makes it easy for users to connect to the WiFi network and interact with advertisements',
+              )}
             </StyledSpan16>
-          </div>
+          </StyledBox>
 
-          <div
-            style={{
-              backgroundColor: '#ffefd6',
-              borderRadius: '10px',
-              boxShadow: 'rgba(0, 0, 0, 0.5) 0px 1px 3px 0px',
-              display: 'grid',
-              height: '-webkit-fill-available',
-              padding: '1rem',
-              gap: '1rem',
-            }}
-          >
+          <StyledBox>
             <img src="/images/ad-based.svg" alt="ad-based" width={50} />
-            <StyledSpan20>Ad-Based Access</StyledSpan20>
+            <StyledSpan20>{t('Ad-Based Access')}</StyledSpan20>
             <StyledSpan16>
-              Users access the service by watching shor advertisements, which serve as a form of currency for utilizing
-              the WiFi.
+              {t(
+                'Users access the service by watching shor advertisements, which serve as a form of currency for utilizing the WiFi',
+              )}
             </StyledSpan16>
-          </div>
+          </StyledBox>
 
-          <div
-            style={{
-              backgroundColor: '#ffefd6',
-              borderRadius: '10px',
-              boxShadow: 'rgba(0, 0, 0, 0.5) 0px 1px 3px 0px',
-              display: 'grid',
-              height: '-webkit-fill-available',
-              padding: '1rem',
-              gap: '1rem',
-            }}
-          >
+          <StyledBox>
             <img src="/images/community-impact.svg" alt="community-impact" width={50} />
-            <span style={{ color: '#623494', fontSize: '20px', fontWeight: '700' }}>Community Impact</span>
-            <span style={{ color: '#8b767e', fontSize: '16px', fontWeight: '300', lineHeight: '1.3' }}>
-              A positive impact on communities, empowering individuals with access to information, education, &
-              oppertunities.
-            </span>
-          </div>
+            <StyledSpan20>{t('Community Impact')}</StyledSpan20>
+            <StyledSpan16>
+              {t(
+                'A positive impact on communities, empowering individuals with access to information, education, & oppertunities',
+              )}
+            </StyledSpan16>
+          </StyledBox>
         </ResponsiveGrid>
       </MobileFlex>
     </>

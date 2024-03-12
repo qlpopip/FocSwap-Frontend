@@ -111,27 +111,27 @@ const ConnectWithUs = () => {
       <MobileFlex>
         <ResponsiveFlex>
           <GridDiv>
-            <StyledSpan24>Circulating Supply</StyledSpan24>
+            <StyledSpan24>{t('Circulating Supply')}</StyledSpan24>
             <StyledSpan>241,756,367</StyledSpan>
           </GridDiv>
 
           <GridDiv>
-            <StyledSpan24>Total Supply</StyledSpan24>
+            <StyledSpan24>{t('Total Supply')}</StyledSpan24>
             <StyledSpan>241,756,367</StyledSpan>
           </GridDiv>
 
           <GridDiv>
-            <StyledSpan24>Market Cap</StyledSpan24>
+            <StyledSpan24>{t('Market Cap')}</StyledSpan24>
             <StyledSpan>241,756,367</StyledSpan>
           </GridDiv>
 
           <GridDiv>
-            <StyledSpan24>Token Burn</StyledSpan24>
+            <StyledSpan24>{t('Token Burn')}</StyledSpan24>
             <StyledSpan>241,756,367</StyledSpan>
           </GridDiv>
 
           <GridDiv>
-            <StyledSpan24>Current Emissions</StyledSpan24>
+            <StyledSpan24>{t('Current Emissions')}</StyledSpan24>
             <StyledSpan>241,756,367</StyledSpan>
           </GridDiv>
         </ResponsiveFlex>

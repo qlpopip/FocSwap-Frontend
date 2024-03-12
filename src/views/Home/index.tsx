@@ -25,11 +25,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
   return (
     <>
       <PageMeta />
-      <StyledHeroSection
-        innerProps={{ style: { margin: '0', width: '100%', height: '80vh' } }}
-        index={1}
-        hasCurvedDivider={false}
-      >
+      <StyledHeroSection innerProps={{ style: { margin: '2rem 0', width: '100%' } }} index={1} hasCurvedDivider={false}>
         <Hero />
       </StyledHeroSection>
       <PageSection

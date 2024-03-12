@@ -94,7 +94,7 @@ const Hero = () => {
           >
             {t('Trade, earn, and own crypto on the all-in-one DEX')}
           </Heading>
-          <Flex alignItems="center" justifyContent="left">
+          <Flex alignItems="center" justifyContent={window.innerWidth > 768 ? 'left' : 'center'}>
             {!account && <ConnectWalletButton mr="8px" />}
             <NextLinkFromReactRouter to="/swap">
               <Button variant={!account ? 'secondary' : 'primary'}>{t('Trade Now')}</Button>

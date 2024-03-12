@@ -47,7 +47,7 @@ const connectors: Config[] = [
   //   icon: Kaikas,
   //   connectorId: ConnectorNames.Kaikas,
   //   priority: 1,
-  //   href: "https://odiswap.netlify.app/",
+  //   href: "https://focswap-test.netlify.app/",
   // },
   // {
   //   title: "WalletConnect",

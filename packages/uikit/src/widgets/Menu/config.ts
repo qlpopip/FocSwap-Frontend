@@ -161,7 +161,7 @@ export const userMenulinks: DropdownMenuItems[] = [
   },
   {
     type: DropdownMenuItemType.EXTERNAL_LINK,
-    href: "https://odiswap.netlify.app",
+    href: "https://focswap-test.netlify.app",
     label: "Link",
   },
   {

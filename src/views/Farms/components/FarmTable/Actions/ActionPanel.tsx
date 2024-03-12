@@ -177,7 +177,6 @@ const ActionPanel: React.FunctionComponent<React.PropsWithChildren<ActionPanelPr
           </StakeContainer>
         )}
         <StyledLinkExternal href={bsc}>{t('View Contract')}</StyledLinkExternal>
-        {/* <StyledLinkExternal href={info}>{t('See Pair Info')}</StyledLinkExternal> */}
       </InfoContainer>
       <ActionContainer>
         {shouldUseProxyFarm ? (
