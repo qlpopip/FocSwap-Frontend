@@ -3,7 +3,6 @@ import { useWeb3React } from '@pancakeswap/wagmi'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from '@pancakeswap/localization'
-import useTheme from 'hooks/useTheme'
 import styled, { keyframes, css } from 'styled-components'
 
 const Robot = styled.img`
@@ -54,7 +53,6 @@ const StyledFlex = styled(Flex)`
 const Hero = () => {
   const { t } = useTranslation()
   const { account } = useWeb3React()
-  const { theme } = useTheme()
 
   return (
     <>
@@ -101,7 +99,7 @@ const Hero = () => {
             </NextLinkFromReactRouter>
           </Flex>
         </Flex>
-        <Robot src="/images/robot.png" alt="robot" width={450} />
+        <Robot src="/images/robots.png" alt="robot" width={450} />
         {/* <Flex
           flex={[null, null, null, '1']}
           mb={['24px', null, null, '0']}
