@@ -26,6 +26,12 @@ const StyledBox = styled.div`
   height: -webkit-fill-available;
   padding: 1rem;
   gap: 1rem;
+
+  ${css`
+    @media screen and (max-width: 768px) {
+      height: fit-content;
+    }
+  `}
 `
 
 const StyledSpan20 = styled.span`

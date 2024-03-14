@@ -67,7 +67,7 @@ const WalletInfo: React.FC<WalletInfoProps> = ({ hasLowNativeBalance, onDismiss 
       </Flex>
       <Flex alignItems="center" justifyContent="space-between" mb="24px" mt="12px">
         <Flex alignItems="center">
-          {!isBSC && <Image src="/images/logo_yes_free_wifi.svg" width={26} height={26} unoptimized alt="FOC" />}
+          {!isBSC && <Image src="/images/logo.png" width={26} height={26} unoptimized alt="FOC" />}
           <Text ml={isBSC ? 0 : '8px'} color="textSubtle">
             FOC
           </Text>

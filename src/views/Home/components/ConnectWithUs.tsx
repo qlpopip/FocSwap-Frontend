@@ -50,6 +50,12 @@ const GridDiv = styled.div`
   padding: 1rem;
   gap: 0.5rem;
   justify-items: center;
+
+  ${css`
+    @media screen and (max-width: 768px) {
+      height: fit-content;
+    }
+  `}
 `
 
 const BgWrapper = styled.div`
