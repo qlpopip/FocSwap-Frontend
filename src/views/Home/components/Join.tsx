@@ -196,22 +196,22 @@ const Join = () => {
           </Flex>
 
           <SocialLogoGroups>
-            <a href="https://web.focad.ph/" target="_blank">
+            <a href="https://web.focad.ph/" target="_blank" rel="noreferrer">
               <HomeIcon style={{ color: '#a24bff', width: '26px', height: '26px' }} />
             </a>
-            <a href="https://www.tiktok.com/@focinofficial" target="_blank">
+            <a href="https://www.tiktok.com/@focinofficial" target="_blank" rel="noreferrer">
               <img src="/images/tiktok-icon.svg" alt="tiktok-icon" width={24} />
             </a>
-            <a href="https://twitter.com/focincofficial?s=21" target="_blank">
+            <a href="https://twitter.com/focincofficial?s=21" target="_blank" rel="noreferrer">
               <img src="/images/x-icon.svg" alt="twitter" width={24} />
             </a>
             {/* <a href="/" target="_blank">
               <img src="/images/instagram-icon.svg" alt="instagram" width={24} />
             </a> */}
-            <a href="https://www.facebook.com/profile.php?id=61556776132353" target="_blank">
+            <a href="https://www.facebook.com/profile.php?id=61556776132353" target="_blank" rel="noreferrer">
               <img src="/images/facebook-icon.svg" alt="facebook" width={24} />
             </a>
-            <a href="https://discord.gg/wxk5FSWc" target="_blank">
+            <a href="https://discord.gg/wxk5FSWc" target="_blank" rel="noreferrer">
               <img src="/images/discord-icon.svg" alt="discord" width={24} />
             </a>
           </SocialLogoGroups>
