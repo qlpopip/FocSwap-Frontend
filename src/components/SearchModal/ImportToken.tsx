@@ -32,7 +32,7 @@ function ImportToken({ tokens, handleCurrencySelect }: ImportProps) {
       <Message variant="warning">
         <Text>
           {t(
-            'Anyone can create a KIP7 token on Klaytn with any name, including creating fake versions of existing tokens and tokens that claim to represent projects that do not have a token.',
+            'Anyone can create a ERC-20 token on Klaytn with any name, including creating fake versions of existing tokens and tokens that claim to represent projects that do not have a token.',
           )}
           <br />
           <br />
