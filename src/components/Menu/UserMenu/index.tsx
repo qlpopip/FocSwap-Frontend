@@ -10,6 +10,7 @@ import {
   UserMenuItem,
   UserMenuVariant,
 } from '@pancakeswap/uikit'
+import NextLink from 'next/link'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import Trans from 'components/Trans'
 import { useActiveChainId } from 'hooks/useActiveChainId'
@@ -59,16 +60,12 @@ const UserMenu = () => {
           {hasPendingTransactions && <RefreshIcon spin />}
         </UserMenuItem>
         <UserMenuDivider />
-        {/* <NextLink href={`/profile/${account?.toLowerCase()}`} passHref>
-          <UserMenuItem as="a" disabled={isWrongNetwork || chainId !== ChainId.BSC}>
-            {t('Your NFTs')}
-          </UserMenuItem>
-        </NextLink> */}
-        {/* <ProfileUserMenuItem
-          isLoading={isLoading}
-          hasProfile={hasProfile}
-          disabled={isWrongNetwork || chainId !== ChainId.BSC}
-        /> */}
+        <NextLink href={`/`} passHref>
+          <UserMenuItem as="a">{t('FOC Online Store')}</UserMenuItem>
+        </NextLink>
+        <NextLink href={`/`} passHref>
+          <UserMenuItem as="a">{t('FOC Reward')}</UserMenuItem>
+        </NextLink>
         <UserMenuDivider />
         <UserMenuItem as="button" onClick={logout}>
           <Flex alignItems="center" justifyContent="space-between" width="100%">
