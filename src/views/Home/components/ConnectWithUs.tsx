@@ -95,10 +95,10 @@ const formatMarketCap = (marketCap: number) => {
   const suffixes = ['', 'K', 'M', 'B', 'T']
   const suffixNum = Math.floor(('' + marketCap).length / 3)
   let shortValue: number | string = parseFloat(
-    (suffixNum !== 0 ? marketCap / Math.pow(1000, suffixNum) : marketCap).toPrecision(2),
+    (suffixNum !== 0 ? marketCap / 1000 ** suffixNum : marketCap).toPrecision(2),
   )
   if (shortValue % 1 !== 0) shortValue = shortValue.toFixed(2)
-  return `${shortValue} ${suffixes[suffixNum]}`
+  return shortValue + ' ' + suffixes[suffixNum]
 }
 
 const ConnectWithUs = () => {
