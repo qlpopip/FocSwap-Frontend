@@ -98,7 +98,7 @@ const formatMarketCap = (marketCap: number) => {
     (suffixNum !== 0 ? marketCap / 1000 ** suffixNum : marketCap).toPrecision(2),
   )
   if (shortValue % 1 !== 0) shortValue = shortValue.toFixed(2)
-  return shortValue + ' ' + suffixes[suffixNum]
+  return `${shortValue} ${suffixes[suffixNum]}`
 }
 
 const ConnectWithUs = () => {
