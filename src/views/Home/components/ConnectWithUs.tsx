@@ -1,7 +1,11 @@
+import React, { useState, useEffect } from 'react'
+import BigNumber from 'bignumber.js'
 import { Button, Flex, Heading } from '@pancakeswap/uikit'
 import { useWeb3React } from '@pancakeswap/wagmi'
 import { useTranslation } from '@pancakeswap/localization'
+import { usePriceCakeBusd } from 'state/farms/hooks'
 import styled, { css } from 'styled-components'
+import { Price } from '../../../../packages/swap-sdk/src/entities'
 
 const MobileFlex = styled.div`
   position: relative;
@@ -87,8 +91,42 @@ const StyledFlex = styled(Flex)`
   `}
 `
 
+const formatMarketCap = (marketCap: number) => {
+  const suffixes = ['', 'K', 'M', 'B', 'T']
+  const suffixNum = Math.floor(('' + marketCap).length / 3)
+  let shortValue: number | string = parseFloat(
+    (suffixNum !== 0 ? marketCap / Math.pow(1000, suffixNum) : marketCap).toPrecision(2),
+  )
+  if (shortValue % 1 !== 0) shortValue = shortValue.toFixed(2)
+  return `${shortValue} ${suffixes[suffixNum]}`
+}
+
 const ConnectWithUs = () => {
   const { t } = useTranslation()
+  const [totalSupply, setTotalSupply] = useState<number>(0)
+  const [circulatingSupply, setCirculatingSupply] = useState<number>(0)
+  const [marketCap, setMarketCap] = useState<number>(0)
+  const [tokenBurn, setTokenBurn] = useState<number>(0)
+  const [currentEmissions, setCurrentEmissions] = useState<number>(0)
+  const price = usePriceCakeBusd()
+
+  useEffect(() => {
+    // Fetch data
+    const fetchStats = async () => {
+      const totalSupply_ = 10000000000
+      const tokenBurn_ = 0 // fetch from contract
+      const circulatingSupply_ = 10000000000 - tokenBurn
+      const marketCap_ = parseInt(price.multipliedBy(totalSupply_).toFixed(0))
+      const curentEmissions_ = 0 // fetch from contract
+      setTotalSupply(totalSupply_)
+      setCirculatingSupply(circulatingSupply_)
+      setMarketCap(marketCap_)
+      setTokenBurn(tokenBurn_)
+      setCurrentEmissions(curentEmissions_)
+    }
+
+    fetchStats()
+  }, [price])
 
   return (
     <>
@@ -112,33 +150,40 @@ const ConnectWithUs = () => {
         </Flex>
       </StyledFlex>
       <Flex alignItems="center" justifyContent="center">
-        <Button variant="secondary">{t('Connect')}</Button>
+        <Button
+          variant="secondary"
+          onClick={() => {
+            window.open('https://web.focad.ph/', '_blank')
+          }}
+        >
+          {t('Connect')}
+        </Button>
       </Flex>
       <MobileFlex>
         <ResponsiveFlex>
           <GridDiv>
             <StyledSpan24>{t('Circulating Supply')}</StyledSpan24>
-            <StyledSpan>241,756,367</StyledSpan>
+            <StyledSpan>{circulatingSupply.toLocaleString()}</StyledSpan>
           </GridDiv>
 
           <GridDiv>
             <StyledSpan24>{t('Total Supply')}</StyledSpan24>
-            <StyledSpan>241,756,367</StyledSpan>
+            <StyledSpan>{totalSupply.toLocaleString()}</StyledSpan>
           </GridDiv>
 
           <GridDiv>
             <StyledSpan24>{t('Market Cap')}</StyledSpan24>
-            <StyledSpan>241,756,367</StyledSpan>
+            <StyledSpan>${formatMarketCap(marketCap)}</StyledSpan>
           </GridDiv>
 
           <GridDiv>
             <StyledSpan24>{t('Token Burn')}</StyledSpan24>
-            <StyledSpan>241,756,367</StyledSpan>
+            <StyledSpan>{tokenBurn.toLocaleString()}</StyledSpan>
           </GridDiv>
 
           <GridDiv>
             <StyledSpan24>{t('Current Emissions')}</StyledSpan24>
-            <StyledSpan>241,756,367</StyledSpan>
+            <StyledSpan>{currentEmissions.toLocaleString()}</StyledSpan>
           </GridDiv>
         </ResponsiveFlex>
       </MobileFlex>

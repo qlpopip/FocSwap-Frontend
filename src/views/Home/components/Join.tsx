@@ -73,6 +73,12 @@ const StyledSpan = styled.span`
   font-weight: 300;
   line-height: 1.3;
   max-width: 700px;
+
+  ${css`
+    @media screen and (max-width: 768px) {
+      text-align: center;
+    }
+  `}
 `
 
 const StyledSpanBlack = styled.span`
@@ -133,6 +139,39 @@ const StyledBlurImgStar = styled.img`
   `}
 `
 
+const Tweets = {
+  link: 'https://twitter.com/focincofficial',
+  content:
+    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam ultrices sagittis orci a. Dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu. Adipiscing at in tellus integer feugiat scelerisque varius. Malesuada pellentesque elit eget gravida cum sociis natoque. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse.',
+}
+
+export const socialLinks = [
+  {
+    href: 'https://web.focad.ph/',
+    icon: <HomeIcon style={{ color: '#a24bff', width: '26px', height: '26px' }} />,
+  },
+  {
+    href: 'https://www.tiktok.com/@focinofficial',
+    icon: <img src="/images/tiktok-icon.svg" alt="tiktok-icon" width={24} />,
+  },
+  {
+    href: 'https://twitter.com/focincofficial?s=21',
+    icon: <img src="/images/x-icon.svg" alt="twitter" width={24} />,
+  },
+  // {
+  //   href: '/',
+  //   icon: <img src="/images/instagram-icon.svg" alt="instagram" width={24} />,
+  // },
+  {
+    href: 'https://www.facebook.com/profile.php?id=61556776132353',
+    icon: <img src="/images/facebook-icon.svg" alt="facebook" width={24} />,
+  },
+  {
+    href: 'https://discord.gg/wxk5FSWc',
+    icon: <img src="/images/discord-icon.svg" alt="discord" width={24} />,
+  },
+]
+
 const Join = () => {
   const { t } = useTranslation()
 
@@ -184,36 +223,31 @@ const Join = () => {
           <Heading scale="lg" color="#8c1fff" mb="24px" width="100%" textAlign="center">
             {t("Everyone's Favorite")}
           </Heading>
-          <StyledSpan>
-            Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et
-            dolore magna aliqua. Aliquam ultrices sagittis orci a. Dignissim cras tincidunt lobortis feugiat vivamus at
-            augue eget arcu. Adipiscing at in tellus integer feugiat scelerisque varius. Malesuada pellentesque elit
-            eget gravida cum sociis natoque. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor.
-            Suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse.
-          </StyledSpan>
+          <StyledSpan>{Tweets.content}</StyledSpan>
           <Flex alignItems="center" justifyContent="center">
-            <Button variant="secondary">{t('Web link')}</Button>
+            <Button
+              variant="secondary"
+              onClick={() => {
+                window.open(Tweets.link, '_blank')
+              }}
+            >
+              {t('Web link')}
+            </Button>
           </Flex>
 
           <SocialLogoGroups>
-            <a href="https://web.focad.ph/" target="_blank" rel="noreferrer">
-              <HomeIcon style={{ color: '#a24bff', width: '26px', height: '26px' }} />
-            </a>
-            <a href="https://www.tiktok.com/@focinofficial" target="_blank" rel="noreferrer">
-              <img src="/images/tiktok-icon.svg" alt="tiktok-icon" width={24} />
-            </a>
-            <a href="https://twitter.com/focincofficial?s=21" target="_blank" rel="noreferrer">
-              <img src="/images/x-icon.svg" alt="twitter" width={24} />
-            </a>
-            {/* <a href="/" target="_blank">
-              <img src="/images/instagram-icon.svg" alt="instagram" width={24} />
-            </a> */}
-            <a href="https://www.facebook.com/profile.php?id=61556776132353" target="_blank" rel="noreferrer">
-              <img src="/images/facebook-icon.svg" alt="facebook" width={24} />
-            </a>
-            <a href="https://discord.gg/wxk5FSWc" target="_blank" rel="noreferrer">
-              <img src="/images/discord-icon.svg" alt="discord" width={24} />
-            </a>
+            {socialLinks.map(({ href, icon }) => (
+              <Button
+                key={href}
+                variant="secondary"
+                style={{ border: '0', padding: '0' }}
+                onClick={() => {
+                  window.open(href, '_blank')
+                }}
+              >
+                {icon}
+              </Button>
+            ))}
           </SocialLogoGroups>
         </Inner>
         <ResponsiveInner>

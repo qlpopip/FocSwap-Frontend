@@ -9,7 +9,7 @@
   "scripts": {
     "analyze": "ANALYZE=true yarn build",
     "dev": "next dev",
-    "build": "next build",
+    "build": "GENERATE_SOURCEMAP=false next build",
     "start": "next start",
     "test": "jest",
     "test:watch": "jest --watch",
