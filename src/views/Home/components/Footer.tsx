@@ -64,11 +64,10 @@ const SocialLogoGroups = styled.div`
 const EcosystemLinks = [
   { title: 'Trade', link: '/trade', id: 1 },
   { title: 'Earn', link: '/earn', id: 2 },
-  { title: 'Game', link: '/', id: 3 },
-  { title: 'NFT', link: '/', id: 4 },
-  { title: 'Tokenomics', link: '/', id: 5 },
-  { title: 'Litepaper', link: '/', id: 6 },
-  { title: 'Merchandise', link: '/', id: 7 },
+  { title: 'Tokenomics', link: '/', id: 3 },
+  { title: 'Litepaper', link: '/', id: 4 },
+  { title: 'FOC Online Store', link: '/', id: 5 },
+  { title: 'FOC Reward', link: '/', id: 6 },
 ]
 
 const DeveloperLinks = [
