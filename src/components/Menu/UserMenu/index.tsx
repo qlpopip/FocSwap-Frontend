@@ -60,10 +60,10 @@ const UserMenu = () => {
           {hasPendingTransactions && <RefreshIcon spin />}
         </UserMenuItem>
         <UserMenuDivider />
-        <NextLink href="" passHref>
+        <NextLink href="https://foc-onlinestore.netlify.app/" passHref>
           <UserMenuItem as="a">{t('FOC Online Store')}</UserMenuItem>
         </NextLink>
-        <NextLink href="" passHref>
+        <NextLink href="https://foc-onlinestore.netlify.app/my-points" passHref>
           <UserMenuItem as="a">{t('FOC Reward')}</UserMenuItem>
         </NextLink>
         <UserMenuDivider />
