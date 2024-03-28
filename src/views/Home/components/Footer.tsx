@@ -64,22 +64,22 @@ const SocialLogoGroups = styled.div`
 const EcosystemLinks = [
   { title: 'Trade', link: '/trade', id: 1 },
   { title: 'Earn', link: '/earn', id: 2 },
-  { title: 'Tokenomics', link: '/', id: 3 },
-  { title: 'Litepaper', link: '/', id: 4 },
-  { title: 'FOC Online Store', link: 'https://foc-onlinestore.netlify.app/', id: 5 },
-  { title: 'FOC Reward', link: 'https://foc-onlinestore.netlify.app/my-points', id: 6 },
+  // { title: 'Tokenomics', link: '/', id: 3 },
+  // { title: 'Litepaper', link: '/', id: 4 },
+  { title: 'FOC Online Store', link: 'https://foc-onlinestore.netlify.app/', id: 3 },
+  { title: 'FOC Reward', link: 'https://foc-onlinestore.netlify.app/my-points', id: 4 },
 ]
 
 const DeveloperLinks = [
   { title: 'Github', link: '/', id: 1 },
-  { title: 'Bug Bounty', link: '/', id: 2 },
-  { title: 'Contributing', link: '/', id: 3 },
+  // { title: 'Bug Bounty', link: '/', id: 2 },
+  // { title: 'Contributing', link: '/', id: 3 },
 ]
 
 const SupportLinks = [
   { title: 'Contract', link: '/', id: 1 },
-  { title: 'Troubleshooting', link: '/', id: 2 },
-  { title: 'Documentation', link: '/', id: 3 },
+  // { title: 'Troubleshooting', link: '/', id: 2 },
+  { title: 'Documentation', link: '/', id: 2 },
 ]
 
 const AboutLinks = [
