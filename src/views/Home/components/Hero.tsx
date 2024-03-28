@@ -5,9 +5,21 @@ import { NextLinkFromReactRouter } from 'components/NextLink'
 import { useTranslation } from '@pancakeswap/localization'
 import styled, { keyframes, css } from 'styled-components'
 
+const upAndDownAnimation = keyframes`
+  0% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-15px);
+  }
+  100% {
+    transform: translateY(0);
+  }
+`
+
 const Robot = styled.img`
   margin-top: 3rem;
-
+  animation: ${upAndDownAnimation} 3s infinite ease-in-out;
   ${css`
     @media only screen and (max-width: 768px) {
       width: 242px;
@@ -68,7 +80,7 @@ const Hero = () => {
           <Heading
             scale="xxl"
             color="#FFF"
-            mb="24px"
+            mb="12px"
             width="100%"
             textAlign={window.innerWidth > 768 ? 'left' : 'center'}
           >
@@ -90,7 +102,7 @@ const Hero = () => {
             textAlign={window.innerWidth > 768 ? 'left' : 'center'}
             color="#FFF"
           >
-            {t('Trade, earn, and own crypto on the all-in-one DEX')}
+            {t('Trade FOC tokens. Participate in staking to earn assets and buy great merchandise at a discount')}
           </Heading>
           <Flex alignItems="center" justifyContent={window.innerWidth > 768 ? 'left' : 'center'}>
             {!account && <ConnectWalletButton mr="8px" />}

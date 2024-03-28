@@ -7,7 +7,7 @@ const style = {
     fontSize: "20px",
     fontSizeLg: "20px",
     textShadow: "none",
-    fontFamily: "Inter",
+    fontFamily: "Kanit",
     fontWeignt: "600",
   },
   [scales.LG]: {

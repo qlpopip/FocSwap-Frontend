@@ -142,7 +142,7 @@ const StyledBlurImgStar = styled.img`
 const Tweets = {
   link: 'https://twitter.com/focincofficial',
   content:
-    'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Aliquam ultrices sagittis orci a. Dignissim cras tincidunt lobortis feugiat vivamus at augue eget arcu. Adipiscing at in tellus integer feugiat scelerisque varius. Malesuada pellentesque elit eget gravida cum sociis natoque. Amet luctus venenatis lectus magna fringilla urna porttitor rhoncus dolor. Suspendisse potenti nullam ac tortor vitae purus faucibus ornare suspendisse.',
+    'We are sharing the status of building the wireless network infrastructure underlying the FOC token ecosystem through various community channels. By joining the community, you can follow our progress, learn about upcoming events, airdrops, and more. Join us now.',
 }
 
 export const socialLinks = [
@@ -203,9 +203,7 @@ const Join = () => {
             {t('Join our Community')}
           </Heading>
           <Heading scale="md" mb="24px" width="100%" textAlign="center" color="#FFF">
-            {t(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-            )}
+            {t('Join our community to get the latest news and information from FOC')}
           </Heading>
         </Flex>
       </StyledFlex>
@@ -215,7 +213,7 @@ const Join = () => {
             {t('Top tweet of the Week')}
           </Heading>
           <img
-            src="/images/logo.png"
+            src="/images/profile.jpg"
             width={50}
             alt="tweet-profile"
             style={{ boxShadow: '0 0 0 3px rgb(240, 169, 30)', borderRadius: '50%' }}

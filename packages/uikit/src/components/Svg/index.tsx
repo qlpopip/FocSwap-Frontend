@@ -124,6 +124,8 @@ export { default as SwapFillIcon } from "./Icons/SwapFill";
 export { default as SwapIcon } from "./Icons/Swap";
 export { default as SwapVertIcon } from "./Icons/SwapVert";
 export { default as SyncAltIcon } from "./Icons/SyncAlt";
+export { default as ShopIcon } from "./Icons/ShopIcon";
+export { default as EventIcon } from "./Icons/Events";
 export { default as TeamBattleIcon } from "./Icons/TeamBattle";
 export { default as TeamPlayerIcon } from "./Icons/TeamPlayer";
 export { default as TelegramIcon } from "./Icons/Telegram";

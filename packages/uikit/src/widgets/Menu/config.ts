@@ -57,10 +57,6 @@ export const links: MenuItemsType[] = [
     fillIcon: EarnFillIcon,
     items: [
       {
-        label: "Earn",
-        href: "/earn",
-      },
-      {
         label: "Yield Farms",
         href: "/farms",
       },

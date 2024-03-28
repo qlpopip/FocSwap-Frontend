@@ -144,8 +144,10 @@ const ConnectWithUs = () => {
           </Heading>
           <Heading scale="md" mb="24px" width="100%" textAlign="center" color="#6234b8">
             {t(
-              'Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
+              "We're building on our network infrastructure. Even now, many new users are joining our free Wi-Fi service every day",
             )}
+            <br />
+            {t('With FOC, you can enjoy even more benefits')}
           </Heading>
         </Flex>
       </StyledFlex>

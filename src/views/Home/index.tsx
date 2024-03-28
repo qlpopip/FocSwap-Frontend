@@ -28,7 +28,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
       <StyledHeroSection innerProps={{ style: { margin: '2rem 0', width: '100%' } }} index={1} hasCurvedDivider={false}>
         <Hero />
       </StyledHeroSection>
-      <PageSection
+      {/* <PageSection
         innerProps={{ style: { margin: '0', width: '100%' } }}
         background="linear-gradient(180deg, #ffffff 30%, #ffe587 100%)"
         containerProps={{
@@ -38,7 +38,7 @@ const Home: React.FC<React.PropsWithChildren> = () => {
         hasCurvedDivider={false}
       >
         <Stats />
-      </PageSection>
+      </PageSection> */}
       <PageSection
         innerProps={{ style: { margin: '0', width: '100%' } }}
         background="linear-gradient(180deg, #ffffff 5%, #ffebcd 20%, #ffa621 100%)"

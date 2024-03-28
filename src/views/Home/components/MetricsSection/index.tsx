@@ -81,9 +81,7 @@ const Stats = () => {
   return (
     <Flex justifyContent="center" alignItems="center" flexDirection="column">
       <Heading textAlign="center" scale="xl">
-        {t(
-          'Lorem ipsum dolor sit amet consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua.',
-        )}
+        {t('The unstoppable drive for decentralized finance')}
       </Heading>
 
       <Flex flexDirection={['column', null, null, 'row']}>
