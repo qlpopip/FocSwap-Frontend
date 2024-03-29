@@ -17,10 +17,9 @@ import {
 import { useTranslation } from '@pancakeswap/localization'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { wrappedCurrency } from 'utils/wrappedCurrency'
-import { WrappedTokenInfo } from '@pancakeswap/tokens'
 import { AutoColumn, ColumnCenter } from '../Layout/Column'
 import { getBlockExploreLink, getBlockExploreName } from '../../utils'
-import AddToWalletButton, { AddToWalletTextOptions } from '../AddToWallet/AddToWalletButton'
+// import AddToWalletButton, { AddToWalletTextOptions } from '../AddToWallet/AddToWalletButton'
 
 const Wrapper = styled.div`
   width: 100%;
@@ -85,7 +84,7 @@ export function TransactionSubmittedContent({
               })}
             </Link>
           )}
-          {currencyToAdd && (
+          {/* {currencyToAdd && (
             <AddToWalletButton
               variant="tertiary"
               mt="12px"
@@ -97,7 +96,7 @@ export function TransactionSubmittedContent({
               tokenDecimals={token.decimals}
               tokenLogo={token instanceof WrappedTokenInfo ? token.logoURI : undefined}
             />
-          )}
+          )} */}
           <Button onClick={onDismiss} mt="20px">
             {t('Close')}
           </Button>

@@ -67,6 +67,7 @@ const NewsItem = styled.div`
   background-color: #fff;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   border-radius: 8px;
+  height: 100%;
   cursor: pointer;
 `
 
@@ -94,6 +95,7 @@ const NewsTitle = styled.h3`
   color: #000;
   text-align: left;
   line-height: 1.3;
+  height: -webkit-fill-available;
 `
 
 const News = () => {

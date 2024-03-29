@@ -13,7 +13,7 @@ import { CurrencyLogo, DoubleCurrencyLogo } from '../Logo'
 
 import { Input as NumericalInput } from './NumericalInput'
 import { CopyButton } from '../CopyButton'
-import AddToWalletButton from '../AddToWallet/AddToWalletButton'
+// import AddToWalletButton from '../AddToWallet/AddToWalletButton'
 
 const InputRow = styled.div<{ selected: boolean }>`
   display: flex;
@@ -185,7 +185,7 @@ export default function CurrencyInputPanel({
                 tooltipRight={40}
                 tooltipFontSize={12}
               />
-              <AddToWalletButton
+              {/* <AddToWalletButton
                 variant="text"
                 p="0"
                 height="auto"
@@ -194,7 +194,7 @@ export default function CurrencyInputPanel({
                 tokenSymbol={token.symbol}
                 tokenDecimals={token.decimals}
                 tokenLogo={token instanceof WrappedTokenInfo ? token.logoURI : undefined}
-              />
+              /> */}
             </Flex>
           ) : null}
         </Flex>
