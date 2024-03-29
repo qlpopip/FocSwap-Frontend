@@ -94,8 +94,8 @@ const NewsTitle = styled.h3`
   font-size: 1.2rem;
   color: #000;
   text-align: left;
+  height: 100%;
   line-height: 1.3;
-  height: -webkit-fill-available;
 `
 
 const News = () => {
