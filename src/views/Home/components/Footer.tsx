@@ -62,7 +62,7 @@ const SocialLogoGroups = styled.div`
 `
 
 const EcosystemLinks = [
-  { title: 'Trade', link: '/trade', id: 1 },
+  { title: 'Trade', link: '/swap', id: 1 },
   { title: 'Earn', link: '/earn', id: 2 },
   // { title: 'Tokenomics', link: '/', id: 3 },
   // { title: 'Litepaper', link: '/', id: 4 },
