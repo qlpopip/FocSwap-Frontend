@@ -72,21 +72,25 @@ const config: (
           label: t('Online Store'),
           href: 'https://foc-onlinestore.netlify.app/',
         },
-      ],
-    },
-    {
-      label: t('Events'),
-      href: 'https://foc-onlinestore.netlify.app/event',
-      icon: EventIcon,
-      fillIcon: EventIcon,
-      image: '/images/decorations/pe2.png',
-      items: [
         {
           label: t('Events'),
           href: 'https://foc-onlinestore.netlify.app/event',
         },
       ],
     },
+    // {
+    //   label: t('Events'),
+    //   href: 'https://foc-onlinestore.netlify.app/event',
+    //   icon: EventIcon,
+    //   fillIcon: EventIcon,
+    //   image: '/images/decorations/pe2.png',
+    //   items: [
+    //     {
+    //       label: t('Events'),
+    //       href: 'https://foc-onlinestore.netlify.app/event',
+    //     },
+    //   ],
+    // },
   ].map((item) => addMenuItemSupported(item, chainId))
 
 export default config
