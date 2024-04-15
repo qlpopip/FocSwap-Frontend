@@ -55,6 +55,15 @@ export const CAKE_KLAYTN = new Token(
   'https://pancakeswap.finance/',
 )
 
+export const CAKE_BASE_TESTNET = new Token(
+  ChainId.BASE_TESTNET,
+  '0x198028E8c21324De512F369dDF2D404c608034Db',
+  18,
+  'FOC',
+  'FOC Token',
+  'https://pancakeswap.finance/',
+)
+
 export const USDC_BSC = new Token(
   ChainId.BSC,
   '0x8AC76a51cc950d9822D68b83fE1Ad97B32Cd580d',
@@ -85,6 +94,15 @@ export const USDC_BAOBAB = new Token(
 export const USDC_SAIGON = new Token(
   ChainId.SAIGON,
   '0x22Ca52E4A56f7CF58AB0F87B9Fa10663844a00CC',
+  18,
+  'USDC',
+  'USD Coin',
+  'https://www.centre.io/usdc',
+)
+
+export const USDC_BASE_TESTNET = new Token(
+  ChainId.BASE_TESTNET,
+  '0x79a91CdCBD808A4B01A2D29773a29d74B6e2DeD6',
   18,
   'USDC',
   'USD Coin',
@@ -141,6 +159,15 @@ export const USDT_KLAYTN = new Token(
   '0xceE8FAF64bB97a73bb51E115Aa89C17FfA8dD167',
   6,
   'oUSDT',
+  'Tether USD',
+  'https://tether.to/',
+)
+
+export const USDT_BASE_TESTNET = new Token(
+  ChainId.BASE_TESTNET,
+  '0x1F6b02688350a1aedEd79358FBe7D22036c5b73C',
+  18,
+  'USDT',
   'Tether USD',
   'https://tether.to/',
 )
@@ -208,6 +235,15 @@ export const BUSD_SAIGON = new Token(
   'https://www.paxos.com/busd/',
 )
 
+export const BUSD_BASE_TESTNET = new Token(
+  ChainId.BASE_TESTNET,
+  '0xcbf9BE1A4A8B3E7A0DA99bD9ad7B42870cD37d7D',
+  6,
+  'BUSD',
+  'Binance USD',
+  'https://www.paxos.com/busd/',
+)
+
 export const BUSD_BAOBAB = new Token(
   ChainId.BAOBAB,
   '0x210bc03f49052169d5588a52c317f71cf2078b85',
@@ -226,6 +262,7 @@ export const BUSD: Record<ChainId, Token> = {
   [ChainId.BAOBAB]: BUSD_BAOBAB,
   [ChainId.KLAYTN]: BUSD_BAOBAB,
   [ChainId.SAIGON]: BUSD_SAIGON,
+  [ChainId.BASE_TESTNET]: BUSD_BASE_TESTNET,
 }
 
 export const CAKE = {
@@ -235,6 +272,7 @@ export const CAKE = {
   [ChainId.BAOBAB]: CAKE_BAOBAB,
   [ChainId.KLAYTN]: CAKE_KLAYTN,
   [ChainId.SAIGON]: CAKE_SAIGON,
+  [ChainId.BASE_TESTNET]: CAKE_BASE_TESTNET,
 }
 
 export const USDC = {
@@ -245,6 +283,7 @@ export const USDC = {
   [ChainId.GOERLI]: USDC_GOERLI,
   [ChainId.BAOBAB]: USDC_BAOBAB,
   [ChainId.SAIGON]: USDC_SAIGON,
+  [ChainId.BASE_TESTNET]: USDC_BASE_TESTNET,
 }
 
 export const USDT = {
@@ -253,4 +292,5 @@ export const USDT = {
   [ChainId.BAOBAB]: USDT_BAOBAB,
   [ChainId.KLAYTN]: USDT_KLAYTN,
   [ChainId.SAIGON]: USDT_SAIGON,
+  [ChainId.BASE_TESTNET]: USDT_BASE_TESTNET,
 }

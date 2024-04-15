@@ -237,24 +237,24 @@
     {
       "name": "FOC Token",
       "symbol": "FOC",
-      "address": "0xcBff9d27af2e13Df19C9082276764426DC50eFF7",
-      "chainId": 2021,
+      "address": "0x198028E8c21324De512F369dDF2D404c608034Db",
+      "chainId": 84532,
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/meritz3695/foc-assets/main/tokens/0xcBff9d27af2e13Df19C9082276764426DC50eFF7.png"
     },
     {
       "name": "USD Coin",
       "symbol": "USDC",
-      "address": "0x22Ca52E4A56f7CF58AB0F87B9Fa10663844a00CC",
-      "chainId": 2021,
+      "address": "0x79a91CdCBD808A4B01A2D29773a29d74B6e2DeD6",
+      "chainId": 84532,
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/meritz3695/foc-assets/main/tokens/0x22Ca52E4A56f7CF58AB0F87B9Fa10663844a00CC.png"
     },
     {
       "name": "Tether USD",
       "symbol": "USDT",
-      "address": "0x1a29215512f7eD3994C3B335F67b03E70890ca57",
-      "chainId": 2021,
+      "address": "0x1F6b02688350a1aedEd79358FBe7D22036c5b73C",
+      "chainId": 84532,
       "decimals": 18,
       "logoURI": "https://raw.githubusercontent.com/meritz3695/foc-assets/main/tokens/0x1a29215512f7eD3994C3B335F67b03E70890ca57.png"
     }

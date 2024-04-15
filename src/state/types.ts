@@ -16,10 +16,10 @@ import {
 } from 'config/constants/types'
 
 export enum GAS_PRICE {
-  default = '30',
-  fast = '60',
-  instant = '70',
-  testnet = '55',
+  default = '10',
+  fast = '20',
+  instant = '30',
+  testnet = '30',
 }
 
 export const GAS_PRICE_GWEI = {

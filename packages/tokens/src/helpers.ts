@@ -62,6 +62,7 @@ export const EMPTY_LIST: TokenAddressMap = {
   [ChainId.BAOBAB]: {},
   [ChainId.KLAYTN]: {},
   [ChainId.SAIGON]: {},
+  [ChainId.BASE_TESTNET]: {},
 }
 
 /**

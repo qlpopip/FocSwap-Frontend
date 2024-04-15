@@ -13,6 +13,7 @@ export enum ChainId {
   BAOBAB = 1001,
   KLAYTN = 8217,
   SAIGON = 2021,
+  BASE_TESTNET = 84532,
 }
 
 export enum TradeType {
@@ -40,6 +41,7 @@ export const FACTORY_ADDRESS_MAP: Record<number, string> = {
   [ChainId.BAOBAB]: '0xcb78A0AC1DfEfDD1b0a6F317AFA181D7B2bcCace',
   [ChainId.KLAYTN]: '0xef2E94DDB76e128B1aB74a7433d26879A1a15f75',
   [ChainId.SAIGON]: '0x8498E2d7a9d579fAB3AA1056F18A863e789b6321',
+  [ChainId.BASE_TESTNET]: '0x4b1Db7Defeb46DDeb7EeFC801236764A6eD67b94',
 }
 export const INIT_CODE_HASH = '0x00fb7f630766e6a796048ea87d01acd3068e8ff67d078148a3fa3f4a84f69bd5'
 
@@ -53,6 +55,7 @@ export const INIT_CODE_HASH_MAP: Record<number, string> = {
   [ChainId.BAOBAB]: '0x29bd6d25b5a86f6ac94daf96ae9932a8109dee0e95aff78c7c9d38ee24fd6f88',
   [ChainId.KLAYTN]: '0x29bd6d25b5a86f6ac94daf96ae9932a8109dee0e95aff78c7c9d38ee24fd6f88',
   [ChainId.SAIGON]: '0x50368cf9d6b394e5bf92ece698ed924a1d0dd04b6e8d6bbc50020afa3e460bed',
+  [ChainId.BASE_TESTNET]: '0x50368cf9d6b394e5bf92ece698ed924a1d0dd04b6e8d6bbc50020afa3e460bed',
 }
 
 export const MINIMUM_LIQUIDITY = JSBI.BigInt(1000)
@@ -129,6 +132,14 @@ export const WETH9 = {
     'Wrapped RON',
     'https://weth.io'
   ),
+  [ChainId.BASE_TESTNET]: new Token(
+    ChainId.BASE_TESTNET,
+    '0x4200000000000000000000000000000000000006',
+    18,
+    'WETH',
+    'Wrapped Ether',
+    'https://weth.io'
+  ),
 }
 
 export const WBNB = {
@@ -167,6 +178,7 @@ export const WNATIVE: Record<number, Token> = {
   [ChainId.BAOBAB]: WETH9[ChainId.BAOBAB],
   [ChainId.KLAYTN]: WETH9[ChainId.KLAYTN],
   [ChainId.SAIGON]: WETH9[ChainId.SAIGON],
+  [ChainId.BASE_TESTNET]: WETH9[ChainId.BASE_TESTNET],
 }
 
 export const NATIVE: Record<
@@ -183,6 +195,7 @@ export const NATIVE: Record<
   [ChainId.BAOBAB]: { name: 'Baobab Klay', symbol: 'KLAY', decimals: 18 },
   [ChainId.KLAYTN]: { name: 'Klay', symbol: 'KLAY', decimals: 18 },
   [ChainId.SAIGON]: { name: 'Saigon Ron', symbol: 'RON', decimals: 18 },
+  [ChainId.BASE_TESTNET]: { name: 'Base Ether', symbol: 'ETH', decimals: 18 },
 
   [ChainId.BSC]: {
     name: 'Binance Chain Native Token',

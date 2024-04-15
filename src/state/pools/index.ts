@@ -17,9 +17,9 @@ import { BIG_ZERO } from 'utils/bigNumber'
 import cakeAbi from 'config/abi/cake.json'
 import { getCakeVaultAddress, getCakeFlexibleSideVaultAddress } from 'utils/addressHelpers'
 import { multicallv2 } from 'utils/multicall'
-import { baobabTokens, bscTokens } from '@pancakeswap/tokens'
+import { baseTestTokens } from '@pancakeswap/tokens'
 import { getBalanceNumber } from 'utils/formatBalance'
-import { saigonRpcProvider } from 'utils/providers'
+import { baseSepoliaRpcProvider } from 'utils/providers'
 import { getPoolsPriceHelperLpFiles } from 'config/constants/priceHelperLps/index'
 import getFarmsPrices from '../farms/getFarmsPrices'
 import {
@@ -109,12 +109,12 @@ export const fetchCakePoolPublicDataAsync = () => async (dispatch, getState) => 
 
 export const fetchCakePoolUserDataAsync = (account: string) => async (dispatch) => {
   const allowanceCall = {
-    address: baobabTokens.odi.address,
+    address: baseTestTokens.foc.address,
     name: 'allowance',
     params: [account, cakeVaultAddress],
   }
   const balanceOfCall = {
-    address: baobabTokens.odi.address,
+    address: baseTestTokens.foc.address,
     name: 'balanceOf',
     params: [account],
   }
@@ -139,7 +139,7 @@ export const fetchPoolsPublicDataAsync =
         fetchPoolsBlockLimits(),
         fetchPoolsTotalStaking(),
         fetchPoolsProfileRequirement(),
-        currentBlockNumber ? Promise.resolve(currentBlockNumber) : saigonRpcProvider.getBlockNumber(),
+        currentBlockNumber ? Promise.resolve(currentBlockNumber) : baseSepoliaRpcProvider.getBlockNumber(),
       ])
 
       const blockLimitsSousIdMap = fromPairs(blockLimits.map((entry) => [entry.sousId, entry]))
@@ -166,7 +166,7 @@ export const fetchPoolsPublicDataAsync =
       const farmsData = getState().farms.data
       const bnbBusdFarm =
         activePriceHelperLpsConfig.length > 0
-          ? farmsData.find((farm) => farm.token.symbol === 'WKLAY' && farm.quoteToken.symbol === 'oUSDT')
+          ? farmsData.find((farm) => farm.token.symbol === 'WETH' && farm.quoteToken.symbol === 'USDT')
           : null
       const farmsWithPricesOfDifferentTokenPools = bnbBusdFarm
         ? await getFarmsPrices([bnbBusdFarm, ...poolsWithDifferentFarmToken], chainId)

@@ -199,4 +199,9 @@ const nativeStableLpMap = {
     wNative: 'WRON',
     stable: 'USDC',
   },
+  [ChainId.BASE_TESTNET]: {
+    address: '0x62cc1fE667525E376AE346A4A714050C7998F885',
+    wNative: 'WETH',
+    stable: 'USDT',
+  },
 }

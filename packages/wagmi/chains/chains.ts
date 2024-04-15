@@ -243,3 +243,26 @@ export const klaytn: Chain = {
     blockCreated: 103742609,
   },
 }
+
+export const base_sepolia: Chain = {
+  id: 84532,
+  name: 'Base',
+  network: 'Base Sepolia',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Ethereum',
+    symbol: 'ETH',
+  },
+  rpcUrls: {
+    default: 'https://sepolia.base.org',
+    // https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key
+    nodeReal: 'https://sepolia.base.org',
+  },
+  blockExplorers: {
+    default: { name: 'blockscout', url: 'https://sepolia-explorer.base.org' },
+  },
+  multicall: {
+    address: '0xcA11bde05977b3631167028862bE2a173976CA11',
+    blockCreated: 103742609,
+  },
+}

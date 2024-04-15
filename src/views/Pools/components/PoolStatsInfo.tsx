@@ -113,7 +113,11 @@ const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({
       )}
       {vaultKey && <PerformanceFee userData={userData} performanceFeeAsDecimal={performanceFeeAsDecimal} />}
       <Flex mb="2px" justifyContent={alignLinksToRight ? 'flex-end' : 'flex-start'}>
-        <LinkExternal href={`${BASE_BSC_SCAN_URLS[ChainId.SAIGON]}/address/${earningToken.address}`} bold={false} small>
+        <LinkExternal
+          href={`${BASE_BSC_SCAN_URLS[ChainId.BASE_TESTNET]}/address/${earningToken.address}`}
+          bold={false}
+          small
+        >
           {t('See Token Info')}
         </LinkExternal>
       </Flex>
@@ -134,7 +138,7 @@ const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({
       {poolContractAddress && (
         <Flex mb="2px" justifyContent={alignLinksToRight ? 'flex-end' : 'flex-start'}>
           <LinkExternal
-            href={`${BASE_BSC_SCAN_URLS[ChainId.SAIGON]}/address/${
+            href={`${BASE_BSC_SCAN_URLS[ChainId.BASE_TESTNET]}/address/${
               vaultKey ? cakeVaultContractAddress : poolContractAddress
             }`}
             bold={false}

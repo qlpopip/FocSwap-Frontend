@@ -8,6 +8,7 @@ export const SUPPORT_FARMS = [
   ChainId.BAOBAB,
   ChainId.KLAYTN,
   ChainId.SAIGON,
+  ChainId.BASE_TESTNET,
 ]
 
 export const SUPPORT_ZAP = [ChainId.BSC, ChainId.BSC_TESTNET]

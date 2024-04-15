@@ -425,6 +425,9 @@ export function useGasPrice(): string {
   if (chainId === ChainId.SAIGON) {
     return userGas
   }
+  if (chainId === ChainId.BASE_TESTNET) {
+    return userGas
+  }
   return data?.formatted?.gasPrice
 }
 

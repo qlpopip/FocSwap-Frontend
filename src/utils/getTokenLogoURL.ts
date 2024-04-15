@@ -7,6 +7,7 @@ const mapping = {
   [ChainId.BAOBAB]: 'klaytn',
   [ChainId.KLAYTN]: 'klaytn',
   [ChainId.SAIGON]: 'saigon',
+  [ChainId.BASE_TESTNET]: 'base',
 }
 
 const getTokenLogoURL = (token?: Token) => {

@@ -70,7 +70,7 @@ const fetchFarmCalls = (farm: SerializedFarmPublicData, chainId: number) => {
 
 export const fetchPublicFarmsData = async (
   farms: SerializedFarmConfig[],
-  chainId = ChainId.SAIGON,
+  chainId = ChainId.BASE_TESTNET,
   multicall,
 ): Promise<any[]> => {
   try {

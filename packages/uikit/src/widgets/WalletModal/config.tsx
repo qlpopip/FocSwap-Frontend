@@ -16,20 +16,20 @@ import Ronin from "../../components/Svg/Icons/Ronin";
 import { Config, ConnectorNames } from "./types";
 
 const connectors: Config[] = [
-  {
-    title: "Ronin Wallet",
-    icon: Ronin,
-    connectorId: ConnectorNames.Ronin,
-    priority: 1,
-    href: "https://wallet.roninchain.com/",
-  },
   // {
-  //   title: "Metamask",
-  //   icon: Metamask,
-  //   connectorId: ConnectorNames.MetaMask,
-  //   priority: 2,
-  //   href: "https://metamask.app.link/dapp/odiswap.netlify.app/",
+  //   title: "Ronin Wallet",
+  //   icon: Ronin,
+  //   connectorId: ConnectorNames.Ronin,
+  //   priority: 1,
+  //   href: "https://wallet.roninchain.com/",
   // },
+  {
+    title: "Metamask",
+    icon: Metamask,
+    connectorId: ConnectorNames.MetaMask,
+    priority: 1,
+    href: "https://metamask.app.link/dapp/focswap-test.netlify.app/",
+  },
   // {
   //   title: "Binance Wallet",
   //   icon: BinanceChain,
