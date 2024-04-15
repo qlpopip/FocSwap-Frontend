@@ -63,31 +63,31 @@ const config: (
     },
     {
       label: t('Shop'),
-      href: 'https://foc-onlinestore.netlify.app/',
+      href: 'https://osh.x2day.io/',
       icon: ShopIcon,
       fillIcon: ShopIcon,
       image: '/images/decorations/pe2.png',
       items: [
         {
           label: t('Online Store'),
-          href: 'https://foc-onlinestore.netlify.app/',
+          href: 'https://osh.x2day.io/',
         },
         {
           label: t('Events'),
-          href: 'https://foc-onlinestore.netlify.app/event',
+          href: 'https://osh.x2day.io/event',
         },
       ],
     },
     // {
     //   label: t('Events'),
-    //   href: 'https://foc-onlinestore.netlify.app/event',
+    //   href: 'https://osh.x2day.io/event',
     //   icon: EventIcon,
     //   fillIcon: EventIcon,
     //   image: '/images/decorations/pe2.png',
     //   items: [
     //     {
     //       label: t('Events'),
-    //       href: 'https://foc-onlinestore.netlify.app/event',
+    //       href: 'https://osh.x2day.io/event',
     //     },
     //   ],
     // },

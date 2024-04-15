@@ -1,6 +1,6 @@
 import { ChainId, Currency, CurrencyAmount, JSBI, Pair, Price, Token, WNATIVE, WBNB } from '@pancakeswap/sdk'
 import { FAST_INTERVAL } from 'config/constants'
-import { BUSD, CAKE, USDC } from '@pancakeswap/tokens'
+import { BUSD, CAKE, USDC, USDT } from '@pancakeswap/tokens'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { useMemo } from 'react'
 import useSWR from 'swr'
@@ -157,7 +157,7 @@ export const useCakeBusdPrice = ({ forceMainnet } = { forceMainnet: false }): Pr
   const isTestnet = !forceMainnet && isChainTestnet(chainId)
   // Return bsc testnet cake if chain is testnet
   const cake: Token = isTestnet ? CAKE[ChainId.BASE_TESTNET] : CAKE[ChainId.BASE_TESTNET]
-  return usePriceByPairs(cake, USDC[cake.chainId])
+  return usePriceByPairs(cake, USDT[cake.chainId])
 }
 
 // @Note: only fetch from one pair

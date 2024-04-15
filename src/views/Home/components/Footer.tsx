@@ -66,8 +66,8 @@ const EcosystemLinks = [
   { title: 'Earn', link: '/earn', id: 2 },
   // { title: 'Tokenomics', link: '/', id: 3 },
   // { title: 'Litepaper', link: '/', id: 4 },
-  { title: 'FOC Online Store', link: 'https://foc-onlinestore.netlify.app/', id: 3 },
-  { title: 'FOC Reward', link: 'https://foc-onlinestore.netlify.app/my-points', id: 4 },
+  { title: 'FOC Online Store', link: 'https://osh.x2day.io/', id: 3 },
+  { title: 'FOC Reward', link: 'https://osh.x2day.io/my-points', id: 4 },
 ]
 
 const DeveloperLinks = [

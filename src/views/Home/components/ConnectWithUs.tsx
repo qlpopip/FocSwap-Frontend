@@ -117,6 +117,7 @@ const ConnectWithUs = () => {
       const tokenBurn_ = 0 // fetch from contract
       const circulatingSupply_ = 10000000000 - tokenBurn
       const marketCap_ = parseInt(price.multipliedBy(totalSupply_).toFixed(0))
+      console.log('marketCap_', marketCap_)
       const curentEmissions_ = 0 // fetch from contract
       setTotalSupply(totalSupply_)
       setCirculatingSupply(circulatingSupply_)
@@ -178,7 +179,7 @@ const ConnectWithUs = () => {
             <StyledSpan>${formatMarketCap(marketCap)}</StyledSpan>
           </GridDiv>
 
-          <GridDiv>
+          {/* <GridDiv>
             <StyledSpan24>{t('Token Burn')}</StyledSpan24>
             <StyledSpan>{tokenBurn.toLocaleString()}</StyledSpan>
           </GridDiv>
@@ -186,7 +187,7 @@ const ConnectWithUs = () => {
           <GridDiv>
             <StyledSpan24>{t('Current Emissions')}</StyledSpan24>
             <StyledSpan>{currentEmissions.toLocaleString()}</StyledSpan>
-          </GridDiv>
+          </GridDiv> */}
         </ResponsiveFlex>
       </MobileFlex>
       <div style={{ display: 'grid', justifyItems: 'center' }}>

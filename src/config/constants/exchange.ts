@@ -119,6 +119,10 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
     [bscTokens.busd, bscTokens.usdt],
     [bscTokens.dai, bscTokens.usdt],
   ],
+  [ChainId.BASE_TESTNET]: [
+    [WNATIVE[ChainId.BASE_TESTNET], USDT[ChainId.BASE_TESTNET]],
+    [baseTestTokens.foc, USDT[ChainId.BASE_TESTNET]],
+  ],
 }
 
 export const BIG_INT_ZERO = JSBI.BigInt(0)
