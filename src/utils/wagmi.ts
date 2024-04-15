@@ -1,5 +1,5 @@
 import { BinanceWalletConnector } from '@pancakeswap/wagmi/connectors/binanceWallet'
-import { bsc, base_sepolia } from '@pancakeswap/wagmi/chains'
+import { bsc, baseSepolia } from '@pancakeswap/wagmi/chains'
 import { configureChains, createClient } from 'wagmi'
 import memoize from 'lodash/memoize'
 import { CoinbaseWalletConnector } from 'wagmi/connectors/coinbaseWallet'
@@ -10,7 +10,7 @@ import { KaikasConnector } from '@pancakeswap/wagmi/connectors/kaikas'
 import { RoninConnector } from '@pancakeswap/wagmi/connectors/roninWallet'
 import { jsonRpcProvider } from 'wagmi/providers/jsonRpc'
 
-const CHAINS = [base_sepolia]
+const CHAINS = [baseSepolia]
 
 const getNodeRealUrl = (networkName: string) => {
   let host = null

@@ -244,7 +244,7 @@ export const klaytn: Chain = {
   },
 }
 
-export const base_sepolia: Chain = {
+export const baseSepolia: Chain = {
   id: 84532,
   name: 'Base',
   network: 'Base Sepolia',
