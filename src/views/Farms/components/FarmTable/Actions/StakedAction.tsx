@@ -1,4 +1,14 @@
-import { AddIcon, Button, IconButton, MinusIcon, Skeleton, Text, useModal } from '@pancakeswap/uikit'
+import {
+  AddIcon,
+  Button,
+  IconButton,
+  MinusIcon,
+  Skeleton,
+  Text,
+  useModal,
+  useTooltip,
+  HelpIcon,
+} from '@pancakeswap/uikit'
 import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import ConnectWalletButton from 'components/ConnectWalletButton'
 import { ToastDescriptionWithTx } from 'components/Toast'
@@ -29,6 +39,10 @@ import { YieldBoosterState } from '../../YieldBooster/hooks/useYieldBoosterState
 
 const IconButtonWrapper = styled.div`
   display: flex;
+`
+
+const ReferenceElement = styled.div`
+  display: inline-block;
 `
 
 interface StackedActionProps extends FarmWithStakedValue {
@@ -156,6 +170,11 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
     tokenAddress: token.address,
   })
   const addLiquidityUrl = `${BASE_ADD_LIQUIDITY_URL}/${liquidityUrlPathParts}`
+
+  const { targetRef, tooltip, tooltipVisible } = useTooltip(
+    t('If you are going to mange your liquidity, you should increase your allowance above 0 with enable button'),
+    { placement: 'top-end', tooltipOffset: [20, 10] },
+  )
 
   const handleStake = async (amount: string) => {
     const receipt = await fetchWithCatchTxError(() => {
@@ -322,6 +341,10 @@ const Staked: React.FunctionComponent<React.PropsWithChildren<StackedActionProps
         <Text bold textTransform="uppercase" color="textSubtle" fontSize="12px">
           {t('Enable Farm')}
         </Text>
+        <ReferenceElement ref={targetRef}>
+          <HelpIcon color="textSubtle" />
+        </ReferenceElement>
+        {tooltipVisible && tooltip}
       </ActionTitles>
       <ActionContent>
         <Button width="100%" disabled={pendingTx} onClick={handleApprove} variant="secondary">

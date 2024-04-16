@@ -24,6 +24,8 @@ export const ActionContainer = styled.div`
 
 export const ActionTitles = styled.div`
   display: flex;
+  align-items: center;
+  gap: 2px;
   margin-bottom: 8px;
 `
 

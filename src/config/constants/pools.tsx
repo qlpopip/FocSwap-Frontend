@@ -32,7 +32,7 @@ export const livePools: SerializedPoolConfig[] = [
     contractAddress: {
       56: '',
       2021: '',
-      84532: '0xAfD3250B17a80e9807A004FC9603A48937Ad3309',
+      84532: '0xf51Ab528017C3b999b5b0Fd00c9834832B192946',
     },
     poolCategory: PoolCategory.COMMUNITY,
     tokenPerBlock: '1',

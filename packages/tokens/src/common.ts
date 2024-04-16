@@ -57,7 +57,7 @@ export const CAKE_KLAYTN = new Token(
 
 export const CAKE_BASE_TESTNET = new Token(
   ChainId.BASE_TESTNET,
-  '0x198028E8c21324De512F369dDF2D404c608034Db',
+  '0xF19AaAE719182296b6876cE514B1f0e96cf0ec18',
   18,
   'FOC',
   'FOC Token',
@@ -102,7 +102,7 @@ export const USDC_SAIGON = new Token(
 
 export const USDC_BASE_TESTNET = new Token(
   ChainId.BASE_TESTNET,
-  '0x79a91CdCBD808A4B01A2D29773a29d74B6e2DeD6',
+  '0x5E8F14B6a2A469c36817078875080B9398AD7b6f',
   18,
   'USDC',
   'USD Coin',
@@ -165,7 +165,7 @@ export const USDT_KLAYTN = new Token(
 
 export const USDT_BASE_TESTNET = new Token(
   ChainId.BASE_TESTNET,
-  '0x1F6b02688350a1aedEd79358FBe7D22036c5b73C',
+  '0x4AD3dC635B46A0A7fBAB92fe0f73dffC419AA602',
   18,
   'USDT',
   'Tether USD',

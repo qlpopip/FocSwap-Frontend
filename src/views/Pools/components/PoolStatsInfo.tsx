@@ -8,11 +8,12 @@ import { useCurrentBlock } from 'state/block/hooks'
 import { useVaultPoolByKey } from 'state/pools/hooks'
 import { DeserializedPool, VaultKey } from 'state/types'
 import { getBlockExploreLink } from 'utils'
+import useActiveWeb3React from 'hooks/useActiveWeb3React'
 import { getAddress, getVaultPoolAddress } from 'utils/addressHelpers'
 import { BIG_ZERO } from 'utils/bigNumber'
 import { getPoolBlockInfo } from 'views/Pools/helpers'
 import MaxStakeRow from './MaxStakeRow'
-import { AprInfo, DurationAvg, PerformanceFee, TotalLocked, TotalStaked } from './Stat'
+import { AprInfo, PerformanceFee, TotalStaked } from './Stat'
 import { ChainId } from '../../../../packages/swap-sdk/src/constants'
 
 interface ExpandedFooterProps {
@@ -30,6 +31,7 @@ const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({
 }) => {
   const { t } = useTranslation()
   const currentBlock = useCurrentBlock()
+  const { chainId } = useActiveWeb3React()
 
   const {
     stakingToken,
@@ -160,7 +162,7 @@ const PoolStatsInfo: React.FC<React.PropsWithChildren<ExpandedFooterProps>> = ({
             tokenAddress={tokenAddress}
             tokenSymbol={earningToken.symbol}
             tokenDecimals={earningToken.decimals}
-            tokenLogo={`https://tokens.pancakeswap.finance/images/${tokenAddress}.png`}
+            tokenLogo={`/images/${chainId}/${earningToken.address}.png`}
           />
         </Flex>
       )} */}

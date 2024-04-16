@@ -266,3 +266,26 @@ export const baseSepolia: Chain = {
     blockCreated: 103742609,
   },
 }
+
+export const base: Chain = {
+  id: 8453,
+  name: 'Base Mainnet',
+  network: 'Base',
+  nativeCurrency: {
+    decimals: 18,
+    name: 'Ethereum',
+    symbol: 'ETH',
+  },
+  rpcUrls: {
+    default: 'https://mainnet.base.org',
+    // https://docs.nodereal.io/nodereal/meganode/meganode-api-overview/public-api-key
+    nodeReal: 'https://mainnet.base.org',
+  },
+  blockExplorers: {
+    default: { name: 'basescan', url: 'https://basescan.org' },
+  },
+  multicall: {
+    address: '0xcA11bde05977b3631167028862bE2a173976CA11',
+    blockCreated: 5054038,
+  },
+}
