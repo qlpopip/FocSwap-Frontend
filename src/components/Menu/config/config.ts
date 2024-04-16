@@ -78,19 +78,6 @@ const config: (
         },
       ],
     },
-    // {
-    //   label: t('Events'),
-    //   href: 'https://osh.x2day.io/event',
-    //   icon: EventIcon,
-    //   fillIcon: EventIcon,
-    //   image: '/images/decorations/pe2.png',
-    //   items: [
-    //     {
-    //       label: t('Events'),
-    //       href: 'https://osh.x2day.io/event',
-    //     },
-    //   ],
-    // },
   ].map((item) => addMenuItemSupported(item, chainId))
 
 export default config
