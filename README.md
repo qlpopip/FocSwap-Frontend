@@ -1,4 +1,4 @@
-# FOC Frontend
+# FocSwap Frontend
 
 ## Quick Start
 
