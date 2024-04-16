@@ -48,14 +48,8 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
     bscTokens.usdc,
   ],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.BAOBAB]: [WNATIVE[ChainId.BAOBAB], USDT[ChainId.BAOBAB], baobabTokens.odi],
-  [ChainId.KLAYTN]: [
-    WNATIVE[ChainId.KLAYTN],
-    USDT[ChainId.KLAYTN],
-    klaytnTokens.odi,
-    klaytnTokens.lcg,
-    klaytnTokens.oETH,
-  ],
+  [ChainId.BAOBAB]: [WNATIVE[ChainId.BAOBAB], USDT[ChainId.BAOBAB]],
+  [ChainId.KLAYTN]: [WNATIVE[ChainId.KLAYTN], USDT[ChainId.KLAYTN]],
 }
 
 /**
@@ -82,8 +76,8 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.SAIGON]: [USDC[ChainId.SAIGON], WNATIVE[ChainId.SAIGON], USDT[ChainId.SAIGON], saigonTokens.foc],
   [ChainId.BSC]: [bscTokens.busd, bscTokens.cake, bscTokens.btcb],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.BAOBAB]: [USDT[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB], baobabTokens.odi, baobabTokens.aaa],
-  [ChainId.KLAYTN]: [USDT[ChainId.KLAYTN], klaytnTokens.odi, klaytnTokens.lcg, klaytnTokens.oETH],
+  [ChainId.BAOBAB]: [USDT[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB]],
+  [ChainId.KLAYTN]: [USDT[ChainId.KLAYTN]],
   [ChainId.BASE_TESTNET]: [USDT[ChainId.BASE_TESTNET], WNATIVE[ChainId.BASE_TESTNET], baseTestTokens.foc],
 }
 
@@ -101,8 +95,8 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.SAIGON]: [USDC[ChainId.SAIGON], WNATIVE[ChainId.SAIGON], saigonTokens.foc],
   [ChainId.BSC]: [bscTokens.wbnb, bscTokens.dai, bscTokens.busd, bscTokens.usdt, bscTokens.cake],
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
-  [ChainId.BAOBAB]: [USDT[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB], baobabTokens.odi],
-  [ChainId.KLAYTN]: [USDT[ChainId.KLAYTN], WNATIVE[ChainId.KLAYTN], klaytnTokens.odi],
+  [ChainId.BAOBAB]: [USDT[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB]],
+  [ChainId.KLAYTN]: [USDT[ChainId.KLAYTN], WNATIVE[ChainId.KLAYTN]],
   [ChainId.BASE_TESTNET]: [USDT[ChainId.BASE_TESTNET], WNATIVE[ChainId.BASE_TESTNET], baseTestTokens.foc],
 }
 
