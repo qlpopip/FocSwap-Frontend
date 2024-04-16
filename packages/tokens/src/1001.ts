@@ -4,7 +4,5 @@ import { USDC_BAOBAB } from './common'
 export const baobabTokens = {
   weth: WETH9[ChainId.BAOBAB],
   usdt: new Token(ChainId.BAOBAB, '0x86eF3B9d8FA7050F8CbBf56CAB762F5C642D054d', 18, 'oUSDT', 'oUSDT Token', ''),
-  lcg: new Token(ChainId.BAOBAB, '0x286A9832a28aD177EdCBAa1f78A842B1013019d4', 18, 'LCG', 'LCG Token', ''),
-  aaa: new Token(ChainId.BAOBAB, '0x9967a82d580a94724471ce331c8eb7b882e41ac5', 18, 'AAA', 'AAA Token', ''),
   usdc: USDC_BAOBAB,
 }
