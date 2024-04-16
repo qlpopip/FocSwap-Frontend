@@ -105,7 +105,6 @@ export function useCurrencyBalances(
     () => currencies?.filter((currency): currency is Token => currency?.isToken) ?? [],
     [currencies],
   )
-
   const tokenBalances = useTokenBalances(account, tokens)
   const containsNative: boolean = useMemo(
     () => currencies?.some((currency) => currency?.isNative) ?? false,

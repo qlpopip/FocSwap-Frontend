@@ -261,7 +261,7 @@
     {
       "name": "Bridged USDC",
       "symbol": "USDbC",
-      "address": "0x5E8F14B6a2A469c36817078875080B9398AD7b6f",
+      "address": "0xd9aAEc86B65D86f6A7B5B1b0c42FFA531710b6CA",
       "chainId": 8453,
       "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/meritz3695/foc-assets/main/tokens/0x22Ca52E4A56f7CF58AB0F87B9Fa10663844a00CC.png"

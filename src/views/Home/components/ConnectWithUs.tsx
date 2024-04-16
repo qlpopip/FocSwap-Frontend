@@ -107,7 +107,6 @@ const ConnectWithUs = () => {
   const [circulatingSupply, setCirculatingSupply] = useState<number>(0)
   const [marketCap, setMarketCap] = useState<number>(0)
   const [tokenBurn, setTokenBurn] = useState<number>(0)
-  const [currentEmissions, setCurrentEmissions] = useState<number>(0)
   const price = usePriceCakeBusd()
 
   useEffect(() => {
@@ -117,13 +116,10 @@ const ConnectWithUs = () => {
       const tokenBurn_ = 0 // fetch from contract
       const circulatingSupply_ = 10000000000 - tokenBurn
       const marketCap_ = parseInt(price.multipliedBy(totalSupply_).toFixed(0))
-      console.log('marketCap_', marketCap_)
-      const curentEmissions_ = 0 // fetch from contract
       setTotalSupply(totalSupply_)
       setCirculatingSupply(circulatingSupply_)
       setMarketCap(marketCap_)
       setTokenBurn(tokenBurn_)
-      setCurrentEmissions(curentEmissions_)
     }
 
     fetchStats()
