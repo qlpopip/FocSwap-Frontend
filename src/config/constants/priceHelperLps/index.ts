@@ -7,6 +7,7 @@ import FarmsBaobabPriceHelper from './farms/1001'
 import FarmsSaigonPriceHelper from './farms/2021'
 import FarmsKlaytnPriceHelper from './farms/8217'
 import FarmsBaseTestnetPriceHelper from './farms/84532'
+import FarmsBasePriceHelper from './farms/8453'
 import PoolsBscPriceHelper from './pools/56'
 import PoolsBscTestnetPriceHelper from './pools/97'
 import PoolsEthereumPriceHelper from './pools/1'
@@ -15,6 +16,7 @@ import PoolsBaobabPriceHelper from './pools/1001'
 import PoolsSaigonPriceHelper from './pools/2021'
 import PoolsKlaytnPriceHelper from './pools/8217'
 import PoolsBaseTestnetPriceHelper from './pools/84532'
+import PoolsBasePriceHelper from './pools/8453'
 
 export const getFarmsPriceHelperLpFiles = (chainId: ChainId) => {
   switch (chainId) {
@@ -32,6 +34,8 @@ export const getFarmsPriceHelperLpFiles = (chainId: ChainId) => {
       return FarmsKlaytnPriceHelper
     case ChainId.SAIGON:
       return FarmsSaigonPriceHelper
+    case ChainId.BASE:
+      return FarmsBasePriceHelper
     case ChainId.BASE_TESTNET:
       return FarmsBaseTestnetPriceHelper
     default:
@@ -55,6 +59,8 @@ export const getPoolsPriceHelperLpFiles = (chainId: ChainId) => {
       return PoolsKlaytnPriceHelper
     case ChainId.SAIGON:
       return PoolsSaigonPriceHelper
+    case ChainId.BASE:
+      return PoolsBasePriceHelper
     case ChainId.BASE_TESTNET:
       return PoolsBaseTestnetPriceHelper
     default:

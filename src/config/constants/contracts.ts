@@ -9,6 +9,7 @@ export default {
     8217: '0xF90F20175539218044277D2862D301CF5ffaf190',
     2021: '0xA14a3778ED736965Fb47303bA1ac1bC57B2f5a61',
     84532: '0xf51Ab528017C3b999b5b0Fd00c9834832B192946',
+    8453: '0x1eC6691bF64B946Ae7d9a657Ac4001e1Ca4Fe3C4',
   },
   masterChefV1: {
     97: '0xE641b73948FeBbD349C9Fd21C110eA9Dd384179C',
@@ -18,6 +19,7 @@ export default {
     8217: '0xF90F20175539218044277D2862D301CF5ffaf190',
     2021: '0xA14a3778ED736965Fb47303bA1ac1bC57B2f5a61',
     84532: '0xf51Ab528017C3b999b5b0Fd00c9834832B192946',
+    8453: '0x1eC6691bF64B946Ae7d9a657Ac4001e1Ca4Fe3C4',
   },
   sousChef: {
     97: '0xd3af5fe61dbaf8f73149bfcfa9fb653ff096029a',
@@ -27,6 +29,7 @@ export default {
     8217: '',
     2021: '',
     84532: '',
+    8453: '',
   },
   lotteryV2: {
     97: '0x5790c3534F30437641541a0FA04C992799602998',
@@ -36,6 +39,7 @@ export default {
     8217: '',
     2021: '',
     84532: '',
+    8453: '',
   },
   multiCall: multicallAddresses,
   pancakeProfile: {
@@ -46,6 +50,7 @@ export default {
     8217: '',
     2021: '',
     84532: '',
+    8453: '',
   },
   pancakeBunnies: {
     56: '0xDf7952B35f24aCF7fC0487D01c8d5690a60DBa07',
@@ -55,6 +60,7 @@ export default {
     8217: '',
     2021: '',
     84532: '',
+    8453: '',
   },
   bunnyFactory: {
     56: '0xfa249Caa1D16f75fa159F7DFBAc0cC5EaB48CeFf',
@@ -64,6 +70,7 @@ export default {
     8217: '',
     2021: '',
     84532: '',
+    8453: '',
   },
   claimRefund: {
     56: '0xE7e53A7e9E3Cf6b840f167eF69519175c497e149',
@@ -73,6 +80,7 @@ export default {
     8217: '',
     2021: '',
     84532: '',
+    8453: '',
   },
   pointCenterIfo: {
     56: '0x3C6919b132462C1FEc572c6300E83191f4F0012a',
@@ -82,6 +90,7 @@ export default {
     8217: '',
     2021: '',
     84532: '',
+    8453: '',
   },
   bunnySpecial: {
     56: '0xFee8A195570a18461146F401d6033f5ab3380849',
@@ -90,6 +99,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   tradingCompetitionEaster: {
@@ -99,6 +109,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   tradingCompetitionFanToken: {
@@ -108,6 +119,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   tradingCompetitionMobox: {
@@ -117,6 +129,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   tradingCompetitionMoD: {
@@ -126,6 +139,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   easterNft: {
@@ -135,6 +149,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   cakeVault: {
@@ -145,6 +160,7 @@ export default {
     8217: '0xE3Ef6D9D88787490549618F5792ecF472447d24e',
     2021: '0x1881895Fd353f0675DBaDcd1ef1558cAf4080160',
     84532: '0x91Cbc39ba725d1893a8436b71e0a000F5F250282',
+    8453: '0xC0B2F93bBA73E34cFb5f35Eeec787542C902322C',
   }, // 수정
   cakeFlexibleSideVault: {
     56: '0x615e896A8C2CA8470A2e9dc2E9552998f8658Ea0',
@@ -154,6 +170,7 @@ export default {
     8217: '',
     2021: '',
     84532: '',
+    8453: '',
   },
   predictionsBNB: {
     56: '0x18B2A687610328590Bc8F2e5fEdDe3b582A49cdA',
@@ -163,6 +180,7 @@ export default {
     8217: '',
     2021: '',
     84532: '',
+    8453: '',
   },
   predictionsCAKE: {
     56: '0x0E3A8078EDD2021dadcdE733C6b4a86E51EE8f07',
@@ -172,6 +190,7 @@ export default {
     8217: '',
     2021: '',
     84532: '',
+    8453: '',
   },
   chainlinkOracleBNB: {
     56: '0xD276fCF34D54A926773c399eBAa772C12ec394aC',
@@ -181,6 +200,7 @@ export default {
     8217: '',
     2021: '',
     84532: '',
+    8453: '',
   },
   chainlinkOracleCAKE: {
     56: '0xB6064eD41d4f67e353768aA239cA86f4F73665a1',
@@ -190,6 +210,7 @@ export default {
     8217: '',
     2021: '',
     84532: '',
+    8453: '',
   },
   predictionsV1: {
     56: '0x516ffd7d1e0ca40b1879935b2de87cb20fc1124b',
@@ -199,6 +220,7 @@ export default {
     8217: '',
     2021: '',
     84532: '',
+    8453: '',
   },
   bunnySpecialCakeVault: {
     56: '0x5B4a770Abe7Eafb2601CA4dF9d73EA99363E60a4',
@@ -207,6 +229,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   bunnySpecialPrediction: {
@@ -216,6 +239,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   bunnySpecialLottery: {
@@ -225,6 +249,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   bunnySpecialXmas: {
@@ -234,6 +259,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   farmAuction: {
@@ -243,6 +269,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   AnniversaryAchievement: {
@@ -252,6 +279,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   nftMarket: {
@@ -261,6 +289,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   nftSale: {
@@ -270,6 +299,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   pancakeSquad: {
@@ -279,6 +309,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   potteryDraw: {
@@ -288,6 +319,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   // TODO: multi
@@ -298,6 +330,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   iCake: {
@@ -307,6 +340,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   bCakeFarmBooster: {
@@ -316,6 +350,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
   bCakeFarmBoosterProxyFactory: {
@@ -325,6 +360,7 @@ export default {
     1001: '',
     8217: '',
     2021: '',
+    8453: '',
     84532: '',
   },
 }

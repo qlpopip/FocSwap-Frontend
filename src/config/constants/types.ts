@@ -24,6 +24,7 @@ export interface Address {
   5?: string
   2021?: string
   84532?: string
+  8453?: string
   [chainId: number]: string
 }
 

@@ -10,6 +10,7 @@ export const BASE_BSC_SCAN_URLS = {
   [ChainId.KLAYTN]: 'https://scope.klaytn.com',
   [ChainId.SAIGON]: 'https://saigon-app.roninchain.com',
   [ChainId.BASE_TESTNET]: 'https://sepolia-explorer.base.org',
+  [ChainId.BASE]: 'https://basescan.org',
 }
 
 // CAKE_PER_BLOCK details

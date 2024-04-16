@@ -6,8 +6,7 @@ import {
   USDC,
   USDT,
   BUSD,
-  baobabTokens,
-  klaytnTokens,
+  baseTokens,
   saigonTokens,
   baseTestTokens,
 } from '@pancakeswap/tokens'
@@ -23,6 +22,7 @@ export const ROUTER_ADDRESS: ChainMap<string> = {
   [ChainId.KLAYTN]: '0x6FC56a0D502AA30791e949E1b7D05dA58635023b',
   [ChainId.SAIGON]: '0x45d29Fa8F9Db474BE7653Fb3e88eB45aA60a2e46',
   [ChainId.BASE_TESTNET]: '0x0593dE33F2753132e557e37a0744e71d3CBCD5Cc',
+  [ChainId.BASE]: '0x1F6b02688350a1aedEd79358FBe7D22036c5b73C',
 } // 수정
 
 // used to construct intermediary pairs for trading
@@ -37,6 +37,7 @@ export const BASES_TO_CHECK_TRADES_AGAINST: ChainTokenList = {
   [ChainId.RINKEBY]: [WNATIVE[ChainId.RINKEBY], USDC[ChainId.RINKEBY], BUSD[ChainId.RINKEBY]],
   [ChainId.GOERLI]: [WNATIVE[ChainId.GOERLI], USDC[ChainId.GOERLI], BUSD[ChainId.GOERLI]],
   [ChainId.SAIGON]: [WNATIVE[ChainId.SAIGON], USDC[ChainId.SAIGON], USDT[ChainId.SAIGON]],
+  [ChainId.BASE]: [WNATIVE[ChainId.BASE], USDC[ChainId.BASE], baseTokens.foc],
   [ChainId.BASE_TESTNET]: [WNATIVE[ChainId.BASE_TESTNET], USDC[ChainId.BASE_TESTNET], USDT[ChainId.BASE_TESTNET]],
   [ChainId.BSC]: [
     bscTokens.wbnb,
@@ -78,6 +79,7 @@ export const SUGGESTED_BASES: ChainTokenList = {
   [ChainId.BSC_TESTNET]: [bscTestnetTokens.wbnb, bscTestnetTokens.cake, bscTestnetTokens.busd],
   [ChainId.BAOBAB]: [USDT[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB]],
   [ChainId.KLAYTN]: [USDT[ChainId.KLAYTN]],
+  [ChainId.BASE]: [USDC[ChainId.BASE], WNATIVE[ChainId.BASE], baseTokens.foc],
   [ChainId.BASE_TESTNET]: [USDT[ChainId.BASE_TESTNET], WNATIVE[ChainId.BASE_TESTNET], baseTestTokens.foc],
 }
 
@@ -98,6 +100,7 @@ export const BASES_TO_TRACK_LIQUIDITY_FOR: ChainTokenList = {
   [ChainId.BAOBAB]: [USDT[ChainId.BAOBAB], WNATIVE[ChainId.BAOBAB]],
   [ChainId.KLAYTN]: [USDT[ChainId.KLAYTN], WNATIVE[ChainId.KLAYTN]],
   [ChainId.BASE_TESTNET]: [USDT[ChainId.BASE_TESTNET], WNATIVE[ChainId.BASE_TESTNET], baseTestTokens.foc],
+  [ChainId.BASE]: [USDC[ChainId.BASE], WNATIVE[ChainId.BASE], baseTokens.foc],
 }
 
 export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } = {
@@ -116,6 +119,10 @@ export const PINNED_PAIRS: { readonly [chainId in ChainId]?: [Token, Token][] } 
   [ChainId.BASE_TESTNET]: [
     [WNATIVE[ChainId.BASE_TESTNET], USDT[ChainId.BASE_TESTNET]],
     [baseTestTokens.foc, USDT[ChainId.BASE_TESTNET]],
+  ],
+  [ChainId.BASE]: [
+    [WNATIVE[ChainId.BASE], USDC[ChainId.BASE]],
+    [baseTokens.foc, USDC[ChainId.BASE]],
   ],
 }
 

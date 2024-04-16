@@ -156,8 +156,8 @@ export const useCakeBusdPrice = ({ forceMainnet } = { forceMainnet: false }): Pr
   const { chainId } = useActiveWeb3React()
   const isTestnet = !forceMainnet && isChainTestnet(chainId)
   // Return bsc testnet cake if chain is testnet
-  const cake: Token = isTestnet ? CAKE[ChainId.BASE_TESTNET] : CAKE[ChainId.BASE_TESTNET]
-  return usePriceByPairs(cake, USDT[cake.chainId])
+  const cake: Token = isTestnet ? CAKE[ChainId.BASE_TESTNET] : CAKE[ChainId.BASE]
+  return usePriceByPairs(cake, USDC[cake.chainId])
 }
 
 // @Note: only fetch from one pair

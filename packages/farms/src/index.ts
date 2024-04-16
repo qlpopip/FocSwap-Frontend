@@ -9,6 +9,7 @@ export const masterChefAddresses = {
   8217: '0xF90F20175539218044277D2862D301CF5ffaf190',
   2021: '0xA14a3778ED736965Fb47303bA1ac1bC57B2f5a61',
   84532: '0xf51Ab528017C3b999b5b0Fd00c9834832B192946',
+  8453: '0x1eC6691bF64B946Ae7d9a657Ac4001e1Ca4Fe3C4',
 }
 // 수정
 export const nonBSCVaultAddresses = {
@@ -17,9 +18,10 @@ export const nonBSCVaultAddresses = {
   8217: '0xF90F20175539218044277D2862D301CF5ffaf190',
   2021: '0x1881895Fd353f0675DBaDcd1ef1558cAf4080160',
   84532: '0x91Cbc39ba725d1893a8436b71e0a000F5F250282',
+  8453: '0xC0B2F93bBA73E34cFb5f35Eeec787542C902322C',
 }
 
-const supportedChainId = [5, 56, 97, 1001, 8217, 2021, 84532]
+const supportedChainId = [5, 56, 97, 1001, 8217, 84532, 8453]
 
 export function createFarmFetcher(multicall: MultiCallV2) {
   const fetchFarms = (params: Omit<fetchFarmsParams, 'masterChefAddresses' | 'multicall'>) => {

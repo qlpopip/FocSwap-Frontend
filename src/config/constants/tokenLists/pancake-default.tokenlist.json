@@ -243,11 +243,27 @@
       "logoURI": "https://raw.githubusercontent.com/meritz3695/foc-assets/main/tokens/0xcBff9d27af2e13Df19C9082276764426DC50eFF7.png"
     },
     {
+      "name": "FOC Token",
+      "symbol": "FOC",
+      "address": "0xDA11e185fF18674A633441Ca954D0f55289Cf7E7",
+      "chainId": 8453,
+      "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/meritz3695/foc-assets/main/tokens/0xcBff9d27af2e13Df19C9082276764426DC50eFF7.png"
+    },
+    {
       "name": "USD Coin",
       "symbol": "USDC",
       "address": "0x5E8F14B6a2A469c36817078875080B9398AD7b6f",
       "chainId": 84532,
       "decimals": 18,
+      "logoURI": "https://raw.githubusercontent.com/meritz3695/foc-assets/main/tokens/0x22Ca52E4A56f7CF58AB0F87B9Fa10663844a00CC.png"
+    },
+    {
+      "name": "Bridged USDC",
+      "symbol": "USDbC",
+      "address": "0x5E8F14B6a2A469c36817078875080B9398AD7b6f",
+      "chainId": 8453,
+      "decimals": 6,
       "logoURI": "https://raw.githubusercontent.com/meritz3695/foc-assets/main/tokens/0x22Ca52E4A56f7CF58AB0F87B9Fa10663844a00CC.png"
     },
     {

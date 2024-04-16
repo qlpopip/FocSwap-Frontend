@@ -61,7 +61,7 @@ export async function farmV2FetchFarms({
   })
   const farmsDataWithPrices = getFarmsPrices(farmsData, chainId)
   const farmsDataWithUpdatedPrices = farmsDataWithPrices.map((farm) => {
-    if (farm.quoteToken.symbol !== 'USDC') {
+    if (farm.quoteToken.symbol !== 'USDbC') {
       const newLpTotalInQuoteToken = parseFloat(farm.lpTotalInQuoteToken) * parseFloat(farm.quoteTokenPriceBusd)
       return {
         ...farm,
@@ -387,9 +387,7 @@ const masterChefV2Abi = [
 
 const masterChefFarmCalls = (farm: SerializedFarmConfig, isTestnet: boolean, masterChefAddresses) => {
   const { pid } = farm
-  const masterChefAddress = isTestnet
-    ? masterChefAddresses[ChainId.BASE_TESTNET]
-    : masterChefAddresses[ChainId.BASE_TESTNET]
+  const masterChefAddress = isTestnet ? masterChefAddresses[ChainId.BASE_TESTNET] : masterChefAddresses[ChainId.BASE]
 
   return pid || pid === 0
     ? {
@@ -413,7 +411,7 @@ export const fetchMasterChefData = async (
     const masterChefMultiCallResult = await multicall({
       abi: masterChefV2Abi,
       calls: masterChefAggregatedCalls,
-      chainId: isTestnet ? ChainId.BASE_TESTNET : ChainId.BASE_TESTNET,
+      chainId: isTestnet ? ChainId.BASE_TESTNET : ChainId.BASE,
     })
 
     let masterChefChunkedResultCounter = 0
@@ -441,7 +439,9 @@ export const fetchMasterChefV2Data = async ({
   masterChefAddresses
 }) => {
   try {
-    const masterChefV2Address = masterChefAddresses[ChainId.BASE_TESTNET]
+    const masterChefV2Address = isTestnet
+      ? masterChefAddresses[ChainId.BASE_TESTNET]
+      : masterChefAddresses[ChainId.BASE]
     const [[poolLength], [totalRegularAllocPoint], [cakePerBlock]] = await multicall<
       [[BigNumber], [BigNumber], [BigNumber]]
     >({
@@ -460,7 +460,7 @@ export const fetchMasterChefV2Data = async ({
           name: 'FOCPerBlock',
         },
       ],
-      chainId: isTestnet ? ChainId.BASE_TESTNET : ChainId.BASE_TESTNET,
+      chainId: isTestnet ? ChainId.BASE_TESTNET : ChainId.BASE,
     })
 
     return {

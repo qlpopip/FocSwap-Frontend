@@ -246,7 +246,7 @@ export const klaytn: Chain = {
 
 export const baseSepolia: Chain = {
   id: 84532,
-  name: 'Base',
+  name: 'Base Sepolia',
   network: 'Base Sepolia',
   nativeCurrency: {
     decimals: 18,
@@ -265,11 +265,12 @@ export const baseSepolia: Chain = {
     address: '0xcA11bde05977b3631167028862bE2a173976CA11',
     blockCreated: 103742609,
   },
+  testnet: true,
 }
 
 export const base: Chain = {
   id: 8453,
-  name: 'Base Mainnet',
+  name: 'Base',
   network: 'Base',
   nativeCurrency: {
     decimals: 18,

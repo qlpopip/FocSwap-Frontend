@@ -92,7 +92,7 @@ const SwitchIconButton = styled(IconButton)`
   }
 `
 
-const CHART_SUPPORT_CHAIN_IDS = [ChainId.BASE_TESTNET]
+const CHART_SUPPORT_CHAIN_IDS = [ChainId.BASE_TESTNET, ChainId.BASE]
 
 const SettingsModalWithCustomDismiss = withCustomOnDismiss(SettingsModal)
 

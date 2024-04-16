@@ -13,6 +13,7 @@ export const multicallAddresses = {
   2021: '0xca11bde05977b3631167028862be2a173976ca11',
   8217: '0xd11dfc2ab34abd3e1abfba80b99aefbd6255c4b8',
   84532: '0xcA11bde05977b3631167028862bE2a173976CA11',
+  8453: '0xcA11bde05977b3631167028862bE2a173976CA11',
 }
 
 export const getMulticallContract = (chainId: ChainId, provider) => {
@@ -61,7 +62,7 @@ export type MultiCallV2 = <T = any>(params: MulticallV2Params) => Promise<T>
 export type MultiCall = <T = any>(abi: any[], calls: Call[], chainId?: ChainId) => Promise<T>
 
 export function createMulticall<TProvider>(provider: ({ chainId }: { chainId?: number | undefined }) => TProvider) {
-  const multicall: MultiCall = async (abi: any[], calls: Call[], chainId = ChainId.BASE_TESTNET) => {
+  const multicall: MultiCall = async (abi: any[], calls: Call[], chainId: number) => {
     const multi = getMulticallContract(chainId, provider({ chainId }))
     if (!multi) throw new Error(`Multicall Provider missing for ${chainId}`)
     const itf = new Interface(abi)
@@ -77,7 +78,7 @@ export function createMulticall<TProvider>(provider: ({ chainId }: { chainId?: n
     return res as any
   }
 
-  const multicallv2: MultiCallV2 = async ({ abi, calls, chainId = ChainId.BASE_TESTNET, options }) => {
+  const multicallv2: MultiCallV2 = async ({ abi, calls, chainId, options }) => {
     const { requireSuccess = true, ...overrides } = options || {}
     const multi = getMulticallContract(chainId, provider({ chainId }))
     if (!multi) throw new Error(`Multicall Provider missing for ${chainId}`)
@@ -97,7 +98,7 @@ export function createMulticall<TProvider>(provider: ({ chainId }: { chainId?: n
     return res as any
   }
 
-  const multicallv3 = async ({ calls, chainId = ChainId.BASE_TESTNET, allowFailure, overrides }: MulticallV3Params) => {
+  const multicallv3 = async ({ calls, chainId, allowFailure, overrides }: MulticallV3Params) => {
     const multi = getMulticallContract(chainId, provider({ chainId }))
     if (!multi) throw new Error(`Multicall Provider missing for ${chainId}`)
     const _calls = calls.map(({ abi, address, name, params, allowFailure: _allowFailure }) => {
