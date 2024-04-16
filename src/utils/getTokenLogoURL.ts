@@ -13,7 +13,7 @@ const mapping = {
 
 const getTokenLogoURL = (token?: Token) => {
   if (token && mapping[token.chainId]) {
-    return `https://raw.githubusercontent.com/meritz3695/foc-assets/main/tokens/${token.address}.png`
+    return `https://raw.githubusercontent.com/qlpopip/FocSwap-Asset/main/tokens/${token.address}.png`
   }
   return null
 }
